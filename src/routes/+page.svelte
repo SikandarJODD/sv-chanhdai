@@ -5,6 +5,7 @@
 	import { ShareMenu } from "$chan/share-menu";
 	import { ShimmeringText } from "$chan/shimmering-text";
 	import AppleHelloEffectExample from "$lib/examples/apple-hello-effect-example.svelte";
+	import DotGridSpotlightExample from "$lib/examples/dot-grid-spotlight-example.svelte";
 	import ElasticSliderExample from "$lib/examples/elastic-slider-example.svelte";
 	import SpinningCircularTextShimmeringExample from "$lib/examples/shimmering-example.svelte";
 	import TestimonialExample from "$lib/examples/testimonial-example.svelte";
@@ -78,6 +79,7 @@
 <div
 	class="flex min-h-svh flex-col items-center justify-center gap-10 overflow-hidden p-10"
 >
+	<DotGridSpotlightExample />
 	<AppleHelloEffectExample />
 	<ElasticSliderExample />
 </div>
