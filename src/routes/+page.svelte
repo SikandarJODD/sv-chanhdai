@@ -2,6 +2,12 @@
 	import { page } from "$app/state";
 	import { GithubStars } from "$chan/github-stars";
 	import { ShimmeringText } from "$chan/shimmering-text";
+	import {
+		SlideToUnlock,
+		SlideToUnlockHandle,
+		SlideToUnlockText,
+		SlideToUnlockTrack
+	} from "$chan/slide-to-unlock";
 	import { Hero } from "$lib/components/landing";
 	import Feature from "$lib/components/landing/feature/feature.svelte";
 	import Footer from "$lib/components/landing/footer.svelte";
@@ -17,6 +23,7 @@
 			alt: seo_config.site_name
 		}
 	];
+	let unlocked = $state(false);
 </script>
 
 <MetaTags
@@ -51,4 +58,24 @@
 	<div>
 		<ShimmeringText text="slide to unlock" />
 	</div>
+</div>
+
+<div
+	class="fixed left-1/2 z-50 flex -translate-x-1/2 flex-col items-center gap-2"
+	style:bottom="max(4rem, env(safe-area-inset-bottom))"
+>
+	{#if unlocked}
+		<p class="text-sm font-medium">Unlocked!</p>
+	{/if}
+
+	<SlideToUnlock onUnlock={() => (unlocked = true)} class="w-67 rounded-full">
+		<SlideToUnlockTrack>
+			<SlideToUnlockText>
+				{#snippet children({ isDragging })}
+					<span>{isDragging ? "Release..." : "Slide to unlock"}</span>
+				{/snippet}
+			</SlideToUnlockText>
+			<SlideToUnlockHandle class="rounded-full" />
+		</SlideToUnlockTrack>
+	</SlideToUnlock>
 </div>
