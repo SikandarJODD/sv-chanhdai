@@ -406,12 +406,14 @@
 		className
 	)}
 >
+	<!-- if needed you can use: cursor-ew-resize instead of cursor-pointer -->
 	<motion.div
 		bind:ref={trackRef}
 		role="slider"
 		tabindex={0}
 		data-slot="elastic-slider-track"
 		data-active={isActive}
+		data-dragging={isDragging}
 		data-focus-visible={keyboardFocusRing}
 		aria-label={ariaLabel ?? label}
 		aria-orientation="horizontal"
@@ -420,7 +422,7 @@
 		aria-valuenow={value}
 		aria-valuetext={displayValue}
 		class={cn(
-			"group/elastic-slider absolute inset-0 cursor-pointer touch-none overflow-hidden rounded-(--elastic-slider-radius) bg-(--elastic-slider-bg) outline-none select-none",
+			"group/elastic-slider absolute inset-0 cursor-pointer touch-none overflow-hidden rounded-(--elastic-slider-radius) bg-(--elastic-slider-bg) outline-none select-none data-[dragging=true]:cursor-grabbing",
 			"data-[focus-visible=true]:ring-2 data-[focus-visible=true]:ring-ring/50 data-[focus-visible=true]:ring-offset-1 data-[focus-visible=true]:ring-offset-background"
 		)}
 		style={{ width: rubberWidth, x: rubberX }}

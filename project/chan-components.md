@@ -6,7 +6,7 @@
 - [ ] [Consent Manager](https://chanhdai.com/components/consent-manager)
 - [ ] [Copy Button](https://chanhdai.com/components/copy-button)
 - [ ] [Dot Grid Spotlight](https://chanhdai.com/components/dot-grid-spotlight)
-- [ ] [Elastic Slider](https://chanhdai.com/components/elastic-slider)
+- [✅] [Elastic Slider](https://chanhdai.com/components/elastic-slider)
 - [ ] [Fluid Gradient Text](https://chanhdai.com/components/fluid-gradient-text)
 - [ ] [GitHub Contributions](https://chanhdai.com/components/github-contributions)
 - [✅] [GitHub Stars](https://chanhdai.com/components/github-stars)
