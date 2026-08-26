@@ -42,6 +42,12 @@ let components: Component[] = [
     href: "/components/status-button",
     desc: "TODO: Add a concise description for Status Button.",
   },
+  {
+    id: "scroll-fade-effect",
+    name: "Scroll Fade Effect",
+    href: "/components/scroll-fade-effect",
+    desc: "TODO: Add a concise description for Scroll Fade Effect.",
+  },
 ];
 
 export { components };
