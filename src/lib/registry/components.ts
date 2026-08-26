@@ -1,18 +1,18 @@
 export type BadgeType = "New" | "Updated" | "Beta";
 
 export interface Component {
-  id: string;
-  name: string;
-  href: string;
-  badge?: BadgeType;
-  desc?: string;
+	id: string;
+	name: string;
+	href: string;
+	badge?: BadgeType;
+	desc?: string;
 }
 
 export interface DocPage {
-  id: string;
-  name: string;
-  href: string;
-  desc?: string;
+	id: string;
+	name: string;
+	href: string;
+	desc?: string;
 }
 
 let components: Component[] = [
@@ -36,23 +36,29 @@ let components: Component[] = [
     href: "/components/input",
     desc: "TODO: Add a concise description for Input.",
   },
+  {
+    id: "status-button",
+    name: "Status Button",
+    href: "/components/status-button",
+    desc: "TODO: Add a concise description for Status Button.",
+  },
 ];
 
 export { components };
 
 let docsPages: DocPage[] = [
-  {
-    id: "docs",
-    name: "Introduction",
-    href: "/docs",
-    desc: "Getting started with the setup.",
-  },
-  {
-    id: "installation",
-    name: "Installation",
-    href: "/docs/installation",
-    desc: "Create the app and initialize shadcn-svelte.",
-  },
+	{
+		id: "docs",
+		name: "Introduction",
+		href: "/docs",
+		desc: "Getting started with the setup."
+	},
+	{
+		id: "installation",
+		name: "Installation",
+		href: "/docs/installation",
+		desc: "Create the app and initialize shadcn-svelte."
+	}
 ];
 
 export { docsPages };
@@ -60,18 +66,18 @@ export { docsPages };
 type NavigationItem = DocPage | Component;
 
 function getNavigationItems(): NavigationItem[] {
-  return [...docsPages, ...components];
+	return [...docsPages, ...components];
 }
 
 export function getPrevNext(id: string): {
-  prev: NavigationItem | null;
-  next: NavigationItem | null;
+	prev: NavigationItem | null;
+	next: NavigationItem | null;
 } {
-  let items = getNavigationItems();
-  let index = items.findIndex((item) => item.id === id);
-  if (index === -1) return { prev: null, next: null };
-  return {
-    prev: index > 0 ? items[index - 1] : null,
-    next: index < items.length - 1 ? items[index + 1] : null,
-  };
+	let items = getNavigationItems();
+	let index = items.findIndex((item) => item.id === id);
+	if (index === -1) return { prev: null, next: null };
+	return {
+		prev: index > 0 ? items[index - 1] : null,
+		next: index < items.length - 1 ? items[index + 1] : null
+	};
 }
