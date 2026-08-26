@@ -4,7 +4,8 @@
 	import { IconSwap, IconSwapItem } from "$chan/icon-swap";
 	import { ShareMenu } from "$chan/share-menu";
 	import { ShimmeringText } from "$chan/shimmering-text";
-	import SpinningCircularTextShimmeringExample from "$chan/spinning-circular-text/shimmering-example.svelte";
+	import SpinningCircularTextShimmeringExample from "$lib/examples/shimmering-example.svelte";
+	import TestimonialExample from "$lib/examples/testimonial-example.svelte";
 	import {
 		SlideToUnlock,
 		SlideToUnlockHandle,
@@ -72,6 +73,10 @@
 <!-- <Feature /> -->
 <!-- <Footer /> -->
 <div class="p-10 flex flex-col gap-5">
+	<div class="flex justify-center py-10">
+		<TestimonialExample />
+	</div>
+
 	<div class="flex justify-center py-10">
 		<SpinningCircularTextShimmeringExample />
 	</div>

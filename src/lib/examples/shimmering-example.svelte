@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { mode } from "mode-watcher";
 	import { motion, useReducedMotion } from "motion-sv";
-	import SpinningCircularText from "./spinning-circular-text.svelte";
+	import SpinningCircularText from "$chan/spinning-circular-text/spinning-circular-text.svelte";
 
 	const TEXT = "Built with care by ncdai • ";
 	const DURATION = 4;
