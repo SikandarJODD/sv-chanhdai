@@ -4,9 +4,9 @@
 	import { IconSwap, IconSwapItem } from "$chan/icon-swap";
 	import { ShareMenu } from "$chan/share-menu";
 	import { ShimmeringText } from "$chan/shimmering-text";
+	import AppleHelloEffectExample from "$lib/examples/apple-hello-effect-example.svelte";
 	import SpinningCircularTextShimmeringExample from "$lib/examples/shimmering-example.svelte";
 	import TestimonialExample from "$lib/examples/testimonial-example.svelte";
-	import TimescaleExample from "$lib/examples/timescale-example.svelte";
 	import {
 		SlideToUnlock,
 		SlideToUnlockHandle,
@@ -74,8 +74,8 @@
 <!-- <Feature /> -->
 <!-- <Footer /> -->
 <!-- <div class="p-10 flex flex-col gap-5 relative"> -->
-<div class="overflow-hidden p-10">
-	<TimescaleExample />
+<div class="flex min-h-svh items-center justify-center overflow-hidden p-10">
+	<AppleHelloEffectExample />
 </div>
 <!-- 
 	<div class="flex justify-center py-10">
