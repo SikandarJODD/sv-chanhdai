@@ -5,6 +5,7 @@
 	import { ShareMenu } from "$chan/share-menu";
 	import { ShimmeringText } from "$chan/shimmering-text";
 	import AppleHelloEffectExample from "$lib/examples/apple-hello-effect-example.svelte";
+	import ElasticSliderExample from "$lib/examples/elastic-slider-example.svelte";
 	import SpinningCircularTextShimmeringExample from "$lib/examples/shimmering-example.svelte";
 	import TestimonialExample from "$lib/examples/testimonial-example.svelte";
 	import {
@@ -74,8 +75,11 @@
 <!-- <Feature /> -->
 <!-- <Footer /> -->
 <!-- <div class="p-10 flex flex-col gap-5 relative"> -->
-<div class="flex min-h-svh items-center justify-center overflow-hidden p-10">
+<div
+	class="flex min-h-svh flex-col items-center justify-center gap-10 overflow-hidden p-10"
+>
 	<AppleHelloEffectExample />
+	<ElasticSliderExample />
 </div>
 <!-- 
 	<div class="flex justify-center py-10">

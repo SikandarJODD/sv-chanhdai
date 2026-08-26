@@ -1,5 +1,5 @@
 ```markdown
-- [ ] [Apple Hello Effect](https://chanhdai.com/components/apple-hello-effect)
+- [✅] [Apple Hello Effect](https://chanhdai.com/components/apple-hello-effect)
 - [ ] [Brand Assets Menu](https://chanhdai.com/components/brand-assets-menu)
 - [ ] [Chevrons Up Down Icon](https://chanhdai.com/components/chevrons-up-down-icon)
 - [ ] [Code Block Command](https://chanhdai.com/components/code-block-command)
@@ -32,8 +32,8 @@
 - [ ] [Text Flip](https://chanhdai.com/components/text-flip)
 - [ ] [Theme Switcher](https://chanhdai.com/components/theme-switcher)
 - [ ] [Theme Toggle Effect](https://chanhdai.com/components/theme-toggle-effect)
-- [ ] [Timescale](https://chanhdai.com/components/timescale)
-- [ ] [TOC Minimap](https://chanhdai.com/components/toc-minimap)
+- [✅] [Timescale](https://chanhdai.com/components/timescale)
+- [] [TOC Minimap](https://chanhdai.com/components/toc-minimap)
 - [ ] [Twemoji](https://chanhdai.com/components/twemoji)
 - [ ] [Work Experience](https://chanhdai.com/components/work-experience)
 ```
