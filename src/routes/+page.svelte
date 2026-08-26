@@ -6,6 +6,7 @@
 	import { ShimmeringText } from "$chan/shimmering-text";
 	import SpinningCircularTextShimmeringExample from "$lib/examples/shimmering-example.svelte";
 	import TestimonialExample from "$lib/examples/testimonial-example.svelte";
+	import TimescaleExample from "$lib/examples/timescale-example.svelte";
 	import {
 		SlideToUnlock,
 		SlideToUnlockHandle,
@@ -72,7 +73,11 @@
 <!-- <Hero /> -->
 <!-- <Feature /> -->
 <!-- <Footer /> -->
-<div class="p-10 flex flex-col gap-5">
+<!-- <div class="p-10 flex flex-col gap-5 relative"> -->
+<div class="overflow-hidden p-10">
+	<TimescaleExample />
+</div>
+<!-- 
 	<div class="flex justify-center py-10">
 		<TestimonialExample />
 	</div>
@@ -120,9 +125,9 @@
 	<div>
 		<ShimmeringText text="slide to unlock" />
 	</div>
-</div>
+</div> -->
 
-<div
+<!-- <div
 	class="fixed left-1/2 z-50 flex -translate-x-1/2 flex-col items-center gap-2"
 	style:bottom="max(4rem, env(safe-area-inset-bottom))"
 >
@@ -140,4 +145,4 @@
 			<SlideToUnlockHandle class="rounded-full" />
 		</SlideToUnlockTrack>
 	</SlideToUnlock>
-</div>
+</div> -->
