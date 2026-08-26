@@ -4,7 +4,7 @@
 	import { Button } from "$lib/components/ui/button";
 	import { cn } from "$lib/utils";
 	import type { CodeBlock } from "$lib/types/code";
-	import {MultipleFiles,SingleFile} from "$lib/components/ui/code";
+	import { MultipleFiles, SingleFile } from "$lib/components/ui/code";
 
 	interface PreviewComponentProps {
 		children: Snippet;
@@ -19,7 +19,7 @@
 		children,
 		showRetry = true,
 		isCentered = true,
-		class: className = "",
+		class: className = ""
 	}: PreviewComponentProps = $props();
 
 	type TabValue = "preview" | "code";
@@ -36,13 +36,13 @@
 		<Tabs.List class="bg-transparent">
 			<Tabs.Trigger
 				value="preview"
-				class="border-none bg-transparent! pl-0 text-base shadow-none! "
+				class="border-none cursor-pointer bg-transparent! pl-0 text-base shadow-none! "
 			>
 				Preview
 			</Tabs.Trigger>
 			<Tabs.Trigger
 				value="code"
-				class="group border-none bg-transparent! text-base shadow-none! "
+				class="group border-none cursor-pointer bg-transparent! text-base shadow-none! "
 			>
 				Code
 			</Tabs.Trigger>
@@ -76,9 +76,9 @@
 							stroke-linecap="round"
 							stroke-linejoin="round"
 							class="lucide lucide-rotate-cw-icon lucide-rotate-cw transition-transform duration-200 ease-out group-hover:rotate-45"
-							><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /><path
-								d="M21 3v5h-5"
-							/></svg
+							><path
+								d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"
+							/><path d="M21 3v5h-5" /></svg
 						>
 					</Button>
 				{/if}
@@ -87,7 +87,8 @@
 						{@render children?.()}
 					{:else}
 						<p class="text-muted-foreground">
-							No component provided. Please provide a component to render.
+							No component provided. Please provide a component to
+							render.
 						</p>
 					{/if}
 				{/key}

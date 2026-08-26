@@ -1,17 +1,10 @@
 <script lang="ts">
-	import { StatusButton } from "$lib/components/chan/status-button";
+	import { StatusButton } from "$chan/status-button";
 
-	const DemoComponent: any = StatusButton;
+	function save() {
+		return new Promise<void>((resolve) => setTimeout(resolve, 1000));
+	}
 </script>
 
-<section class="flex w-full flex-col gap-4 rounded-2xl border border-border/60 bg-background p-6 shadow-sm">
-	<div class="space-y-1">
-		<h2 class="text-lg font-semibold">Status Button demo</h2>
-		<p class="text-sm text-muted-foreground">
-			Swap this placeholder with a real usage example for Status Button.
-		</p>
-	</div>
-	<div class="flex min-h-48 items-center justify-center rounded-xl border border-dashed border-border/60 bg-muted/20 p-6">
-		<DemoComponent />
-	</div>
-</section>
+<!-- Use when a button should manage its own loading and success states. -->
+<StatusButton onclick={save}>Save changes</StatusButton>

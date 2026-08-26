@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { DollarIcon } from "$icons";
 	import { Button } from "$lib/components/ui/button/index.js";
 	import * as Card from "$lib/components/ui/card/index.js";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
@@ -17,9 +18,11 @@
 		<Button
 			class="w-full"
 			size="sm"
-			variant="secondary"
 			href="https://github.com/sponsors/{github_repo.owner}"
 		>
+			<DollarIcon
+				class="mr-1 text-emerald-400 dark:text-primary-foreground"
+			/>
 			GitHub Sponsors
 		</Button>
 	</Card.Content>
