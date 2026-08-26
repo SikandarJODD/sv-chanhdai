@@ -77,7 +77,7 @@
 }
 
 @theme inline {
-	--font-sans: 'Inter Variable', sans-serif;
+	--font-sans: "Inter Variable", sans-serif;
 	--font-mono: "JetBrains Mono Variable", monospace;
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
@@ -122,6 +122,10 @@
 	/* Status Button */
 	--animate-spinner-opacity: spinner-opacity
 		var(--tw-animation-duration, var(--tw-duration, 1s)) linear infinite;
+
+	/* Spinning Circular Text */
+	--animate-spin-ccw: spin-ccw
+		var(--tw-animation-duration, var(--tw-duration, 6s)) linear infinite;
 }
 
 @layer base {
@@ -299,5 +303,11 @@
 	}
 	to {
 		opacity: 0.15;
+	}
+}
+
+@keyframes spin-ccw {
+	to {
+		rotate: -360deg;
 	}
 }
