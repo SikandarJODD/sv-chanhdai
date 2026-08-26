@@ -9,7 +9,7 @@
 - [ ] [Elastic Slider](https://chanhdai.com/components/elastic-slider)
 - [ ] [Fluid Gradient Text](https://chanhdai.com/components/fluid-gradient-text)
 - [ ] [GitHub Contributions](https://chanhdai.com/components/github-contributions)
-- [ ] [GitHub Stars](https://chanhdai.com/components/github-stars)
+- [✅] [GitHub Stars](https://chanhdai.com/components/github-stars)
 - [ ] [Glow Card Grid](https://chanhdai.com/components/glow-card-grid)
 - [ ] [Haptic Feedback](https://chanhdai.com/components/haptic-feedback)
 - [ ] [Icon Swap](https://chanhdai.com/components/icon-swap)

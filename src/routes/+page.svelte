@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
+	import { GithubStars } from "$chan/github-stars";
 	import { Hero } from "$lib/components/landing";
 	import Feature from "$lib/components/landing/feature/feature.svelte";
 	import Footer from "$lib/components/landing/footer.svelte";
@@ -39,6 +40,9 @@
 	}}
 />
 
-<Hero />
-<Feature />
-<Footer />
+<!-- <Hero /> -->
+<!-- <Feature /> -->
+<!-- <Footer /> -->
+<div class="p-10">
+	<GithubStars repo="ncdai/chanhdai.com" stargazersCount={2050} />
+</div>
