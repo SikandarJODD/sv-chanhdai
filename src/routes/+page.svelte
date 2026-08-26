@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import { GithubStars } from "$chan/github-stars";
+	import { ShimmeringText } from "$chan/shimmering-text";
 	import { Hero } from "$lib/components/landing";
 	import Feature from "$lib/components/landing/feature/feature.svelte";
 	import Footer from "$lib/components/landing/footer.svelte";
@@ -43,6 +44,11 @@
 <!-- <Hero /> -->
 <!-- <Feature /> -->
 <!-- <Footer /> -->
-<div class="p-10">
-	<GithubStars repo="ncdai/chanhdai.com" stargazersCount={2050} />
+<div class="p-10 flex flex-col gap-5">
+	<div>
+		<GithubStars repo="ncdai/chanhdai.com" stargazersCount={2050} />
+	</div>
+	<div>
+		<ShimmeringText text="slide to unlock" />
+	</div>
 </div>
