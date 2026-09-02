@@ -8,6 +8,7 @@
 	import ChevronsUpDownIconExample from "$lib/examples/chevrons-up-down-icon-example.svelte";
 	import DotGridSpotlightExample from "$lib/examples/dot-grid-spotlight-example.svelte";
 	import ElasticSliderExample from "$lib/examples/elastic-slider-example.svelte";
+	import GitHubContributionsExample from "$lib/examples/github-contributions-example.svelte";
 	import GlowCardGridExample from "$lib/examples/glow-card-grid-example.svelte";
 	import SpinningCircularTextShimmeringExample from "$lib/examples/shimmering-example.svelte";
 	import TestimonialExample from "$lib/examples/testimonial-example.svelte";
@@ -81,6 +82,7 @@
 <div
 	class="flex min-h-svh flex-col items-center justify-center gap-10 overflow-hidden p-10"
 >
+	<GitHubContributionsExample />
 	<ChevronsUpDownIconExample />
 	<DotGridSpotlightExample />
 	<AppleHelloEffectExample />
