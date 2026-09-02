@@ -8,6 +8,7 @@
 	import ChevronsUpDownIconExample from "$lib/examples/chevrons-up-down-icon-example.svelte";
 	import DotGridSpotlightExample from "$lib/examples/dot-grid-spotlight-example.svelte";
 	import ElasticSliderExample from "$lib/examples/elastic-slider-example.svelte";
+	import GlowCardGridExample from "$lib/examples/glow-card-grid-example.svelte";
 	import SpinningCircularTextShimmeringExample from "$lib/examples/shimmering-example.svelte";
 	import TestimonialExample from "$lib/examples/testimonial-example.svelte";
 	import {
@@ -84,6 +85,7 @@
 	<DotGridSpotlightExample />
 	<AppleHelloEffectExample />
 	<ElasticSliderExample />
+	<GlowCardGridExample />
 </div>
 <!-- 
 	<div class="flex justify-center py-10">
