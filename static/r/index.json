@@ -1,0 +1,13 @@
+[
+	{
+		"name": "apple-hello-effect",
+		"title": "Apple Hello Effect",
+		"type": "registry:block",
+		"description": "A simple apple hello effect component.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "apple-hello-effect.json"
+	}
+]

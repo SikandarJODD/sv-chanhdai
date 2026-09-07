@@ -1,20 +1,43 @@
 {
-  "$schema": "https://shadcn-svelte.com/schema/registry.json",
-  "name": "sv-project",
-  "homepage": "https://sv-project.vercel.app",
-  "items": [
-    {
-      "name": "hello-world",
-      "type": "registry:block",
-      "title": "Hello World",
-      "description": "A simple hello world component.",
-      "registryDependencies": [],
-      "files": [
+	"$schema": "https://shadcn-svelte.com/schema/registry.json",
+	"name": "sv-project",
+	"homepage": "https://sv-project.vercel.app",
+	"items": [
+	
+		{
+			"name": "apple-hello-effect",
+			"type": "registry:block",
+			"title": "Apple Hello Effect",
+			"description": "A simple apple hello effect component.",
+			"registryDependencies": [],
+      "dependencies": ["motion-sv"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-english.svelte",
+					"type": "registry:component",
+          "target": "chan/apple-hello-effect/apple-hello-effect-english.svelte"
+				},
         {
-          "path": "src/lib/registry/blocks/hello-world/hello-world.svelte",
-          "type": "registry:component"
+          "path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-hindi.svelte",
+          "type": "registry:component",
+          "target": "chan/apple-hello-effect/apple-hello-effect-hindi.svelte"
+        },
+        {
+          "path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-spanish.svelte",
+          "type": "registry:component",
+          "target": "chan/apple-hello-effect/apple-hello-effect-spanish.svelte"
+        },
+        {
+          "path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-vietnamese.svelte",
+          "type": "registry:component",
+          "target": "chan/apple-hello-effect/apple-hello-effect-vietnamese.svelte"
+        },
+        {
+          "path": "src/lib/components/chan/apple-hello-effect/index.ts",
+          "type": "registry:file",
+          "target": "chan/apple-hello-effect/index.ts"
         }
-      ]
-    }
-  ]
+			]
+		}
+	]
 }
