@@ -3,41 +3,81 @@
 	"name": "sv-project",
 	"homepage": "https://sv-project.vercel.app",
 	"items": [
-	
 		{
 			"name": "apple-hello-effect",
 			"type": "registry:block",
 			"title": "Apple Hello Effect",
 			"description": "A simple apple hello effect component.",
 			"registryDependencies": [],
-      "dependencies": ["motion-sv"],
+			"dependencies": ["motion-sv"],
 			"files": [
 				{
 					"path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-english.svelte",
 					"type": "registry:component",
-          "target": "chan/apple-hello-effect/apple-hello-effect-english.svelte"
+					"target": "chan/apple-hello-effect/apple-hello-effect-english.svelte"
 				},
+				{
+					"path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-hindi.svelte",
+					"type": "registry:component",
+					"target": "chan/apple-hello-effect/apple-hello-effect-hindi.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-spanish.svelte",
+					"type": "registry:component",
+					"target": "chan/apple-hello-effect/apple-hello-effect-spanish.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-vietnamese.svelte",
+					"type": "registry:component",
+					"target": "chan/apple-hello-effect/apple-hello-effect-vietnamese.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/apple-hello-effect/index.ts",
+					"type": "registry:file",
+					"target": "chan/apple-hello-effect/index.ts"
+				}
+			],
+      "author": "Bhide Svelte"
+		},
+		{
+			"name": "brand-assets-menu",
+			"type": "registry:block",
+			"title": "Brand Assets Menu",
+			"description": "A simple brand assets menu component.",
+			"registryDependencies": ["context-menu"],
+			"dependencies": ["motion-sv", "svelte-sonner", "@lucide/svelte"],
+			"files": [
         {
-          "path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-hindi.svelte",
+          "path": "src/lib/components/chan/brand-assets-menu/brand-assets-menu.svelte",
           "type": "registry:component",
-          "target": "chan/apple-hello-effect/apple-hello-effect-hindi.svelte"
+          "target": "chan/brand-assets-menu/brand-assets-menu.svelte"
         },
         {
-          "path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-spanish.svelte",
-          "type": "registry:component",
-          "target": "chan/apple-hello-effect/apple-hello-effect-spanish.svelte"
-        },
-        {
-          "path": "src/lib/components/chan/apple-hello-effect/apple-hello-effect-vietnamese.svelte",
-          "type": "registry:component",
-          "target": "chan/apple-hello-effect/apple-hello-effect-vietnamese.svelte"
-        },
-        {
-          "path": "src/lib/components/chan/apple-hello-effect/index.ts",
+          "path": "src/lib/components/chan/brand-assets-menu/index.ts",
           "type": "registry:file",
-          "target": "chan/apple-hello-effect/index.ts"
+          "target": "chan/brand-assets-menu/index.ts"
         }
-			]
-		}
+      ],
+      "author": "Bhide Svelte"
+		},
+    {
+      "name": "chevrons-up-down-icon",
+      "type": "registry:block",
+      "title": "Chevrons Up Down Icon",
+      "description": "A simple chevrons up down icon component.",
+      "registryDependencies": [],
+      "dependencies": ["motion-sv"],
+      "files": [
+        {
+          "path": "src/lib/components/chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte",
+          "type": "registry:component",
+          "target": "chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte"
+        },
+        {
+          "path": "src/lib/components/chan/chevrons-up-down-icon/index.ts",
+          "type": "registry:file",
+          "target": "chan/chevrons-up-down-icon/index.ts" 
+        }]
+    }
 	]
 }

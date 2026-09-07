@@ -3,11 +3,39 @@
 		"name": "apple-hello-effect",
 		"title": "Apple Hello Effect",
 		"type": "registry:block",
+		"author": "Bhide Svelte",
 		"description": "A simple apple hello effect component.",
 		"dependencies": [
 			"motion-sv"
 		],
 		"registryDependencies": [],
 		"relativeUrl": "apple-hello-effect.json"
+	},
+	{
+		"name": "brand-assets-menu",
+		"title": "Brand Assets Menu",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A simple brand assets menu component.",
+		"dependencies": [
+			"motion-sv",
+			"svelte-sonner",
+			"@lucide/svelte"
+		],
+		"registryDependencies": [
+			"context-menu"
+		],
+		"relativeUrl": "brand-assets-menu.json"
+	},
+	{
+		"name": "chevrons-up-down-icon",
+		"title": "Chevrons Up Down Icon",
+		"type": "registry:block",
+		"description": "A simple chevrons up down icon component.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "chevrons-up-down-icon.json"
 	}
 ]
