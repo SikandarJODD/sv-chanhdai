@@ -114,5 +114,96 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "dot-grid-spotlight.json"
+	},
+	{
+		"name": "glow-card-grid",
+		"title": "Glow Card Grid",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An interactive card grid with pointer-responsive glow effects.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "glow-card-grid.json"
+	},
+	{
+		"name": "icon-swap",
+		"title": "Icon Swap",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Animated primitives for smoothly swapping icon content.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "icon-swap.json"
+	},
+	{
+		"name": "middle-truncation",
+		"title": "Middle Truncation",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Responsive text truncation that preserves content at both ends.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "middle-truncation.json"
+	},
+	{
+		"name": "status-button",
+		"title": "Status Button",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An async button with animated loading, success, and failure states.",
+		"dependencies": [
+			"@lucide/svelte",
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [
+			"button"
+		],
+		"relativeUrl": "status-button.json"
+	},
+	{
+		"name": "share-menu",
+		"title": "Share Menu",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A dropdown menu for copying and sharing links on social platforms.",
+		"dependencies": [
+			"@lucide/svelte",
+			"svelte-sonner"
+		],
+		"registryDependencies": [
+			"button",
+			"dropdown-menu"
+		],
+		"relativeUrl": "share-menu.json"
+	},
+	{
+		"name": "elastic-slider",
+		"title": "Elastic Slider",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An accessible animated slider with elastic edge feedback.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "elastic-slider.json"
+	},
+	{
+		"name": "slide-to-unlock",
+		"title": "Slide to Unlock",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A compound drag-to-confirm control with animated feedback.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "slide-to-unlock.json"
 	}
 ]

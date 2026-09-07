@@ -325,6 +325,228 @@
 				}
 			],
 			"author": "Bhide Svelte"
+		},
+		{
+			"name": "glow-card-grid",
+			"type": "registry:block",
+			"title": "Glow Card Grid",
+			"description": "An interactive card grid with pointer-responsive glow effects.",
+			"registryDependencies": [],
+			"dependencies": [],
+			"files": [
+				{
+					"path": "src/lib/components/chan/glow-card-grid/glow-card-grid.svelte",
+					"type": "registry:component",
+					"target": "chan/glow-card-grid/glow-card-grid.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/glow-card-grid/glow-card.svelte",
+					"type": "registry:component",
+					"target": "chan/glow-card-grid/glow-card.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/glow-card-grid/index.ts",
+					"type": "registry:file",
+					"target": "chan/glow-card-grid/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "icon-swap",
+			"type": "registry:block",
+			"title": "Icon Swap",
+			"description": "Animated primitives for smoothly swapping icon content.",
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/icon-swap/icon-swap.svelte",
+					"type": "registry:component",
+					"target": "chan/icon-swap/icon-swap.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/icon-swap/icon-swap-item.svelte",
+					"type": "registry:component",
+					"target": "chan/icon-swap/icon-swap-item.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/icon-swap/index.ts",
+					"type": "registry:file",
+					"target": "chan/icon-swap/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "middle-truncation",
+			"type": "registry:block",
+			"title": "Middle Truncation",
+			"description": "Responsive text truncation that preserves content at both ends.",
+			"registryDependencies": [],
+			"dependencies": ["runed"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/middle-truncation/middle-truncation.svelte",
+					"type": "registry:component",
+					"target": "chan/middle-truncation/middle-truncation.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/middle-truncation/middle-truncation.ts",
+					"type": "registry:file",
+					"target": "chan/middle-truncation/middle-truncation.ts"
+				},
+				{
+					"path": "src/lib/components/chan/middle-truncation/index.ts",
+					"type": "registry:file",
+					"target": "chan/middle-truncation/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "status-button",
+			"type": "registry:block",
+			"title": "Status Button",
+			"description": "An async button with animated loading, success, and failure states.",
+			"registryDependencies": ["button"],
+			"dependencies": ["@lucide/svelte", "motion-sv", "runed"],
+			"cssVars": {
+				"theme": {
+					"--animate-spinner-opacity": "spinner-opacity var(--tw-animation-duration, var(--tw-duration, 1s)) linear infinite"
+				}
+			},
+			"css": {
+				"@keyframes spinner-opacity": {
+					"from": {
+						"opacity": "1"
+					},
+					"to": {
+						"opacity": "0.15"
+					}
+				}
+			},
+			"files": [
+				{
+					"path": "src/lib/components/chan/status-button/status-button.svelte",
+					"type": "registry:component",
+					"target": "chan/status-button/status-button.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/status-button/spinner.svelte",
+					"type": "registry:component",
+					"target": "chan/status-button/spinner.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/status-button/index.ts",
+					"type": "registry:file",
+					"target": "chan/status-button/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "share-menu",
+			"type": "registry:block",
+			"title": "Share Menu",
+			"description": "A dropdown menu for copying and sharing links on social platforms.",
+			"registryDependencies": ["button", "dropdown-menu"],
+			"dependencies": ["@lucide/svelte", "svelte-sonner"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/share-menu/share-menu.svelte",
+					"type": "registry:component",
+					"target": "chan/share-menu/share-menu.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/share-menu/linkedin-icon.svelte",
+					"type": "registry:component",
+					"target": "chan/share-menu/linkedin-icon.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/share-menu/x-icon.svelte",
+					"type": "registry:component",
+					"target": "chan/share-menu/x-icon.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/share-menu/index.ts",
+					"type": "registry:file",
+					"target": "chan/share-menu/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "elastic-slider",
+			"type": "registry:block",
+			"title": "Elastic Slider",
+			"description": "An accessible animated slider with elastic edge feedback.",
+			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/elastic-slider/elastic-slider.svelte",
+					"type": "registry:component",
+					"target": "chan/elastic-slider/elastic-slider.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/elastic-slider/elastic-slider-state.svelte.ts",
+					"type": "registry:file",
+					"target": "chan/elastic-slider/elastic-slider-state.svelte.ts"
+				},
+				{
+					"path": "src/lib/components/chan/elastic-slider/elastic-slider.utils.ts",
+					"type": "registry:file",
+					"target": "chan/elastic-slider/elastic-slider.utils.ts"
+				},
+				{
+					"path": "src/lib/components/chan/elastic-slider/index.ts",
+					"type": "registry:file",
+					"target": "chan/elastic-slider/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "slide-to-unlock",
+			"type": "registry:block",
+			"title": "Slide to Unlock",
+			"description": "A compound drag-to-confirm control with animated feedback.",
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/slide-to-unlock/slide-to-unlock.svelte",
+					"type": "registry:component",
+					"target": "chan/slide-to-unlock/slide-to-unlock.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/slide-to-unlock/slide-to-unlock-track.svelte",
+					"type": "registry:component",
+					"target": "chan/slide-to-unlock/slide-to-unlock-track.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/slide-to-unlock/slide-to-unlock-text.svelte",
+					"type": "registry:component",
+					"target": "chan/slide-to-unlock/slide-to-unlock-text.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/slide-to-unlock/slide-to-unlock-handle.svelte",
+					"type": "registry:component",
+					"target": "chan/slide-to-unlock/slide-to-unlock-handle.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/slide-to-unlock/slide-to-unlock-context.ts",
+					"type": "registry:file",
+					"target": "chan/slide-to-unlock/slide-to-unlock-context.ts"
+				},
+				{
+					"path": "src/lib/components/chan/slide-to-unlock/index.ts",
+					"type": "registry:file",
+					"target": "chan/slide-to-unlock/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
 		}
 	]
 }

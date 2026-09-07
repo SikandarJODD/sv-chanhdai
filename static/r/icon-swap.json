@@ -1,0 +1,28 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "icon-swap",
+	"title": "Icon Swap",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "Animated primitives for smoothly swapping icon content.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { AnimatePresenceProps } from \"motion-sv\";\n\timport type { Snippet } from \"svelte\";\n\n\texport type IconSwapProps = AnimatePresenceProps & {\n\t\tchildren: Snippet;\n\t};\n</script>\n\n<script lang=\"ts\">\n\timport { AnimatePresence } from \"motion-sv\";\n\n\tlet {\n\t\tchildren,\n\t\tmode = \"popLayout\",\n\t\tinitial = false,\n\t\t...restProps\n\t}: IconSwapProps = $props();\n</script>\n\n<AnimatePresence {mode} {initial} {...restProps}>\n\t{@render children()}\n</AnimatePresence>\n",
+			"type": "registry:component",
+			"target": "chan/icon-swap/icon-swap.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\" module>\n\timport { motion as motionNamespace } from \"motion-sv\";\n\timport type { ComponentProps, Snippet } from \"svelte\";\n\n\ttype MotionElement =\n\t\ttypeof motionNamespace.div | typeof motionNamespace.span;\n\n\texport type IconSwapItemProps = Omit<\n\t\tComponentProps<typeof motionNamespace.div>,\n\t\t\"children\"\n\t> & {\n\t\tchildren: Snippet;\n\t\tas?: MotionElement;\n\t};\n</script>\n\n<script lang=\"ts\">\n\timport { motion } from \"motion-sv\";\n\n\tlet {\n\t\tchildren,\n\t\tas = motion.div,\n\t\t...restProps\n\t}: IconSwapItemProps = $props();\n\n\t// The public props intentionally mirror motion.div, as in the React source.\n\t// Normalizing the optional span here avoids expanding both DOM prop unions.\n\tconst Component = $derived(as as typeof motion.div);\n</script>\n\n<!-- {...restProps} -->\n<Component\n\tinitial={{ opacity: 0, scale: 0.25, filter: \"blur(4px)\" }}\n\tanimate={{ opacity: 1, scale: 1, filter: \"blur(0px)\" }}\n\texit={{ opacity: 0, scale: 0.25, filter: \"blur(4px)\" }}\n\ttransition={{ type: \"spring\", duration: 0.3, bounce: 0 }}\n>\n\t{@render children()}\n</Component>\n",
+			"type": "registry:component",
+			"target": "chan/icon-swap/icon-swap-item.svelte"
+		},
+		{
+			"content": "import IconSwap from \"./icon-swap.svelte\";\nimport IconSwapItem from \"./icon-swap-item.svelte\";\n\nexport { IconSwap, IconSwapItem };\n\nexport type { IconSwapProps } from \"./icon-swap.svelte\";\nexport type { IconSwapItemProps } from \"./icon-swap-item.svelte\";\n",
+			"type": "registry:file",
+			"target": "chan/icon-swap/index.ts"
+		}
+	]
+}
