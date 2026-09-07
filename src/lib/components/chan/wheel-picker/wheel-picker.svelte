@@ -25,7 +25,7 @@
 		),
 		highlightWrapper: cn(
 			"bg-zinc-100 text-zinc-950 dark:bg-zinc-800 dark:text-zinc-50",
-			// "data-rwp-focused:inset-ring-2 data-rwp-focused:inset-ring-zinc-300 dark:data-rwp-focused:inset-ring-zinc-600",
+			// "data-wheel-picker-focused:inset-ring-2 data-wheel-picker-focused:inset-ring-zinc-300 dark:data-wheel-picker-focused:inset-ring-zinc-600",
 			classes?.highlightWrapper
 		),
 		highlightItem: cn("data-disabled:opacity-40", classes?.highlightItem)

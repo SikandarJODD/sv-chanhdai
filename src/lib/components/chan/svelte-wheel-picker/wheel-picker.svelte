@@ -219,7 +219,7 @@
 			wheelItemsRef.style.transform = `translateZ(${-radius}px) rotateX(${itemAngle * normalizedScroll}deg)`;
 
 			for (const element of wheelItemsRef.querySelectorAll<HTMLElement>(
-				":scope > [data-rwp-option]"
+				":scope > [data-wheel-picker-option]"
 			)) {
 				const index = Number(element.dataset.index);
 				const distance = Math.abs(index - normalizedScroll);
@@ -817,7 +817,7 @@
 	bind:this={ref}
 	{...restProps}
 	class={className}
-	data-rwp
+	data-wheel-picker
 	data-slot="wheel-picker"
 	role="listbox"
 	aria-label={ariaLabel ?? "Wheel picker"}
@@ -828,12 +828,12 @@
 	onblur={handleBlur}
 	style:height={`${containerHeight}px`}
 >
-	<ul bind:this={wheelItemsRef} data-rwp-options>
+	<ul bind:this={wheelItemsRef} data-wheel-picker-options>
 		{#each wheelItems as item (item.index)}
 			<li
 				class={classes?.optionItem}
 				data-slot="option-item"
-				data-rwp-option
+				data-wheel-picker-option
 				data-index={item.index}
 				data-disabled={item.option.disabled || undefined}
 				role="option"
@@ -852,8 +852,8 @@
 
 	<div
 		class={classes?.highlightWrapper}
-		data-rwp-highlight-wrapper
-		data-rwp-focused={isFocused || undefined}
+		data-wheel-picker-highlight-wrapper
+		data-wheel-picker-focused={isFocused || undefined}
 		data-slot="highlight-wrapper"
 		aria-hidden="true"
 		style:height={`${itemHeight}px`}
@@ -861,14 +861,14 @@
 	>
 		<ul
 			bind:this={highlightListRef}
-			data-rwp-highlight-list
+			data-wheel-picker-highlight-list
 			style:top={infinite ? `${-itemHeight}px` : undefined}
 		>
 			{#each highlightItems as item (item.key)}
 				<li
 					class={classes?.highlightItem}
 					data-slot="highlight-item"
-					data-rwp-highlight-item
+					data-wheel-picker-highlight-item
 					data-disabled={item.option.disabled || undefined}
 					style:height={`${itemHeight}px`}
 				>

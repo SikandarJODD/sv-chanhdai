@@ -16,7 +16,7 @@
 	bind:this={ref}
 	{...restProps}
 	class={className}
-	data-rwp-wrapper
+	data-wheel-picker-wrapper
 	data-slot="wheel-picker-wrapper"
 >
 	{@render children()}
