@@ -10,8 +10,10 @@
 	import ElasticSliderExample from "$lib/examples/elastic-slider-example.svelte";
 	import GitHubContributionsExample from "$lib/examples/github-contributions-example.svelte";
 	import GlowCardGridExample from "$lib/examples/glow-card-grid-example.svelte";
+	import MultiWheelPickerExample from "$lib/examples/multi-wheel-picker-example.svelte";
 	import SpinningCircularTextShimmeringExample from "$lib/examples/shimmering-example.svelte";
 	import TestimonialExample from "$lib/examples/testimonial-example.svelte";
+	import WheelPickerExample from "$lib/examples/wheel-picker-example.svelte";
 	import {
 		SlideToUnlock,
 		SlideToUnlockHandle,
@@ -82,12 +84,16 @@
 <div
 	class="flex min-h-svh flex-col items-center justify-center gap-10 overflow-hidden p-10"
 >
-	<GitHubContributionsExample />
-	<ChevronsUpDownIconExample />
-	<DotGridSpotlightExample />
-	<AppleHelloEffectExample />
-	<ElasticSliderExample />
-	<GlowCardGridExample />
+	<!-- <GitHubContributionsExample /> -->
+	<!-- <ChevronsUpDownIconExample /> -->
+	<!-- <DotGridSpotlightExample /> -->
+	<!-- <AppleHelloEffectExample /> -->
+	<!-- <ElasticSliderExample /> -->
+	<div class="w-56">
+		<WheelPickerExample />
+	</div>
+	<MultiWheelPickerExample />
+	<!-- <GlowCardGridExample /> -->
 </div>
 <!-- 
 	<div class="flex justify-center py-10">
