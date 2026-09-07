@@ -740,6 +740,83 @@
 				}
 			],
 			"author": "Bhide Svelte"
+		},
+		{
+			"name": "svelte-wheel-picker",
+			"type": "registry:block",
+			"title": "Svelte Wheel Picker",
+			"description": "An accessible, headless wheel picker with drag, wheel, keyboard, and typeahead interactions.",
+			"registryDependencies": [],
+			"dependencies": ["runed"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/svelte-wheel-picker/wheel-picker.svelte",
+					"type": "registry:component",
+					"target": "chan/svelte-wheel-picker/wheel-picker.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/svelte-wheel-picker/wheel-picker-wrapper.svelte",
+					"type": "registry:component",
+					"target": "chan/svelte-wheel-picker/wheel-picker-wrapper.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/svelte-wheel-picker/wheel-picker-context.svelte.ts",
+					"type": "registry:file",
+					"target": "chan/svelte-wheel-picker/wheel-picker-context.svelte.ts"
+				},
+				{
+					"path": "src/lib/components/chan/svelte-wheel-picker/wheel-picker-typeahead.ts",
+					"type": "registry:file",
+					"target": "chan/svelte-wheel-picker/wheel-picker-typeahead.ts"
+				},
+				{
+					"path": "src/lib/components/chan/svelte-wheel-picker/wheel-picker-types.ts",
+					"type": "registry:file",
+					"target": "chan/svelte-wheel-picker/wheel-picker-types.ts"
+				},
+				{
+					"path": "src/lib/components/chan/svelte-wheel-picker/wheel-picker-utils.ts",
+					"type": "registry:file",
+					"target": "chan/svelte-wheel-picker/wheel-picker-utils.ts"
+				},
+				{
+					"path": "src/lib/components/chan/svelte-wheel-picker/wheel-picker.css",
+					"type": "registry:file",
+					"target": "chan/svelte-wheel-picker/wheel-picker.css"
+				},
+				{
+					"path": "src/lib/components/chan/svelte-wheel-picker/index.ts",
+					"type": "registry:file",
+					"target": "chan/svelte-wheel-picker/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "wheel-picker",
+			"type": "registry:block",
+			"title": "Wheel Picker",
+			"description": "A styled wheel picker built on the headless Svelte wheel picker primitives.",
+			"registryDependencies": ["local:svelte-wheel-picker"],
+			"dependencies": [],
+			"files": [
+				{
+					"path": "src/lib/components/chan/wheel-picker/wheel-picker.svelte",
+					"type": "registry:component",
+					"target": "chan/wheel-picker/wheel-picker.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/wheel-picker/wheel-picker-wrapper.svelte",
+					"type": "registry:component",
+					"target": "chan/wheel-picker/wheel-picker-wrapper.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/wheel-picker/index.ts",
+					"type": "registry:file",
+					"target": "chan/wheel-picker/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
 		}
 	]
 }

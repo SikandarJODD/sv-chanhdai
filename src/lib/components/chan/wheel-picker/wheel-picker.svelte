@@ -4,7 +4,7 @@
 		WheelPicker as WheelPickerPrimitive,
 		type WheelPickerProps,
 		type WheelPickerValue
-	} from "$chan/svelte-wheel-picker";
+	} from "../svelte-wheel-picker/index.js";
 
 	let {
 		ref = $bindable(null),

@@ -3,7 +3,7 @@
 	import {
 		WheelPickerWrapper as WheelPickerWrapperPrimitive,
 		type WheelPickerWrapperProps
-	} from "$chan/svelte-wheel-picker";
+	} from "../svelte-wheel-picker/index.js";
 
 	let {
 		ref = $bindable(null),

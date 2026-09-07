@@ -10,4 +10,4 @@ export type {
 	WheelPickerProps,
 	WheelPickerValue,
 	WheelPickerWrapperProps
-} from "$chan/svelte-wheel-picker";
+} from "../svelte-wheel-picker/index.js";
