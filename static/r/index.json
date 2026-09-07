@@ -37,5 +37,82 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "chevrons-up-down-icon.json"
+	},
+	{
+		"name": "scroll-fade-effect",
+		"title": "Scroll Fade Effect",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A scrollable container with configurable edge fade effects.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "scroll-fade-effect.json"
+	},
+	{
+		"name": "testimonial-2",
+		"title": "Testimonial 2",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A compact testimonial quote with linked author attribution.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "testimonial-2.json"
+	},
+	{
+		"name": "testimonial-spotlight",
+		"title": "Testimonial Spotlight",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A testimonial container with a cursor-following spotlight effect.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "testimonial-spotlight.json"
+	},
+	{
+		"name": "spinning-circular-text",
+		"title": "Spinning Circular Text",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Text arranged in an animated circular ring.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "spinning-circular-text.json"
+	},
+	{
+		"name": "github-stars",
+		"title": "GitHub Stars",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A tooltip-enabled button displaying a GitHub repository's star count.",
+		"dependencies": [],
+		"registryDependencies": [
+			"button",
+			"tooltip"
+		],
+		"relativeUrl": "github-stars.json"
+	},
+	{
+		"name": "shimmering-text",
+		"title": "Shimmering Text",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An animated text component with configurable shimmer timing.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "shimmering-text.json"
+	},
+	{
+		"name": "dot-grid-spotlight",
+		"title": "Dot Grid Spotlight",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An interactive canvas dot grid spotlight that responds to the cursor.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "dot-grid-spotlight.json"
 	}
 ]

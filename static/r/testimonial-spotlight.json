@@ -1,0 +1,20 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "testimonial-spotlight",
+	"title": "Testimonial Spotlight",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "A testimonial container with a cursor-following spotlight effect.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport type { WithElementRef } from \"$UTILS$\";\n\n\texport type TestimonialSpotlightProps = Omit<\n\t\tWithElementRef<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,\n\t\t\"children\" | \"class\" | \"onmousemove\"\n\t> & {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t};\n</script>\n\n<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\n\tconst spotlightBackground =\n\t\t\"radial-gradient(circle at var(--spotlight-x) var(--spotlight-y), var(--spotlight-color, rgba(255, 255, 255, 0.2)), transparent var(--spotlight-size, 60%))\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tchildren,\n\t\tclass: className,\n\t\t...restProps\n\t}: TestimonialSpotlightProps = $props();\n\n\tfunction handleMouseMove(\n\t\tevent: MouseEvent & { currentTarget: HTMLDivElement }\n\t) {\n\t\tconst rect = event.currentTarget.getBoundingClientRect();\n\n\t\tevent.currentTarget.style.setProperty(\n\t\t\t\"--spotlight-x\",\n\t\t\t`${event.clientX - rect.left}px`\n\t\t);\n\t\tevent.currentTarget.style.setProperty(\n\t\t\t\"--spotlight-y\",\n\t\t\t`${event.clientY - rect.top}px`\n\t\t);\n\t}\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"testimonial-spotlight\"\n\tclass={cn(\n\t\t\"group/testimonial-spotlight relative overflow-hidden rounded-xl bg-card/50 inset-ring-1 inset-ring-foreground/10\",\n\t\tclassName\n\t)}\n\tonmousemove={handleMouseMove}\n\t{...restProps}\n>\n\t<div\n\t\tclass=\"pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out group-hover/testimonial-spotlight:opacity-(--spotlight-opacity,0.5)\"\n\t\tstyle:background={spotlightBackground}\n\t></div>\n\n\t{@render children()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial-spotlight/testimonial-spotlight.svelte"
+		},
+		{
+			"content": "import TestimonialSpotlight, {\n\ttype TestimonialSpotlightProps\n} from \"./testimonial-spotlight.svelte\";\n\nexport { TestimonialSpotlight, type TestimonialSpotlightProps };\n",
+			"type": "registry:file",
+			"target": "chan/testimonial-spotlight/index.ts"
+		}
+	]
+}

@@ -1,0 +1,23 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "shimmering-text",
+	"title": "Shimmering Text",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "An animated text component with configurable shimmer timing.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport { motion as motionNamespace } from \"motion-sv\";\n\timport type { ComponentProps } from \"svelte\";\n\n\texport type ShimmeringTextProps = Omit<\n\t\tComponentProps<typeof motionNamespace.span>,\n\t\t\"children\"\n\t> & {\n\t\t/** The text to render with the shimmering effect. */\n\t\ttext: string;\n\t\t/** Duration in seconds for one shimmer cycle. @default 1 */\n\t\tduration?: number;\n\t\t/** Whether the shimmer animation is paused. @default false */\n\t\tisStopped?: boolean;\n\t};\n</script>\n\n<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport { motion } from \"motion-sv\";\n\timport type { Variants } from \"motion-sv\";\n\n\tlet {\n\t\ttext,\n\t\tduration = 1,\n\t\tisStopped = false,\n\t\tclass: className,\n\t\t...restProps\n\t}: ShimmeringTextProps = $props();\n\n\tconst characters = $derived(text.split(\"\"));\n\tconst characterVariants = $derived.by(() =>\n\t\tcharacters.map((_, index): Variants => ({\n\t\t\trunning: {\n\t\t\t\tcolor: [\n\t\t\t\t\t\"var(--color)\",\n\t\t\t\t\t\"var(--shimmering-color)\",\n\t\t\t\t\t\"var(--color)\"\n\t\t\t\t],\n\t\t\t\ttransition: {\n\t\t\t\t\tduration,\n\t\t\t\t\trepeat: Infinity,\n\t\t\t\t\trepeatType: \"loop\",\n\t\t\t\t\trepeatDelay: text.length * 0.05,\n\t\t\t\t\tdelay: (index * duration) / text.length,\n\t\t\t\t\tease: \"easeInOut\"\n\t\t\t\t}\n\t\t\t},\n\t\t\tstopped: {\n\t\t\t\tcolor: \"var(--color)\",\n\t\t\t\ttransition: {\n\t\t\t\t\tduration: duration * 0.5,\n\t\t\t\t\tease: \"easeOut\"\n\t\t\t\t}\n\t\t\t}\n\t\t}))\n\t);\n</script>\n\n<motion.span\n\tclass={cn(\n\t\t\"inline-block select-none\",\n\t\t\"[--color:var(--muted-foreground)] [--shimmering-color:var(--foreground)]\",\n\t\tclassName\n\t)}\n>\n\t{#each characters as character, index (index)}\n\t\t<motion.span\n\t\t\tclass=\"inline-block whitespace-pre\"\n\t\t\tinitial=\"stopped\"\n\t\t\tanimate={isStopped ? \"stopped\" : \"running\"}\n\t\t\tvariants={characterVariants[index]}\n\t\t\taria-hidden=\"true\"\n\t\t>\n\t\t\t{character}\n\t\t</motion.span>\n\t{/each}\n\t<span class=\"sr-only\">{text}</span>\n</motion.span>\n",
+			"type": "registry:component",
+			"target": "chan/shimmering-text/shimmering-text.svelte"
+		},
+		{
+			"content": "import ShimmeringText from \"./shimmering-text.svelte\";\nexport { ShimmeringText };\n",
+			"type": "registry:file",
+			"target": "chan/shimmering-text/index.ts"
+		}
+	]
+}

@@ -2,6 +2,13 @@
 	"$schema": "https://shadcn-svelte.com/schema/registry.json",
 	"name": "sv-project",
 	"homepage": "https://sv-project.vercel.app",
+	"aliases": {
+		"lib": "$lib",
+		"utils": "$lib/utils",
+		"hooks": "$lib/hooks",
+		"components": "$lib/components",
+		"ui": "$ui"
+	},
 	"items": [
 		{
 			"name": "apple-hello-effect",
@@ -78,6 +85,246 @@
           "type": "registry:file",
           "target": "chan/chevrons-up-down-icon/index.ts" 
         }]
-    }
+	    },
+		{
+			"name": "scroll-fade-effect",
+			"type": "registry:block",
+			"title": "Scroll Fade Effect",
+			"description": "A scrollable container with configurable edge fade effects.",
+			"registryDependencies": [],
+			"dependencies": [],
+			"css": {
+				"@utility no-scrollbar": {
+					"-ms-overflow-style": "none",
+					"scrollbar-width": "none",
+					"&::-webkit-scrollbar": {
+						"display": "none"
+					}
+				},
+				"@layer base": {
+					"@keyframes show-top-mask": {
+						"to": {
+							"--top-mask-height": "var(--mask-height)"
+						}
+					},
+					"@keyframes hide-bottom-mask": {
+						"to": {
+							"--bottom-mask-height": "0px"
+						}
+					},
+					"@keyframes show-left-mask": {
+						"to": {
+							"--left-mask-width": "var(--mask-width)"
+						}
+					},
+					"@keyframes hide-right-mask": {
+						"to": {
+							"--right-mask-width": "0px"
+						}
+					}
+				},
+				"@property --top-mask-height": {
+					"syntax": "\"<length>\"",
+					"inherits": "true",
+					"initial-value": "0px"
+				},
+				"@property --bottom-mask-height": {
+					"syntax": "\"<length>\"",
+					"inherits": "true",
+					"initial-value": "64px"
+				},
+				"@property --left-mask-width": {
+					"syntax": "\"<length>\"",
+					"inherits": "true",
+					"initial-value": "0px"
+				},
+				"@property --right-mask-width": {
+					"syntax": "\"<length>\"",
+					"inherits": "true",
+					"initial-value": "64px"
+				},
+				"@utility scroll-fade-effect-y": {
+					"--mask-height": "64px",
+					"--mask-offset-top": "0px",
+					"--mask-offset-bottom": "0px",
+					"--scroll-buffer": "2rem",
+					"mask-image": "linear-gradient(to top, transparent, black 90%), linear-gradient(to bottom, transparent 0%, black 100%), linear-gradient(black, black)",
+					"mask-size": "100% var(--top-mask-height), 100% var(--bottom-mask-height), 100% 100%",
+					"mask-repeat": "no-repeat, no-repeat, no-repeat",
+					"mask-position": "0 var(--mask-offset-top), 0 calc(100% - var(--mask-offset-bottom)), 0 0",
+					"mask-composite": "exclude",
+					"animation-name": "show-top-mask, hide-bottom-mask",
+					"animation-timeline": "scroll(self), scroll(self)",
+					"animation-range": "0 var(--scroll-buffer), calc(100% - var(--scroll-buffer)) 100%",
+					"animation-fill-mode": "both"
+				},
+				"@utility scroll-fade-effect-x": {
+					"--mask-width": "64px",
+					"--mask-offset-left": "0px",
+					"--mask-offset-right": "0px",
+					"--scroll-buffer": "2rem",
+					"mask-image": "linear-gradient(to left, transparent, black 90%), linear-gradient(to right, transparent 0%, black 100%), linear-gradient(black, black)",
+					"mask-size": "var(--left-mask-width) 100%, var(--right-mask-width) 100%, 100% 100%",
+					"mask-repeat": "no-repeat, no-repeat, no-repeat",
+					"mask-position": "var(--mask-offset-left) 0, calc(100% - var(--mask-offset-right)) 0, 0 0",
+					"mask-composite": "exclude",
+					"animation-name": "show-left-mask, hide-right-mask",
+					"animation-timeline": "scroll(self inline), scroll(self inline)",
+					"animation-range": "0 var(--scroll-buffer), calc(100% - var(--scroll-buffer)) 100%",
+					"animation-fill-mode": "both"
+				}
+			},
+			"files": [
+				{
+					"path": "src/lib/components/chan/scroll-fade-effect/scroll-fade-effect.svelte",
+					"type": "registry:component",
+					"target": "chan/scroll-fade-effect/scroll-fade-effect.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/scroll-fade-effect/index.ts",
+					"type": "registry:file",
+					"target": "chan/scroll-fade-effect/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "testimonial-2",
+			"type": "registry:block",
+			"title": "Testimonial 2",
+			"description": "A compact testimonial quote with linked author attribution.",
+			"registryDependencies": [],
+			"dependencies": [],
+			"files": [
+				{
+					"path": "src/lib/components/chan/testimonial-2/testimonial-2.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial-2/testimonial-2.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial-2/index.ts",
+					"type": "registry:file",
+					"target": "chan/testimonial-2/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "testimonial-spotlight",
+			"type": "registry:block",
+			"title": "Testimonial Spotlight",
+			"description": "A testimonial container with a cursor-following spotlight effect.",
+			"registryDependencies": [],
+			"dependencies": [],
+			"files": [
+				{
+					"path": "src/lib/components/chan/testimonial-spotlight/testimonial-spotlight.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial-spotlight/testimonial-spotlight.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial-spotlight/index.ts",
+					"type": "registry:file",
+					"target": "chan/testimonial-spotlight/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "spinning-circular-text",
+			"type": "registry:block",
+			"title": "Spinning Circular Text",
+			"description": "Text arranged in an animated circular ring.",
+			"registryDependencies": [],
+			"dependencies": [],
+			"cssVars": {
+				"theme": {
+					"--animate-spin-ccw": "spin-ccw var(--tw-animation-duration, var(--tw-duration, 6s)) linear infinite"
+				}
+			},
+			"css": {
+				"@keyframes spin-ccw": {
+					"to": {
+						"rotate": "-360deg"
+					}
+				}
+			},
+			"files": [
+				{
+					"path": "src/lib/components/chan/spinning-circular-text/spinning-circular-text.svelte",
+					"type": "registry:component",
+					"target": "chan/spinning-circular-text/spinning-circular-text.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/spinning-circular-text/index.ts",
+					"type": "registry:file",
+					"target": "chan/spinning-circular-text/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "github-stars",
+			"type": "registry:block",
+			"title": "GitHub Stars",
+			"description": "A tooltip-enabled button displaying a GitHub repository's star count.",
+			"registryDependencies": ["button", "tooltip"],
+			"dependencies": [],
+			"files": [
+				{
+					"path": "src/lib/components/chan/github-stars/github-stars.svelte",
+					"type": "registry:component",
+					"target": "chan/github-stars/github-stars.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/github-stars/index.ts",
+					"type": "registry:file",
+					"target": "chan/github-stars/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "shimmering-text",
+			"type": "registry:block",
+			"title": "Shimmering Text",
+			"description": "An animated text component with configurable shimmer timing.",
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/shimmering-text/shimmering-text.svelte",
+					"type": "registry:component",
+					"target": "chan/shimmering-text/shimmering-text.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/shimmering-text/index.ts",
+					"type": "registry:file",
+					"target": "chan/shimmering-text/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "dot-grid-spotlight",
+			"type": "registry:block",
+			"title": "Dot Grid Spotlight",
+			"description": "An interactive canvas dot grid spotlight that responds to the cursor.",
+			"registryDependencies": [],
+			"dependencies": ["runed"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/dot-grid-spotlight/dot-grid-spotlight.svelte",
+					"type": "registry:component",
+					"target": "chan/dot-grid-spotlight/dot-grid-spotlight.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/dot-grid-spotlight/index.ts",
+					"type": "registry:file",
+					"target": "chan/dot-grid-spotlight/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		}
 	]
 }
