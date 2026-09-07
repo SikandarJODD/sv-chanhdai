@@ -205,5 +205,42 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "slide-to-unlock.json"
+	},
+	{
+		"name": "github-contributions",
+		"title": "GitHub Contributions",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A responsive GitHub contribution graph with tooltips, totals, and a legend.",
+		"dependencies": [
+			"date-fns"
+		],
+		"registryDependencies": [
+			"tooltip",
+			"spinner"
+		],
+		"relativeUrl": "github-contributions.json"
+	},
+	{
+		"name": "testimonial",
+		"title": "Testimonial",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Composable primitives for building testimonial cards.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "testimonial.json"
+	},
+	{
+		"name": "timescale",
+		"title": "Timescale",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Composable horizontal and vertical timeline primitives.",
+		"dependencies": [],
+		"registryDependencies": [
+			"local:scroll-fade-effect"
+		],
+		"relativeUrl": "timescale.json"
 	}
 ]

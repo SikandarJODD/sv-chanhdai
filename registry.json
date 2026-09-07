@@ -547,6 +547,199 @@
 				}
 			],
 			"author": "Bhide Svelte"
+		},
+		{
+			"name": "github-contributions",
+			"type": "registry:block",
+			"title": "GitHub Contributions",
+			"description": "A responsive GitHub contribution graph with tooltips, totals, and a legend.",
+			"registryDependencies": ["tooltip", "spinner"],
+			"dependencies": ["date-fns"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/github-contributions/github-contributions.svelte",
+					"type": "registry:component",
+					"target": "chan/github-contributions/github-contributions.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/github-contributions/github-contributions-fallback.svelte",
+					"type": "registry:component",
+					"target": "chan/github-contributions/github-contributions-fallback.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/github-contributions/contribution-graph.svelte",
+					"type": "registry:component",
+					"target": "chan/github-contributions/contribution-graph.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/github-contributions/contribution-graph-block.svelte",
+					"type": "registry:component",
+					"target": "chan/github-contributions/contribution-graph-block.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/github-contributions/contribution-graph-calendar.svelte",
+					"type": "registry:component",
+					"target": "chan/github-contributions/contribution-graph-calendar.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/github-contributions/contribution-graph-footer.svelte",
+					"type": "registry:component",
+					"target": "chan/github-contributions/contribution-graph-footer.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/github-contributions/contribution-graph-legend.svelte",
+					"type": "registry:component",
+					"target": "chan/github-contributions/contribution-graph-legend.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/github-contributions/contribution-graph-total-count.svelte",
+					"type": "registry:component",
+					"target": "chan/github-contributions/contribution-graph-total-count.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/github-contributions/contribution-graph-context.svelte.ts",
+					"type": "registry:file",
+					"target": "chan/github-contributions/contribution-graph-context.svelte.ts"
+				},
+				{
+					"path": "src/lib/components/chan/github-contributions/contribution-graph-utils.ts",
+					"type": "registry:file",
+					"target": "chan/github-contributions/contribution-graph-utils.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "testimonial",
+			"type": "registry:block",
+			"title": "Testimonial",
+			"description": "Composable primitives for building testimonial cards.",
+			"registryDependencies": [],
+			"dependencies": [],
+			"files": [
+				{
+					"path": "src/lib/components/chan/testimonial/testimonial.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial/testimonial.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial/testimonial-author.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial/testimonial-author.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial/testimonial-author-name.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial/testimonial-author-name.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial/testimonial-author-tagline.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial/testimonial-author-tagline.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial/testimonial-avatar.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial/testimonial-avatar.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial/testimonial-avatar-img.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial/testimonial-avatar-img.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial/testimonial-avatar-ring.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial/testimonial-avatar-ring.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial/testimonial-quote.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial/testimonial-quote.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial/testimonial-verified-badge.svelte",
+					"type": "registry:component",
+					"target": "chan/testimonial/testimonial-verified-badge.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/testimonial/index.ts",
+					"type": "registry:file",
+					"target": "chan/testimonial/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "timescale",
+			"type": "registry:block",
+			"title": "Timescale",
+			"description": "Composable horizontal and vertical timeline primitives.",
+			"registryDependencies": ["local:scroll-fade-effect"],
+			"dependencies": [],
+			"files": [
+				{
+					"path": "src/lib/components/chan/timescale/timescale.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-age.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-age.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-content.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-content.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-header.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-header.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-intro-scroll.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-intro-scroll.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-item.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-item.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-rail.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-rail.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-tick.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-tick.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-track.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-track.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-viewport.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-viewport.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/timescale-year.svelte",
+					"type": "registry:component",
+					"target": "chan/timescale/timescale-year.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/timescale/index.ts",
+					"type": "registry:file",
+					"target": "chan/timescale/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
 		}
 	]
 }
