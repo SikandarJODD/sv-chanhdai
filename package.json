@@ -40,6 +40,7 @@
     "bits-ui": "^2.19.0",
     "clsx": "^2.1.1",
     "package-manager-detector": "^1.6.0",
+    "paneforge": "^1.0.2",
     "prettier": "^3.8.1",
     "prettier-plugin-svelte": "^4.1.1",
     "prettier-plugin-tailwindcss": "^0.7.2",

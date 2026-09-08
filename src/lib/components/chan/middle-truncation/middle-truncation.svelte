@@ -52,22 +52,15 @@
 
 	function recalculate(width: number) {
 		const font = getComputedFont(containerRef);
-		displayed = computeTruncated(
-			text,
-			end,
-			minEnd,
-			width,
-			font,
-			ellipsis
-		);
+		displayed = computeTruncated(text, end, minEnd, width, font, ellipsis);
 	}
 
 	watch(
 		[() => text, () => end, () => minEnd, () => ellipsis],
 		() => {
 			if (containerRef) recalculate(containerRef.offsetWidth);
-		},
-		{ lazy: true }
+		}
+		// { lazy: true }
 	);
 
 	onMount(() => {
