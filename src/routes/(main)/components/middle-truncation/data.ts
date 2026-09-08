@@ -1,6 +1,6 @@
-import IndexTsRaw from "$lib/components/chan/status-button/index.ts?raw";
-import SpinnerSvelteRaw from "$lib/components/chan/status-button/spinner.svelte?raw";
-import StatusButtonSvelteRaw from "$lib/components/chan/status-button/status-button.svelte?raw";
+import IndexTsRaw from "$lib/components/chan/middle-truncation/index.ts?raw";
+import MiddleTruncationSvelteRaw from "$lib/components/chan/middle-truncation/middle-truncation.svelte?raw";
+import MiddleTruncationTsRaw from "$lib/components/chan/middle-truncation/middle-truncation.ts?raw";
 
 import type {
 	ComponentDoc,
@@ -15,16 +15,16 @@ import DemoExample from "./examples/demo-example.svelte";
 import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "status-button",
-	title: "Status Button",
-	description: "TODO: Add a concise description for Status Button.",
+	id: "middle-truncation",
+	title: "Middle Truncation",
+	description: "TODO: Add a concise description for Middle Truncation.",
 	category: "chan",
 };
 
 const seo: SEO = {
-	title: "Status Button",
-	description: "TODO: Add an SEO description for Status Button.",
-	keywords: ["Svelte", "Status Button", "Component"],
+	title: "Middle Truncation",
+	description: "TODO: Add an SEO description for Middle Truncation.",
+	keywords: ["Svelte", "Middle Truncation", "Component"],
 };
 
 const examples: Example[] = [
@@ -43,10 +43,10 @@ const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "spinner.svelte", code: SpinnerSvelteRaw, lang: "svelte", },
-		{ name: "status-button.svelte", code: StatusButtonSvelteRaw, lang: "svelte", }
+		{ name: "middle-truncation.svelte", code: MiddleTruncationSvelteRaw, lang: "svelte", },
+		{ name: "middle-truncation.ts", code: MiddleTruncationTsRaw, lang: "typescript", }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- status-button/\n                |-- index.ts\n                |-- spinner.svelte\n                `-- status-button.svelte",
+	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- middle-truncation/\n                |-- index.ts\n                |-- middle-truncation.svelte\n                `-- middle-truncation.ts",
 };
 
 export const data: ComponentDoc = {

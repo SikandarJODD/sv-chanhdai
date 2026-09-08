@@ -1,6 +1,7 @@
-import IndexTsRaw from "$lib/components/chan/status-button/index.ts?raw";
-import SpinnerSvelteRaw from "$lib/components/chan/status-button/spinner.svelte?raw";
-import StatusButtonSvelteRaw from "$lib/components/chan/status-button/status-button.svelte?raw";
+import IndexTsRaw from "$lib/components/chan/share-menu/index.ts?raw";
+import LinkedinIconSvelteRaw from "$lib/components/chan/share-menu/linkedin-icon.svelte?raw";
+import ShareMenuSvelteRaw from "$lib/components/chan/share-menu/share-menu.svelte?raw";
+import XIconSvelteRaw from "$lib/components/chan/share-menu/x-icon.svelte?raw";
 
 import type {
 	ComponentDoc,
@@ -15,16 +16,16 @@ import DemoExample from "./examples/demo-example.svelte";
 import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "status-button",
-	title: "Status Button",
-	description: "TODO: Add a concise description for Status Button.",
+	id: "share-menu",
+	title: "Share Menu",
+	description: "TODO: Add a concise description for Share Menu.",
 	category: "chan",
 };
 
 const seo: SEO = {
-	title: "Status Button",
-	description: "TODO: Add an SEO description for Status Button.",
-	keywords: ["Svelte", "Status Button", "Component"],
+	title: "Share Menu",
+	description: "TODO: Add an SEO description for Share Menu.",
+	keywords: ["Svelte", "Share Menu", "Component"],
 };
 
 const examples: Example[] = [
@@ -43,10 +44,11 @@ const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "spinner.svelte", code: SpinnerSvelteRaw, lang: "svelte", },
-		{ name: "status-button.svelte", code: StatusButtonSvelteRaw, lang: "svelte", }
+		{ name: "linkedin-icon.svelte", code: LinkedinIconSvelteRaw, lang: "svelte", },
+		{ name: "share-menu.svelte", code: ShareMenuSvelteRaw, lang: "svelte", },
+		{ name: "x-icon.svelte", code: XIconSvelteRaw, lang: "svelte", }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- status-button/\n                |-- index.ts\n                |-- spinner.svelte\n                `-- status-button.svelte",
+	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- share-menu/\n                |-- index.ts\n                |-- linkedin-icon.svelte\n                |-- share-menu.svelte\n                `-- x-icon.svelte",
 };
 
 export const data: ComponentDoc = {

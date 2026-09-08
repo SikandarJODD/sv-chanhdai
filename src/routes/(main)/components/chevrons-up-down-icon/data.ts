@@ -1,6 +1,5 @@
-import IndexTsRaw from "$lib/components/chan/status-button/index.ts?raw";
-import SpinnerSvelteRaw from "$lib/components/chan/status-button/spinner.svelte?raw";
-import StatusButtonSvelteRaw from "$lib/components/chan/status-button/status-button.svelte?raw";
+import ChevronsUpDownIconSvelteRaw from "$lib/components/chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte?raw";
+import IndexTsRaw from "$lib/components/chan/chevrons-up-down-icon/index.ts?raw";
 
 import type {
 	ComponentDoc,
@@ -15,16 +14,16 @@ import DemoExample from "./examples/demo-example.svelte";
 import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "status-button",
-	title: "Status Button",
-	description: "TODO: Add a concise description for Status Button.",
+	id: "chevrons-up-down-icon",
+	title: "Chevrons Up Down Icon",
+	description: "TODO: Add a concise description for Chevrons Up Down Icon.",
 	category: "chan",
 };
 
 const seo: SEO = {
-	title: "Status Button",
-	description: "TODO: Add an SEO description for Status Button.",
-	keywords: ["Svelte", "Status Button", "Component"],
+	title: "Chevrons Up Down Icon",
+	description: "TODO: Add an SEO description for Chevrons Up Down Icon.",
+	keywords: ["Svelte", "Chevrons Up Down Icon", "Component"],
 };
 
 const examples: Example[] = [
@@ -42,11 +41,10 @@ const examples: Example[] = [
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "spinner.svelte", code: SpinnerSvelteRaw, lang: "svelte", },
-		{ name: "status-button.svelte", code: StatusButtonSvelteRaw, lang: "svelte", }
+		{ name: "chevrons-up-down-icon.svelte", code: ChevronsUpDownIconSvelteRaw, lang: "svelte", isExpand: true, },
+		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- status-button/\n                |-- index.ts\n                |-- spinner.svelte\n                `-- status-button.svelte",
+	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- chevrons-up-down-icon/\n                |-- chevrons-up-down-icon.svelte\n                `-- index.ts",
 };
 
 export const data: ComponentDoc = {

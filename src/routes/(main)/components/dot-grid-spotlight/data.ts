@@ -1,6 +1,5 @@
-import IndexTsRaw from "$lib/components/chan/status-button/index.ts?raw";
-import SpinnerSvelteRaw from "$lib/components/chan/status-button/spinner.svelte?raw";
-import StatusButtonSvelteRaw from "$lib/components/chan/status-button/status-button.svelte?raw";
+import DotGridSpotlightSvelteRaw from "$lib/components/chan/dot-grid-spotlight/dot-grid-spotlight.svelte?raw";
+import IndexTsRaw from "$lib/components/chan/dot-grid-spotlight/index.ts?raw";
 
 import type {
 	ComponentDoc,
@@ -15,16 +14,16 @@ import DemoExample from "./examples/demo-example.svelte";
 import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "status-button",
-	title: "Status Button",
-	description: "TODO: Add a concise description for Status Button.",
+	id: "dot-grid-spotlight",
+	title: "Dot Grid Spotlight",
+	description: "TODO: Add a concise description for Dot Grid Spotlight.",
 	category: "chan",
 };
 
 const seo: SEO = {
-	title: "Status Button",
-	description: "TODO: Add an SEO description for Status Button.",
-	keywords: ["Svelte", "Status Button", "Component"],
+	title: "Dot Grid Spotlight",
+	description: "TODO: Add an SEO description for Dot Grid Spotlight.",
+	keywords: ["Svelte", "Dot Grid Spotlight", "Component"],
 };
 
 const examples: Example[] = [
@@ -42,11 +41,10 @@ const examples: Example[] = [
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "spinner.svelte", code: SpinnerSvelteRaw, lang: "svelte", },
-		{ name: "status-button.svelte", code: StatusButtonSvelteRaw, lang: "svelte", }
+		{ name: "dot-grid-spotlight.svelte", code: DotGridSpotlightSvelteRaw, lang: "svelte", isExpand: true, },
+		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- status-button/\n                |-- index.ts\n                |-- spinner.svelte\n                `-- status-button.svelte",
+	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- dot-grid-spotlight/\n                |-- dot-grid-spotlight.svelte\n                `-- index.ts",
 };
 
 export const data: ComponentDoc = {

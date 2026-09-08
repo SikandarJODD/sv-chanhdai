@@ -310,11 +310,13 @@ async function resolveComponentExport({
     preferredExports.push(sourcePascal);
   }
 
-  preferredExports.push("Root");
-
-  const exportName = preferredExports.find((candidate) =>
-    exportNames.has(candidate),
-  );
+  const exportName =
+    preferredExports.find((candidate) => exportNames.has(candidate)) ??
+    (!exportOverride
+      ? [...exportNames].find((candidate) =>
+          candidate.startsWith(sourcePascal),
+        )
+      : undefined);
 
   if (!exportName) {
     throw new Error(
@@ -472,22 +474,8 @@ export const GET: RequestHandler = async () => {
 `;
 }
 
-function renderPreviewSvelte(importStatement, componentName, title) {
-  return `<script lang="ts">
-\t${importStatement}
-
-\tconst PreviewComponent: any = ${componentName};
-</script>
-
-<div class="flex w-full flex-col gap-4 rounded-2xl border border-dashed border-border/60 bg-muted/20 p-6">
-\t<p class="text-sm text-muted-foreground">
-\t\tReplace this starter preview with a polished ${title} example.
-\t</p>
-\t<div class="flex min-h-48 items-center justify-center rounded-xl bg-background/80 p-6">
-\t\t<PreviewComponent />
-\t</div>
-</div>
-`;
+function renderPreviewSvelte() {
+  return "";
 }
 
 function renderDemoExampleSvelte(importStatement, componentName, title) {
@@ -888,11 +876,7 @@ function buildGeneratedFiles(routePlan) {
       filePath: path.join(llmsDirectory, "+server.ts"),
     },
     {
-      contents: renderPreviewSvelte(
-        importStatement,
-        routePlan.localName,
-        routePlan.title,
-      ),
+      contents: renderPreviewSvelte(),
       filePath: path.join(examplesDirectory, "preview.svelte"),
     },
     {
@@ -1061,7 +1045,7 @@ export async function generateRoutes(specInputs, options = {}) {
 function printBatchUsage() {
   console.log(`Usage:
   pnpm create:routes <name1> <name2> <name3>
-  pnpm create:routes badge=ui/badge dialog=ui/dialog navigation-menu=ui/navigation-menu@Root
+  pnpm create:routes badge=ui/badge dialog=ui/dialog navigation-menu=ui/navigation-menu@NavigationMenu
 
 Options:
   --force    Overwrite generated files for existing routes

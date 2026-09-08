@@ -1,6 +1,5 @@
-import IndexTsRaw from "$lib/components/chan/status-button/index.ts?raw";
-import SpinnerSvelteRaw from "$lib/components/chan/status-button/spinner.svelte?raw";
-import StatusButtonSvelteRaw from "$lib/components/chan/status-button/status-button.svelte?raw";
+import IndexTsRaw from "$lib/components/chan/spinning-circular-text/index.ts?raw";
+import SpinningCircularTextSvelteRaw from "$lib/components/chan/spinning-circular-text/spinning-circular-text.svelte?raw";
 
 import type {
 	ComponentDoc,
@@ -15,16 +14,16 @@ import DemoExample from "./examples/demo-example.svelte";
 import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "status-button",
-	title: "Status Button",
-	description: "TODO: Add a concise description for Status Button.",
+	id: "spinning-circular-text",
+	title: "Spinning Circular Text",
+	description: "TODO: Add a concise description for Spinning Circular Text.",
 	category: "chan",
 };
 
 const seo: SEO = {
-	title: "Status Button",
-	description: "TODO: Add an SEO description for Status Button.",
-	keywords: ["Svelte", "Status Button", "Component"],
+	title: "Spinning Circular Text",
+	description: "TODO: Add an SEO description for Spinning Circular Text.",
+	keywords: ["Svelte", "Spinning Circular Text", "Component"],
 };
 
 const examples: Example[] = [
@@ -43,10 +42,9 @@ const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "spinner.svelte", code: SpinnerSvelteRaw, lang: "svelte", },
-		{ name: "status-button.svelte", code: StatusButtonSvelteRaw, lang: "svelte", }
+		{ name: "spinning-circular-text.svelte", code: SpinningCircularTextSvelteRaw, lang: "svelte", }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- status-button/\n                |-- index.ts\n                |-- spinner.svelte\n                `-- status-button.svelte",
+	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- spinning-circular-text/\n                |-- index.ts\n                `-- spinning-circular-text.svelte",
 };
 
 export const data: ComponentDoc = {
