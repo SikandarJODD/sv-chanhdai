@@ -4,7 +4,7 @@ import IndexTsRaw from "$lib/components/chan/chevrons-up-down-icon/index.ts?raw"
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -17,34 +17,40 @@ export const meta: ComponentMeta = {
 	id: "chevrons-up-down-icon",
 	title: "Chevrons Up Down Icon",
 	description: "TODO: Add a concise description for Chevrons Up Down Icon.",
-	category: "chan",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Chevrons Up Down Icon",
 	description: "TODO: Add an SEO description for Chevrons Up Down Icon.",
-	keywords: ["Svelte", "Chevrons Up Down Icon", "Component"],
+	keywords: ["Svelte", "Chevrons Up Down Icon", "Component"]
 };
 
 const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+	// {
+	// 	name: "Demo",
+	// 	preview: DemoExample,
+	// 	code: {
+	// 		name: "demo-example.svelte",
+	// 		code: DemoExampleRaw,
+	// 		lang: "svelte",
+	// 	},
+	// },
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "chevrons-up-down-icon.svelte", code: ChevronsUpDownIconSvelteRaw, lang: "svelte", isExpand: true, },
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", }
+		{
+			name: "chevrons-up-down-icon.svelte",
+			code: ChevronsUpDownIconSvelteRaw,
+			lang: "svelte",
+			isExpand: true
+		},
+		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- chevrons-up-down-icon/\n                |-- chevrons-up-down-icon.svelte\n                `-- index.ts",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- chevrons-up-down-icon/\n                |-- chevrons-up-down-icon.svelte\n                `-- index.ts"
 };
 
 export const data: ComponentDoc = {
@@ -54,10 +60,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };

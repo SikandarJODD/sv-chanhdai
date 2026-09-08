@@ -70,7 +70,7 @@
 				<layout.div>
 					<Tabs.Trigger
 						value="cli"
-						class="relative border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
+						class="relative cursor-pointer border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
 					>
 						CLI
 						{#if activeTab === "cli"}
@@ -86,7 +86,7 @@
 				<layout.div>
 					<Tabs.Trigger
 						value="manual"
-						class="relative border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
+						class="relative cursor-pointer border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
 					>
 						Manual
 						{#if activeTab === "manual"}

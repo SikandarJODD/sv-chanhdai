@@ -4,7 +4,7 @@ import IndexTsRaw from "$lib/components/chan/dot-grid-spotlight/index.ts?raw";
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -17,34 +17,40 @@ export const meta: ComponentMeta = {
 	id: "dot-grid-spotlight",
 	title: "Dot Grid Spotlight",
 	description: "TODO: Add a concise description for Dot Grid Spotlight.",
-	category: "chan",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Dot Grid Spotlight",
 	description: "TODO: Add an SEO description for Dot Grid Spotlight.",
-	keywords: ["Svelte", "Dot Grid Spotlight", "Component"],
+	keywords: ["Svelte", "Dot Grid Spotlight", "Component"]
 };
 
 const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+	// {
+	// 	name: "Demo",
+	// 	preview: DemoExample,
+	// 	code: {
+	// 		name: "demo-example.svelte",
+	// 		code: DemoExampleRaw,
+	// 		lang: "svelte",
+	// 	},
+	// },
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "dot-grid-spotlight.svelte", code: DotGridSpotlightSvelteRaw, lang: "svelte", isExpand: true, },
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", }
+		{
+			name: "dot-grid-spotlight.svelte",
+			code: DotGridSpotlightSvelteRaw,
+			lang: "svelte",
+			isExpand: true
+		},
+		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- dot-grid-spotlight/\n                |-- dot-grid-spotlight.svelte\n                `-- index.ts",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- dot-grid-spotlight/\n                |-- dot-grid-spotlight.svelte\n                `-- index.ts"
 };
 
 export const data: ComponentDoc = {
@@ -54,10 +60,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };
