@@ -4,7 +4,7 @@ import IndexTsRaw from "$lib/components/chan/brand-assets-menu/index.ts?raw";
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -17,34 +17,40 @@ export const meta: ComponentMeta = {
 	id: "brand-assets-menu",
 	title: "Brand Assets Menu",
 	description: "TODO: Add a concise description for Brand Assets Menu.",
-	category: "chan",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Brand Assets Menu",
 	description: "TODO: Add an SEO description for Brand Assets Menu.",
-	keywords: ["Svelte", "Brand Assets Menu", "Component"],
+	keywords: ["Svelte", "Brand Assets Menu", "Component"]
 };
 
 const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+	// {
+	// 	name: "Demo",
+	// 	preview: DemoExample,
+	// 	code: {
+	// 		name: "demo-example.svelte",
+	// 		code: DemoExampleRaw,
+	// 		lang: "svelte",
+	// 	},
+	// },
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "brand-assets-menu.svelte", code: BrandAssetsMenuSvelteRaw, lang: "svelte", isExpand: true, },
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", }
+		{
+			name: "brand-assets-menu.svelte",
+			code: BrandAssetsMenuSvelteRaw,
+			lang: "svelte",
+			isExpand: true
+		},
+		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- brand-assets-menu/\n                |-- brand-assets-menu.svelte\n                `-- index.ts",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- brand-assets-menu/\n                |-- brand-assets-menu.svelte\n                `-- index.ts"
 };
 
 export const data: ComponentDoc = {
@@ -54,10 +60,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };

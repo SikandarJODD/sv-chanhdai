@@ -7,7 +7,7 @@ import IndexTsRaw from "$lib/components/chan/apple-hello-effect/index.ts?raw";
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -19,14 +19,22 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "apple-hello-effect",
 	title: "Apple Hello Effect",
-	description: "TODO: Add a concise description for Apple Hello Effect.",
-	category: "chan",
+	description:
+		"Animated handwritten 'hello' text in multiple languages with a polished Apple-inspired motion effect.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Apple Hello Effect",
-	description: "TODO: Add an SEO description for Apple Hello Effect.",
-	keywords: ["Svelte", "Apple Hello Effect", "Component"],
+	description:
+		"Create a multilingual Apple-inspired hello animation in Svelte with customizable timing and motion props.",
+	keywords: [
+		"Svelte",
+		"Apple Hello Effect",
+		"Animated Text",
+		"Greeting Animation",
+		"Motion SVG"
+	]
 };
 
 const examples: Example[] = [
@@ -36,21 +44,38 @@ const examples: Example[] = [
 		code: {
 			name: "demo-example.svelte",
 			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+			lang: "svelte"
+		}
+	}
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "apple-hello-effect-english.svelte", code: AppleHelloEffectEnglishSvelteRaw, lang: "svelte", isExpand: true, },
-		{ name: "apple-hello-effect-hindi.svelte", code: AppleHelloEffectHindiSvelteRaw, lang: "svelte", },
-		{ name: "apple-hello-effect-spanish.svelte", code: AppleHelloEffectSpanishSvelteRaw, lang: "svelte", },
-		{ name: "apple-hello-effect-vietnamese.svelte", code: AppleHelloEffectVietnameseSvelteRaw, lang: "svelte", },
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", }
+		{
+			name: "apple-hello-effect-english.svelte",
+			code: AppleHelloEffectEnglishSvelteRaw,
+			lang: "svelte",
+			isExpand: true
+		},
+		{
+			name: "apple-hello-effect-hindi.svelte",
+			code: AppleHelloEffectHindiSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "apple-hello-effect-spanish.svelte",
+			code: AppleHelloEffectSpanishSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "apple-hello-effect-vietnamese.svelte",
+			code: AppleHelloEffectVietnameseSvelteRaw,
+			lang: "svelte"
+		},
+		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- apple-hello-effect/\n                |-- apple-hello-effect-english.svelte\n                |-- apple-hello-effect-hindi.svelte\n                |-- apple-hello-effect-spanish.svelte\n                |-- apple-hello-effect-vietnamese.svelte\n                `-- index.ts",
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -60,10 +85,37 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: [
+		{
+			name: "AppleHelloEffect",
+			desc: "Multilingual animated greeting text with Apple-style handwriting motion.",
+			props: [
+				{
+					name: "class",
+					type: "string",
+					default: "''",
+					description:
+						"Additional classes applied to the underlying SVG element."
+				},
+				{
+					name: "durationScale",
+					type: "number",
+					default: "1",
+					description:
+						"Scales the overall handwriting animation speed for the current language variation."
+				},
+				{
+					name: "onAnimationComplete",
+					type: "() => void",
+					default: "undefined",
+					description: "Called when the full animation completes."
+				}
+			]
+		}
+	]
 };

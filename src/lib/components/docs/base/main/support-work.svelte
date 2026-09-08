@@ -16,7 +16,7 @@
 	</Card.Header>
 	<Card.Content class="mt-2 border-none px-4!">
 		<Button
-			class="w-full"
+			class="w-full bg-emerald-100 text-emerald-600 hover:bg-emerald-200/70 dark:bg-emerald-500 dark:text-emerald-800 dark:hover:bg-emerald-500/90"
 			size="sm"
 			href="https://github.com/sponsors/{github_repo.owner}"
 		>
