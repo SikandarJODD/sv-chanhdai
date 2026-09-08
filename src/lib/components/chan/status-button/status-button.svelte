@@ -223,7 +223,7 @@
 >
 	<!-- Invisible copies of the widest states keep the button's width fixed. -->
 	<span aria-hidden="true" class="invisible">
-		{@render children()}
+		{@render children?.()}
 	</span>
 	<span aria-hidden="true" class="invisible">
 		{@render successContent()}

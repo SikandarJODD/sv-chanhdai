@@ -42,7 +42,7 @@
 		jsrepoID = ""
 	}: InstallComponentProps = $props();
 
-	let activeTab = $state("jsrepo");
+	let activeTab = $state("cli");
 	let agent = new PersistedState<Agent>("user-package-manager", "pnpm");
 
 	let layout = createLayoutMotion();
@@ -98,7 +98,7 @@
 						{/if}
 					</Tabs.Trigger>
 				</layout.div>
-				<layout.div>
+				<!-- <layout.div>
 					<Tabs.Trigger
 						value="jsrepo"
 						class="relative border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:text-amber-600 dark:hover:text-amber-300 data-active:text-amber-600 dark:data-active:text-amber-300"
@@ -112,7 +112,7 @@
 							></layout.span>
 						{/if}
 					</Tabs.Trigger>
-				</layout.div>
+				</layout.div> -->
 			</Tabs.List>
 		</MotionConfig>
 
