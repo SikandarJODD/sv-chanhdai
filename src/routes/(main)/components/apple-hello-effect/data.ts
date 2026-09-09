@@ -23,6 +23,7 @@ import SpanishExample from "./examples/spanish.svelte";
 import SpanishExampleCode from "./examples/spanish.svelte?raw";
 import VietnameseExample from "./examples/vietnamese.svelte";
 import VietnameseExampleCode from "./examples/vietnamese.svelte?raw";
+import type { CodeBlock } from "$lib/types/code";
 
 export const meta: ComponentMeta = {
 	id: "apple-hello-effect",
@@ -89,7 +90,7 @@ const examples: Example[] = [
 	}
 ];
 
-const usage = [
+const usage: CodeBlock[] = [
 	{
 		name: "example.svelte",
 		code: `<script lang="ts">
@@ -97,7 +98,8 @@ const usage = [
 </script>
 
 <AppleHelloEffectEnglish />`,
-		lang: "svelte" as const
+		lang: "svelte",
+		isExpand: false
 	}
 ];
 
