@@ -17,18 +17,6 @@ export interface DocPage {
 
 let components: Component[] = [
 	{
-		id: "status-button",
-		name: "Status Button",
-		href: "/components/status-button",
-		desc: "TODO: Add a concise description for Status Button."
-	},
-	// {
-	//   id: "scroll-fade-effect",
-	//   name: "Scroll Fade Effect",
-	//   href: "/components/scroll-fade-effect",
-	//   desc: "TODO: Add a concise description for Scroll Fade Effect.",
-	// },
-	{
 		id: "apple-hello-effect",
 		name: "Apple Hello Effect",
 		href: "/components/apple-hello-effect",
@@ -59,6 +47,12 @@ let components: Component[] = [
 		desc: "Slider with elastic rubber-band drag and magnetic snap feedback."
 	},
 	{
+		id: "github-contributions",
+		name: "Github Contributions",
+		href: "/components/github-contributions",
+		desc: "Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link."
+	},
+	{
 		id: "github-stars",
 		name: "Github Stars",
 		href: "/components/github-stars",
@@ -82,6 +76,12 @@ let components: Component[] = [
 		href: "/components/middle-truncation",
 		desc: "Truncate text in the middle while preserving start and end."
 	},
+	// {
+	// 	id: "scroll-fade-effect",
+	// 	name: "Scroll Fade Effect",
+	// 	href: "/components/scroll-fade-effect",
+	// 	desc: "TODO: Add a concise description for Scroll Fade Effect."
+	// },
 	{
 		id: "share-menu",
 		name: "Share Menu",
@@ -105,6 +105,12 @@ let components: Component[] = [
 		name: "Spinning Circular Text",
 		href: "/components/spinning-circular-text",
 		desc: "Text arranged in a circle with a continuous spinning animation."
+	},
+	{
+		id: "status-button",
+		name: "Status Button",
+		href: "/components/status-button",
+		desc: "TODO: Add a concise description for Status Button."
 	},
 	{
 		id: "testimonial",
@@ -135,12 +141,6 @@ let components: Component[] = [
 		name: "Wheel Picker",
 		href: "/components/wheel-picker",
 		desc: "iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support."
-	},
-	{
-		id: "github-contributions",
-		name: "Github Contributions",
-		href: "/components/github-contributions",
-		desc: "Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link."
 	}
 ];
 

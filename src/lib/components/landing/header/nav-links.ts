@@ -9,14 +9,14 @@ let navs: NavType[] = [
 	{
 		name: "Components",
 		href: resolve("/(main)/components/apple-hello-effect")
-	},
-	{
-		name: "Docs",
-		href: "/docs"
-	},
-	{
-		name: "Changelog",
-		href: "/changelog"
 	}
+	// {
+	// 	name: "Docs",
+	// 	href: "/docs"
+	// },
+	// {
+	// 	name: "Changelog",
+	// 	href: "/changelog"
+	// }
 ];
 export { navs };

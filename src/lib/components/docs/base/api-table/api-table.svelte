@@ -1,5 +1,13 @@
 <script lang="ts">
-	import { Table, Thead, Tbody, Tr, Th, Td, H3 } from "$lib/components/docs/markdown";
+	import {
+		Table,
+		Thead,
+		Tbody,
+		Tr,
+		Th,
+		Td,
+		H3
+	} from "$lib/components/docs/markdown";
 	import { cn } from "$lib/utils";
 	import { page } from "$app/state";
 	import { watch } from "runed";
@@ -20,7 +28,7 @@
 	};
 
 	let {
-		data,
+		data
 	}: {
 		data: PropsTable | PropDef[];
 	} = $props();
@@ -72,7 +80,7 @@
 	<Thead>
 		<Tr>
 			{#each tableHeaders as header (header)}
-				<Th>{header}</Th>
+				<Th class="px-4 h-10">{header}</Th>
 			{/each}
 		</Tr>
 	</Thead>
@@ -80,11 +88,11 @@
 		{#each tableData as row, i (i)}
 			<Tr>
 				{#each tableKeys as key, index (key)}
-					<Td>
+					<Td class="px-4 py-1.5">
 						<span class="inline-flex items-center gap-1">
 							<code
 								class={cn(
-									"dark:bg-muted/50 bg-muted/75 rounded-md px-2 py-0.5 font-mono text-sm text-neutral-600 dark:text-neutral-300"
+									"rounded-md px-0 font-mono text-sm text-neutral-600 dark:text-neutral-300"
 								)}
 							>
 								{key === "default" && row.required

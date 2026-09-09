@@ -22,7 +22,7 @@
 </script>
 
 {#if browser && dev}
-	<Agentation />
+	<Agentation deleteAllDelayMs={0} />
 {/if}
 
 <ModeWatcher defaultMode="dark" />
