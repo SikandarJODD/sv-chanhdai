@@ -48,7 +48,6 @@
 	import { page } from "$app/state";
 	import type { ComponentProps } from "svelte";
 	import { watch } from "runed";
-	import SupportWork from "../../base/main/support-work.svelte";
 
 	let {
 		ref = $bindable(null),
@@ -117,7 +116,4 @@
 			{/each}
 		</ScrollFadeEffect>
 	</Sidebar.Content>
-	<Sidebar.Footer>
-		<SupportWork />
-	</Sidebar.Footer>
 </Sidebar.Root>
