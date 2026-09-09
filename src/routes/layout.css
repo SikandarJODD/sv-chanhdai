@@ -46,6 +46,10 @@
 	--sidebar-accent-foreground: oklch(0.205 0 0);
 	--sidebar-border: oklch(0.922 0 0);
 	--sidebar-ring: oklch(0.708 0 0);
+
+	/* Ink Color */
+	--ink: lab(36 55.64 -107.68);
+	--ink-dim: lab(93 0 -8);
 }
 
 .dark {
@@ -123,6 +127,10 @@
 	--radius-2xl: calc(var(--radius) * 1.8);
 	--radius-3xl: calc(var(--radius) * 2.2);
 	--radius-4xl: calc(var(--radius) * 2.6);
+
+	/* Ink Color */
+	--color-ink: var(--ink);
+	--color-ink-dim: var(--ink-dim);
 
 	/* Chanhdai Animations */
 	/* Status Button */

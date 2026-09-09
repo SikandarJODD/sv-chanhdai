@@ -9,9 +9,20 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+import CustomColorsExample from "./examples/custom-colors.svelte";
+import CustomColorsExampleCode from "./examples/custom-colors.svelte?raw";
+import EnglishExample from "./examples/english.svelte";
+import EnglishExampleCode from "./examples/english.svelte?raw";
+import HindiExample from "./examples/hindi.svelte";
+import HindiExampleCode from "./examples/hindi.svelte?raw";
+import SpanishExample from "./examples/spanish.svelte";
+import SpanishExampleCode from "./examples/spanish.svelte?raw";
+import VietnameseExample from "./examples/vietnamese.svelte";
+import VietnameseExampleCode from "./examples/vietnamese.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "apple-hello-effect",
@@ -33,6 +44,62 @@ const seo: SEO = {
 		"Motion SVG"
 	]
 };
+
+const examples: Example[] = [
+	{
+		name: "Custom colors",
+		preview: CustomColorsExample,
+		code: {
+			name: "custom-colors.svelte",
+			code: CustomColorsExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "English",
+		preview: EnglishExample,
+		code: {
+			name: "english.svelte",
+			code: EnglishExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Hindi",
+		preview: HindiExample,
+		code: { name: "hindi.svelte", code: HindiExampleCode, lang: "svelte" }
+	},
+	{
+		name: "Spanish",
+		preview: SpanishExample,
+		code: {
+			name: "spanish.svelte",
+			code: SpanishExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Vietnamese",
+		preview: VietnameseExample,
+		code: {
+			name: "vietnamese.svelte",
+			code: VietnameseExampleCode,
+			lang: "svelte"
+		}
+	}
+];
+
+const usage = [
+	{
+		name: "example.svelte",
+		code: `<script lang="ts">
+	import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+</script>
+
+<AppleHelloEffectEnglish />`,
+		lang: "svelte" as const
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: ["motion-sv"],
@@ -73,6 +140,8 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
+	examples,
 	seo,
 	props: [
 		{

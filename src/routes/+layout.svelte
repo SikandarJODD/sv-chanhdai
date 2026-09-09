@@ -8,6 +8,7 @@
 	import { browser, dev } from "$app/environment";
 	import { Agentation } from "sv-agentation";
 	import Footer from "$lib/components/landing/footer.svelte";
+	import { Toaster } from "$ui/sonner";
 
 	let { children } = $props();
 	let keys = new PressedKeys();
@@ -21,6 +22,7 @@
 	});
 </script>
 
+<Toaster position="top-center" />
 {#if browser && dev}
 	<Agentation deleteAllDelayMs={0} />
 {/if}

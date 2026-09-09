@@ -88,7 +88,7 @@
 		{#each tableData as row, i (i)}
 			<Tr>
 				{#each tableKeys as key, index (key)}
-					<Td class="px-4 py-1.5">
+					<Td class="px-4 py-2">
 						<span class="inline-flex items-center gap-1">
 							<code
 								class={cn(
