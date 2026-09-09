@@ -38,6 +38,7 @@
 </script>
 
 <script lang="ts">
+	import BhideSvelteCard from "$lib/components/docs/base/main/bhide-svelte-card.svelte";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import { Button } from "$lib/components/ui/button";
 	import {
@@ -116,4 +117,7 @@
 			{/each}
 		</ScrollFadeEffect>
 	</Sidebar.Content>
+	<Sidebar.Footer>
+		<BhideSvelteCard />
+	</Sidebar.Footer>
 </Sidebar.Root>

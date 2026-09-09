@@ -19,6 +19,12 @@ const config = {
     // See https://svelte.dev/docs/kit/adapters for more information about adapters.
     adapter: adapter(),
   },
+  vitePlugin: {
+    inspector: {
+      toggleKeyCombo: "meta-shift",
+      holdMode: true,
+    }
+  }
 };
 
 export default config;

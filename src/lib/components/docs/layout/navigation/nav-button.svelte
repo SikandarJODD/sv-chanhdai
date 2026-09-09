@@ -24,11 +24,13 @@
 	{href}
 	{...rest}
 	class={cn(
-		"group border-border bg-background hover:bg-muted/50 relative flex flex-col rounded-lg border px-4 py-3 shadow-sm transition-[background-color] duration-150 ease-out",
+		"group border-border bg-background hover:bg-muted/50 relative flex flex-col rounded-lg border px-4 py-3 transition-[background-color] duration-150 ease-out",
 		forceSecondColumn && "col-start-2"
 	)}
 >
-	<div class={cn("flex items-start gap-1", align === "right" && "justify-end")}>
+	<div
+		class={cn("flex items-start gap-1", align === "right" && "justify-end")}
+	>
 		{#if align === "left"}
 			<span>
 				<ChevronLeftIcon
@@ -41,7 +43,10 @@
 				{title}
 			</span>
 			<span
-				class={["text-foreground/45 mt-1 line-clamp-1 text-sm", align === "left" && "pr-2"]}
+				class={[
+					"text-foreground/45 mt-1 line-clamp-1 text-sm",
+					align === "left" && "pr-2"
+				]}
 			>
 				{label}
 			</span>

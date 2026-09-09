@@ -19,11 +19,10 @@
 			return;
 		toggleMode();
 	});
-	let workSpaceRootPath = "S:\\sv\\comp-setup";
 </script>
 
 {#if browser && dev}
-	<Agentation workspaceRoot={workSpaceRootPath} />
+	<Agentation />
 {/if}
 
 <ModeWatcher defaultMode="dark" />
