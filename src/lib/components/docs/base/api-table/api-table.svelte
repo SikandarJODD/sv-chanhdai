@@ -80,7 +80,7 @@
 	<Thead>
 		<Tr>
 			{#each tableHeaders as header (header)}
-				<Th class="px-4 h-10">{header}</Th>
+				<Th class="px-4 h-10 text-sm">{header}</Th>
 			{/each}
 		</Tr>
 	</Thead>
