@@ -23,8 +23,6 @@
 		...restProps
 	}: IconSwapItemProps = $props();
 
-	// The public props intentionally mirror motion.div, as in the React source.
-	// Normalizing the optional span here avoids expanding both DOM prop unions.
 	const Component = $derived(as as typeof motion.div);
 </script>
 

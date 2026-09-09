@@ -242,5 +242,29 @@
 			"local:scroll-fade-effect"
 		],
 		"relativeUrl": "timescale.json"
+	},
+	{
+		"name": "svelte-wheel-picker",
+		"title": "Svelte Wheel Picker",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An accessible, headless wheel picker with drag, wheel, keyboard, and typeahead interactions.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "svelte-wheel-picker.json"
+	},
+	{
+		"name": "wheel-picker",
+		"title": "Wheel Picker",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A styled wheel picker built on the headless Svelte wheel picker primitives.",
+		"dependencies": [],
+		"registryDependencies": [
+			"local:svelte-wheel-picker"
+		],
+		"relativeUrl": "wheel-picker.json"
 	}
 ]

@@ -25,7 +25,7 @@
 		}
 	];
 
-	let value = $state("react");
+	let value = $state("svelte");
 </script>
 
 <div class="w-64">

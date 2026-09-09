@@ -1,0 +1,28 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "wheel-picker",
+	"title": "Wheel Picker",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "A styled wheel picker built on the headless Svelte wheel picker primitives.",
+	"registryDependencies": [
+		"./svelte-wheel-picker.json"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" generics=\"T extends WheelPickerValue\">\n\timport { cn } from \"$UTILS$\";\n\timport {\n\t\tWheelPicker as WheelPickerPrimitive,\n\t\ttype WheelPickerProps,\n\t\ttype WheelPickerValue\n\t} from \"../svelte-wheel-picker/index.js\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tvalue = $bindable(),\n\t\tclasses,\n\t\t...restProps\n\t}: WheelPickerProps<T> = $props();\n</script>\n\n<WheelPickerPrimitive\n\tbind:ref\n\tbind:value\n\t{...restProps}\n\tclasses={{\n\t\toptionItem: cn(\n\t\t\t\"text-zinc-400 data-disabled:opacity-40 dark:text-zinc-500\",\n\t\t\tclasses?.optionItem\n\t\t),\n\t\thighlightWrapper: cn(\n\t\t\t\"bg-zinc-100 text-zinc-950 dark:bg-zinc-800 dark:text-zinc-50\",\n\t\t\t// \"data-wheel-picker-focused:inset-ring-2 data-wheel-picker-focused:inset-ring-zinc-300 dark:data-wheel-picker-focused:inset-ring-zinc-600\",\n\t\t\tclasses?.highlightWrapper\n\t\t),\n\t\thighlightItem: cn(\"data-disabled:opacity-40\", classes?.highlightItem)\n\t}}\n/>\n",
+			"type": "registry:component",
+			"target": "chan/wheel-picker/wheel-picker.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport {\n\t\tWheelPickerWrapper as WheelPickerWrapperPrimitive,\n\t\ttype WheelPickerWrapperProps\n\t} from \"../svelte-wheel-picker/index.js\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tchildren,\n\t\tclass: className,\n\t\t...restProps\n\t}: WheelPickerWrapperProps = $props();\n</script>\n\n<WheelPickerWrapperPrimitive\n\tbind:ref\n\t{...restProps}\n\tclass={cn(\n\t\t\"w-56 rounded-lg border border-zinc-200 bg-white px-1 shadow-xs dark:border-zinc-700/80 dark:bg-zinc-900\",\n\t\t\"*:data-wheel-picker:first:*:data-wheel-picker-highlight-wrapper:rounded-s-md\",\n\t\t\"*:data-wheel-picker:last:*:data-wheel-picker-highlight-wrapper:rounded-e-md\",\n\t\tclassName\n\t)}\n>\n\t{@render children()}\n</WheelPickerWrapperPrimitive>\n",
+			"type": "registry:component",
+			"target": "chan/wheel-picker/wheel-picker-wrapper.svelte"
+		},
+		{
+			"content": "import WheelPicker from \"./wheel-picker.svelte\";\nimport WheelPickerWrapper from \"./wheel-picker-wrapper.svelte\";\n\nexport { WheelPicker, WheelPickerWrapper };\n\nexport type {\n\tWheelPickerClasses,\n\tWheelPickerLabel,\n\tWheelPickerOption,\n\tWheelPickerProps,\n\tWheelPickerValue,\n\tWheelPickerWrapperProps\n} from \"../svelte-wheel-picker/index.js\";\n",
+			"type": "registry:file",
+			"target": "chan/wheel-picker/index.ts"
+		}
+	]
+}
