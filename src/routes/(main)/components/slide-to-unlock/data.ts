@@ -10,7 +10,21 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
+import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
+import AsyncActionExample from "./examples/async-action.svelte";
+import AsyncActionExampleCode from "./examples/async-action.svelte?raw";
+import BasicExample from "./examples/basic.svelte";
+import BasicExampleCode from "./examples/basic.svelte?raw";
+import ConfirmActionExample from "./examples/confirm-action.svelte";
+import ConfirmActionExampleCode from "./examples/confirm-action.svelte?raw";
+import CustomHandleExample from "./examples/custom-handle.svelte";
+import CustomHandleExampleCode from "./examples/custom-handle.svelte?raw";
+import CustomPromptExample from "./examples/custom-prompt.svelte";
+import CustomPromptExampleCode from "./examples/custom-prompt.svelte?raw";
+import DestructiveConfirmationExample from "./examples/destructive-confirmation.svelte";
+import DestructiveConfirmationExampleCode from "./examples/destructive-confirmation.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -28,6 +42,100 @@ const seo: SEO = {
 		"Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
 	keywords: ["Svelte", "Slide To Unlock", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import {
+		SlideToUnlock,
+		SlideToUnlockHandle,
+		SlideToUnlockText,
+		SlideToUnlockTrack
+	} from "$chan/slide-to-unlock";
+
+	function handleUnlock() {
+		console.log("Unlocked");
+	}
+</script>
+
+<SlideToUnlock onUnlock={handleUnlock} class="w-64 rounded-full">
+	<SlideToUnlockTrack>
+		<SlideToUnlockText>
+			{#snippet children({ isDragging })}
+				{isDragging ? "Release…" : "Slide to unlock"}
+			{/snippet}
+		</SlideToUnlockText>
+		<SlideToUnlockHandle class="rounded-full" />
+	</SlideToUnlockTrack>
+</SlideToUnlock>`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
+
+const examples: Example[] = [
+	{
+		name: "Basic",
+		description: "Run a callback when the handle reaches the end of the track.",
+		preview: BasicExample,
+		code: {
+			name: "basic.svelte",
+			code: BasicExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Custom prompt",
+		description: "Change the instruction while the handle is being dragged.",
+		preview: CustomPromptExample,
+		code: {
+			name: "custom-prompt.svelte",
+			code: CustomPromptExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Custom handle",
+		description: "Provide custom handle content, colors, and drag width.",
+		preview: CustomHandleExample,
+		code: {
+			name: "custom-handle.svelte",
+			code: CustomHandleExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Confirm action",
+		description: "Replace a one-time confirmation gesture with completion feedback.",
+		preview: ConfirmActionExample,
+		code: {
+			name: "confirm-action.svelte",
+			code: ConfirmActionExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Async action",
+		description: "Show processing and success states after the gesture completes.",
+		preview: AsyncActionExample,
+		code: {
+			name: "async-action.svelte",
+			code: AsyncActionExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Destructive confirmation",
+		description: "Add deliberate friction before a destructive action.",
+		preview: DestructiveConfirmationExample,
+		code: {
+			name: "destructive-confirmation.svelte",
+			code: DestructiveConfirmationExampleCode,
+			lang: "svelte"
+		}
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: ["motion-sv"],
@@ -77,6 +185,8 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
+	examples,
 	seo,
 	props: [
 		{
