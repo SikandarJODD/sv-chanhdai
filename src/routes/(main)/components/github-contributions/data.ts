@@ -15,7 +15,16 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
+import CompactGraphExample from "./examples/compact-graph.svelte";
+import CompactGraphExampleCode from "./examples/compact-graph.svelte?raw";
+import CustomDataExample from "./examples/custom-data.svelte";
+import CustomDataExampleCode from "./examples/custom-data.svelte?raw";
+import CustomThemeExample from "./examples/custom-theme.svelte";
+import CustomThemeExampleCode from "./examples/custom-theme.svelte?raw";
+import LocalizedLabelsExample from "./examples/localized-labels.svelte";
+import LocalizedLabelsExampleCode from "./examples/localized-labels.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -33,6 +42,52 @@ const seo: SEO = {
 		"Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link.",
 	keywords: ["Svelte", "Github Contributions", "Component"]
 };
+
+const examples: Example[] = [
+	{
+		name: "Custom theme",
+		description: "Apply a warm orange palette to every contribution level.",
+		preview: CustomThemeExample,
+		code: {
+			name: "custom-theme.svelte",
+			code: CustomThemeExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Localized labels",
+		description: "Translate month, total count, and legend labels.",
+		preview: LocalizedLabelsExample,
+		code: {
+			name: "localized-labels.svelte",
+			code: LocalizedLabelsExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Compact graph",
+		description:
+			"Hide month labels and use smaller blocks for tight layouts.",
+		preview: CompactGraphExample,
+		previewClass: "min-h-120",
+		code: {
+			name: "compact-graph.svelte",
+			code: CompactGraphExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Custom data",
+		description:
+			"Shape deterministic activity levels into a fading emerald wave.",
+		preview: CustomDataExample,
+		code: {
+			name: "custom-data.svelte",
+			code: CustomDataExampleCode,
+			lang: "svelte"
+		}
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: ["date-fns"],
@@ -103,6 +158,7 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	examples,
 	seo,
 	props: [
 		{
@@ -113,13 +169,15 @@ export const data: ComponentDoc = {
 					name: "username",
 					type: "string",
 					required: true,
-					description: "GitHub username whose recent contributions are displayed."
+					description:
+						"GitHub username whose recent contributions are displayed."
 				},
 				{
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the contribution graph."
+					description:
+						"Additional classes applied to the contribution graph."
 				}
 			]
 		},
@@ -161,7 +219,8 @@ export const data: ComponentDoc = {
 					name: "labels",
 					type: "Labels",
 					default: "undefined",
-					description: "Overrides for month, legend, and total-count labels."
+					description:
+						"Overrides for month, legend, and total-count labels."
 				},
 				{
 					name: "maxLevel",
@@ -173,19 +232,22 @@ export const data: ComponentDoc = {
 					name: "totalCount",
 					type: "number",
 					default: "sum of data counts",
-					description: "Optional total that replaces the value calculated from data."
+					description:
+						"Optional total that replaces the value calculated from data."
 				},
 				{
 					name: "weekStart",
 					type: "Day",
 					default: "0",
-					description: "Day of the week used to start each graph column."
+					description:
+						"Day of the week used to start each graph column."
 				},
 				{
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "Graph composition rendered within the shared context."
+					description:
+						"Graph composition rendered within the shared context."
 				},
 				{
 					name: "ref",
@@ -299,13 +361,15 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet<[{ totalCount: number; year: number }]>",
 					default: "undefined",
-					description: "Optional renderer receiving the total count and year."
+					description:
+						"Optional renderer receiving the total count and year."
 				},
 				{
 					name: "ref",
 					type: "HTMLDivElement | null",
 					default: "null",
-					description: "Bindable reference to the default total-count element."
+					description:
+						"Bindable reference to the default total-count element."
 				}
 			]
 		}
