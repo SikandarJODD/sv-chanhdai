@@ -40,15 +40,6 @@ const seo: SEO = {
 };
 
 const examples: Example[] = [
-	// {
-	// 	name: "Preview",
-	// 	preview: Preview,
-	// 	code: {
-	// 		name: "preview.svelte",
-	// 		code: PreviewCode,
-	// 		lang: "svelte"
-	// 	}
-	// },
 	{
 		name: "Basic async",
 		preview: BasicAsyncExample,
@@ -106,7 +97,7 @@ const examples: Example[] = [
 ];
 
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["@lucide/svelte", "motion-sv", "runed"],
 	install_code: [
 		{
 			name: "index.ts",

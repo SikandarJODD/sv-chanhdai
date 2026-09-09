@@ -6,12 +6,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "dot-grid-spotlight",
@@ -28,20 +25,8 @@ const seo: SEO = {
 	keywords: ["Svelte", "Dot Grid Spotlight", "Component"]
 };
 
-const examples: Example[] = [
-	// {
-	// 	name: "Demo",
-	// 	preview: DemoExample,
-	// 	code: {
-	// 		name: "demo-example.svelte",
-	// 		code: DemoExampleRaw,
-	// 		lang: "svelte",
-	// 	},
-	// },
-];
-
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["runed"],
 	install_code: [
 		{
 			name: "dot-grid-spotlight.svelte",
@@ -51,8 +36,7 @@ const install_block: InstallComponentDocs = {
 		},
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- dot-grid-spotlight/\n                |-- dot-grid-spotlight.svelte\n                `-- index.ts"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -65,7 +49,73 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "DotGridSpotlight",
+			desc: "Canvas dot grid with a pointer-driven spotlight.",
+			props: [
+				{
+					name: "dotColor",
+					type: "string",
+					default: "'rgba(255, 255, 255, 0.05)'",
+					description: "Color used for inactive dots."
+				},
+				{
+					name: "activeDotColor",
+					type: "string",
+					default: "'rgba(255, 255, 255, 0.1)'",
+					description: "Color used for dots illuminated by the pointer."
+				},
+				{
+					name: "spacing",
+					type: "number",
+					default: "10",
+					description: "Distance between dots in pixels."
+				},
+				{
+					name: "baseRadius",
+					type: "number",
+					default: "1",
+					description: "Radius of inactive dots in pixels."
+				},
+				{
+					name: "activeRadius",
+					type: "number",
+					default: "2",
+					description: "Radius of a dot at the center of the spotlight."
+				},
+				{
+					name: "interactionRadius",
+					type: "number",
+					default: "128",
+					description: "Radius of the pointer spotlight in pixels."
+				},
+				{
+					name: "activeMaxAlpha",
+					type: "number",
+					default: "1",
+					description: "Opacity applied at the center of the spotlight."
+				},
+				{
+					name: "activeMinAlpha",
+					type: "number",
+					default: "0.5",
+					description: "Opacity applied at the edge of the spotlight."
+				},
+				{
+					name: "ref",
+					type: "HTMLCanvasElement | null",
+					default: "null",
+					description: "Bindable reference to the canvas element."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the canvas."
+				}
+			]
+		}
+	]
 };

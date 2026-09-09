@@ -8,12 +8,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "elastic-slider",
@@ -30,20 +27,8 @@ const seo: SEO = {
 	keywords: ["Svelte", "Elastic Slider", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["motion-sv", "runed"],
 	install_code: [
 		{
 			name: "elastic-slider-state.svelte.ts",
@@ -63,8 +48,7 @@ const install_block: InstallComponentDocs = {
 		},
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- elastic-slider/\n                |-- elastic-slider-state.svelte.ts\n                |-- elastic-slider.svelte\n                |-- elastic-slider.utils.ts\n                `-- index.ts"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -77,7 +61,73 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "ElasticSlider",
+			desc: "Controlled or uncontrolled elastic value slider.",
+			props: [
+				{
+					name: "label",
+					type: "string",
+					required: true,
+					description: "Label displayed inside the slider track."
+				},
+				{
+					name: "value",
+					type: "number",
+					default: "undefined",
+					description: "Controlled slider value."
+				},
+				{
+					name: "defaultValue",
+					type: "number",
+					default: "min",
+					description: "Initial value when the slider is uncontrolled."
+				},
+				{
+					name: "onValueChange",
+					type: "(value: number) => void",
+					default: "undefined",
+					description: "Called after drag, click, or keyboard interaction changes the value."
+				},
+				{
+					name: "min",
+					type: "number",
+					default: "0",
+					description: "Minimum allowed value."
+				},
+				{
+					name: "max",
+					type: "number",
+					default: "1",
+					description: "Maximum allowed value."
+				},
+				{
+					name: "step",
+					type: "number",
+					default: "0.01",
+					description: "Increment used when snapping values."
+				},
+				{
+					name: "formatValue",
+					type: "(value: number) => string",
+					default: "undefined",
+					description: "Formats the value displayed in the track."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the outer slider element."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the slider."
+				}
+			]
+		}
+	]
 };

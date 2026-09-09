@@ -7,12 +7,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "icon-swap",
@@ -27,20 +24,8 @@ const seo: SEO = {
 	keywords: ["Svelte", "Icon Swap", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["motion-sv"],
 	install_code: [
 		{
 			name: "icon-swap-item.svelte",
@@ -51,8 +36,7 @@ const install_block: InstallComponentDocs = {
 		{ name: "icon-swap.svelte", code: IconSwapSvelteRaw, lang: "svelte" },
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- icon-swap/\n                |-- icon-swap-item.svelte\n                |-- icon-swap.svelte\n                `-- index.ts"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -65,7 +49,49 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "IconSwap",
+			desc: "AnimatePresence wrapper for swapping icon content.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "Keyed IconSwapItem content to animate between."
+				},
+				{
+					name: "mode",
+					type: "AnimatePresenceProps['mode']",
+					default: "'popLayout'",
+					description: "Controls how entering and exiting items are sequenced."
+				},
+				{
+					name: "initial",
+					type: "boolean",
+					default: "false",
+					description: "Whether content should animate on its initial render."
+				}
+			]
+		},
+		{
+			name: "IconSwapItem",
+			desc: "Motion element that defines the icon enter and exit transition.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "Icon content rendered inside the motion element."
+				},
+				{
+					name: "as",
+					type: "typeof motion.div | typeof motion.span",
+					default: "motion.div",
+					description: "Motion element used as the item wrapper."
+				}
+			]
+		}
+	]
 };

@@ -8,12 +8,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "share-menu",
@@ -30,20 +27,8 @@ const seo: SEO = {
 	keywords: ["Svelte", "Share Menu", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["@lucide/svelte", "svelte-sonner"],
 	install_code: [
 		{
 			name: "index.ts",
@@ -59,8 +44,7 @@ const install_block: InstallComponentDocs = {
 		{ name: "share-menu.svelte", code: ShareMenuSvelteRaw, lang: "svelte" },
 		{ name: "x-icon.svelte", code: XIconSvelteRaw, lang: "svelte" }
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- share-menu/\n                |-- index.ts\n                |-- linkedin-icon.svelte\n                |-- share-menu.svelte\n                `-- x-icon.svelte"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -73,7 +57,25 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "ShareMenu",
+			desc: "Menu for copying or sharing a URL through supported services.",
+			props: [
+				{
+					name: "title",
+					type: "string",
+					required: true,
+					description: "Title passed to the native share sheet."
+				},
+				{
+					name: "url",
+					type: "string",
+					required: true,
+					description: "URL to share; relative values are resolved against the current origin."
+				}
+			]
+		}
+	]
 };

@@ -7,42 +7,27 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "wheel-picker",
 	title: "Wheel Picker",
 	description:
-		"iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
+		"iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Wheel Picker",
 	description:
-		"iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.",
+		"iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support.",
 	keywords: ["Svelte", "Wheel Picker", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["runed"],
 	install_code: [
 		{
 			name: "index.ts",
@@ -61,8 +46,7 @@ const install_block: InstallComponentDocs = {
 			lang: "svelte"
 		}
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- wheel-picker/\n                |-- index.ts\n                |-- wheel-picker-wrapper.svelte\n                `-- wheel-picker.svelte"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -75,7 +59,103 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "WheelPicker",
+			desc: "Keyboard, pointer, touch, and wheel-controlled option picker.",
+			props: [
+				{
+					name: "options",
+					type: "WheelPickerOption<T>[]",
+					required: true,
+					description: "Values, labels, and disabled states available for selection."
+				},
+				{
+					name: "value",
+					type: "T",
+					default: "undefined",
+					description: "Bindable selected value."
+				},
+				{
+					name: "defaultValue",
+					type: "T",
+					default: "undefined",
+					description: "Initial selection when value is undefined."
+				},
+				{
+					name: "onValueChange",
+					type: "(value: T) => void",
+					default: "undefined",
+					description: "Called whenever interaction selects a different value."
+				},
+				{
+					name: "infinite",
+					type: "boolean",
+					default: "false",
+					description: "Repeats options to allow continuous looping."
+				},
+				{
+					name: "visibleCount",
+					type: "number",
+					default: "20",
+					description: "Number of wheel positions; must be a positive multiple of four."
+				},
+				{
+					name: "dragSensitivity",
+					type: "number",
+					default: "3",
+					description: "Multiplier applied to pointer and touch dragging."
+				},
+				{
+					name: "scrollSensitivity",
+					type: "number",
+					default: "5",
+					description: "Multiplier applied to wheel scrolling."
+				},
+				{
+					name: "optionItemHeight",
+					type: "number",
+					default: "30",
+					description: "Height of each option row in pixels."
+				},
+				{
+					name: "classes",
+					type: "WheelPickerClasses",
+					default: "undefined",
+					description: "Class overrides for optionItem, highlightWrapper, and highlightItem."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the picker element."
+				}
+			]
+		},
+		{
+			name: "WheelPickerWrapper",
+			desc: "Styled group container for one or more wheel pickers.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "WheelPicker components rendered inside the group."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the wrapper."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the wrapper element."
+				}
+			]
+		}
+	]
 };

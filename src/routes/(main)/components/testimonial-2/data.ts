@@ -6,12 +6,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "testimonial-2",
@@ -28,18 +25,6 @@ const seo: SEO = {
 	keywords: ["Svelte", "Testimonial 2", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
@@ -55,8 +40,7 @@ const install_block: InstallComponentDocs = {
 			lang: "svelte"
 		}
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- testimonial-2/\n                |-- index.ts\n                `-- testimonial-2.svelte"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -69,7 +53,43 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "Testimonial2",
+			desc: "Quote and author attribution with an external profile link.",
+			props: [
+				{
+					name: "authorName",
+					type: "string",
+					required: true,
+					description: "Full display name of the testimonial author."
+				},
+				{
+					name: "authorTagline",
+					type: "string",
+					required: true,
+					description: "Short title or description shown beside the author."
+				},
+				{
+					name: "url",
+					type: "string",
+					required: true,
+					description: "Link to the author's profile, website, or social page."
+				},
+				{
+					name: "quote",
+					type: "string",
+					required: true,
+					description: "Testimonial quote content."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the figure."
+				}
+			]
+		}
+	]
 };

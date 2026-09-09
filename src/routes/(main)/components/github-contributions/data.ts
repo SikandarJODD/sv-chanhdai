@@ -15,12 +15,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "github-contributions",
@@ -37,20 +34,8 @@ const seo: SEO = {
 	keywords: ["Svelte", "Github Contributions", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["date-fns"],
 	install_code: [
 		{
 			name: "contribution-graph-block.svelte",
@@ -105,8 +90,7 @@ const install_block: InstallComponentDocs = {
 		},
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- github-contributions/\n                |-- contribution-graph-block.svelte\n                |-- contribution-graph-calendar.svelte\n                |-- contribution-graph-context.svelte.ts\n                |-- contribution-graph-footer.svelte\n                |-- contribution-graph-legend.svelte\n                |-- contribution-graph-total-count.svelte\n                |-- contribution-graph-utils.ts\n                |-- contribution-graph.svelte\n                |-- github-contributions-fallback.svelte\n                |-- github-contributions.svelte\n                `-- index.ts"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -119,7 +103,211 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "GitHubContributions",
+			desc: "Ready-to-use contribution graph loaded from a GitHub username.",
+			props: [
+				{
+					name: "username",
+					type: "string",
+					required: true,
+					description: "GitHub username whose recent contributions are displayed."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the contribution graph."
+				}
+			]
+		},
+		{
+			name: "ContributionGraph",
+			desc: "Context provider and layout root for a custom contribution graph.",
+			props: [
+				{
+					name: "data",
+					type: "Activity[]",
+					required: true,
+					description: "Daily activity records rendered by the graph."
+				},
+				{
+					name: "blockMargin",
+					type: "number",
+					default: "4",
+					description: "Gap between contribution blocks in pixels."
+				},
+				{
+					name: "blockRadius",
+					type: "number",
+					default: "2",
+					description: "Corner radius of each contribution block."
+				},
+				{
+					name: "blockSize",
+					type: "number",
+					default: "12",
+					description: "Width and height of each contribution block."
+				},
+				{
+					name: "fontSize",
+					type: "number",
+					default: "14",
+					description: "Base graph label size in pixels."
+				},
+				{
+					name: "labels",
+					type: "Labels",
+					default: "undefined",
+					description: "Overrides for month, legend, and total-count labels."
+				},
+				{
+					name: "maxLevel",
+					type: "number",
+					default: "4",
+					description: "Highest contribution intensity level."
+				},
+				{
+					name: "totalCount",
+					type: "number",
+					default: "sum of data counts",
+					description: "Optional total that replaces the value calculated from data."
+				},
+				{
+					name: "weekStart",
+					type: "Day",
+					default: "0",
+					description: "Day of the week used to start each graph column."
+				},
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "Graph composition rendered within the shared context."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the graph root."
+				}
+			]
+		},
+		{
+			name: "ContributionGraphCalendar",
+			desc: "Scrollable SVG calendar that exposes each activity to a render snippet.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet<[{ activity: Activity; dayIndex: number; weekIndex: number }]>",
+					required: true,
+					description: "Renderer called for every activity block."
+				},
+				{
+					name: "hideMonthLabels",
+					type: "boolean",
+					default: "false",
+					description: "Hides the month labels above the calendar."
+				},
+				{
+					name: "title",
+					type: "string",
+					default: "'Contribution Graph'",
+					description: "Accessible title rendered inside the SVG."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the calendar container."
+				}
+			]
+		},
+		{
+			name: "ContributionGraphBlock",
+			desc: "A positioned contribution rectangle using the graph context.",
+			props: [
+				{
+					name: "activity",
+					type: "Activity",
+					required: true,
+					description: "Activity record represented by the block."
+				},
+				{
+					name: "dayIndex",
+					type: "number",
+					required: true,
+					description: "Row position within the week."
+				},
+				{
+					name: "weekIndex",
+					type: "number",
+					required: true,
+					description: "Column position within the year."
+				},
+				{
+					name: "ref",
+					type: "SVGRectElement | null",
+					default: "null",
+					description: "Bindable reference to the SVG rectangle."
+				}
+			]
+		},
+		{
+			name: "ContributionGraphFooter",
+			desc: "Footer layout for totals and the contribution legend.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "Footer content."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the footer element."
+				}
+			]
+		},
+		{
+			name: "ContributionGraphLegend",
+			desc: "Contribution intensity legend with optional custom level rendering.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet<[{ level: number }]>",
+					default: "undefined",
+					description: "Optional renderer for each legend level."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the legend element."
+				}
+			]
+		},
+		{
+			name: "ContributionGraphTotalCount",
+			desc: "Total contribution label with an optional custom renderer.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet<[{ totalCount: number; year: number }]>",
+					default: "undefined",
+					description: "Optional renderer receiving the total count and year."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the default total-count element."
+				}
+			]
+		}
+	]
 };

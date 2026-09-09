@@ -6,12 +6,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "testimonial-spotlight",
@@ -25,18 +22,6 @@ const seo: SEO = {
 	description: "Testimonial card with spotlight effect on hover.",
 	keywords: ["Svelte", "Testimonial Spotlight", "Component"]
 };
-
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
@@ -53,8 +38,7 @@ const install_block: InstallComponentDocs = {
 			lang: "svelte"
 		}
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- testimonial-spotlight/\n                |-- index.ts\n                `-- testimonial-spotlight.svelte"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -67,7 +51,31 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "TestimonialSpotlight",
+			desc: "Content container with a pointer-following radial spotlight.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "Content rendered inside the spotlight container."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the spotlight container."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the spotlight container."
+				}
+			]
+		}
+	]
 };

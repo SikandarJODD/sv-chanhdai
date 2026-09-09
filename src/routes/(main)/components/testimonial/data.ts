@@ -14,12 +14,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "testimonial",
@@ -35,18 +32,6 @@ const seo: SEO = {
 		"Display user feedback with author info, avatar, and verified badge.",
 	keywords: ["Svelte", "Testimonial", "Component"]
 };
-
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
@@ -103,8 +88,7 @@ const install_block: InstallComponentDocs = {
 			lang: "svelte"
 		}
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- testimonial/\n                |-- index.ts\n                |-- testimonial-author-name.svelte\n                |-- testimonial-author-tagline.svelte\n                |-- testimonial-author.svelte\n                |-- testimonial-avatar-img.svelte\n                |-- testimonial-avatar-ring.svelte\n                |-- testimonial-avatar.svelte\n                |-- testimonial-quote.svelte\n                |-- testimonial-verified-badge.svelte\n                `-- testimonial.svelte"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -117,7 +101,61 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "Testimonial layout components",
+			desc: "Shared API for Testimonial, Author, AuthorName, AuthorTagline, Avatar, AvatarRing, Quote, and VerifiedBadge.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					default: "undefined",
+					description: "Content rendered inside the selected testimonial primitive."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the primitive element."
+				},
+				{
+					name: "ref",
+					type: "HTMLElement | null",
+					default: "null",
+					description: "Bindable reference to the primitive's underlying element."
+				}
+			]
+		},
+		{
+			name: "TestimonialAvatarImg",
+			desc: "Image primitive used inside TestimonialAvatar.",
+			props: [
+				{
+					name: "src",
+					type: "string",
+					default: "undefined",
+					description: "Avatar image URL."
+				},
+				{
+					name: "alt",
+					type: "string",
+					default: "undefined",
+					description: "Accessible alternative text for the avatar."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the image."
+				},
+				{
+					name: "ref",
+					type: "HTMLImageElement | null",
+					default: "null",
+					description: "Bindable reference to the image element."
+				}
+			]
+		}
+	]
 };

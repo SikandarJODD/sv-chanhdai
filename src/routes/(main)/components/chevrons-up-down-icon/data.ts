@@ -6,12 +6,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "chevrons-up-down-icon",
@@ -28,20 +25,8 @@ const seo: SEO = {
 	keywords: ["Svelte", "Chevrons Up Down Icon", "Component"]
 };
 
-const examples: Example[] = [
-	// {
-	// 	name: "Demo",
-	// 	preview: DemoExample,
-	// 	code: {
-	// 		name: "demo-example.svelte",
-	// 		code: DemoExampleRaw,
-	// 		lang: "svelte",
-	// 	},
-	// },
-];
-
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["motion-sv"],
 	install_code: [
 		{
 			name: "chevrons-up-down-icon.svelte",
@@ -51,8 +36,7 @@ const install_block: InstallComponentDocs = {
 		},
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- chevrons-up-down-icon/\n                |-- chevrons-up-down-icon.svelte\n                `-- index.ts"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -65,7 +49,31 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "ChevronsUpDownIcon",
+			desc: "Animated SVG chevrons controlled through the component handle.",
+			props: [
+				{
+					name: "duration",
+					type: "number",
+					default: "0.3",
+					description: "Duration of the path morph animation in seconds."
+				},
+				{
+					name: "ref",
+					type: "SVGSVGElement | null",
+					default: "null",
+					description: "Bindable reference to the SVG element."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the SVG element."
+				}
+			]
+		}
+	]
 };

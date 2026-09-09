@@ -25,7 +25,7 @@ const seo: SEO = {
 };
 
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["@lucide/svelte", "svelte-sonner"],
 	install_code: [
 		{
 			name: "brand-assets-menu.svelte",

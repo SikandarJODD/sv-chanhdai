@@ -7,12 +7,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "middle-truncation",
@@ -27,20 +24,8 @@ const seo: SEO = {
 	keywords: ["Svelte", "Middle Truncation", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["runed"],
 	install_code: [
 		{
 			name: "index.ts",
@@ -59,8 +44,7 @@ const install_block: InstallComponentDocs = {
 			lang: "typescript"
 		}
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- middle-truncation/\n                |-- index.ts\n                |-- middle-truncation.svelte\n                `-- middle-truncation.ts"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -73,7 +57,43 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "MiddleTruncation",
+			desc: "Responsive middle truncation for a single line of text.",
+			props: [
+				{
+					name: "text",
+					type: "string",
+					required: true,
+					description: "Text content to truncate."
+				},
+				{
+					name: "ellipsis",
+					type: "string",
+					default: "'...'",
+					description: "Custom separator shown between the preserved text segments."
+				},
+				{
+					name: "end",
+					type: "number",
+					default: "undefined",
+					description: "Fixed number of characters preserved at the end; cannot be combined with minEnd."
+				},
+				{
+					name: "minEnd",
+					type: "number",
+					default: "undefined",
+					description: "Minimum trailing characters preserved during an even split; cannot be combined with end."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the wrapper span."
+				}
+			]
+		}
+	]
 };

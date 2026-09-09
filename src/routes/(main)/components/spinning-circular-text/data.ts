@@ -6,12 +6,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spinning-circular-text",
@@ -28,18 +25,6 @@ const seo: SEO = {
 	keywords: ["Svelte", "Spinning Circular Text", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
@@ -55,8 +40,7 @@ const install_block: InstallComponentDocs = {
 			lang: "svelte"
 		}
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- spinning-circular-text/\n                |-- index.ts\n                `-- spinning-circular-text.svelte"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -69,7 +53,55 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "SpinningCircularText",
+			desc: "Circular character layout with a continuously spinning ring.",
+			props: [
+				{
+					name: "text",
+					type: "string",
+					required: true,
+					description: "Text arranged around the circle."
+				},
+				{
+					name: "charSpacing",
+					type: "number",
+					default: "1",
+					description: "Spacing multiplier between characters."
+				},
+				{
+					name: "fontSize",
+					type: "string",
+					default: "'1rem'",
+					description: "CSS font size used for each character."
+				},
+				{
+					name: "spinClass",
+					type: "ClassValue",
+					default: "undefined",
+					description: "Classes applied to the spinning character ring."
+				},
+				{
+					name: "renderChar",
+					type: "Snippet<[{ char: string; index: number }]>",
+					default: "undefined",
+					description: "Custom renderer for each positioned character."
+				},
+				{
+					name: "class",
+					type: "ClassValue",
+					default: "undefined",
+					description: "Additional classes applied to the outer container."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the outer container."
+				}
+			]
+		}
+	]
 };

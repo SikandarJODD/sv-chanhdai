@@ -16,12 +16,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "timescale",
@@ -37,18 +34,6 @@ const seo: SEO = {
 		"Ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
 	keywords: ["Svelte", "Timescale", "Component"]
 };
-
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
@@ -111,8 +96,7 @@ const install_block: InstallComponentDocs = {
 		},
 		{ name: "timescale.svelte", code: TimescaleSvelteRaw, lang: "svelte" }
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- timescale/\n                |-- index.ts\n                |-- timescale-age.svelte\n                |-- timescale-content.svelte\n                |-- timescale-header.svelte\n                |-- timescale-intro-scroll.svelte\n                |-- timescale-item.svelte\n                |-- timescale-rail.svelte\n                |-- timescale-tick.svelte\n                |-- timescale-track.svelte\n                |-- timescale-viewport.svelte\n                |-- timescale-year.svelte\n                `-- timescale.svelte"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -125,7 +109,73 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "Timescale",
+			desc: "Root layout that sets the timeline orientation for its primitives.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "Timescale primitives rendered inside the root."
+				},
+				{
+					name: "orientation",
+					type: "'horizontal' | 'vertical'",
+					default: "'horizontal'",
+					description: "Direction used to lay out the timeline."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the root element."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the root element."
+				}
+			]
+		},
+		{
+			name: "TimescaleIntroScroll",
+			desc: "Wrapper that performs the initial horizontal scroll animation.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "Timescale content containing a viewport."
+				}
+			]
+		},
+		{
+			name: "Timescale layout primitives",
+			desc: "Shared API for Age, Content, Header, Item, Rail, Tick, Track, Viewport, and Year.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					default: "undefined",
+					description: "Content rendered inside the selected timescale primitive."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the primitive element."
+				},
+				{
+					name: "ref",
+					type: "HTMLElement | null",
+					default: "null",
+					description: "Bindable reference to the primitive's underlying element."
+				}
+			]
+		}
+	]
 };

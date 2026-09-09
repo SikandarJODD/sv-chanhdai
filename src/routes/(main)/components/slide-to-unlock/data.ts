@@ -10,12 +10,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "slide-to-unlock",
@@ -32,20 +29,8 @@ const seo: SEO = {
 	keywords: ["Svelte", "Slide To Unlock", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
-	packages: [],
+	packages: ["motion-sv"],
 	install_code: [
 		{
 			name: "index.ts",
@@ -79,8 +64,7 @@ const install_block: InstallComponentDocs = {
 			lang: "svelte"
 		}
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- slide-to-unlock/\n                |-- index.ts\n                |-- slide-to-unlock-context.ts\n                |-- slide-to-unlock-handle.svelte\n                |-- slide-to-unlock-text.svelte\n                |-- slide-to-unlock-track.svelte\n                `-- slide-to-unlock.svelte"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -93,7 +77,127 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "SlideToUnlock",
+			desc: "Root provider for the slide-to-unlock interaction.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "Track, text, and handle composition rendered inside the root."
+				},
+				{
+					name: "handleWidth",
+					type: "number",
+					default: "56",
+					description: "Width of the draggable handle in pixels."
+				},
+				{
+					name: "onUnlock",
+					type: "() => void",
+					default: "undefined",
+					description: "Called when the handle reaches the end of the track."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the root element."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the root element."
+				}
+			]
+		},
+		{
+			name: "SlideToUnlockTrack",
+			desc: "Track that supplies the drag constraint boundary.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					required: true,
+					description: "Text and handle content rendered inside the track."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the track element."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description: "Additional classes applied to the track."
+				}
+			]
+		},
+		{
+			name: "SlideToUnlockText",
+			desc: "Instruction text that fades with drag progress.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet<[{ isDragging: boolean }]>",
+					required: true,
+					description: "Text renderer receiving the current dragging state."
+				},
+				{
+					name: "style",
+					type: "MotionStyleProps",
+					default: "undefined",
+					description: "Additional Motion style values merged with the progress styles."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the text element."
+				},
+				{
+					name: "class",
+					type: "ClassValue",
+					default: "undefined",
+					description: "Additional classes applied to the text element."
+				}
+			]
+		},
+		{
+			name: "SlideToUnlockHandle",
+			desc: "Draggable handle with a built-in arrow fallback.",
+			props: [
+				{
+					name: "children",
+					type: "Snippet",
+					default: "default arrow",
+					description: "Optional custom content rendered inside the handle."
+				},
+				{
+					name: "style",
+					type: "MotionStyleProps",
+					default: "undefined",
+					description: "Additional Motion style values merged with the drag styles."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description: "Bindable reference to the handle element."
+				},
+				{
+					name: "class",
+					type: "ClassValue",
+					default: "undefined",
+					description: "Additional classes applied to the handle."
+				}
+			]
+		}
+	]
 };

@@ -6,12 +6,9 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "github-stars",
@@ -28,18 +25,6 @@ const seo: SEO = {
 	keywords: ["Svelte", "Github Stars", "Component"]
 };
 
-const examples: Example[] = [
-	{
-		name: "Demo",
-		preview: DemoExample,
-		code: {
-			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte"
-		}
-	}
-];
-
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
@@ -51,8 +36,7 @@ const install_block: InstallComponentDocs = {
 		},
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- github-stars/\n                |-- github-stars.svelte\n                `-- index.ts"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -65,7 +49,31 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "GithubStars",
+			desc: "GitHub repository link with compact and full star counts.",
+			props: [
+				{
+					name: "repo",
+					type: "string",
+					required: true,
+					description: "GitHub repository in owner/repo format."
+				},
+				{
+					name: "stargazersCount",
+					type: "number",
+					required: true,
+					description: "Number of stars to display."
+				},
+				{
+					name: "locales",
+					type: "Intl.LocalesArgument",
+					default: "'en-US'",
+					description: "Locale or locales used to format the star count."
+				}
+			]
+		}
+	]
 };
