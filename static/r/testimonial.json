@@ -1,0 +1,60 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "testimonial",
+	"title": "Testimonial",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "Composable primitives for building testimonial cards.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<figure\n\tbind:this={ref}\n\tdata-slot=\"testimonial\"\n\tclass={cn(\"flex h-full flex-col\", className)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</figure>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial/testimonial.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<!-- svelte-ignore a11y_figcaption_parent -->\n<figcaption\n\tbind:this={ref}\n\tdata-slot=\"testimonial-author\"\n\tclass={cn(\n\t\t\"grid grid-cols-[auto_1fr] grid-rows-2 items-center gap-x-3.5 px-4 pt-1 pb-3\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</figcaption>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial/testimonial-author.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"testimonial-author-name\"\n\tclass={cn(\n\t\t\"text-foreground flex items-center gap-1.5 text-sm leading-4.5 font-semibold\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial/testimonial-author-name.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"testimonial-author-tagline\"\n\tclass={cn(\n\t\t\"text-muted-foreground text-xs leading-4 text-balance\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial/testimonial-author-tagline.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"testimonial-avatar\"\n\tclass={cn(\"relative row-span-2 size-8 shrink-0\", className)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial/testimonial-avatar.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLImgAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\t...restProps\n\t}: WithElementRef<HTMLImgAttributes, HTMLImageElement> = $props();\n</script>\n\n<img\n\tbind:this={ref}\n\tdata-slot=\"testimonial-avatar-img\"\n\tclass={cn(\"size-8 rounded-full select-none\", className)}\n\t{...restProps}\n/>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial/testimonial-avatar-img.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"testimonial-avatar-ring\"\n\tclass={cn(\n\t\t\"pointer-events-none absolute inset-0 rounded-full inset-ring-1 inset-ring-black/10 dark:inset-ring-white/15\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial/testimonial-avatar-ring.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<blockquote\n\tbind:this={ref}\n\tdata-slot=\"testimonial-quote\"\n\tclass={cn(\n\t\t\"text-foreground grow px-4 py-3 text-base text-pretty\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</blockquote>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial/testimonial-quote.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLSpanElement>> = $props();\n</script>\n\n<span\n\tbind:this={ref}\n\tdata-slot=\"testimonial-verified-badge\"\n\tclass={cn(\n\t\t\"flex [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-3.5\",\n\t\tclassName\n\t)}\n\taria-hidden=\"true\"\n\t{...restProps}\n>\n\t{@render children?.()}\n</span>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial/testimonial-verified-badge.svelte"
+		},
+		{
+			"content": "import Testimonial from \"./testimonial.svelte\";\nimport TestimonialAuthor from \"./testimonial-author.svelte\";\nimport TestimonialAuthorName from \"./testimonial-author-name.svelte\";\nimport TestimonialAuthorTagline from \"./testimonial-author-tagline.svelte\";\nimport TestimonialAvatar from \"./testimonial-avatar.svelte\";\nimport TestimonialAvatarImg from \"./testimonial-avatar-img.svelte\";\nimport TestimonialAvatarRing from \"./testimonial-avatar-ring.svelte\";\nimport TestimonialQuote from \"./testimonial-quote.svelte\";\nimport TestimonialVerifiedBadge from \"./testimonial-verified-badge.svelte\";\n\nexport {\n\tTestimonial,\n\tTestimonialAuthor,\n\tTestimonialAuthorName,\n\tTestimonialAuthorTagline,\n\tTestimonialAvatar,\n\tTestimonialAvatarImg,\n\tTestimonialAvatarRing,\n\tTestimonialQuote,\n\tTestimonialVerifiedBadge\n};\n",
+			"type": "registry:file",
+			"target": "chan/testimonial/index.ts"
+		}
+	]
+}

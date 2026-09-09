@@ -1,0 +1,32 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "spinning-circular-text",
+	"title": "Spinning Circular Text",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "Text arranged in an animated circular ring.",
+	"css": {
+		"@keyframes spin-ccw": {
+			"to": {
+				"rotate": "-360deg"
+			}
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"--animate-spin-ccw": "spin-ccw var(--tw-animation-duration, var(--tw-duration, 6s)) linear infinite"
+		}
+	},
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Snippet } from \"svelte\";\n\timport type { ClassValue, HTMLAttributes } from \"svelte/elements\";\n\n\texport type SpinningCircularTextProps = Omit<\n\t\tHTMLAttributes<HTMLDivElement>,\n\t\t\"children\" | \"class\"\n\t> & {\n\t\ttext: string;\n\t\t/** Controls the distance between characters. @default 1 */\n\t\tcharSpacing?: number;\n\t\t/** Controls the size of each character. @default \"1rem\" */\n\t\tfontSize?: string;\n\t\t/** Classes applied to the spinning ring. */\n\t\tspinClass?: ClassValue;\n\t\t/** Custom content rendered inside each positioned character wrapper. */\n\t\trenderChar?: Snippet<[{ char: string; index: number }]>;\n\t\tclass?: ClassValue;\n\t\tref?: HTMLDivElement | null;\n\t};\n</script>\n\n<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\ttext,\n\t\tcharSpacing = 1,\n\t\tfontSize = \"1rem\",\n\t\tspinClass,\n\t\trenderChar,\n\t\tclass: className,\n\t\tstyle,\n\t\t...restProps\n\t}: SpinningCircularTextProps = $props();\n\n\tconst characters = $derived(text.split(\"\"));\n</script>\n\n<div\n\tbind:this={ref}\n\tclass={cn(\n\t\t\"grid size-(--sc-container-size) place-items-center font-mono font-medium uppercase select-none\",\n\t\tclassName\n\t)}\n\t{style}\n\tstyle:--sc-size={fontSize}\n\tstyle:--sc-char-count={characters.length}\n\tstyle:--sc-char-spacing={charSpacing}\n\tstyle:--sc-inner-angle=\"calc((360 / var(--sc-char-count)) * 1deg)\"\n\tstyle:--sc-radius-factor=\"calc(var(--sc-char-spacing)/sin(var(--sc-inner-angle)))\"\n\tstyle:--sc-radius=\"calc(var(--sc-radius-factor) * -1ch)\"\n\tstyle:--sc-container-size=\"calc(var(--sc-radius-factor) * var(--sc-size) *2)\"\n\t{...restProps}\n>\n\t<div\n\t\tclass={cn(\n\t\t\t\"relative animate-spin-ccw text-(size:--sc-size) leading-none\",\n\t\t\t\"*:absolute *:top-1/2 *:left-1/2 *:inline-block\",\n\t\t\t\"*:[--sc-char-rotate:calc(var(--sc-inner-angle)*var(--sc-char-index))]\",\n\t\t\t\"*:transform-[translate(-50%,-50%)_rotate(var(--sc-char-rotate))_translateY(var(--sc-radius))]\",\n\t\t\tspinClass\n\t\t)}\n\t\taria-hidden=\"true\"\n\t>\n\t\t{#each characters as char, index (index)}\n\t\t\t<span style:--sc-char-index={index}>\n\t\t\t\t{#if renderChar}\n\t\t\t\t\t{@render renderChar({ char, index })}\n\t\t\t\t{:else}\n\t\t\t\t\t{char}\n\t\t\t\t{/if}\n\t\t\t</span>\n\t\t{/each}\n\t</div>\n\t<span class=\"sr-only\">{text}</span>\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/spinning-circular-text/spinning-circular-text.svelte"
+		},
+		{
+			"content": "import SpinningCircularText from \"./spinning-circular-text.svelte\";\nexport { SpinningCircularText };\n",
+			"type": "registry:file",
+			"target": "chan/spinning-circular-text/index.ts"
+		}
+	]
+}

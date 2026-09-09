@@ -1,0 +1,22 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "chevrons-up-down-icon",
+	"title": "Chevrons Up Down Icon",
+	"type": "registry:block",
+	"description": "A simple chevrons up down icon component.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport { motion as motionNamespace } from \"motion-sv\";\n\timport type { ComponentProps } from \"svelte\";\n\n\texport type ChevronsUpDownIconHandle = {\n\t\tstartAnimation: () => void;\n\t\tstopAnimation: () => void;\n\t};\n\n\texport type ChevronsUpDownIconProps = ComponentProps<\n\t\ttypeof motionNamespace.svg\n\t> & {\n\t\t/** Duration of the path morph in seconds. @default 0.3 */\n\t\tduration?: number;\n\t\tref?: SVGSVGElement | null;\n\t};\n</script>\n\n<script lang=\"ts\">\n\timport { motion, useAnimationControls } from \"motion-sv\";\n\timport type { Variants } from \"motion-sv\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tduration = 0.3,\n\t\t...restProps\n\t}: ChevronsUpDownIconProps = $props();\n\n\tconst controls = useAnimationControls();\n\n\tconst lowerChevronVariants: Variants = {\n\t\tnormal: { d: \"M7 15L12 20L17 15\" },\n\t\tanimate: { d: \"M7 20L12 15L17 20\" }\n\t};\n\n\tconst upperChevronVariants: Variants = {\n\t\tnormal: { d: \"M7 9L12 4L17 9\" },\n\t\tanimate: { d: \"M7 4L12 9L17 4\" }\n\t};\n\n\texport function startAnimation(): void {\n\t\tvoid controls.start(\"animate\");\n\t}\n\n\texport function stopAnimation(): void {\n\t\tvoid controls.start(\"normal\");\n\t}\n</script>\n\n<!-- \txmlns=\"http://www.w3.org/2000/svg\", aria-hidden=\"true\" -->\n<motion.svg\n\tbind:ref\n\twidth=\"24\"\n\theight=\"24\"\n\tviewBox=\"0 0 24 24\"\n\tfill=\"none\"\n\tstroke=\"currentColor\"\n\tstroke-width=\"2\"\n\tstroke-linecap=\"round\"\n\tstroke-linejoin=\"round\"\n\t{...restProps}\n>\n\t<motion.path\n\t\td=\"M7 15L12 20L17 15\"\n\t\tvariants={lowerChevronVariants}\n\t\tinitial=\"normal\"\n\t\tanimate={controls}\n\t\ttransition={{ duration }}\n\t/>\n\t<motion.path\n\t\td=\"M7 9L12 4L17 9\"\n\t\tvariants={upperChevronVariants}\n\t\tinitial=\"normal\"\n\t\tanimate={controls}\n\t\ttransition={{ duration }}\n\t/>\n</motion.svg>\n",
+			"type": "registry:component",
+			"target": "chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte"
+		},
+		{
+			"content": "import ChevronsUpDownIcon from \"./chevrons-up-down-icon.svelte\";\n\nexport { ChevronsUpDownIcon };\nexport type {\n\tChevronsUpDownIconHandle,\n\tChevronsUpDownIconProps\n} from \"./chevrons-up-down-icon.svelte\";\n",
+			"type": "registry:file",
+			"target": "chan/chevrons-up-down-icon/index.ts"
+		}
+	]
+}

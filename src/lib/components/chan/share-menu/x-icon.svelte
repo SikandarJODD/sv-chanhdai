@@ -1,0 +1,12 @@
+<script lang="ts">
+	import type { SVGAttributes } from "svelte/elements";
+
+	let { ...props }: SVGAttributes<SVGSVGElement> = $props();
+</script>
+
+<svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+	<path
+		d="m22.991 23-8.533-12.612L22.42 1h-2.77l-6.422 7.575L8.105 1H1.123l8.225 12.158L1 23h2.77l6.81-8.03L16.015 23H23zM7.193 2.769l12.49 18.462h-2.76L4.43 2.769z"
+		fill="currentColor"
+	/>
+</svg>

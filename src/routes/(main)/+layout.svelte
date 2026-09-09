@@ -7,6 +7,7 @@
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import AppSidebar from "$lib/components/docs/layout/all-sidebar/app-sidebar.svelte";
 	import ContributeCard from "$lib/components/docs/base/main/contribute-card.svelte";
+	import SupportWork from "$lib/components/docs/base/main/support-work.svelte";
 
 	let { children } = $props();
 
@@ -49,14 +50,17 @@
 		</main>
 
 		<aside class="sticky top-21 hidden w-56 shrink-0 xl:block">
-			<div class="flex max-h-[calc(100vh-7rem)] min-h-0 flex-col">
-				<div>
+			<div class="flex h-[calc(100vh-7rem)] min-h-0 flex-col">
+				<div class="shrink-0">
 					<h2 class="mb-2 text-sm font-medium">On this page</h2>
 				</div>
-				<div class="min-h-0 flex-1 overflow-y-auto pr-2">
+				<div class="min-h-0 overflow-y-auto pr-2">
 					<Toc toc={toc.current}></Toc>
 				</div>
-				<ContributeCard class="mt-auto" />
+				<ContributeCard class="shrink-0" />
+				<div class="mt-auto shrink-0">
+					<SupportWork />
+				</div>
 			</div>
 		</aside>
 	</div>

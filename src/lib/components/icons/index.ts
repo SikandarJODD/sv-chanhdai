@@ -8,21 +8,23 @@ import Terminal from "./terminal.svelte";
 import Code from "./code.svelte";
 import MCP from "./mcp.svelte";
 import Markdown from "./markdown.svelte";
+import Dollar from "./dollar-icon.svelte";
 
 export interface Props extends HTMLAttributes<SVGElement> {
-  class?: string;
-  width?: number;
-  height?: number;
+	class?: string;
+	width?: number;
+	height?: number;
 }
 
 export {
-  GitHub,
-  CSS,
-  TypeScript,
-  Twitter,
-  Svelte,
-  Terminal,
-  Code as CodeIcon,
-  MCP,
-  Markdown,
+	GitHub,
+	CSS,
+	TypeScript,
+	Twitter,
+	Svelte,
+	Terminal,
+	Code as CodeIcon,
+	MCP,
+	Markdown,
+	Dollar as DollarIcon
 };

@@ -1,0 +1,20 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "testimonial-2",
+	"title": "Testimonial 2",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "A compact testimonial quote with linked author attribution.",
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\n\ttype Testimonial2Props = {\n\t\t/** Full display name of the person giving the testimonial. */\n\t\tauthorName: string;\n\t\t/** Short tagline, title, or description of the person. */\n\t\tauthorTagline: string;\n\t\t/** Link to the person's profile, website, or social media page. */\n\t\turl: string;\n\t\t/** The testimonial text content or recommendation message. */\n\t\tquote: string;\n\t\t/** Additional CSS classes to apply to the testimonial container. */\n\t\tclass?: string;\n\t};\n\n\tlet {\n\t\tauthorName,\n\t\tauthorTagline,\n\t\turl,\n\t\tquote,\n\t\tclass: className\n\t}: Testimonial2Props = $props();\n</script>\n\n<figure class={cn(\"relative flex flex-col gap-6 pl-3\", className)}>\n\t<blockquote\n\t\tclass=\"relative block w-full font-serif text-xl text-foreground md:w-lg md:text-2xl\"\n\t>\n\t\t<span\n\t\t\tclass=\"absolute -left-3 text-muted-foreground select-none\"\n\t\t\taria-hidden=\"true\"\n\t\t>\n\t\t\t“\n\t\t</span>\n\t\t<p class=\"inline text-pretty\">{quote}</p>\n\t\t<span\n\t\t\tclass=\"absolute translate-x-0.5 text-muted-foreground select-none\"\n\t\t\taria-hidden=\"true\"\n\t\t>\n\t\t\t”\n\t\t</span>\n\t</blockquote>\n\n\t<figcaption class=\"ml-auto flex w-full items-center gap-2 md:w-1/2\">\n\t\t<div class=\"hidden h-px grow translate-y-px bg-border md:block\"></div>\n\n\t\t<div class=\"flex flex-col md:ml-auto md:text-right\">\n\t\t\t<span class=\"text-sm leading-none font-medium\">\n\t\t\t\t<a href={url} target=\"_blank\" rel=\"noopener\">\n\t\t\t\t\t<span class=\"absolute inset-0\" aria-hidden=\"true\"></span>\n\t\t\t\t\t{authorName}\n\t\t\t\t</a>\n\t\t\t\t<span\n\t\t\t\t\tclass=\"mt-1 block text-muted-foreground md:mt-0 md:inline\"\n\t\t\t\t>\n\t\t\t\t\t<span class=\"hidden text-foreground md:inline\">, </span>\n\t\t\t\t\t{authorTagline}\n\t\t\t\t</span>\n\t\t\t</span>\n\t\t</div>\n\t</figcaption>\n</figure>\n",
+			"type": "registry:component",
+			"target": "chan/testimonial-2/testimonial-2.svelte"
+		},
+		{
+			"content": "import Testimonial2 from \"./testimonial-2.svelte\";\nexport { Testimonial2 };\n",
+			"type": "registry:file",
+			"target": "chan/testimonial-2/index.ts"
+		}
+	]
+}

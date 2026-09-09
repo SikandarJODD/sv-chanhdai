@@ -7,7 +7,7 @@ function printSingleUsage() {
 
 Examples:
   pnpm create:route backlight
-  pnpm create:route dialog-doc --source ui/dialog --export Root
+  pnpm create:route dialog-doc --source ui/dialog --export Dialog
 `);
 }
 

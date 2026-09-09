@@ -1,8 +1,10 @@
-<!-- Main File --><script lang="ts" module>
+<!-- Main File -->
+<script lang="ts" module>
 	import type { Component } from "svelte";
 	import type { SEO } from "$lib/types/seo";
 	import type { Example } from "$lib/types/example";
 	import type { PropsTable } from "$lib/types/structure";
+	import type { CodeBlock } from "$lib/types/code";
 
 	export type ComponentDocPageProps = {
 		id: string;
@@ -16,6 +18,7 @@
 		installPackages?: string[];
 		installFolderStructure?: string;
 		installTailwindCode?: CodeBlock;
+		usage?: CodeBlock[];
 		examples?: Example[];
 		propsTables?: PropsTable[];
 		descriptionClass?: string;
@@ -25,12 +28,12 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import { H1, H2, Paragraph, H3 } from "$markdown";
-	import type { CodeBlock } from "$lib/types/code";
 	import PackageBadges from "./package-badges.svelte";
 	import InstallComponent from "./install-component.svelte";
 	import ApiTable from "../api-table/api-table.svelte";
 	import Seo from "./seo.svelte";
 	import { PreviewComponent } from "$lib/components/ui/preview-component";
+	import FrameSingle from "$lib/components/ui/code/frame-single.svelte";
 	import CopyPageDropdown from "./copy-page-dropdown.svelte";
 
 	let {
@@ -45,15 +48,14 @@
 		installPackages = [],
 		installFolderStructure,
 		installTailwindCode,
+		usage = [],
 		examples = [],
 		propsTables = [],
-		descriptionClass = "",
+		descriptionClass = ""
 	}: ComponentDocPageProps = $props();
 
 	let PreviewComp = $derived(preview);
-	let installUrl = $derived(
-		`${page.url.origin}/r/${id}.json`
-	);
+	let installUrl = $derived(`${page.url.origin}/r/${id}.json`);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -99,6 +101,17 @@
 			class="mt-4"
 		/>
 	</section>
+
+	{#if usage.length > 0}
+		<section>
+			<H2 id="usage">Usage</H2>
+			<div class="mt-4 space-y-4">
+				{#each usage as code}
+					<FrameSingle {code} faded={false} />
+				{/each}
+			</div>
+		</section>
+	{/if}
 
 	{#if examples.length > 0}
 		<section>

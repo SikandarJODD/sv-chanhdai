@@ -1,0 +1,73 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "timescale",
+	"title": "Timescale",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "Composable horizontal and vertical timeline primitives.",
+	"registryDependencies": [
+		"./scroll-fade-effect.json"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Snippet } from \"svelte\";\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport type { WithElementRef } from \"$UTILS$\";\n\n\texport type TimescaleRootProps = Omit<\n\t\tWithElementRef<HTMLAttributes<HTMLDivElement>>,\n\t\t\"children\"\n\t> & {\n\t\tchildren: Snippet;\n\t\torientation?: \"horizontal\" | \"vertical\";\n\t};\n</script>\n\n<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tchildren,\n\t\tclass: className,\n\t\torientation = \"horizontal\",\n\t\t...restProps\n\t}: TimescaleRootProps = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"timescale-root\"\n\tdata-orientation={orientation}\n\tclass={cn(\n\t\t\"group/timescale relative flex w-full [--timescale-rail:--spacing(14)]\",\n\t\t\"data-[orientation=vertical]:flex-col\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLParagraphElement>> = $props();\n</script>\n\n<p\n\tbind:this={ref}\n\tdata-slot=\"timescale-age\"\n\tclass={cn(\n\t\t\"text-muted-foreground text-xs leading-5 font-medium tabular-nums\",\n\t\t\"in-data-[slot=timescale-header]:tracking-widest in-data-[slot=timescale-header]:uppercase\",\n\t\t\"group-data-[orientation=vertical]/timescale:col-start-1 group-data-[orientation=vertical]/timescale:row-start-1 group-data-[orientation=vertical]/timescale:pr-4 group-data-[orientation=vertical]/timescale:text-right\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</p>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-age.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"timescale-content\"\n\tclass={cn(\n\t\t\"w-full py-4 text-left\",\n\t\t\"group-data-[orientation=horizontal]/timescale:mt-4\",\n\t\t\"group-data-[orientation=vertical]/timescale:col-start-2 group-data-[orientation=vertical]/timescale:row-start-2\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-content.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"timescale-header\"\n\taria-hidden=\"true\"\n\tclass={cn(\n\t\t\"z-10\",\n\t\t\"group-data-[orientation=horizontal]/timescale:from-background group-data-[orientation=horizontal]/timescale:absolute group-data-[orientation=horizontal]/timescale:top-0 group-data-[orientation=horizontal]/timescale:left-0 group-data-[orientation=horizontal]/timescale:w-20 group-data-[orientation=horizontal]/timescale:shrink-0 group-data-[orientation=horizontal]/timescale:bg-linear-to-r group-data-[orientation=horizontal]/timescale:from-75% group-data-[orientation=horizontal]/timescale:to-transparent group-data-[orientation=horizontal]/timescale:pr-4 group-data-[orientation=horizontal]/timescale:text-right\",\n\t\t\"group-data-[orientation=vertical]/timescale:bg-background group-data-[orientation=vertical]/timescale:grid group-data-[orientation=vertical]/timescale:w-full group-data-[orientation=vertical]/timescale:grid-cols-[var(--timescale-rail)_1fr] group-data-[orientation=vertical]/timescale:gap-x-4\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-header.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Snippet } from \"svelte\";\n\n\texport type TimescaleIntroScrollProps = {\n\t\tchildren: Snippet;\n\t};\n</script>\n\n<script lang=\"ts\">\n\tconst INTRO_SCROLL_START_HOLD = 200;\n\n\tlet { children }: TimescaleIntroScrollProps = $props();\n\tlet ref = $state<HTMLDivElement | null>(null);\n\n\t$effect(() => {\n\t\tconst viewport = ref?.querySelector<HTMLElement>(\n\t\t\t'[data-slot=\"timescale-viewport\"]'\n\t\t);\n\t\tif (!viewport) return;\n\n\t\tconst distance = viewport.scrollWidth - viewport.clientWidth;\n\t\tif (distance <= 0) return;\n\n\t\tif (window.matchMedia(\"(prefers-reduced-motion: reduce)\").matches) {\n\t\t\tviewport.scrollLeft = distance;\n\t\t\treturn;\n\t\t}\n\n\t\tconst timer = window.setTimeout(() => {\n\t\t\tviewport.scrollTo({ left: distance, behavior: \"smooth\" });\n\t\t}, INTRO_SCROLL_START_HOLD);\n\n\t\treturn () => window.clearTimeout(timer);\n\t});\n</script>\n\n<div bind:this={ref} class=\"contents\">\n\t{@render children()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-intro-scroll.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"timescale-item\"\n\tclass={cn(\n\t\t\"relative\",\n\t\t\"group-data-[orientation=horizontal]/timescale:w-20 group-data-[orientation=horizontal]/timescale:shrink-0 group-data-[orientation=horizontal]/timescale:not-last:pr-4 group-data-[orientation=horizontal]/timescale:has-data-[slot=timescale-content]:w-80\",\n\t\t\"group-data-[orientation=vertical]/timescale:grid group-data-[orientation=vertical]/timescale:w-full group-data-[orientation=vertical]/timescale:grid-cols-[var(--timescale-rail)_1fr] group-data-[orientation=vertical]/timescale:gap-x-4 group-data-[orientation=vertical]/timescale:not-last:pb-4\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-item.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"timescale-rail\"\n\taria-hidden=\"true\"\n\tclass={cn(\n\t\t\"pointer-events-none absolute border-dashed\",\n\t\t\"group-data-[orientation=horizontal]/timescale:inset-x-0 group-data-[orientation=horizontal]/timescale:top-(--timescale-rail) group-data-[orientation=horizontal]/timescale:h-px group-data-[orientation=horizontal]/timescale:border-t\",\n\t\t\"group-data-[orientation=vertical]/timescale:inset-y-0 group-data-[orientation=vertical]/timescale:left-(--timescale-rail) group-data-[orientation=vertical]/timescale:w-px group-data-[orientation=vertical]/timescale:border-l\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-rail.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLSpanElement>> = $props();\n</script>\n\n<span\n\tbind:this={ref}\n\tdata-slot=\"timescale-tick\"\n\taria-hidden=\"true\"\n\tclass={cn(\n\t\t\"bg-border absolute z-10\",\n\t\t\"group-data-[orientation=horizontal]/timescale:top-(--timescale-rail) group-data-[orientation=horizontal]/timescale:left-0 group-data-[orientation=horizontal]/timescale:h-3 group-data-[orientation=horizontal]/timescale:w-px group-data-[orientation=horizontal]/timescale:-translate-y-1/2\",\n\t\t\"group-data-[orientation=vertical]/timescale:top-2.5 group-data-[orientation=vertical]/timescale:left-(--timescale-rail) group-data-[orientation=vertical]/timescale:h-px group-data-[orientation=vertical]/timescale:w-3 group-data-[orientation=vertical]/timescale:-translate-x-1/2\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</span>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-tick.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"timescale-track\"\n\tclass={cn(\n\t\t\"relative flex\",\n\t\t\"group-data-[orientation=horizontal]/timescale:w-max group-data-[orientation=horizontal]/timescale:items-start\",\n\t\t\"group-data-[orientation=vertical]/timescale:w-full group-data-[orientation=vertical]/timescale:flex-col group-data-[orientation=vertical]/timescale:pt-4\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-track.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"timescale-viewport\"\n\tclass={cn(\n\t\t\"no-scrollbar w-full\",\n\t\t\"group-data-[orientation=horizontal]/timescale:scroll-fade-effect-x group-data-[orientation=horizontal]/timescale:flex group-data-[orientation=horizontal]/timescale:flex-1 group-data-[orientation=horizontal]/timescale:overflow-x-auto group-data-[orientation=horizontal]/timescale:overscroll-x-contain group-data-[orientation=horizontal]/timescale:pl-20\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-viewport.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLParagraphElement>> = $props();\n</script>\n\n<p\n\tbind:this={ref}\n\tdata-slot=\"timescale-year\"\n\tclass={cn(\n\t\t\"text-muted-foreground text-xs leading-5 font-medium tabular-nums\",\n\t\t\"in-data-[slot=timescale-header]:tracking-widest in-data-[slot=timescale-header]:uppercase\",\n\t\t\"group-data-[orientation=vertical]/timescale:col-start-2 group-data-[orientation=vertical]/timescale:row-start-1\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</p>\n",
+			"type": "registry:component",
+			"target": "chan/timescale/timescale-year.svelte"
+		},
+		{
+			"content": "import Timescale from \"./timescale.svelte\";\nimport TimescaleAge from \"./timescale-age.svelte\";\nimport TimescaleContent from \"./timescale-content.svelte\";\nimport TimescaleHeader from \"./timescale-header.svelte\";\nimport TimescaleIntroScroll from \"./timescale-intro-scroll.svelte\";\nimport TimescaleItem from \"./timescale-item.svelte\";\nimport TimescaleRail from \"./timescale-rail.svelte\";\nimport TimescaleTick from \"./timescale-tick.svelte\";\nimport TimescaleTrack from \"./timescale-track.svelte\";\nimport TimescaleViewport from \"./timescale-viewport.svelte\";\nimport TimescaleYear from \"./timescale-year.svelte\";\n\nexport {\n\tTimescale,\n\tTimescaleAge,\n\tTimescaleContent,\n\tTimescaleHeader,\n\tTimescaleIntroScroll,\n\tTimescaleItem,\n\tTimescaleRail,\n\tTimescaleTick,\n\tTimescaleTrack,\n\tTimescaleViewport,\n\tTimescaleYear,\n\tTimescale as TimescaleRoot\n};\n",
+			"type": "registry:file",
+			"target": "chan/timescale/index.ts"
+		}
+	]
+}

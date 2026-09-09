@@ -1,0 +1,270 @@
+[
+	{
+		"name": "apple-hello-effect",
+		"title": "Apple Hello Effect",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A simple apple hello effect component.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "apple-hello-effect.json"
+	},
+	{
+		"name": "brand-assets-menu",
+		"title": "Brand Assets Menu",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A simple brand assets menu component.",
+		"dependencies": [
+			"motion-sv",
+			"svelte-sonner",
+			"@lucide/svelte"
+		],
+		"registryDependencies": [
+			"context-menu"
+		],
+		"relativeUrl": "brand-assets-menu.json"
+	},
+	{
+		"name": "chevrons-up-down-icon",
+		"title": "Chevrons Up Down Icon",
+		"type": "registry:block",
+		"description": "A simple chevrons up down icon component.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "chevrons-up-down-icon.json"
+	},
+	{
+		"name": "scroll-fade-effect",
+		"title": "Scroll Fade Effect",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A scrollable container with configurable edge fade effects.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "scroll-fade-effect.json"
+	},
+	{
+		"name": "testimonial-2",
+		"title": "Testimonial 2",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A compact testimonial quote with linked author attribution.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "testimonial-2.json"
+	},
+	{
+		"name": "testimonial-spotlight",
+		"title": "Testimonial Spotlight",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A testimonial container with a cursor-following spotlight effect.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "testimonial-spotlight.json"
+	},
+	{
+		"name": "spinning-circular-text",
+		"title": "Spinning Circular Text",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Text arranged in an animated circular ring.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "spinning-circular-text.json"
+	},
+	{
+		"name": "github-stars",
+		"title": "GitHub Stars",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A tooltip-enabled button displaying a GitHub repository's star count.",
+		"dependencies": [],
+		"registryDependencies": [
+			"button",
+			"tooltip"
+		],
+		"relativeUrl": "github-stars.json"
+	},
+	{
+		"name": "shimmering-text",
+		"title": "Shimmering Text",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An animated text component with configurable shimmer timing.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "shimmering-text.json"
+	},
+	{
+		"name": "dot-grid-spotlight",
+		"title": "Dot Grid Spotlight",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An interactive canvas dot grid spotlight that responds to the cursor.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "dot-grid-spotlight.json"
+	},
+	{
+		"name": "glow-card-grid",
+		"title": "Glow Card Grid",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An interactive card grid with pointer-responsive glow effects.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "glow-card-grid.json"
+	},
+	{
+		"name": "icon-swap",
+		"title": "Icon Swap",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Animated primitives for smoothly swapping icon content.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "icon-swap.json"
+	},
+	{
+		"name": "middle-truncation",
+		"title": "Middle Truncation",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Responsive text truncation that preserves content at both ends.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "middle-truncation.json"
+	},
+	{
+		"name": "status-button",
+		"title": "Status Button",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An async button with animated loading, success, and failure states.",
+		"dependencies": [
+			"@lucide/svelte",
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [
+			"button"
+		],
+		"relativeUrl": "status-button.json"
+	},
+	{
+		"name": "share-menu",
+		"title": "Share Menu",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A dropdown menu for copying and sharing links on social platforms.",
+		"dependencies": [
+			"@lucide/svelte",
+			"svelte-sonner"
+		],
+		"registryDependencies": [
+			"button",
+			"dropdown-menu"
+		],
+		"relativeUrl": "share-menu.json"
+	},
+	{
+		"name": "elastic-slider",
+		"title": "Elastic Slider",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An accessible animated slider with elastic edge feedback.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "elastic-slider.json"
+	},
+	{
+		"name": "slide-to-unlock",
+		"title": "Slide to Unlock",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A compound drag-to-confirm control with animated feedback.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "slide-to-unlock.json"
+	},
+	{
+		"name": "github-contributions",
+		"title": "GitHub Contributions",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A responsive GitHub contribution graph with tooltips, totals, and a legend.",
+		"dependencies": [
+			"date-fns"
+		],
+		"registryDependencies": [
+			"tooltip",
+			"spinner"
+		],
+		"relativeUrl": "github-contributions.json"
+	},
+	{
+		"name": "testimonial",
+		"title": "Testimonial",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Composable primitives for building testimonial cards.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "testimonial.json"
+	},
+	{
+		"name": "timescale",
+		"title": "Timescale",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Composable horizontal and vertical timeline primitives.",
+		"dependencies": [],
+		"registryDependencies": [
+			"local:scroll-fade-effect"
+		],
+		"relativeUrl": "timescale.json"
+	},
+	{
+		"name": "svelte-wheel-picker",
+		"title": "Svelte Wheel Picker",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An accessible, headless wheel picker with drag, wheel, keyboard, and typeahead interactions.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "svelte-wheel-picker.json"
+	},
+	{
+		"name": "wheel-picker",
+		"title": "Wheel Picker",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A styled wheel picker built on the headless Svelte wheel picker primitives.",
+		"dependencies": [],
+		"registryDependencies": [
+			"local:svelte-wheel-picker"
+		],
+		"relativeUrl": "wheel-picker.json"
+	}
+]
