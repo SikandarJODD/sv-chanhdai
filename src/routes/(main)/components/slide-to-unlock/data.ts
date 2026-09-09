@@ -8,7 +8,7 @@ import SlideToUnlockSvelteRaw from "$lib/components/chan/slide-to-unlock/slide-t
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -20,14 +20,16 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "slide-to-unlock",
 	title: "Slide To Unlock",
-	description: "TODO: Add a concise description for Slide To Unlock.",
-	category: "chan",
+	description:
+		"Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Slide To Unlock",
-	description: "TODO: Add an SEO description for Slide To Unlock.",
-	keywords: ["Svelte", "Slide To Unlock", "Component"],
+	description:
+		"Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
+	keywords: ["Svelte", "Slide To Unlock", "Component"]
 };
 
 const examples: Example[] = [
@@ -37,22 +39,48 @@ const examples: Example[] = [
 		code: {
 			name: "demo-example.svelte",
 			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+			lang: "svelte"
+		}
+	}
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "slide-to-unlock-context.ts", code: SlideToUnlockContextTsRaw, lang: "typescript", },
-		{ name: "slide-to-unlock-handle.svelte", code: SlideToUnlockHandleSvelteRaw, lang: "svelte", },
-		{ name: "slide-to-unlock-text.svelte", code: SlideToUnlockTextSvelteRaw, lang: "svelte", },
-		{ name: "slide-to-unlock-track.svelte", code: SlideToUnlockTrackSvelteRaw, lang: "svelte", },
-		{ name: "slide-to-unlock.svelte", code: SlideToUnlockSvelteRaw, lang: "svelte", }
+		{
+			name: "index.ts",
+			code: IndexTsRaw,
+			lang: "typescript",
+			isExpand: true
+		},
+		{
+			name: "slide-to-unlock-context.ts",
+			code: SlideToUnlockContextTsRaw,
+			lang: "typescript"
+		},
+		{
+			name: "slide-to-unlock-handle.svelte",
+			code: SlideToUnlockHandleSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "slide-to-unlock-text.svelte",
+			code: SlideToUnlockTextSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "slide-to-unlock-track.svelte",
+			code: SlideToUnlockTrackSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "slide-to-unlock.svelte",
+			code: SlideToUnlockSvelteRaw,
+			lang: "svelte"
+		}
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- slide-to-unlock/\n                |-- index.ts\n                |-- slide-to-unlock-context.ts\n                |-- slide-to-unlock-handle.svelte\n                |-- slide-to-unlock-text.svelte\n                |-- slide-to-unlock-track.svelte\n                `-- slide-to-unlock.svelte",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- slide-to-unlock/\n                |-- index.ts\n                |-- slide-to-unlock-context.ts\n                |-- slide-to-unlock-handle.svelte\n                |-- slide-to-unlock-text.svelte\n                |-- slide-to-unlock-track.svelte\n                `-- slide-to-unlock.svelte"
 };
 
 export const data: ComponentDoc = {
@@ -62,10 +90,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };

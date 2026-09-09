@@ -12,7 +12,7 @@ import TestimonialSvelteRaw from "$lib/components/chan/testimonial/testimonial.s
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -24,14 +24,16 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "testimonial",
 	title: "Testimonial",
-	description: "TODO: Add a concise description for Testimonial.",
-	category: "chan",
+	description:
+		"Display user feedback with author info, avatar, and verified badge.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Testimonial",
-	description: "TODO: Add an SEO description for Testimonial.",
-	keywords: ["Svelte", "Testimonial", "Component"],
+	description:
+		"Display user feedback with author info, avatar, and verified badge.",
+	keywords: ["Svelte", "Testimonial", "Component"]
 };
 
 const examples: Example[] = [
@@ -41,26 +43,68 @@ const examples: Example[] = [
 		code: {
 			name: "demo-example.svelte",
 			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+			lang: "svelte"
+		}
+	}
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "testimonial-author-name.svelte", code: TestimonialAuthorNameSvelteRaw, lang: "svelte", },
-		{ name: "testimonial-author-tagline.svelte", code: TestimonialAuthorTaglineSvelteRaw, lang: "svelte", },
-		{ name: "testimonial-author.svelte", code: TestimonialAuthorSvelteRaw, lang: "svelte", },
-		{ name: "testimonial-avatar-img.svelte", code: TestimonialAvatarImgSvelteRaw, lang: "svelte", },
-		{ name: "testimonial-avatar-ring.svelte", code: TestimonialAvatarRingSvelteRaw, lang: "svelte", },
-		{ name: "testimonial-avatar.svelte", code: TestimonialAvatarSvelteRaw, lang: "svelte", },
-		{ name: "testimonial-quote.svelte", code: TestimonialQuoteSvelteRaw, lang: "svelte", },
-		{ name: "testimonial-verified-badge.svelte", code: TestimonialVerifiedBadgeSvelteRaw, lang: "svelte", },
-		{ name: "testimonial.svelte", code: TestimonialSvelteRaw, lang: "svelte", }
+		{
+			name: "index.ts",
+			code: IndexTsRaw,
+			lang: "typescript",
+			isExpand: true
+		},
+		{
+			name: "testimonial-author-name.svelte",
+			code: TestimonialAuthorNameSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "testimonial-author-tagline.svelte",
+			code: TestimonialAuthorTaglineSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "testimonial-author.svelte",
+			code: TestimonialAuthorSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "testimonial-avatar-img.svelte",
+			code: TestimonialAvatarImgSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "testimonial-avatar-ring.svelte",
+			code: TestimonialAvatarRingSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "testimonial-avatar.svelte",
+			code: TestimonialAvatarSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "testimonial-quote.svelte",
+			code: TestimonialQuoteSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "testimonial-verified-badge.svelte",
+			code: TestimonialVerifiedBadgeSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "testimonial.svelte",
+			code: TestimonialSvelteRaw,
+			lang: "svelte"
+		}
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- testimonial/\n                |-- index.ts\n                |-- testimonial-author-name.svelte\n                |-- testimonial-author-tagline.svelte\n                |-- testimonial-author.svelte\n                |-- testimonial-avatar-img.svelte\n                |-- testimonial-avatar-ring.svelte\n                |-- testimonial-avatar.svelte\n                |-- testimonial-quote.svelte\n                |-- testimonial-verified-badge.svelte\n                `-- testimonial.svelte",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- testimonial/\n                |-- index.ts\n                |-- testimonial-author-name.svelte\n                |-- testimonial-author-tagline.svelte\n                |-- testimonial-author.svelte\n                |-- testimonial-avatar-img.svelte\n                |-- testimonial-avatar-ring.svelte\n                |-- testimonial-avatar.svelte\n                |-- testimonial-quote.svelte\n                |-- testimonial-verified-badge.svelte\n                `-- testimonial.svelte"
 };
 
 export const data: ComponentDoc = {
@@ -70,10 +114,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };

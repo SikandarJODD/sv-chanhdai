@@ -10,33 +10,19 @@ import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "brand-assets-menu",
 	title: "Brand Assets Menu",
-	description: "TODO: Add a concise description for Brand Assets Menu.",
+	description: "Context menu for copying brand SVGs and opening asset links.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Brand Assets Menu",
-	description: "TODO: Add an SEO description for Brand Assets Menu.",
+	description: "Context menu for copying brand SVGs and opening asset links.",
 	keywords: ["Svelte", "Brand Assets Menu", "Component"]
 };
-
-const examples: Example[] = [
-	// {
-	// 	name: "Demo",
-	// 	preview: DemoExample,
-	// 	code: {
-	// 		name: "demo-example.svelte",
-	// 		code: DemoExampleRaw,
-	// 		lang: "svelte",
-	// 	},
-	// },
-];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
@@ -49,8 +35,7 @@ const install_block: InstallComponentDocs = {
 		},
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure:
-		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- brand-assets-menu/\n                |-- brand-assets-menu.svelte\n                `-- index.ts"
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -63,7 +48,54 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
-	examples,
 	seo,
-	props: []
+	props: [
+		{
+			name: "BrandAssetsMenu",
+			desc: "Context menu for copying brand SVGs and opening asset links.",
+			props: [
+				{
+					name: "logomark",
+					type: "Snippet",
+					default: "undefined",
+					description:
+						"Custom logomark content displayed within the copy menu item."
+				},
+				{
+					name: "logomarkSVG",
+					type: "string",
+					default: "undefined",
+					description:
+						"SVG markup used when the user copies the logomark to the clipboard."
+				},
+				{
+					name: "logotypeSVG",
+					type: "string",
+					default: "undefined",
+					description:
+						"SVG markup used when the user copies the logotype to the clipboard."
+				},
+				{
+					name: "brandGuidelinesURL",
+					type: "string",
+					default: "undefined",
+					description:
+						"URL for the brand guidelines page opened in a new tab."
+				},
+				{
+					name: "brandAssetsURL",
+					type: "string",
+					default: "undefined",
+					description: "URL used for the brand assets download link."
+				},
+				{
+					name: "children",
+					type: "Snippet<{ props: Record<string, unknown> }>",
+					default: "undefined",
+					description:
+						"Render prop used to attach the trigger element and menu props to the custom trigger content."
+				}
+			]
+		}
+	]
 };

@@ -16,13 +16,15 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "chevrons-up-down-icon",
 	title: "Chevrons Up Down Icon",
-	description: "TODO: Add a concise description for Chevrons Up Down Icon.",
+	description:
+		"Animated chevrons icon that morphs between up and down directions.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Chevrons Up Down Icon",
-	description: "TODO: Add an SEO description for Chevrons Up Down Icon.",
+	description:
+		"Animated chevrons icon that morphs between up and down directions.",
 	keywords: ["Svelte", "Chevrons Up Down Icon", "Component"]
 };
 

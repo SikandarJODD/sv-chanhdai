@@ -6,7 +6,7 @@ import XIconSvelteRaw from "$lib/components/chan/share-menu/x-icon.svelte?raw";
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -18,14 +18,16 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "share-menu",
 	title: "Share Menu",
-	description: "TODO: Add a concise description for Share Menu.",
-	category: "chan",
+	description:
+		"Share menu to copy a link or post to X, LinkedIn, and the native share sheet.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Share Menu",
-	description: "TODO: Add an SEO description for Share Menu.",
-	keywords: ["Svelte", "Share Menu", "Component"],
+	description:
+		"Share menu to copy a link or post to X, LinkedIn, and the native share sheet.",
+	keywords: ["Svelte", "Share Menu", "Component"]
 };
 
 const examples: Example[] = [
@@ -35,20 +37,30 @@ const examples: Example[] = [
 		code: {
 			name: "demo-example.svelte",
 			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+			lang: "svelte"
+		}
+	}
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "linkedin-icon.svelte", code: LinkedinIconSvelteRaw, lang: "svelte", },
-		{ name: "share-menu.svelte", code: ShareMenuSvelteRaw, lang: "svelte", },
-		{ name: "x-icon.svelte", code: XIconSvelteRaw, lang: "svelte", }
+		{
+			name: "index.ts",
+			code: IndexTsRaw,
+			lang: "typescript",
+			isExpand: true
+		},
+		{
+			name: "linkedin-icon.svelte",
+			code: LinkedinIconSvelteRaw,
+			lang: "svelte"
+		},
+		{ name: "share-menu.svelte", code: ShareMenuSvelteRaw, lang: "svelte" },
+		{ name: "x-icon.svelte", code: XIconSvelteRaw, lang: "svelte" }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- share-menu/\n                |-- index.ts\n                |-- linkedin-icon.svelte\n                |-- share-menu.svelte\n                `-- x-icon.svelte",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- share-menu/\n                |-- index.ts\n                |-- linkedin-icon.svelte\n                |-- share-menu.svelte\n                `-- x-icon.svelte"
 };
 
 export const data: ComponentDoc = {
@@ -58,10 +70,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };

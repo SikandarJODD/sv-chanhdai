@@ -4,7 +4,7 @@ import IndexTsRaw from "$lib/components/chan/github-stars/index.ts?raw";
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -16,14 +16,16 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "github-stars",
 	title: "Github Stars",
-	description: "TODO: Add a concise description for Github Stars.",
-	category: "chan",
+	description:
+		"Display GitHub repo star count with formatted numbers and full-count tooltip.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Github Stars",
-	description: "TODO: Add an SEO description for Github Stars.",
-	keywords: ["Svelte", "Github Stars", "Component"],
+	description:
+		"Display GitHub repo star count with formatted numbers and full-count tooltip.",
+	keywords: ["Svelte", "Github Stars", "Component"]
 };
 
 const examples: Example[] = [
@@ -33,18 +35,24 @@ const examples: Example[] = [
 		code: {
 			name: "demo-example.svelte",
 			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+			lang: "svelte"
+		}
+	}
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "github-stars.svelte", code: GithubStarsSvelteRaw, lang: "svelte", isExpand: true, },
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", }
+		{
+			name: "github-stars.svelte",
+			code: GithubStarsSvelteRaw,
+			lang: "svelte",
+			isExpand: true
+		},
+		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- github-stars/\n                |-- github-stars.svelte\n                `-- index.ts",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- github-stars/\n                |-- github-stars.svelte\n                `-- index.ts"
 };
 
 export const data: ComponentDoc = {
@@ -54,10 +62,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };

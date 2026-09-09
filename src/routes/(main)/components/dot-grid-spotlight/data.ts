@@ -16,13 +16,15 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "dot-grid-spotlight",
 	title: "Dot Grid Spotlight",
-	description: "TODO: Add a concise description for Dot Grid Spotlight.",
+	description:
+		"Interactive dot grid with a cursor-tracking spotlight effect.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Dot Grid Spotlight",
-	description: "TODO: Add an SEO description for Dot Grid Spotlight.",
+	description:
+		"Interactive dot grid with a cursor-tracking spotlight effect.",
 	keywords: ["Svelte", "Dot Grid Spotlight", "Component"]
 };
 

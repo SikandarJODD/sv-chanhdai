@@ -5,7 +5,7 @@ import MiddleTruncationTsRaw from "$lib/components/chan/middle-truncation/middle
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -17,14 +17,14 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "middle-truncation",
 	title: "Middle Truncation",
-	description: "TODO: Add a concise description for Middle Truncation.",
-	category: "chan",
+	description: "Truncate text in the middle while preserving start and end.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Middle Truncation",
-	description: "TODO: Add an SEO description for Middle Truncation.",
-	keywords: ["Svelte", "Middle Truncation", "Component"],
+	description: "Truncate text in the middle while preserving start and end.",
+	keywords: ["Svelte", "Middle Truncation", "Component"]
 };
 
 const examples: Example[] = [
@@ -34,19 +34,33 @@ const examples: Example[] = [
 		code: {
 			name: "demo-example.svelte",
 			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+			lang: "svelte"
+		}
+	}
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "middle-truncation.svelte", code: MiddleTruncationSvelteRaw, lang: "svelte", },
-		{ name: "middle-truncation.ts", code: MiddleTruncationTsRaw, lang: "typescript", }
+		{
+			name: "index.ts",
+			code: IndexTsRaw,
+			lang: "typescript",
+			isExpand: true
+		},
+		{
+			name: "middle-truncation.svelte",
+			code: MiddleTruncationSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "middle-truncation.ts",
+			code: MiddleTruncationTsRaw,
+			lang: "typescript"
+		}
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- middle-truncation/\n                |-- index.ts\n                |-- middle-truncation.svelte\n                `-- middle-truncation.ts",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- middle-truncation/\n                |-- index.ts\n                |-- middle-truncation.svelte\n                `-- middle-truncation.ts"
 };
 
 export const data: ComponentDoc = {
@@ -56,10 +70,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };

@@ -13,7 +13,7 @@ import IndexTsRaw from "$lib/components/chan/github-contributions/index.ts?raw";
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -25,14 +25,16 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "github-contributions",
 	title: "Github Contributions",
-	description: "TODO: Add a concise description for Github Contributions.",
-	category: "chan",
+	description:
+		"Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Github Contributions",
-	description: "TODO: Add an SEO description for Github Contributions.",
-	keywords: ["Svelte", "Github Contributions", "Component"],
+	description:
+		"Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link.",
+	keywords: ["Svelte", "Github Contributions", "Component"]
 };
 
 const examples: Example[] = [
@@ -42,27 +44,69 @@ const examples: Example[] = [
 		code: {
 			name: "demo-example.svelte",
 			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+			lang: "svelte"
+		}
+	}
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "contribution-graph-block.svelte", code: ContributionGraphBlockSvelteRaw, lang: "svelte", isExpand: true, },
-		{ name: "contribution-graph-calendar.svelte", code: ContributionGraphCalendarSvelteRaw, lang: "svelte", },
-		{ name: "contribution-graph-context.svelte.ts", code: ContributionGraphContextSvelteTsRaw, lang: "typescript", },
-		{ name: "contribution-graph-footer.svelte", code: ContributionGraphFooterSvelteRaw, lang: "svelte", },
-		{ name: "contribution-graph-legend.svelte", code: ContributionGraphLegendSvelteRaw, lang: "svelte", },
-		{ name: "contribution-graph-total-count.svelte", code: ContributionGraphTotalCountSvelteRaw, lang: "svelte", },
-		{ name: "contribution-graph-utils.ts", code: ContributionGraphUtilsTsRaw, lang: "typescript", },
-		{ name: "contribution-graph.svelte", code: ContributionGraphSvelteRaw, lang: "svelte", },
-		{ name: "github-contributions-fallback.svelte", code: GithubContributionsFallbackSvelteRaw, lang: "svelte", },
-		{ name: "github-contributions.svelte", code: GithubContributionsSvelteRaw, lang: "svelte", },
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", }
+		{
+			name: "contribution-graph-block.svelte",
+			code: ContributionGraphBlockSvelteRaw,
+			lang: "svelte",
+			isExpand: true
+		},
+		{
+			name: "contribution-graph-calendar.svelte",
+			code: ContributionGraphCalendarSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "contribution-graph-context.svelte.ts",
+			code: ContributionGraphContextSvelteTsRaw,
+			lang: "typescript"
+		},
+		{
+			name: "contribution-graph-footer.svelte",
+			code: ContributionGraphFooterSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "contribution-graph-legend.svelte",
+			code: ContributionGraphLegendSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "contribution-graph-total-count.svelte",
+			code: ContributionGraphTotalCountSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "contribution-graph-utils.ts",
+			code: ContributionGraphUtilsTsRaw,
+			lang: "typescript"
+		},
+		{
+			name: "contribution-graph.svelte",
+			code: ContributionGraphSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "github-contributions-fallback.svelte",
+			code: GithubContributionsFallbackSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "github-contributions.svelte",
+			code: GithubContributionsSvelteRaw,
+			lang: "svelte"
+		},
+		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- github-contributions/\n                |-- contribution-graph-block.svelte\n                |-- contribution-graph-calendar.svelte\n                |-- contribution-graph-context.svelte.ts\n                |-- contribution-graph-footer.svelte\n                |-- contribution-graph-legend.svelte\n                |-- contribution-graph-total-count.svelte\n                |-- contribution-graph-utils.ts\n                |-- contribution-graph.svelte\n                |-- github-contributions-fallback.svelte\n                |-- github-contributions.svelte\n                `-- index.ts",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- github-contributions/\n                |-- contribution-graph-block.svelte\n                |-- contribution-graph-calendar.svelte\n                |-- contribution-graph-context.svelte.ts\n                |-- contribution-graph-footer.svelte\n                |-- contribution-graph-legend.svelte\n                |-- contribution-graph-total-count.svelte\n                |-- contribution-graph-utils.ts\n                |-- contribution-graph.svelte\n                |-- github-contributions-fallback.svelte\n                |-- github-contributions.svelte\n                `-- index.ts"
 };
 
 export const data: ComponentDoc = {
@@ -72,10 +116,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };

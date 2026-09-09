@@ -14,7 +14,7 @@ import TimescaleSvelteRaw from "$lib/components/chan/timescale/timescale.svelte?
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
@@ -26,14 +26,16 @@ import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "timescale",
 	title: "Timescale",
-	description: "TODO: Add a concise description for Timescale.",
-	category: "chan",
+	description:
+		"Ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Timescale",
-	description: "TODO: Add an SEO description for Timescale.",
-	keywords: ["Svelte", "Timescale", "Component"],
+	description:
+		"Ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
+	keywords: ["Svelte", "Timescale", "Component"]
 };
 
 const examples: Example[] = [
@@ -43,28 +45,74 @@ const examples: Example[] = [
 		code: {
 			name: "demo-example.svelte",
 			code: DemoExampleRaw,
-			lang: "svelte",
-		},
-	},
+			lang: "svelte"
+		}
+	}
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "timescale-age.svelte", code: TimescaleAgeSvelteRaw, lang: "svelte", },
-		{ name: "timescale-content.svelte", code: TimescaleContentSvelteRaw, lang: "svelte", },
-		{ name: "timescale-header.svelte", code: TimescaleHeaderSvelteRaw, lang: "svelte", },
-		{ name: "timescale-intro-scroll.svelte", code: TimescaleIntroScrollSvelteRaw, lang: "svelte", },
-		{ name: "timescale-item.svelte", code: TimescaleItemSvelteRaw, lang: "svelte", },
-		{ name: "timescale-rail.svelte", code: TimescaleRailSvelteRaw, lang: "svelte", },
-		{ name: "timescale-tick.svelte", code: TimescaleTickSvelteRaw, lang: "svelte", },
-		{ name: "timescale-track.svelte", code: TimescaleTrackSvelteRaw, lang: "svelte", },
-		{ name: "timescale-viewport.svelte", code: TimescaleViewportSvelteRaw, lang: "svelte", },
-		{ name: "timescale-year.svelte", code: TimescaleYearSvelteRaw, lang: "svelte", },
-		{ name: "timescale.svelte", code: TimescaleSvelteRaw, lang: "svelte", }
+		{
+			name: "index.ts",
+			code: IndexTsRaw,
+			lang: "typescript",
+			isExpand: true
+		},
+		{
+			name: "timescale-age.svelte",
+			code: TimescaleAgeSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "timescale-content.svelte",
+			code: TimescaleContentSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "timescale-header.svelte",
+			code: TimescaleHeaderSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "timescale-intro-scroll.svelte",
+			code: TimescaleIntroScrollSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "timescale-item.svelte",
+			code: TimescaleItemSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "timescale-rail.svelte",
+			code: TimescaleRailSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "timescale-tick.svelte",
+			code: TimescaleTickSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "timescale-track.svelte",
+			code: TimescaleTrackSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "timescale-viewport.svelte",
+			code: TimescaleViewportSvelteRaw,
+			lang: "svelte"
+		},
+		{
+			name: "timescale-year.svelte",
+			code: TimescaleYearSvelteRaw,
+			lang: "svelte"
+		},
+		{ name: "timescale.svelte", code: TimescaleSvelteRaw, lang: "svelte" }
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- timescale/\n                |-- index.ts\n                |-- timescale-age.svelte\n                |-- timescale-content.svelte\n                |-- timescale-header.svelte\n                |-- timescale-intro-scroll.svelte\n                |-- timescale-item.svelte\n                |-- timescale-rail.svelte\n                |-- timescale-tick.svelte\n                |-- timescale-track.svelte\n                |-- timescale-viewport.svelte\n                |-- timescale-year.svelte\n                `-- timescale.svelte",
+	folder_structure:
+		"src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- timescale/\n                |-- index.ts\n                |-- timescale-age.svelte\n                |-- timescale-content.svelte\n                |-- timescale-header.svelte\n                |-- timescale-intro-scroll.svelte\n                |-- timescale-item.svelte\n                |-- timescale-rail.svelte\n                |-- timescale-tick.svelte\n                |-- timescale-track.svelte\n                |-- timescale-viewport.svelte\n                |-- timescale-year.svelte\n                `-- timescale.svelte"
 };
 
 export const data: ComponentDoc = {
@@ -74,10 +122,10 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	examples,
 	seo,
-	props: [],
+	props: []
 };
