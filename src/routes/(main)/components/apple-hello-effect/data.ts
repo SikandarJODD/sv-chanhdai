@@ -92,7 +92,7 @@ const examples: Example[] = [
 
 const usage: CodeBlock[] = [
 	{
-		name: "example.svelte",
+		name: "preview.svelte",
 		code: `<script lang="ts">
 	import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
 </script>

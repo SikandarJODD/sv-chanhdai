@@ -6,7 +6,11 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
+import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
+import CustomColorsExample from "./examples/custom-colors.svelte";
+import CustomColorsExampleCode from "./examples/custom-colors.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -24,6 +28,33 @@ const seo: SEO = {
 		"Interactive dot grid with a cursor-tracking spotlight effect.",
 	keywords: ["Svelte", "Dot Grid Spotlight", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "preview.svelte",
+		code: `<script lang="ts">
+	import { DotGridSpotlight } from "$chan/dot-grid-spotlight";
+</script>
+
+<div class="relative h-80 w-full overflow-hidden">
+	<DotGridSpotlight />
+</div>`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
+
+const examples: Example[] = [
+	{
+		name: "Custom colors",
+		preview: CustomColorsExample,
+		code: {
+			name: "custom-colors.svelte",
+			code: CustomColorsExampleCode,
+			lang: "svelte"
+		}
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: ["runed"],
@@ -49,6 +80,8 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
+	examples,
 	seo,
 	props: [
 		{
