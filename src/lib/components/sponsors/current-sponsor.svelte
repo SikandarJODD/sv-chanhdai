@@ -35,7 +35,7 @@
 				target="_blank"
 				rel="noreferrer"
 				variant="ghost"
-				size="icon-sm"
+				size="icon-xs"
 				aria-label={`${name} on GitHub`}
 			>
 				<Github class="size-4" />
@@ -47,7 +47,7 @@
 					target="_blank"
 					rel="noreferrer"
 					variant="ghost"
-					size="icon-sm"
+					size="icon-xs"
 					aria-label={`${name} on X`}
 				>
 					<X class="size-3.5" />

@@ -87,13 +87,11 @@
 <main class="font-figtree min-h-[calc(100vh-4rem)] px-4 py-10 sm:py-14">
 	<div class="mx-auto w-full max-w-3xl">
 		<header
-			class="flex flex-col items-start justify-between gap-5 border-b border-border pb-8 sm:flex-row sm:items-end"
+			class="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end"
 		>
 			<div class="max-w-2xl">
-				<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">
-					Sponsors
-				</h1>
-				<p class="mt-3 text-muted-foreground">
+				<h1 class="text-3xl font-gp-circle sm:text-4xl">Sponsors</h1>
+				<p class="mt-3 text-muted-foreground font-cursive">
 					If you like my work, consider supporting me on GitHub.
 				</p>
 			</div>
@@ -123,7 +121,7 @@
 		</section>
 
 		<section
-			class="border-t border-border py-9"
+			class="py-4 border-t border-dashed border-ink/40 dark:border-muted"
 			aria-labelledby="past-sponsors"
 		>
 			<div class="mb-5">
