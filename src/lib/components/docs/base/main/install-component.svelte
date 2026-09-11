@@ -23,12 +23,6 @@
 	import { PMCommand } from "$lib/components/ui/pm-command";
 	import { PersistedState } from "runed";
 	import type { Agent } from "package-manager-detector";
-	import {
-		createLayoutMotion,
-		motion,
-		STOP_UPDATE,
-		MotionConfig
-	} from "motion-sv";
 	import { jsrepo } from "$lib/config/repo";
 	import { page } from "$app/state";
 
@@ -45,12 +39,6 @@
 	let activeTab = $state("cli");
 	let agent = new PersistedState<Agent>("user-package-manager", "pnpm");
 
-	let layout = createLayoutMotion();
-	let updateActiveTab = layout.update.with((tab: string) => {
-		if (tab === activeTab) return STOP_UPDATE;
-		activeTab = tab;
-	});
-
 	let jsrepoURL = $derived.by(() => {
 		if (jsrepoID) {
 			return jsrepo.name + jsrepoID;
@@ -62,59 +50,38 @@
 </script>
 
 <div class={cn("w-full", className)}>
-	<Tabs.Root value={activeTab} onValueChange={updateActiveTab}>
-		<MotionConfig transition={{ type: "tween", bounce: 0, duration: 0.8 }}>
-			<Tabs.List
-				class="relative h-auto gap-1 rounded-none bg-transparent px-0 text-foreground"
-			>
-				<layout.div>
-					<Tabs.Trigger
-						value="cli"
-						class="relative cursor-pointer border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
-					>
-						CLI
-						{#if activeTab === "cli"}
-							<layout.span
-								class="absolute inset-0 -z-10 rounded-md bg-neutral-200/50 dark:bg-primary/10"
-								layoutId="install-tab-highlight"
-								transition={{ duration: 0.2, type: "tween" }}
-							></layout.span>
-						{/if}
-					</Tabs.Trigger>
-				</layout.div>
+	<Tabs.Root bind:value={activeTab}>
+		<Tabs.List
+			class="relative h-auto gap-1 rounded-none bg-transparent px-0 text-foreground"
+		>
+			<div>
+				<Tabs.Trigger
+					value="cli"
+					class="relative cursor-pointer border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
+				>
+					CLI
+					{#if activeTab === "cli"}
+						<span
+							class="absolute inset-0 -z-10 rounded-md bg-neutral-200/50 dark:bg-primary/10"
+						></span>
+					{/if}
+				</Tabs.Trigger>
+			</div>
 
-				<layout.div>
-					<Tabs.Trigger
-						value="manual"
-						class="relative cursor-pointer border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
-					>
-						Manual
-						{#if activeTab === "manual"}
-							<layout.span
-								class="absolute inset-0 -z-10 rounded-md bg-neutral-200/50 dark:bg-primary/10"
-								layoutId="install-tab-highlight"
-								transition={{ duration: 0.2, type: "tween" }}
-							></layout.span>
-						{/if}
-					</Tabs.Trigger>
-				</layout.div>
-				<!-- <layout.div>
-					<Tabs.Trigger
-						value="jsrepo"
-						class="relative border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5 hover:text-amber-600 dark:hover:text-amber-300 data-active:text-amber-600 dark:data-active:text-amber-300"
-					>
-						jsrepo
-						{#if activeTab === "jsrepo"}
-							<layout.span
-								class="absolute inset-0 -z-10 rounded-md bg-amber-300/30 dark:bg-amber-300/15"
-								layoutId="install-tab-highlight"
-								transition={{ duration: 0.2, type: "tween" }}
-							></layout.span>
-						{/if}
-					</Tabs.Trigger>
-				</layout.div> -->
-			</Tabs.List>
-		</MotionConfig>
+			<div>
+				<Tabs.Trigger
+					value="manual"
+					class="relative cursor-pointer border-none bg-transparent! px-4 py-1.5 shadow-none! after:absolute after:inset-x-0 after:bottom-0 after:-mb-1 after:h-0.5"
+				>
+					Manual
+					{#if activeTab === "manual"}
+						<span
+							class="absolute inset-0 -z-10 rounded-md bg-neutral-200/50 dark:bg-primary/10"
+						></span>
+					{/if}
+				</Tabs.Trigger>
+			</div>
+		</Tabs.List>
 
 		<Tabs.Content value="cli" class="mt-0">
 			<PMCommand

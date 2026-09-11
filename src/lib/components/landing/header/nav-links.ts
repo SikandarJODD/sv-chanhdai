@@ -9,6 +9,10 @@ let navs: NavType[] = [
 	{
 		name: "Components",
 		href: resolve("/(main)/components/apple-hello-effect")
+	},
+	{
+		name: "Sponsors",
+		href: resolve("/sponsors")
 	}
 	// {
 	// 	name: "Docs",

@@ -32,6 +32,7 @@
 </script>
 
 <script lang="ts">
+	import { navigating } from "$app/state";
 	import XIcon from "@lucide/svelte/icons/x";
 	import { Button } from "$ui/button";
 	import { cn } from "$lib/utils";
@@ -123,6 +124,8 @@
 	const transition = $derived<Transition>(
 		shouldReduceMotion.current ? { duration: 0 } : swapTransition
 	);
+	// Skip exits during navigation because motion-sv's global outro can delay route removal.
+	const exitVariant = $derived(navigating.type === null ? "exit" : undefined);
 
 	function setStatus(nextStatus: ButtonStatus) {
 		if (nextStatus === currentStatus) return;
@@ -241,7 +244,7 @@
 				{variants}
 				initial="initial"
 				animate="animate"
-				exit="exit"
+				exit={exitVariant}
 				{transition}
 			>
 				{@render children()}
@@ -252,7 +255,7 @@
 				{variants}
 				initial="initial"
 				animate="animate"
-				exit="exit"
+				exit={exitVariant}
 				{transition}
 			>
 				{@render loadingContent()}
@@ -265,7 +268,7 @@
 					: successVariants}
 				initial="initial"
 				animate="animate"
-				exit="exit"
+				exit={exitVariant}
 				{transition}
 			>
 				{@render successContent()}
@@ -278,7 +281,7 @@
 					: failedVariants}
 				initial="initial"
 				animate="animate"
-				exit="exit"
+				exit={exitVariant}
 				{transition}
 			>
 				{@render failedContent()}

@@ -616,6 +616,11 @@
 			"description": "Composable primitives for building testimonial cards.",
 			"registryDependencies": [],
 			"dependencies": [],
+			"cssVars": {
+				"light": {
+					"info": "oklch(0.67 0.17 244.98)"
+				}
+			},
 			"files": [
 				{
 					"path": "src/lib/components/chan/testimonial/testimonial.svelte",

@@ -24,7 +24,7 @@
 	<Button
 		variant="ghost"
 		size="sm"
-		class="bg-secondary dark:bg-muted/60 flex justify-between px-1.5 md:min-w-46  md:pr-1"
+		class="bg-secondary rounded-full dark:bg-muted/60 flex justify-between px-1.5 md:min-w-46  md:px-2"
 		onclick={() => (open = true)}
 	>
 		<span class="hidden pl-1 md:block"> Search... </span>
@@ -70,7 +70,11 @@
 		<Command.Empty>No results found.</Command.Empty>
 		<Command.Group heading="Documentation">
 			{#each docs as doc (doc.id)}
-				<Command.LinkItem value={doc.id} onclick={() => (open = false)} href={doc.href}>
+				<Command.LinkItem
+					value={doc.id}
+					onclick={() => (open = false)}
+					href={doc.href}
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="16"
@@ -122,7 +126,13 @@
 						role="img"
 						color="currentColor"
 					>
-						<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"></circle>
+						<circle
+							opacity="0.2"
+							cx="12"
+							cy="12"
+							r="10"
+							fill="currentColor"
+						></circle>
 						<circle
 							cx="12"
 							cy="12"

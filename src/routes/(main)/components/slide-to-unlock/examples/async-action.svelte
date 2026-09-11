@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { navigating } from "$app/state";
 	import CircleCheckIcon from "@lucide/svelte/icons/circle-check";
 	import LoaderCircleIcon from "@lucide/svelte/icons/loader-circle";
 	import ShoppingBagIcon from "@lucide/svelte/icons/shopping-bag";
@@ -13,6 +14,8 @@
 
 	let status = $state<"idle" | "processing" | "complete">("idle");
 	const shouldReduceMotion = useReducedMotion();
+	// Skip exits during navigation because motion-sv's global outro can delay route removal.
+	const exitVariant = $derived(navigating.type === null ? "exit" : undefined);
 	const swapTransition: Transition = {
 		type: "spring",
 		duration: 0.4,
@@ -54,7 +57,7 @@
 					: swapVariants}
 				initial="initial"
 				animate="animate"
-				exit="exit"
+				exit={exitVariant}
 				transition={swapTransition}
 			>
 				<LoaderCircleIcon class="size-5 animate-spin" />
@@ -69,7 +72,7 @@
 					: successVariants}
 				initial="initial"
 				animate="animate"
-				exit="exit"
+				exit={exitVariant}
 				transition={swapTransition}
 			>
 				<CircleCheckIcon class="size-5" />
@@ -82,7 +85,7 @@
 					: swapVariants}
 				initial="initial"
 				animate="animate"
-				exit="exit"
+				exit={exitVariant}
 				transition={swapTransition}
 			>
 				<SlideToUnlock onUnlock={confirmOrder} class="w-72 rounded-full">
