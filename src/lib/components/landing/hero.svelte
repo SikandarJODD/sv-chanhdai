@@ -18,7 +18,7 @@
 	{#if mode.current === "dark"}
 		<div
 			aria-hidden="true"
-			class="absolute inset-0 size-full overflow-hidden"
+			class="absolute inset-0 size-full overflow-hidden -z-60"
 		>
 			<div
 				class="absolute inset-0 isolate -z-10 bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"

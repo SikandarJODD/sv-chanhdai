@@ -214,6 +214,16 @@
 		scroll-behavior: smooth;
 		@apply font-sans;
 	}
+
+	::selection {
+		background-color: var(--ink-dim);
+		color: var(--ink);
+	}
+
+	.dark ::selection {
+		background-color: var(--primary);
+		color: var(--primary-foreground);
+	}
 	/* Custom scrollbar styling. Thanks @pranathiperii. */
 	::-webkit-scrollbar {
 		width: 5px;
@@ -274,10 +284,10 @@
 	}
 }
 
-::selection {
+/* ::selection {
 	background-color: var(--color-primary);
 	color: var(--color-background);
-}
+} */
 .no-scrollbar {
 	&::-webkit-scrollbar {
 		display: none;
