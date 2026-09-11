@@ -1,61 +1,176 @@
 <script lang="ts">
-	const members = [
+	import CurrentSponsor from "$lib/components/sponsors/current-sponsor.svelte";
+	import Github from "$lib/svg/github.svelte";
+
+	type Sponsor = {
+		name: string;
+		handle: string;
+		avatar: string;
+		github: string;
+		role?: string;
+		x?: string;
+	};
+
+	const sponsorUrl = "https://github.com/sponsors/SikandarJODD";
+
+	const currentSponsors: Sponsor[] = [
 		{
-			avatar: "https://avatars.githubusercontent.com/u/47919550?v=4",
-			name: "Meschac Irung",
-			role: "Frontend Engineer at Acme"
+			name: "Guillermo Rauch",
+			handle: "rauchg",
+			avatar: "https://avatars.githubusercontent.com/u/13041?v=4",
+			github: "https://github.com/rauchg",
+			role: "CEO of Vercel",
+			x: "https://x.com/rauchg"
+		}
+	];
+
+	const pastSponsors: Sponsor[] = [
+		{
+			name: "ZerGo0",
+			handle: "ZerGo0",
+			avatar: "https://avatars.githubusercontent.com/u/18653821?v=4",
+			github: "https://github.com/ZerGo0",
+			role: "Software Engineer"
 		},
 		{
-			avatar: "https://avatars.githubusercontent.com/u/68236786?v=4",
-			name: "Theo Balick",
-			role: "Founder, CEO - Acme"
+			name: "Francisco Sainz",
+			handle: "pacosw1",
+			avatar: "https://avatars.githubusercontent.com/u/12486003?v=4",
+			github: "https://github.com/pacosw1"
 		},
 		{
-			avatar: "https://avatars.githubusercontent.com/u/12345678?v=4",
-			name: "Sarah Johnson",
-			role: "DevOps Engineer"
+			name: "Joe Krump",
+			handle: "joekrump",
+			avatar: "https://avatars.githubusercontent.com/u/3317231?v=4",
+			github: "https://github.com/joekrump",
+			role: "Senior Software Developer"
+		},
+		{
+			name: "Yashash Pugalia",
+			handle: "yashash-pugalia",
+			avatar: "https://avatars.githubusercontent.com/u/89068816?v=4",
+			github: "https://github.com/yashash-pugalia",
+			x: "https://x.com/yashash_pugalia"
+		},
+		{
+			name: "Ever",
+			handle: "ruizdiazever",
+			avatar: "https://avatars.githubusercontent.com/u/29817086?v=4",
+			github: "https://github.com/ruizdiazever",
+			role: "Developer",
+			x: "https://x.com/everruizdiazo"
+		},
+		{
+			name: "Hunter Johnston",
+			handle: "huntabyte",
+			avatar: "https://avatars.githubusercontent.com/u/64506580?v=4",
+			github: "https://github.com/huntabyte",
+			x: "https://x.com/huntabyte"
+		},
+		{
+			name: "hahaha-helpme",
+			handle: "hahaha-helpme",
+			avatar: "https://avatars.githubusercontent.com/u/43705134?v=4",
+			github: "https://github.com/hahaha-helpme"
 		}
 	];
 </script>
 
-<section class="@container bg-background py-24">
-	<div class="mx-auto max-w-2xl px-6">
-		<div class="space-y-4">
-			<h2 class="font-serif text-4xl font-medium text-balance">
-				Meet Our Founders
-			</h2>
-			<p class="text-balance text-muted-foreground">
-				The visionary leaders behind our mission to transform how teams
-				work and collaborate.
-			</p>
-		</div>
-		<div
-			class="mt-12 grid grid-cols-2 gap-3 gap-y-6 text-sm @xl:grid-cols-3 @xl:gap-6 @xl:gap-12"
+<svelte:head>
+	<title>Sponsors</title>
+	<meta
+		name="description"
+		content="The people supporting Sikandar Bhide's open-source work."
+	/>
+</svelte:head>
+
+<main class="font-figtree min-h-[calc(100vh-4rem)] px-4 py-10 sm:py-14">
+	<div class="mx-auto w-full max-w-3xl">
+		<header
+			class="flex flex-col items-start justify-between gap-5 border-b border-border pb-8 sm:flex-row sm:items-end"
 		>
-			{#each members as member, index}
-				<div class="flex flex-col gap-4">
-					<div
-						class="relative size-28 shrink-0 rounded-xl shadow-md shadow-foreground/6.5 before:absolute before:inset-0 before:rounded-xl before:border before:border-foreground/10 dark:shadow-black/6.5"
+			<div class="max-w-2xl">
+				<h1 class="text-3xl font-semibold tracking-tight sm:text-4xl">
+					Sponsors
+				</h1>
+				<p class="mt-3 text-muted-foreground">
+					If you like my work, consider supporting me on GitHub.
+				</p>
+			</div>
+
+			<a
+				href={sponsorUrl}
+				target="_blank"
+				rel="noreferrer"
+				class="inline-flex h-9 shrink-0 items-center justify-center rounded-md bg-primary px-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+			>
+				Sponsor my work
+			</a>
+		</header>
+
+		<section class="py-9" aria-labelledby="current-sponsors">
+			<div class="mb-5">
+				<h2 id="current-sponsors" class="text-xl font-semibold">
+					Current sponsor
+				</h2>
+			</div>
+
+			<div class="grid gap-x-8 gap-y-5 sm:grid-cols-2">
+				{#each currentSponsors as sponsor (sponsor.handle)}
+					<CurrentSponsor {...sponsor} />
+				{/each}
+			</div>
+		</section>
+
+		<section
+			class="border-t border-border py-9"
+			aria-labelledby="past-sponsors"
+		>
+			<div class="mb-5">
+				<h2 id="past-sponsors" class="text-xl font-semibold">
+					Past sponsors
+				</h2>
+			</div>
+
+			<div class="grid gap-x-3 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+				{#each pastSponsors as sponsor (sponsor.handle)}
+					<article
+						class="group flex items-center gap-3 rounded-lg border border-border p-2"
 					>
 						<img
-							src={member.avatar}
-							alt={member.name}
-							class="rounded-xl object-cover"
-							width={120}
-							height={120}
+							src={sponsor.avatar}
+							alt=""
+							class="size-10 shrink-0 rounded-md object-cover ring-1 ring-foreground/10"
+							width="40"
+							height="40"
+							loading="lazy"
 						/>
-					</div>
 
-					<div class="space-y-1">
-						<p class="text-sm font-medium text-foreground">
-							{member.name}
-						</p>
-						<p class="text-sm text-muted-foreground">
-							{member.role}
-						</p>
-					</div>
-				</div>
-			{/each}
-		</div>
+						<div class="min-w-0 flex-1">
+							<h3
+								class="truncate text-sm font-medium text-foreground"
+							>
+								{sponsor.name}
+							</h3>
+							<p
+								class="truncate font-mono text-xs text-muted-foreground"
+							>
+								{sponsor.role ?? `@${sponsor.handle}`}
+							</p>
+						</div>
+
+						<a
+							href={sponsor.github}
+							target="_blank"
+							rel="noreferrer"
+							aria-label={`${sponsor.name} on GitHub`}
+							class="rounded-md p-2 text-muted-foreground opacity-70 transition-all group-hover:opacity-100 hover:bg-background hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
+						>
+							<Github class="size-4" />
+						</a>
+					</article>
+				{/each}
+			</div>
+		</section>
 	</div>
-</section>
+</main>
