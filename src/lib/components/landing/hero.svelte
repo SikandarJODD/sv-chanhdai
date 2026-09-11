@@ -46,7 +46,7 @@
 		</a> -->
 
 		<h1
-			class="animate-in text-4xl leading-tight font-medium text-balance text-foreground delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in md:text-5xl"
+			class="animate-in font-gp-circle text-4xl leading-tight font-medium text-balance text-foreground delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in md:text-5xl"
 		>
 			Svelte Chan Components
 		</h1>
