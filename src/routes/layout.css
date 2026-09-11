@@ -100,6 +100,7 @@
 	/* Ink Color */
 	--ink: lab(36 55.64 -107.68);
 	--ink-dim: lab(93 0 -8);
+	--info: oklch(0.67 0.17 244.98);
 }
 
 .dark {
@@ -190,6 +191,7 @@
 	/* Ink Color */
 	--color-ink: var(--ink);
 	--color-ink-dim: var(--ink-dim);
+	--color-info: var(--info);
 
 	/* Chanhdai Animations */
 	/* Status Button */
