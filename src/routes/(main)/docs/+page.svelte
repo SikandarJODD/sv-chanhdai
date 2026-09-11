@@ -94,14 +94,14 @@
 			</FaviconLink>
 			for his original work.
 			<br />
-			If you like this Svelte port, you can sponsor
+			If you like this Svelte port, you can support me
 			<FaviconLink
 				href="https://github.com/sponsors/SikandarJODD"
 				faviconSrc="https://github.com/favicon.ico"
 				target="_blank"
 				rel="noreferrer"
 			>
-				Bhide Svelte
+				Sikandar JODD
 			</FaviconLink>.
 		</Paragraph>
 	</section>

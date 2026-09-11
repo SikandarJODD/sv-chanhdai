@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
+	import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+	import { ElasticSlider } from "$chan/elastic-slider";
 	import GitHubContributions from "$chan/github-contributions/github-contributions.svelte";
 	import {
 		SlideToUnlock,
@@ -19,9 +21,24 @@
 		TestimonialQuote,
 		TestimonialVerifiedBadge
 	} from "$chan/testimonial";
+	import { Testimonial2 } from "$chan/testimonial-2";
+	import {
+		WheelPicker,
+		WheelPickerWrapper,
+		type WheelPickerOption
+	} from "$chan/wheel-picker";
+	import Annotation from "$ui/annotation/annotation.svelte";
 	import MasonryCard from "./masonry-card.svelte";
 
+	const wheelOptions: WheelPickerOption[] = [
+		{ label: "React", value: "react" },
+		{ label: "Vue", value: "vue" },
+		{ label: "Svelte", value: "svelte" }
+	];
+
 	let unlocked = $state(false);
+	let sliderValue = $state(50);
+	let wheelValue = $state("svelte");
 
 	function save() {
 		return new Promise<void>((resolvePromise) => {
@@ -30,7 +47,9 @@
 	}
 </script>
 
-<section class="mx-auto w-full max-w-6xl px-4 pb-20 sm:pb-24 z-[300]">
+<section
+	class="mx-auto w-full animate-in fade-in delay-500 duration-200 ease-out fill-mode-backwards slide-in-from-bottom-[6px] max-w-6xl px-4 pb-20 sm:pb-24 z-[300]"
+>
 	<h2
 		class="font-gp-circle text-2xl leading-tight font-medium text-balance sm:text-3xl lg:text-4xl"
 	>
@@ -53,7 +72,18 @@
 			href={resolve("/(main)/components/status-button")}
 			class="md:col-span-5"
 		>
-			<StatusButton onclick={save}>Save changes</StatusButton>
+			<Annotation
+				note="Clickkk!"
+				noMark
+				direction="s"
+				customColor="orange"
+				targetGap="0.6rem"
+				labelGap="0.5rem"
+			>
+				<StatusButton onclick={save} class="rounded-full px-4"
+					>Save changes</StatusButton
+				>
+			</Annotation>
 		</MasonryCard>
 
 		<MasonryCard
@@ -131,6 +161,62 @@
 				>
 					{unlocked ? "Unlocked!" : ""}
 				</p>
+			</div>
+		</MasonryCard>
+
+		<MasonryCard
+			name="Apple Hello Effect"
+			href={resolve("/(main)/components/apple-hello-effect")}
+			class="md:col-span-7"
+		>
+			<AppleHelloEffectEnglish
+				class="w-full max-w-sm text-orange-500 dark:text-emerald-500"
+			/>
+		</MasonryCard>
+
+		<MasonryCard
+			name="Elastic Slider"
+			href={resolve("/(main)/components/elastic-slider")}
+			class="md:col-span-5"
+		>
+			<ElasticSlider
+				label="Value"
+				min={0}
+				max={100}
+				step={1}
+				value={sliderValue}
+				onValueChange={(value) => (sliderValue = value)}
+				class="w-52 max-w-full"
+			/>
+		</MasonryCard>
+
+		<MasonryCard
+			name="Testimonial 2"
+			href={resolve("/(main)/components/testimonial-2")}
+			class="md:col-span-7"
+		>
+			<Testimonial2
+				authorName="Guillermo Rauch"
+				authorTagline="CEO @Vercel"
+				url="https://x.com/rauchg/status/1978913158514237669"
+				quote="Awesome. Love the components, especially slide-to-unlock. Great job."
+				class="max-w-lg"
+			/>
+		</MasonryCard>
+
+		<MasonryCard
+			name="Wheel Picker"
+			href={resolve("/(main)/components/wheel-picker")}
+			class="md:col-span-5"
+		>
+			<div class="w-64 max-w-full">
+				<WheelPickerWrapper>
+					<WheelPicker
+						options={wheelOptions}
+						bind:value={wheelValue}
+						aria-label="Framework"
+					/>
+				</WheelPickerWrapper>
 			</div>
 		</MasonryCard>
 	</div>

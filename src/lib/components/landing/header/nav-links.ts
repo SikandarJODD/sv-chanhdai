@@ -12,7 +12,7 @@ let navs: NavType[] = [
 	},
 	{
 		name: "Sponsors",
-		href: ""
+		href: resolve("/sponsors")
 	}
 	// {
 	// 	name: "Docs",
