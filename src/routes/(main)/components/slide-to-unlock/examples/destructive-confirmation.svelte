@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { navigating } from "$app/state";
 	import Trash2Icon from "@lucide/svelte/icons/trash-2";
 	import { AnimatePresence, motion, useReducedMotion } from "motion-sv";
 	import type { Transition, Variants } from "motion-sv";
@@ -12,6 +13,8 @@
 	let deleted = $state(false);
 
 	const shouldReduceMotion = useReducedMotion();
+	// Skip exits during navigation because motion-sv's global outro can delay route removal.
+	const exitVariant = $derived(navigating.type === null ? "exit" : undefined);
 	const swapTransition: Transition = {
 		type: "spring",
 		duration: 0.45,
@@ -39,7 +42,7 @@
 					: swapVariants}
 				initial="initial"
 				animate="animate"
-				exit="exit"
+				exit={exitVariant}
 				transition={swapTransition}
 			>
 				<p class="text-sm font-medium" role="status">Project deleted.</p>
@@ -58,7 +61,7 @@
 					: swapVariants}
 				initial="initial"
 				animate="animate"
-				exit="exit"
+				exit={exitVariant}
 				transition={swapTransition}
 			>
 				<SlideToUnlock

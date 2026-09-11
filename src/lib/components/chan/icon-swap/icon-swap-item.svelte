@@ -15,6 +15,7 @@
 </script>
 
 <script lang="ts">
+	import { navigating } from "$app/state";
 	import { motion } from "motion-sv";
 
 	let {
@@ -24,13 +25,19 @@
 	}: IconSwapItemProps = $props();
 
 	const Component = $derived(as as typeof motion.div);
+	// Skip exits during navigation because motion-sv's global outro can delay route removal.
+	const exitVariant = $derived(
+		navigating.type === null
+			? { opacity: 0, scale: 0.25, filter: "blur(4px)" }
+			: undefined
+	);
 </script>
 
 <!-- {...restProps} -->
 <Component
 	initial={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
 	animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-	exit={{ opacity: 0, scale: 0.25, filter: "blur(4px)" }}
+	exit={exitVariant}
 	transition={{ type: "spring", duration: 0.3, bounce: 0 }}
 >
 	{@render children()}

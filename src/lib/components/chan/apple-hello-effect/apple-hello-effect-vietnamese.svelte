@@ -19,6 +19,7 @@
 </script>
 
 <script lang="ts">
+	import { navigating } from "$app/state";
 	import { cn } from "$lib/utils";
 	import { motion } from "motion-sv";
 
@@ -33,6 +34,10 @@
 	const initial = { pathLength: 0, opacity: 0 };
 	const animate = { pathLength: 1, opacity: 1 };
 	const calc = (value: number) => value * durationScale;
+	// Skip exits during navigation because motion-sv's global outro can delay route removal.
+	const exitVariant = $derived(
+		navigating.type === null ? { opacity: 0 } : undefined
+	);
 </script>
 
 <motion.svg
@@ -44,7 +49,7 @@
 	stroke-width="14.8883"
 	stroke-linecap="round"
 	initial={{ opacity: 1 }}
-	exit={{ opacity: 0 }}
+	exit={exitVariant}
 	transition={{ duration: 0.5 }}
 	{...restProps}
 >
