@@ -133,7 +133,7 @@
 			<div class="grid gap-x-3 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
 				{#each pastSponsors as sponsor (sponsor.handle)}
 					<article
-						class="group flex items-center gap-3 rounded-lg border border-border p-2"
+						class="group flex items-center gap-3 rounded-lg border border-border p-2 transition-colors duration-150 ease-out hover:bg-muted/50"
 					>
 						<img
 							src={sponsor.avatar}

@@ -14,7 +14,9 @@
 	let { name, avatar, github, role, x }: CurrentSponsorProps = $props();
 </script>
 
-<article class="flex items-center gap-3 rounded-xl border border-border p-2">
+<article
+	class="flex items-center gap-3 rounded-xl border border-border p-2 transition-colors duration-150 ease-out hover:bg-muted/50"
+>
 	<img
 		src={avatar}
 		alt=""
