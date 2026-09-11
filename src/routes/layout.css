@@ -5,7 +5,7 @@
 @import "@fontsource-variable/figtree";
 @import "@fontsource-variable/jetbrains-mono";
 @import "@fontsource-variable/shantell-sans";
-@source "$lib/styles/neat-annotations.css";
+@import "../lib/styles/neat-annotations.css";
 
 @custom-variant dark (&:is(.dark *));
 

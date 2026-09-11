@@ -8,7 +8,7 @@
 		color-mix(in oklch, var(--ann-color) 10%, transparent),
 		oklch(from var(--ann-color) l calc(c * 1.35) h / 24%)
 	);
-	--ann-font: "Shantell Sans", cursive;
+	--ann-font: var(--font-cursive, "Shantell Sans Variable", cursive);
 	--ann-target-gap: 5px;
 	--ann-label-gap: 6px;
 	--ann-lower-label-gap: -4px;

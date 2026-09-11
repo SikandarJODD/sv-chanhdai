@@ -24,6 +24,7 @@
 	import Feature from "$lib/components/landing/feature/feature.svelte";
 	import Footer from "$lib/components/landing/footer.svelte";
 	import { seo_config } from "$lib/config/seo";
+	import { Annotation } from "$ui/annotation";
 	import { Button } from "$ui/button";
 	import { Toaster } from "$ui/sonner";
 	import { MonitorIcon, MoonIcon, SunIcon } from "@lucide/svelte";
@@ -77,90 +78,86 @@
 
 <Toaster />
 
-<!-- <Hero /> -->
-<!-- <Feature /> -->
-<!-- <Footer /> -->
-<!-- <div class="p-10 flex flex-col gap-5 relative"> -->
-<div
-	class="flex min-h-svh flex-col items-center justify-center gap-10 overflow-hidden p-10"
->
-	<!-- <GitHubContributionsExample /> -->
-	<!-- <ChevronsUpDownIconExample /> -->
-	<!-- <DotGridSpotlightExample /> -->
-	<!-- <AppleHelloEffectExample /> -->
-	<!-- <ElasticSliderExample /> -->
-	<div class="w-56">
-		<WheelPickerExample />
-	</div>
-	<MultiWheelPickerExample />
-	<!-- <GlowCardGridExample /> -->
-</div>
-<!-- 
-	<div class="flex justify-center py-10">
-		<TestimonialExample />
+<main class="mx-auto min-h-svh w-full max-w-5xl px-6 py-24">
+	<div class="mb-12 text-center">
+		<h1 class="text-3xl font-semibold tracking-tight">
+			Annotation examples
+		</h1>
+		<p class="text-muted-foreground mt-2">
+			Five ways to call attention to what matters.
+		</p>
 	</div>
 
-	<div class="flex justify-center py-10">
-		<SpinningCircularTextShimmeringExample />
-	</div>
-
-	<div class="flex flex-col items-center gap-4">
-		<Button
-			class="relative will-change-transform"
-			variant="outline"
-			size="icon-sm"
-			aria-label={icon}
+	<div class="grid gap-6 sm:grid-cols-2">
+		<section
+			class="bg-card flex min-h-56 items-center justify-center rounded-xl border p-10"
 		>
-			<IconSwap>
-				{#key icon}
-					<IconSwapItem>
-						<Icon />
-					</IconSwapItem>
-				{/key}
-			</IconSwap>
-		</Button>
+			<p class="text-xl font-medium">
+				Ship the <Annotation color="amber">important update</Annotation> today.
+			</p>
+		</section>
 
-		<div class="flex gap-0.5 rounded-lg p-0.5">
-			{#each iconKeys as key (key)}
-				<Button
-					class="rounded-md border-none capitalize"
-					size="sm"
-					variant={icon === key ? "secondary" : "ghost"}
-					onclick={() => (icon = key)}
+		<section
+			class="bg-card flex min-h-56 items-center justify-center rounded-xl border p-10"
+		>
+			<p class="text-xl font-medium">
+				Updates happen
+				<Annotation note="no refresh needed" direction="n" color="blue">
+					in real time
+				</Annotation>
+			</p>
+		</section>
+
+		<section
+			class="bg-card flex min-h-56 items-center justify-center rounded-xl border p-10"
+		>
+			<p class="text-xl font-medium">
+				Ready for <Annotation
+					note="ship it!"
+					direction="s"
+					color="green">production</Annotation
 				>
-					{key}
-				</Button>
-			{/each}
-		</div>
-	</div>
+			</p>
+		</section>
 
-	<div>
-		<GithubStars repo="ncdai/chanhdai.com" stargazersCount={2050} />
-	</div>
-	<div>
-		<ShareMenu title="Chanh Dai" url="/" />
-	</div>
-	<div>
-		<ShimmeringText text="slide to unlock" />
-	</div>
-</div> -->
+		<section
+			class="bg-card flex min-h-56 items-center justify-center rounded-xl border p-10"
+		>
+			<Annotation
+				note="keeps its own fill"
+				direction="w"
+				color="purple"
+				noMark
+			>
+				<span
+					class="rounded-full bg-purple-500/15 px-3 py-1 text-lg font-medium text-purple-600 dark:text-purple-300"
+				>
+					Stable
+				</span>
+			</Annotation>
+		</section>
 
-<!-- <div
-	class="fixed left-1/2 z-50 flex -translate-x-1/2 flex-col items-center gap-2"
-	style:bottom="max(4rem, env(safe-area-inset-bottom))"
->
-	{#if unlocked}
-		<p class="text-sm font-medium">Unlocked!</p>
-	{/if}
-
-	<SlideToUnlock onUnlock={() => (unlocked = true)} class="w-67 rounded-full">
-		<SlideToUnlockTrack>
-			<SlideToUnlockText>
-				{#snippet children({ isDragging })}
-					<span>{isDragging ? "Release..." : "Slide to unlock"}</span>
-				{/snippet}
-			</SlideToUnlockText>
-			<SlideToUnlockHandle class="rounded-full" />
-		</SlideToUnlockTrack>
-	</SlideToUnlock>
-</div> -->
+		<section
+			class="bg-card flex min-h-64 items-center justify-center rounded-xl border p-14 sm:col-span-2"
+		>
+			<p class="text-xl font-medium">
+				Make the
+				<Annotation
+					note="fine-tuned by props"
+					noMark
+					direction="nw"
+					targetGap="8px"
+					labelGap="10px"
+					labelMaxWidth="180px"
+					arrowX="4px"
+					textY="8px"
+					rotate="-2deg"
+					customColor="lab(36 55.64 -107.68)"
+				>
+					important thing
+				</Annotation>
+				stand out.
+			</p>
+		</section>
+	</div>
+</main>
