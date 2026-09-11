@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from "$app/paths";
 	import FaviconLink from "$lib/components/docs/base/main/favicon-link.svelte";
 	import { Button } from "$lib/components/ui/button";
 	import { components } from "$lib/registry/components";
@@ -14,11 +15,16 @@
 </script>
 
 <section class="mx-auto w-full max-w-6xl overflow-hidden py-20 sm:py-24">
-	<div aria-hidden="true" class="absolute inset-0 size-full overflow-hidden">
+	{#if mode.current === "dark"}
 		<div
-			class="absolute inset-0 isolate -z-10 bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
-		></div>
-	</div>
+			aria-hidden="true"
+			class="absolute inset-0 size-full overflow-hidden"
+		>
+			<div
+				class="absolute inset-0 isolate -z-10 bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
+			></div>
+		</div>
+	{/if}
 
 	<div class="relative z-10 flex max-w-3xl flex-col px-4">
 		<!-- <a
@@ -46,13 +52,16 @@
 		</h1>
 
 		<p
-			class="mt-5 max-w-3xl animate-in font-mono text-sm lg:text-base leading-8 font-medium text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
+			class="mt-5 max-w-3xl animate-in text-sm lg:text-base leading-8 font-medium font-mono text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 		>
-			{components.length} Open-Source Portfolio components by
+			A Svelte port of {components.length} components from
 			<Annotation
 				note="Original Creator"
-				direction="nw"
-				customColor="lab(36 55.64 -107.68)"
+				direction="n"
+				rotate="-2deg"
+				customColor={mode.current === "dark"
+					? "#24DD84"
+					: "lab(36 55.64 -107.68)"}
 				noMark
 			>
 				<FaviconLink
@@ -64,9 +73,9 @@
 				>
 					Chánh Đại
 				</FaviconLink>
-			</Annotation>
+			</Annotation>’s Portfolio
 			<br />
-			Ported to Svelte by
+			by
 			<FaviconLink
 				href="https://bhide.dev"
 				target="_blank"
@@ -81,8 +90,9 @@
 		<div
 			class="mt-10 flex w-fit animate-in items-center justify-center gap-3 delay-300 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 		>
-			<Button href="/components/buttons" variant="ink"
-				>View Components</Button
+			<Button
+				href={resolve("/(main)/components/elastic-slider")}
+				variant="ink">View Components</Button
 			>
 		</div>
 	</div>

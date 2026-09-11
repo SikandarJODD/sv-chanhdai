@@ -20,7 +20,7 @@
 				destructive:
 					"bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
 				link: "text-primary underline-offset-4 hover:underline",
-				ink: "bg-ink text-white rounded-full lg:px-4 hover:bg-ink/80 aria-expanded:bg-ink aria-expanded:text-ink-foreground"
+				ink: "bg-ink text-white rounded-full lg:px-4 hover:bg-ink/80 aria-expanded:bg-ink aria-expanded:text-ink-foreground dark:bg-primary dark:text-primary-foreground dark:hover:bg-primary/80 dark:aria-expanded:bg-primary dark:aria-expanded:text-primary-foreground"
 			},
 			size: {
 				default:
