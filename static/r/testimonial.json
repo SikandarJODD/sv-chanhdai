@@ -5,6 +5,11 @@
 	"type": "registry:block",
 	"author": "Bhide Svelte",
 	"description": "Composable primitives for building testimonial cards.",
+	"cssVars": {
+		"light": {
+			"info": "oklch(0.67 0.17 244.98)"
+		}
+	},
 	"files": [
 		{
 			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<figure\n\tbind:this={ref}\n\tdata-slot=\"testimonial\"\n\tclass={cn(\"flex h-full flex-col\", className)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</figure>\n",
