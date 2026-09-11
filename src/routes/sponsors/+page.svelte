@@ -1,6 +1,7 @@
 <script lang="ts">
 	import CurrentSponsor from "$lib/components/sponsors/current-sponsor.svelte";
 	import Github from "$lib/svg/github.svelte";
+	import Button from "$ui/button/button.svelte";
 
 	type Sponsor = {
 		name: string;
@@ -87,7 +88,7 @@
 <main class="font-figtree min-h-[calc(100vh-4rem)] px-4 py-10 sm:py-14">
 	<div class="mx-auto w-full max-w-3xl">
 		<header
-			class="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end"
+			class="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center"
 		>
 			<div class="max-w-2xl">
 				<h1 class="text-3xl font-gp-circle sm:text-4xl">Sponsors</h1>
@@ -96,14 +97,14 @@
 				</p>
 			</div>
 
-			<a
+			<Button
 				href={sponsorUrl}
 				target="_blank"
 				rel="noreferrer"
-				class="inline-flex h-9 shrink-0 items-center justify-center rounded-md bg-primary px-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/80 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+				class="rounded-full md:px-4"
 			>
-				Sponsor my work
-			</a>
+				Support my work
+			</Button>
 		</header>
 
 		<section class="py-9" aria-labelledby="current-sponsors">
