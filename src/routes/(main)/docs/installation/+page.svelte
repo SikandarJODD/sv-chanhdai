@@ -13,14 +13,20 @@
 </script>
 
 <Seo
-	title="Installation"
-	description="Install SvelteKit, initialize shadcn-svelte, and start adding components with the Svelte Component Setup workflow."
+	title="Installation Guide"
+	description="Install Svelte Chanhdai components in a SvelteKit project using shadcn-svelte, Tailwind CSS, and the component registry with step-by-step commands."
 	keywords={[
-		"sveltekit",
-		"installation",
+		"install Svelte components",
+		"SvelteKit installation",
+		"Svelte 5 setup",
 		"shadcn-svelte",
-		"tailwind css",
-		"docs"
+		"shadcn-svelte installation",
+		"Tailwind CSS",
+		"Svelte component registry",
+		"Svelte CLI",
+		"pnpm",
+		"Svelte UI library",
+		"Chanhdai components"
 	]}
 />
 

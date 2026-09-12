@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from "$lib/components/docs/base/main/seo.svelte";
 	import CurrentSponsor from "$lib/components/sponsors/current-sponsor.svelte";
 	import Github from "$lib/svg/github.svelte";
 	import Button from "$ui/button/button.svelte";
@@ -77,13 +78,22 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Sponsors</title>
-	<meta
-		name="description"
-		content="The people supporting Sikandar Bhide's open-source work."
-	/>
-</svelte:head>
+<Seo
+	title="Sponsors"
+	description="Meet the sponsors supporting Bhide Svelte's open-source Svelte components, and learn how to fund continued development through GitHub Sponsors."
+	keywords={[
+		"support open source Svelte",
+		"GitHub Sponsors",
+		"Svelte sponsorship",
+		"Bhide Svelte sponsors",
+		"Svelte components",
+		"Svelte open source",
+		"fund open source development",
+		"Svelte UI library",
+		"Chanhdai components",
+		"Sikandar Bhide"
+	]}
+/>
 
 <main class="font-figtree min-h-[calc(100vh-4rem)] px-4 py-10 sm:py-14">
 	<div class="mx-auto w-full max-w-3xl">

@@ -21,14 +21,21 @@
 </script>
 
 <Seo
-	title="Introduction"
-	description="Explore reusable Svelte components ported from Chánh Đại's original work."
+	title="Documentation"
+	description="Learn how to install and use Svelte Chanhdai: free, reusable Svelte 5 UI components and animated blocks built with SvelteKit, Tailwind CSS, and shadcn-svelte."
 	keywords={[
 		"svelte components",
-		"sveltekit",
-		"Chánh Đại",
-		"docs",
-		"introduction"
+		"Svelte component documentation",
+		"Svelte UI documentation",
+		"Svelte 5 components",
+		"SvelteKit UI",
+		"reusable Svelte components",
+		"Svelte animations",
+		"shadcn-svelte",
+		"Tailwind CSS",
+		"component examples",
+		"Chanhdai components",
+		"Chánh Đại"
 	]}
 />
 
