@@ -111,7 +111,7 @@
 				href={sponsorUrl}
 				target="_blank"
 				rel="noreferrer"
-				class="rounded-full md:px-4"
+				class="rounded-full px-4"
 			>
 				Support my work
 			</Button>
