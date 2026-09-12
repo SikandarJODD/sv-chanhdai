@@ -42,7 +42,7 @@
 				class="rounded-lg hover:bg-muted dark:hover:bg-muted/50"
 				href="/"
 			>
-				<Logo class="h-5" />
+				<Logo class="h-4.5" />
 			</a>
 			<DesktopNav />
 		</div>

@@ -35,6 +35,7 @@
 		ResizablePane,
 		ResizablePaneGroup
 	} from "$ui/resizable";
+	import { watch } from "runed";
 	import MasonryCard from "./masonry-card.svelte";
 
 	const LOGOMARK_SVG =
@@ -70,6 +71,17 @@
 			window.setTimeout(resolvePromise, 1000);
 		});
 	}
+
+	watch(
+		() => unlocked,
+		(value) => {
+			if (value) {
+				window.setTimeout(() => {
+					unlocked = false;
+				}, 1400);
+			}
+		}
+	);
 </script>
 
 {#snippet chanhDaiMark(className = "")}
@@ -178,7 +190,7 @@
 			<div class="flex w-full flex-col items-center gap-3">
 				<SlideToUnlock
 					onUnlock={() => (unlocked = true)}
-					class="w-67 max-w-full rounded-full"
+					class="w-56 md:w-64 max-w-full rounded-full"
 				>
 					<SlideToUnlockTrack>
 						<SlideToUnlockText>

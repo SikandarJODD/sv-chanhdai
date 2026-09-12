@@ -11,6 +11,7 @@
 
 <script lang="ts">
 	import ExternalLink from "@lucide/svelte/icons/external-link";
+	import RotateCw from "@lucide/svelte/icons/rotate-cw";
 	import { cn } from "$lib/utils";
 	import * as Frame from "$lib/components/ui/frame";
 	import { Button } from "$ui/button";
@@ -22,6 +23,12 @@
 		class: className,
 		...restProps
 	}: MasonryCardProps = $props();
+
+	let retryKey = $state(0);
+
+	function handleRetry() {
+		retryKey += 1;
+	}
 </script>
 
 <Frame.Root
@@ -31,7 +38,23 @@
 	<Frame.Panel
 		class="flex min-h-0 flex-1 items-center justify-center overflow-hidden p-4 shadow-none before:shadow-none sm:p-5 dark:before:shadow-none"
 	>
-		{@render children()}
+		<Button
+			variant="secondary"
+			size="icon-sm"
+			onclick={handleRetry}
+			class="group absolute top-1.5 right-1.5 z-30"
+			aria-label={`Retry ${name}`}
+			title={`Retry ${name}`}
+		>
+			<RotateCw
+				class="transition-transform duration-200 ease-out group-hover:rotate-45 opacity-70"
+				aria-hidden="true"
+			/>
+		</Button>
+
+		{#key retryKey}
+			{@render children()}
+		{/key}
 	</Frame.Panel>
 
 	<Frame.Footer class="flex items-center justify-between pl-2 pr-1 py-1.5">
