@@ -85,10 +85,10 @@
 					></Code.Root>
 				</ScrollFadeEffect>
 			{:else}
-				<div class="max-h-[600px] overflow-auto noscrollbar!">
+				<div class="no-scrollbar max-h-[600px] overflow-auto">
 					<Code.Root
 						lang={code.lang || "svelte"}
-						class="h-auto w-full overflow-visible rounded-none border-none bg-background no-scrollbar!"
+						class="h-auto w-full overflow-visible rounded-none border-none bg-background [&_pre]:no-scrollbar"
 						code={code.code}
 						highlight={code.highlight}
 						hideLines={code.hideLines ?? false}
