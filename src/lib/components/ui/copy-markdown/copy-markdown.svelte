@@ -37,14 +37,14 @@
 <Button
 	variant="secondary"
 	onclick={copyMarkdown}
-	class="gap-2"
+	class="gap-1.5 [&_svg:not([class*='size-'])]:size-3 lg:[&_svg:not([class*='size-'])]:size-3.5"
 	aria-label="Copy as Markdown"
 	{size}
 >
 	{#if copied}
-		<Check class="size-4" />
+		<Check />
 	{:else}
-		<Copy class="size-4" />
+		<Copy />
 	{/if}
-	<span>Copy Page</span>
+	<span class="text-xs!">Copy Page</span>
 </Button>
