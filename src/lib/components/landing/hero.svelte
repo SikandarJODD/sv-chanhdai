@@ -24,12 +24,12 @@
 			class="absolute inset-0 size-full overflow-hidden -z-60"
 		>
 			<div
-				class="absolute inset-0 isolate -z-10 bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
+				class="absolute inset-0 isolate -z-10 bg-[radial-gradient(60%_60%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)] md:bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
 			></div>
 		</div>
 	{/if}
 
-	<div class="relative z-10 flex max-w-3xl flex-col px-6 md:px-0">
+	<div class="relative z-10 flex max-w-3xl flex-col px-6 md:px-4">
 		<!-- <a
 			class="group flex w-fit animate-in items-center gap-3 rounded-full border bg-card p-1 shadow-xs transition-all delay-50 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 			href="/"
