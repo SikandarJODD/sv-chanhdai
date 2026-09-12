@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Seo from "$lib/components/docs/base/main/seo.svelte";
-	import { Hero } from "$lib/components/landing";
+	import { Hero, Sponsors } from "$lib/components/landing";
 	import MasonryGrid from "$lib/components/ui/masonry-grid/masonry-grid.svelte";
 </script>
 
@@ -28,4 +28,5 @@
 <main>
 	<Hero />
 	<MasonryGrid />
+	<Sponsors />
 </main>
