@@ -29,7 +29,7 @@
 		</div>
 	{/if}
 
-	<div class="relative z-10 flex max-w-3xl flex-col px-4">
+	<div class="relative z-10 flex max-w-3xl flex-col px-6 md:px-0">
 		<!-- <a
 			class="group flex w-fit animate-in items-center gap-3 rounded-full border bg-card p-1 shadow-xs transition-all delay-50 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 			href="/"
@@ -108,7 +108,46 @@
 		>
 			<Button
 				href={resolve("/(main)/components/elastic-slider")}
-				variant="ink">View Components</Button
+				variant="ink"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					><g fill="currentColor"
+						><circle
+							cx="14.5"
+							cy="8.5"
+							r="2.5"
+							fill="currentColor"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+						></circle><rect
+							x="5"
+							y="12"
+							width="5"
+							height="5"
+							rx="1"
+							ry="1"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							fill="currentColor"
+						></rect><path
+							d="m5.1889,3.7146l-2.1169,3.5282c-.2.3333.0401.7572.4287.7572h4.2338c.3886,0,.6287-.424.4287-.7572l-2.1169-3.5282c-.1942-.3237-.6633-.3237-.8575,0Z"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							fill="currentColor"
+						></path></g
+					></svg
+				>
+				View Components</Button
 			>
 		</div>
 	</div>

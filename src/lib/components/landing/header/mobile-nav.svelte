@@ -1,30 +1,42 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button';
-	import { Portal, PortalBackdrop } from '$lib/components/ui/portal';
-	import { cn } from '$lib/utils';
-	import MenuIcon from '@lucide/svelte/icons/menu';
-	import XIcon from '@lucide/svelte/icons/x';
-	import LinkItem from './link-item.svelte';
-	import { navs } from './nav-links';
+	import { Button } from "$lib/components/ui/button";
+	import { Portal, PortalBackdrop } from "$lib/components/ui/portal";
+	import { cn } from "$lib/utils";
+	import MenuIcon from "@lucide/svelte/icons/menu";
+	import XIcon from "@lucide/svelte/icons/x";
+	import LinkItem from "./link-item.svelte";
+	import { navs } from "./nav-links";
+	import SearchNavigation from "$lib/components/docs/layout/navigation/search-navigation.svelte";
+	import { LightSwitch } from "$ui/light-switch";
 
 	let open = $state(false);
 </script>
 
-<div class="md:hidden">
+<div class="md:hidden flex items-center gap-1">
+	<SearchNavigation />
+	<LightSwitch />
 	<Button
 		aria-controls="mobile-menu"
 		aria-expanded={open}
 		aria-label="Toggle menu"
 		class="md:hidden"
 		onclick={() => (open = !open)}
-		size="icon"
-		variant="outline"
+		size="icon-sm"
+		variant="secondary"
 	>
-		<div class={cn('transition-all', open ? 'scale-100 opacity-100' : 'scale-0 opacity-0')}>
+		<div
+			class={cn(
+				"transition-all",
+				open ? "scale-100 opacity-100" : "scale-0 opacity-0"
+			)}
+		>
 			<XIcon />
 		</div>
 		<div
-			class={cn('absolute transition-all', open ? 'scale-0 opacity-0' : 'scale-100 opacity-100')}
+			class={cn(
+				"absolute transition-all",
+				open ? "scale-0 opacity-0" : "scale-100 opacity-100"
+			)}
 		>
 			<MenuIcon />
 		</div>
@@ -34,10 +46,10 @@
 			<PortalBackdrop />
 			<div
 				class={cn(
-					'size-full overflow-y-auto p-4',
-					'ease-out data-[slot=open]:animate-in data-[slot=open]:zoom-in-97'
+					"size-full overflow-y-auto p-4",
+					"ease-out data-[slot=open]:animate-in data-[slot=open]:zoom-in-97"
 				)}
-				data-slot={open ? 'open' : 'closed'}
+				data-slot={open ? "open" : "closed"}
 			>
 				<div class="flex w-full flex-col gap-y-2">
 					<span class="text-sm">Product</span>
@@ -60,7 +72,10 @@
 								/>
 							{/each}
 						{:else}
-							<LinkItem class="rounded-lg p-2 active:bg-muted dark:active:bg-muted/50" {...nav} />
+							<LinkItem
+								class="rounded-lg p-2 active:bg-muted dark:active:bg-muted/50"
+								{...nav}
+							/>
 						{/if}
 					{/each}
 				</div>
