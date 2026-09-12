@@ -74,13 +74,15 @@
 	<ul
 		class="contents font-cursive text-[0.925rem] leading-none font-semibold whitespace-nowrap"
 	>
-		<li class="absolute top-8 left-5 h-14 w-[204px] -rotate-3 text-ink">
+		<li
+			class="absolute top-8 left-5 h-14 w-[204px] -rotate-3 text-ink dark:text-info"
+		>
 			<Rough.SVG
 				width={204}
 				height={56}
 				class="pointer-events-none absolute inset-0 size-full"
 				aria-hidden="true"
-				stroke="var(--color-ink)"
+				stroke="currentColor"
 				strokeWidth={1.8}
 				roughness={1.5}
 				bowing={1.2}
@@ -88,7 +90,7 @@
 			>
 				<Rough.Path
 					d="M 15 5 H 189 Q 199 5 199 15 V 41 Q 199 51 189 51 H 15 Q 5 51 5 41 V 15 Q 5 5 15 5 Z"
-					fill="color-mix(in oklab, var(--color-ink) 10%, transparent)"
+					fill="color-mix(in oklab, currentColor 10%, transparent)"
 					fillStyle="hachure"
 					hachureGap={7}
 				/>

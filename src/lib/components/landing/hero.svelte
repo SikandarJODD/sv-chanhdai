@@ -61,7 +61,7 @@
 			<div
 				class="mt-5 max-w-3xl animate-in text-sm lg:text-base leading-8 font-medium font-mono text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 			>
-				A Svelte port of {components.length} components from
+				A Svelte port of 20+ components from
 				{#if large.current}
 					<Annotation
 						note="Original Creator"
