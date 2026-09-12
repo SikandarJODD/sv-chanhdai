@@ -110,7 +110,7 @@
 		{#each sponsors as sponsor (sponsor.handle)}
 			<article class="min-w-0 p-2">
 				<div
-					class="relative aspect-square w-full p-1.5 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-ink/40 after:content-[''] after:border-dashed"
+					class="relative aspect-square w-full p-1.5 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-ink/40 after:content-[''] after:border-dashed dark:after:border-emerald-500/40"
 				>
 					<img
 						src={sponsor.avatar}
@@ -140,7 +140,7 @@
 								target="_blank"
 								rel="noreferrer"
 								variant="ghost"
-								size="icon-xs"
+								size="icon-sm"
 								aria-label={`${sponsor.name} on X`}
 							>
 								<X class="size-3" />
@@ -152,7 +152,7 @@
 							target="_blank"
 							rel="noreferrer"
 							variant="ghost"
-							size="icon-xs"
+							size="icon-sm"
 							aria-label={`${sponsor.name} on GitHub`}
 						>
 							<Github class="size-3.5" />
