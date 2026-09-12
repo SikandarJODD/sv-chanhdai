@@ -46,6 +46,11 @@
 		[1, 0]
 	);
 
+	export function reset() {
+		isDragging = false;
+		animate(x, 0, { type: "spring", bounce: 0, duration: 0.25 });
+	}
+
 	function handleDragStart() {
 		isDragging = true;
 	}

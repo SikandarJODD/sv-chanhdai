@@ -47,7 +47,7 @@
 			title={`Retry ${name}`}
 		>
 			<RotateCw
-				class="transition-transform duration-200 ease-out group-hover:rotate-45 opacity-70"
+				class="transition-transform duration-200 ease-out group-hover:rotate-45 opacity-50"
 				aria-hidden="true"
 			/>
 		</Button>

@@ -37,6 +37,7 @@
 	} from "$ui/resizable";
 	import { watch } from "runed";
 	import MasonryCard from "./masonry-card.svelte";
+	import { fade, slide } from "svelte/transition";
 
 	const LOGOMARK_SVG =
 		'<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 256 128"><path fill="currentColor" d="M96 128H32V96h64v32ZM224 32h-64v64h64v32h-96V0h96v32ZM32 96H0V32h32v64ZM256 96h-32V32h32v64ZM96 32H32V0h64v32Z"/></svg>';
@@ -65,6 +66,7 @@
 	let unlocked = $state(false);
 	let sliderValue = $state(50);
 	let wheelValue = $state("svelte");
+	let slideToUnlock = $state<{ reset: () => void }>();
 
 	function save() {
 		return new Promise<void>((resolvePromise) => {
@@ -76,9 +78,12 @@
 		() => unlocked,
 		(value) => {
 			if (value) {
-				window.setTimeout(() => {
+				const timeout = window.setTimeout(() => {
+					slideToUnlock?.reset();
 					unlocked = false;
-				}, 1400);
+				}, 2000);
+
+				return () => window.clearTimeout(timeout);
 			}
 		}
 	);
@@ -188,31 +193,43 @@
 			class="md:col-span-7"
 		>
 			<div class="flex w-full flex-col items-center gap-3">
-				<SlideToUnlock
-					onUnlock={() => (unlocked = true)}
-					class="w-56 md:w-64 max-w-full rounded-full"
+				{#if unlocked}
+					<p
+						class="h-5 text-sm font-medium transition-opacity"
+						class:opacity-0={!unlocked}
+						aria-live="polite"
+						transition:slide={{ duration: 200 }}
+					>
+						{unlocked ? "Unlocked!" : ""}
+					</p>
+				{/if}
+				<Annotation
+					note="Resets in 2.0s"
+					noMark
+					direction="n"
+					color="purple"
+					targetGap="0.6rem"
+					labelGap="0.5rem"
 				>
-					<SlideToUnlockTrack>
-						<SlideToUnlockText>
-							{#snippet children({ isDragging })}
-								<span>
-									{isDragging
-										? "Release..."
-										: "Slide to unlock"}
-								</span>
-							{/snippet}
-						</SlideToUnlockText>
-						<SlideToUnlockHandle class="rounded-full" />
-					</SlideToUnlockTrack>
-				</SlideToUnlock>
-
-				<p
-					class="h-5 text-sm font-medium transition-opacity"
-					class:opacity-0={!unlocked}
-					aria-live="polite"
-				>
-					{unlocked ? "Unlocked!" : ""}
-				</p>
+					<SlideToUnlock
+						bind:this={slideToUnlock}
+						onUnlock={() => (unlocked = true)}
+						class="w-56 md:w-64 max-w-full rounded-full"
+					>
+						<SlideToUnlockTrack>
+							<SlideToUnlockText>
+								{#snippet children({ isDragging })}
+									<span>
+										{isDragging
+											? "Release..."
+											: "Slide to unlock"}
+									</span>
+								{/snippet}
+							</SlideToUnlockText>
+							<SlideToUnlockHandle class="rounded-full" />
+						</SlideToUnlockTrack>
+					</SlideToUnlock>
+				</Annotation>
 			</div>
 		</MasonryCard>
 
@@ -322,7 +339,7 @@
 					<div
 						class="relative flex w-full min-w-0 flex-col gap-3 rounded-xl border bg-card p-5 after:pointer-events-none after:absolute after:inset-1 after:rounded-lg after:border after:border-border/50"
 					>
-						{#each exampleFiles as file}
+						{#each exampleFiles as file (file.name)}
 							<MiddleTruncation
 								text={file.name}
 								end={file.name.endsWith(".svelte") ? 7 : 3}
