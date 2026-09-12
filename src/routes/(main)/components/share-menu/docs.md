@@ -1,44 +1,59 @@
 # Share Menu
 
-TODO: Add a concise description for Share Menu.
+Share menu to copy a link or post to X, LinkedIn, and the native share sheet.
+
+Packages: @lucide/svelte, svelte-sonner
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
+### npm
 
 ```bash
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/share-menu.json
 ```
 
-</Tab>
-<Tab value="Manual">
+### pnpm
 
-### Manual Installation
+```bash
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/share-menu.json
+```
 
-Copy the component source files into your project and update the example files with real usage.
+### yarn
 
-</Tab>
-</Tabs>
+```bash
+yarn dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/share-menu.json
+```
+
+### bun
+
+```bash
+bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/share-menu.json
+```
 
 ## Usage
 
 ```svelte
-<script lang="ts">
-  import { ShareMenu } from "$lib/components/chan/share-menu";
+<script>
+  import { ShareMenu } from "$chan/share-menu";
 </script>
 
-<ShareMenu />
+<ShareMenu title="Share Menu" url="/components/share-menu" />
 ```
 
 ## Props
 
-Document the Share Menu props here.
+### ShareMenu
+
+Menu for copying or sharing a URL through supported services.
+
+| Prop    | Type     | Default | Required | Description                                                            |
+| ------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
+| `title` | `string` | —       | Yes      | Title passed to the native share sheet.                                |
+| `url`   | `string` | —       | Yes      | URL to share; relative values are resolved against the current origin. |
 
 ## Features
 
-- Replace this placeholder bullet with a real Share Menu feature.
-- Add one or two implementation details that matter to consumers.
-- Include usage constraints or accessibility notes if they apply.
+- Copy the link to the clipboard with toast feedback
+- Share directly to X and LinkedIn in a new tab
+- Resolves relative URLs against the current origin
+- Shows the native share option only when the Web Share API is available

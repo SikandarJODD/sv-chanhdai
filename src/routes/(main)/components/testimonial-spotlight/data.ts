@@ -86,19 +86,22 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "Content rendered inside the spotlight container."
+					description:
+						"Content rendered inside the spotlight container."
 				},
 				{
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the spotlight container."
+					description:
+						"Additional classes applied to the spotlight container."
 				},
 				{
 					name: "ref",
 					type: "HTMLDivElement | null",
 					default: "null",
-					description: "Bindable reference to the spotlight container."
+					description:
+						"Bindable reference to the spotlight container."
 				}
 			]
 		}

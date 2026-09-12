@@ -15,7 +15,9 @@
 		class="w-72 rounded-full bg-blue-500/10"
 	>
 		<SlideToUnlockTrack>
-			<SlideToUnlockText class="text-base text-blue-700 dark:text-blue-300">
+			<SlideToUnlockText
+				class="text-base text-blue-700 dark:text-blue-300"
+			>
 				{#snippet children({ isDragging })}
 					{isDragging ? "Release to check in" : "Slide to check in"}
 				{/snippet}

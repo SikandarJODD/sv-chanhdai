@@ -1,44 +1,91 @@
 # Testimonial
 
-TODO: Add a concise description for Testimonial.
+Display user feedback with author info, avatar, and verified badge.
+
+Packages: None
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
+### npm
 
 ```bash
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial.json
 ```
 
-</Tab>
-<Tab value="Manual">
+### pnpm
 
-### Manual Installation
+```bash
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial.json
+```
 
-Copy the component source files into your project and update the example files with real usage.
+### yarn
 
-</Tab>
-</Tabs>
+```bash
+yarn dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial.json
+```
+
+### bun
+
+```bash
+bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial.json
+```
 
 ## Usage
 
 ```svelte
 <script lang="ts">
-  import { Testimonial } from "$lib/components/chan/testimonial";
+  import {
+    Testimonial,
+    TestimonialAuthor,
+    TestimonialAuthorName,
+    TestimonialAuthorTagline,
+    TestimonialAvatar,
+    TestimonialAvatarImg,
+    TestimonialAvatarRing,
+    TestimonialQuote
+  } from "$chan/testimonial";
 </script>
 
-<Testimonial />
+<Testimonial>
+  <TestimonialQuote>
+    <p>This component library is a joy to use.</p>
+  </TestimonialQuote>
+  <TestimonialAuthor>
+    <TestimonialAvatar>
+      <TestimonialAvatarImg src="/avatar.jpg" alt="Jane Doe" />
+      <TestimonialAvatarRing />
+    </TestimonialAvatar>
+    <TestimonialAuthorName>Jane Doe</TestimonialAuthorName>
+    <TestimonialAuthorTagline>Product Designer</TestimonialAuthorTagline>
+  </TestimonialAuthor>
+</Testimonial>
 ```
 
 ## Props
 
-Document the Testimonial props here.
+### Testimonial layout components
+
+Shared API for Testimonial, Author, AuthorName, AuthorTagline, Avatar, AvatarRing, Quote, and VerifiedBadge.
+
+| Prop       | Type                  | Default     | Required | Description                                                 |
+| ---------- | --------------------- | ----------- | -------- | ----------------------------------------------------------- |
+| `children` | `Snippet`             | `undefined` | No       | Content rendered inside the selected testimonial primitive. |
+| `class`    | `string`              | `undefined` | No       | Additional classes applied to the primitive element.        |
+| `ref`      | `HTMLElement \| null` | `null`      | No       | Bindable reference to the primitive's underlying element.   |
+
+### TestimonialAvatarImg
+
+Image primitive used inside TestimonialAvatar.
+
+| Prop    | Type                       | Default     | Required | Description                                 |
+| ------- | -------------------------- | ----------- | -------- | ------------------------------------------- |
+| `src`   | `string`                   | `undefined` | No       | Avatar image URL.                           |
+| `alt`   | `string`                   | `undefined` | No       | Accessible alternative text for the avatar. |
+| `class` | `string`                   | `undefined` | No       | Additional classes applied to the image.    |
+| `ref`   | `HTMLImageElement \| null` | `null`      | No       | Bindable reference to the image element.    |
 
 ## Features
 
-- Replace this placeholder bullet with a real Testimonial feature.
-- Add one or two implementation details that matter to consumers.
-- Include usage constraints or accessibility notes if they apply.
+- Composable testimonial layout with quote, author info, and avatar
+- Built-in verified badge for the author name
+- Composable via Testimonial, TestimonialAuthor, TestimonialAvatar, and related subcomponents

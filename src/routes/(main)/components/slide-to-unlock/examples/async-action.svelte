@@ -88,14 +88,21 @@
 				exit={exitVariant}
 				transition={swapTransition}
 			>
-				<SlideToUnlock onUnlock={confirmOrder} class="w-72 rounded-full">
+				<SlideToUnlock
+					onUnlock={confirmOrder}
+					class="w-72 rounded-full"
+				>
 					<SlideToUnlockTrack>
 						<SlideToUnlockText class="text-base">
 							{#snippet children({ isDragging })}
-								{isDragging ? "Release to confirm" : "Slide to confirm order"}
+								{isDragging
+									? "Release to confirm"
+									: "Slide to confirm order"}
 							{/snippet}
 						</SlideToUnlockText>
-						<SlideToUnlockHandle class="rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900">
+						<SlideToUnlockHandle
+							class="rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900"
+						>
 							{#snippet children()}
 								<ShoppingBagIcon class="size-5" />
 							{/snippet}

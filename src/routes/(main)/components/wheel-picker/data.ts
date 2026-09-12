@@ -104,7 +104,8 @@ export const data: ComponentDoc = {
 					name: "options",
 					type: "WheelPickerOption<T>[]",
 					required: true,
-					description: "Values, labels, and disabled states available for selection."
+					description:
+						"Values, labels, and disabled states available for selection."
 				},
 				{
 					name: "value",
@@ -122,7 +123,8 @@ export const data: ComponentDoc = {
 					name: "onValueChange",
 					type: "(value: T) => void",
 					default: "undefined",
-					description: "Called whenever interaction selects a different value."
+					description:
+						"Called whenever interaction selects a different value."
 				},
 				{
 					name: "infinite",
@@ -134,13 +136,15 @@ export const data: ComponentDoc = {
 					name: "visibleCount",
 					type: "number",
 					default: "20",
-					description: "Number of wheel positions; must be a positive multiple of four."
+					description:
+						"Number of wheel positions; must be a positive multiple of four."
 				},
 				{
 					name: "dragSensitivity",
 					type: "number",
 					default: "3",
-					description: "Multiplier applied to pointer and touch dragging."
+					description:
+						"Multiplier applied to pointer and touch dragging."
 				},
 				{
 					name: "scrollSensitivity",
@@ -158,7 +162,8 @@ export const data: ComponentDoc = {
 					name: "classes",
 					type: "WheelPickerClasses",
 					default: "undefined",
-					description: "Class overrides for optionItem, highlightWrapper, and highlightItem."
+					description:
+						"Class overrides for optionItem, highlightWrapper, and highlightItem."
 				},
 				{
 					name: "ref",
@@ -176,7 +181,8 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "WheelPicker components rendered inside the group."
+					description:
+						"WheelPicker components rendered inside the group."
 				},
 				{
 					name: "class",

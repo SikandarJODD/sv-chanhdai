@@ -8,7 +8,7 @@
 
 	let {
 		previous,
-		next,
+		next
 	}: {
 		previous?: DocNavLink | null;
 		next?: DocNavLink | null;

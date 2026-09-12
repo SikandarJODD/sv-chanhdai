@@ -101,19 +101,22 @@ export const data: ComponentDoc = {
 					name: "spinClass",
 					type: "ClassValue",
 					default: "undefined",
-					description: "Classes applied to the spinning character ring."
+					description:
+						"Classes applied to the spinning character ring."
 				},
 				{
 					name: "renderChar",
 					type: "Snippet<[{ char: string; index: number }]>",
 					default: "undefined",
-					description: "Custom renderer for each positioned character."
+					description:
+						"Custom renderer for each positioned character."
 				},
 				{
 					name: "class",
 					type: "ClassValue",
 					default: "undefined",
-					description: "Additional classes applied to the outer container."
+					description:
+						"Additional classes applied to the outer container."
 				},
 				{
 					name: "ref",

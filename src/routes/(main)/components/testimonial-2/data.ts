@@ -93,13 +93,15 @@ export const data: ComponentDoc = {
 					name: "authorTagline",
 					type: "string",
 					required: true,
-					description: "Short title or description shown beside the author."
+					description:
+						"Short title or description shown beside the author."
 				},
 				{
 					name: "url",
 					type: "string",
 					required: true,
-					description: "Link to the author's profile, website, or social page."
+					description:
+						"Link to the author's profile, website, or social page."
 				},
 				{
 					name: "quote",

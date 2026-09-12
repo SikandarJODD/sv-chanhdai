@@ -1,44 +1,64 @@
 # Testimonial Spotlight
 
-TODO: Add a concise description for Testimonial Spotlight.
+Testimonial card with spotlight effect on hover.
+
+Packages: None
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
+### npm
 
 ```bash
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial-spotlight.json
 ```
 
-</Tab>
-<Tab value="Manual">
+### pnpm
 
-### Manual Installation
+```bash
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial-spotlight.json
+```
 
-Copy the component source files into your project and update the example files with real usage.
+### yarn
 
-</Tab>
-</Tabs>
+```bash
+yarn dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial-spotlight.json
+```
+
+### bun
+
+```bash
+bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial-spotlight.json
+```
 
 ## Usage
 
 ```svelte
 <script lang="ts">
-  import { TestimonialSpotlight } from "$lib/components/chan/testimonial-spotlight";
+  import { TestimonialSpotlight } from "$chan/testimonial-spotlight";
 </script>
 
-<TestimonialSpotlight />
+<TestimonialSpotlight class="max-w-sm p-6">
+  <blockquote class="text-lg font-medium">
+    “This component library is a joy to use.”
+  </blockquote>
+  <p class="mt-4 text-sm text-muted-foreground">Jane Doe</p>
+</TestimonialSpotlight>
 ```
 
 ## Props
 
-Document the Testimonial Spotlight props here.
+### TestimonialSpotlight
+
+Content container with a pointer-following radial spotlight.
+
+| Prop       | Type                     | Default     | Required | Description                                            |
+| ---------- | ------------------------ | ----------- | -------- | ------------------------------------------------------ |
+| `children` | `Snippet`                | —           | Yes      | Content rendered inside the spotlight container.       |
+| `class`    | `string`                 | `undefined` | No       | Additional classes applied to the spotlight container. |
+| `ref`      | `HTMLDivElement \| null` | `null`      | No       | Bindable reference to the spotlight container.         |
 
 ## Features
 
-- Replace this placeholder bullet with a real Testimonial Spotlight feature.
-- Add one or two implementation details that matter to consumers.
-- Include usage constraints or accessibility notes if they apply.
+- Wraps testimonial cards with a cursor-hover spotlight effect
+- Customizable spotlight color, size, and opacity via CSS variables
+- Composable with the base Testimonial component

@@ -79,7 +79,8 @@ const usage: CodeBlock[] = [
 const examples: Example[] = [
 	{
 		name: "Basic",
-		description: "Run a callback when the handle reaches the end of the track.",
+		description:
+			"Run a callback when the handle reaches the end of the track.",
 		preview: BasicExample,
 		code: {
 			name: "basic.svelte",
@@ -89,7 +90,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Reset",
-		description: "Return the handle to its starting position with the reset method.",
+		description:
+			"Return the handle to its starting position with the reset method.",
 		preview: ResetExample,
 		code: {
 			name: "reset.svelte",
@@ -99,7 +101,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Custom prompt",
-		description: "Change the instruction while the handle is being dragged.",
+		description:
+			"Change the instruction while the handle is being dragged.",
 		preview: CustomPromptExample,
 		code: {
 			name: "custom-prompt.svelte",
@@ -119,7 +122,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Confirm action",
-		description: "Replace a one-time confirmation gesture with completion feedback.",
+		description:
+			"Replace a one-time confirmation gesture with completion feedback.",
 		preview: ConfirmActionExample,
 		code: {
 			name: "confirm-action.svelte",
@@ -129,7 +133,8 @@ const examples: Example[] = [
 	},
 	{
 		name: "Async action",
-		description: "Show processing and success states after the gesture completes.",
+		description:
+			"Show processing and success states after the gesture completes.",
 		preview: AsyncActionExample,
 		code: {
 			name: "async-action.svelte",
@@ -215,7 +220,8 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "Track, text, and handle composition rendered inside the root."
+					description:
+						"Track, text, and handle composition rendered inside the root."
 				},
 				{
 					name: "handleWidth",
@@ -227,7 +233,8 @@ export const data: ComponentDoc = {
 					name: "onUnlock",
 					type: "() => void",
 					default: "undefined",
-					description: "Called when the handle reaches the end of the track."
+					description:
+						"Called when the handle reaches the end of the track."
 				},
 				{
 					name: "ref",
@@ -239,7 +246,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the root element."
+					description:
+						"Additional classes applied to the root element."
 				}
 			]
 		},
@@ -251,7 +259,8 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "Text and handle content rendered inside the track."
+					description:
+						"Text and handle content rendered inside the track."
 				},
 				{
 					name: "ref",
@@ -275,13 +284,15 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet<[{ isDragging: boolean }]>",
 					required: true,
-					description: "Text renderer receiving the current dragging state."
+					description:
+						"Text renderer receiving the current dragging state."
 				},
 				{
 					name: "style",
 					type: "MotionStyleProps",
 					default: "undefined",
-					description: "Additional Motion style values merged with the progress styles."
+					description:
+						"Additional Motion style values merged with the progress styles."
 				},
 				{
 					name: "ref",
@@ -293,7 +304,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "ClassValue",
 					default: "undefined",
-					description: "Additional classes applied to the text element."
+					description:
+						"Additional classes applied to the text element."
 				}
 			]
 		},
@@ -305,13 +317,15 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					default: "default arrow",
-					description: "Optional custom content rendered inside the handle."
+					description:
+						"Optional custom content rendered inside the handle."
 				},
 				{
 					name: "style",
 					type: "MotionStyleProps",
 					default: "undefined",
-					description: "Additional Motion style values merged with the drag styles."
+					description:
+						"Additional Motion style values merged with the drag styles."
 				},
 				{
 					name: "ref",

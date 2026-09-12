@@ -1,44 +1,114 @@
 # Apple Hello Effect
 
-TODO: Add a concise description for Apple Hello Effect.
+Animated handwritten 'hello' text in multiple languages with a polished Apple-inspired motion effect.
+
+Packages: motion-sv
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
+### npm
 
 ```bash
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/apple-hello-effect.json
 ```
 
-</Tab>
-<Tab value="Manual">
+### pnpm
 
-### Manual Installation
+```bash
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/apple-hello-effect.json
+```
 
-Copy the component source files into your project and update the example files with real usage.
+### yarn
 
-</Tab>
-</Tabs>
+```bash
+yarn dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/apple-hello-effect.json
+```
+
+### bun
+
+```bash
+bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/apple-hello-effect.json
+```
 
 ## Usage
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectEnglish as AppleHelloEffect } from "$lib/components/chan/apple-hello-effect";
+  import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
 </script>
 
-<AppleHelloEffect />
+<AppleHelloEffectEnglish />
 ```
 
 ## Props
 
-Document the Apple Hello Effect props here.
+### AppleHelloEffect
+
+Multilingual animated greeting text with Apple-style handwriting motion.
+
+| Prop                  | Type         | Default     | Required | Description                                                                        |
+| --------------------- | ------------ | ----------- | -------- | ---------------------------------------------------------------------------------- |
+| `class`               | `string`     | `''`        | No       | Additional classes applied to the underlying SVG element.                          |
+| `durationScale`       | `number`     | `1`         | No       | Scales the overall handwriting animation speed for the current language variation. |
+| `onAnimationComplete` | `() => void` | `undefined` | No       | Called when the full animation completes.                                          |
 
 ## Features
 
-- Replace this placeholder bullet with a real Apple Hello Effect feature.
-- Add one or two implementation details that matter to consumers.
-- Include usage constraints or accessibility notes if they apply.
+- SVG writing/path animation inspired by Apple's "Hello" welcome screen
+- Ships with English, Hindi, Spanish, and Vietnamese language variants
+- onAnimationComplete callback to trigger logic after the animation finishes
+- durationScale prop to control animation speed
+
+## Examples
+
+### Custom colors
+
+```svelte
+<script lang="ts">
+  import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+</script>
+
+<AppleHelloEffectEnglish
+  class="text-ink dark:text-emerald-400 bg-ink/5 p-1 border border-dashed border"
+/>
+```
+
+### English
+
+```svelte
+<script lang="ts">
+  import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+</script>
+
+<AppleHelloEffectEnglish />
+```
+
+### Hindi
+
+```svelte
+<script lang="ts">
+  import { AppleHelloEffectHindi } from "$chan/apple-hello-effect";
+</script>
+
+<AppleHelloEffectHindi />
+```
+
+### Spanish
+
+```svelte
+<script lang="ts">
+  import { AppleHelloEffectSpanish } from "$chan/apple-hello-effect";
+</script>
+
+<AppleHelloEffectSpanish />
+```
+
+### Vietnamese
+
+```svelte
+<script lang="ts">
+  import { AppleHelloEffectVietnamese } from "$chan/apple-hello-effect";
+</script>
+
+<AppleHelloEffectVietnamese />
+```

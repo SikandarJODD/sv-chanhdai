@@ -109,7 +109,8 @@ export const data: ComponentDoc = {
 					name: "locales",
 					type: "Intl.LocalesArgument",
 					default: "'en-US'",
-					description: "Locale or locales used to format the star count."
+					description:
+						"Locale or locales used to format the star count."
 				}
 			]
 		}

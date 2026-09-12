@@ -19,7 +19,7 @@
 	{#each toc as heading, i (i)}
 		<li
 			class={cn("text-muted-foreground mt-0 pt-2 transition-all", {
-				"text-foreground": heading.active,
+				"text-foreground": heading.active
 			})}
 		>
 			{#if heading.id}

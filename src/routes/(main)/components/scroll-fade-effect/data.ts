@@ -68,13 +68,15 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "Content rendered inside the scrollable container."
+					description:
+						"Content rendered inside the scrollable container."
 				},
 				{
 					name: "orientation",
 					type: "'vertical' | 'horizontal' | 'both'",
 					default: "'vertical'",
-					description: "Direction in which scrolling and edge fades are enabled."
+					description:
+						"Direction in which scrolling and edge fades are enabled."
 				},
 				{
 					name: "ref",
@@ -86,7 +88,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the scroll container."
+					description:
+						"Additional classes applied to the scroll container."
 				}
 			]
 		}

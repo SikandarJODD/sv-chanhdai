@@ -8,6 +8,11 @@
 	}>();
 </script>
 
-<div class={cn("border-border relative mb-12 ml-4 border-l [counter-reset:step]", className)}>
+<div
+	class={cn(
+		"border-border relative mb-12 ml-4 border-l [counter-reset:step]",
+		className
+	)}
+>
 	{@render children?.()}
 </div>

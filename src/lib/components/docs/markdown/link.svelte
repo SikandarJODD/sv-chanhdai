@@ -9,7 +9,12 @@
 		[prop: string]: unknown;
 	};
 
-	const { children, href = "#", class: className = "", ...restProps }: ComponentProps = $props();
+	const {
+		children,
+		href = "#",
+		class: className = "",
+		...restProps
+	}: ComponentProps = $props();
 </script>
 
 <a

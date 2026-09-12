@@ -103,7 +103,8 @@ export const data: ComponentDoc = {
 					name: "activeDotColor",
 					type: "string",
 					default: "'rgba(255, 255, 255, 0.1)'",
-					description: "Color used for dots illuminated by the pointer."
+					description:
+						"Color used for dots illuminated by the pointer."
 				},
 				{
 					name: "spacing",
@@ -121,7 +122,8 @@ export const data: ComponentDoc = {
 					name: "activeRadius",
 					type: "number",
 					default: "2",
-					description: "Radius of a dot at the center of the spotlight."
+					description:
+						"Radius of a dot at the center of the spotlight."
 				},
 				{
 					name: "interactionRadius",
@@ -133,7 +135,8 @@ export const data: ComponentDoc = {
 					name: "activeMaxAlpha",
 					type: "number",
 					default: "1",
-					description: "Opacity applied at the center of the spotlight."
+					description:
+						"Opacity applied at the center of the spotlight."
 				},
 				{
 					name: "activeMinAlpha",

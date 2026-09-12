@@ -152,19 +152,22 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					default: "undefined",
-					description: "Content rendered inside the selected testimonial primitive."
+					description:
+						"Content rendered inside the selected testimonial primitive."
 				},
 				{
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the primitive element."
+					description:
+						"Additional classes applied to the primitive element."
 				},
 				{
 					name: "ref",
 					type: "HTMLElement | null",
 					default: "null",
-					description: "Bindable reference to the primitive's underlying element."
+					description:
+						"Bindable reference to the primitive's underlying element."
 				}
 			]
 		},

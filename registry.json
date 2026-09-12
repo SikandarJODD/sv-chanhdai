@@ -44,7 +44,7 @@
 					"target": "chan/apple-hello-effect/index.ts"
 				}
 			],
-      "author": "Bhide Svelte"
+			"author": "Bhide Svelte"
 		},
 		{
 			"name": "brand-assets-menu",
@@ -54,38 +54,39 @@
 			"registryDependencies": ["context-menu"],
 			"dependencies": ["motion-sv", "svelte-sonner", "@lucide/svelte"],
 			"files": [
-        {
-          "path": "src/lib/components/chan/brand-assets-menu/brand-assets-menu.svelte",
-          "type": "registry:component",
-          "target": "chan/brand-assets-menu/brand-assets-menu.svelte"
-        },
-        {
-          "path": "src/lib/components/chan/brand-assets-menu/index.ts",
-          "type": "registry:file",
-          "target": "chan/brand-assets-menu/index.ts"
-        }
-      ],
-      "author": "Bhide Svelte"
+				{
+					"path": "src/lib/components/chan/brand-assets-menu/brand-assets-menu.svelte",
+					"type": "registry:component",
+					"target": "chan/brand-assets-menu/brand-assets-menu.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/brand-assets-menu/index.ts",
+					"type": "registry:file",
+					"target": "chan/brand-assets-menu/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
 		},
-    {
-      "name": "chevrons-up-down-icon",
-      "type": "registry:block",
-      "title": "Chevrons Up Down Icon",
-      "description": "A simple chevrons up down icon component.",
-      "registryDependencies": [],
-      "dependencies": ["motion-sv"],
-      "files": [
-        {
-          "path": "src/lib/components/chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte",
-          "type": "registry:component",
-          "target": "chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte"
-        },
-        {
-          "path": "src/lib/components/chan/chevrons-up-down-icon/index.ts",
-          "type": "registry:file",
-          "target": "chan/chevrons-up-down-icon/index.ts" 
-        }]
-	    },
+		{
+			"name": "chevrons-up-down-icon",
+			"type": "registry:block",
+			"title": "Chevrons Up Down Icon",
+			"description": "A simple chevrons up down icon component.",
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte",
+					"type": "registry:component",
+					"target": "chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/chevrons-up-down-icon/index.ts",
+					"type": "registry:file",
+					"target": "chan/chevrons-up-down-icon/index.ts"
+				}
+			]
+		},
 		{
 			"name": "scroll-fade-effect",
 			"type": "registry:block",

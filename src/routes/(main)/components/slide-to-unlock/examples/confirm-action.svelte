@@ -65,12 +65,18 @@
 					class="w-72 rounded-full bg-emerald-500/10"
 				>
 					<SlideToUnlockTrack>
-						<SlideToUnlockText class="text-base text-emerald-700 dark:text-emerald-300">
+						<SlideToUnlockText
+							class="text-base text-emerald-700 dark:text-emerald-300"
+						>
 							{#snippet children({ isDragging })}
-								{isDragging ? "Release to publish" : "Slide to publish"}
+								{isDragging
+									? "Release to publish"
+									: "Slide to publish"}
 							{/snippet}
 						</SlideToUnlockText>
-						<SlideToUnlockHandle class="rounded-full bg-emerald-600 text-white">
+						<SlideToUnlockHandle
+							class="rounded-full bg-emerald-600 text-white"
+						>
 							{#snippet children()}
 								<SendIcon class="size-5" />
 							{/snippet}

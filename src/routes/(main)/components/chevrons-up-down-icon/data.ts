@@ -64,7 +64,8 @@ export const data: ComponentDoc = {
 					name: "duration",
 					type: "number",
 					default: "0.3",
-					description: "Duration of the path morph animation in seconds."
+					description:
+						"Duration of the path morph animation in seconds."
 				},
 				{
 					name: "ref",
@@ -76,7 +77,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the SVG element."
+					description:
+						"Additional classes applied to the SVG element."
 				}
 			]
 		}

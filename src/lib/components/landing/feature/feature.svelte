@@ -94,8 +94,8 @@
 			Free, open-source Svelte components you can install with
 			<code class="rounded bg-muted px-1.5 py-0.5 text-foreground">
 				shadcn-svelte
-			</code>,
-			shape to your system, and ship without giving up control of the code.
+			</code>, shape to your system, and ship without giving up control of
+			the code.
 		</p>
 	</div>
 

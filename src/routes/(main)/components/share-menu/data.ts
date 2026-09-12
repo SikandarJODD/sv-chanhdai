@@ -79,7 +79,8 @@ export const data: ComponentDoc = {
 					name: "url",
 					type: "string",
 					required: true,
-					description: "URL to share; relative values are resolved against the current origin."
+					description:
+						"URL to share; relative values are resolved against the current origin."
 				}
 			]
 		}

@@ -4,7 +4,7 @@ import ShimmeringTextSvelteRaw from "$lib/components/chan/shimmering-text/shimme
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
@@ -13,23 +13,34 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "shimmering-text",
 	title: "Shimmering Text",
-	description: "Animated text with a configurable character-by-character shimmer effect.",
-	category: "chan",
+	description:
+		"Animated text with a configurable character-by-character shimmer effect.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Shimmering Text",
-	description: "Add a configurable character-by-character shimmer animation to text in Svelte.",
-	keywords: ["Svelte", "Shimmering Text", "Component"],
+	description:
+		"Add a configurable character-by-character shimmer animation to text in Svelte.",
+	keywords: ["Svelte", "Shimmering Text", "Component"]
 };
 
 const install_block: InstallComponentDocs = {
 	packages: ["motion-sv"],
 	install_code: [
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", isExpand: true, },
-		{ name: "shimmering-text.svelte", code: ShimmeringTextSvelteRaw, lang: "svelte", }
+		{
+			name: "index.ts",
+			code: IndexTsRaw,
+			lang: "typescript",
+			isExpand: true
+		},
+		{
+			name: "shimmering-text.svelte",
+			code: ShimmeringTextSvelteRaw,
+			lang: "svelte"
+		}
 	],
-	folder_structure: "",
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -44,7 +55,7 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
 	seo,
@@ -69,7 +80,8 @@ export const data: ComponentDoc = {
 					name: "isStopped",
 					type: "boolean",
 					default: "false",
-					description: "Pauses the shimmer and returns characters to their resting color."
+					description:
+						"Pauses the shimmer and returns characters to their resting color."
 				},
 				{
 					name: "class",
@@ -79,5 +91,5 @@ export const data: ComponentDoc = {
 				}
 			]
 		}
-	],
+	]
 };

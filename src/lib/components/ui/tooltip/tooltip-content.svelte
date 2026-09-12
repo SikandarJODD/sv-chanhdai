@@ -16,7 +16,9 @@
 		...restProps
 	}: TooltipPrimitive.ContentProps & {
 		arrowClasses?: string;
-		portalProps?: WithoutChildrenOrChild<ComponentProps<typeof TooltipPortal>>;
+		portalProps?: WithoutChildrenOrChild<
+			ComponentProps<typeof TooltipPortal>
+		>;
 	} = $props();
 </script>
 
