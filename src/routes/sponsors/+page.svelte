@@ -1,6 +1,8 @@
 <script lang="ts">
+	import Seo from "$lib/components/docs/base/main/seo.svelte";
 	import CurrentSponsor from "$lib/components/sponsors/current-sponsor.svelte";
 	import Github from "$lib/svg/github.svelte";
+	import X from "$lib/svg/x.svelte";
 	import Button from "$ui/button/button.svelte";
 
 	type Sponsor = {
@@ -26,6 +28,22 @@
 	];
 
 	const pastSponsors: Sponsor[] = [
+		{
+			name: "Aidan Bleser",
+			handle: "ieedan",
+			avatar: "https://avatars.githubusercontent.com/u/117548273?v=4",
+			github: "https://github.com/ieedan",
+			role: "Frontend Engineer",
+			x: "https://x.com/ieeeedan"
+		},
+		{
+			name: "Nono Martínez Alonso",
+			handle: "nonoesp",
+			avatar: "https://avatars.githubusercontent.com/u/1243210?v=4",
+			github: "https://github.com/nonoesp",
+			role: "Host of Getting Simple",
+			x: "https://x.com/nonoesp"
+		},
 		{
 			name: "ZerGo0",
 			handle: "ZerGo0",
@@ -77,13 +95,22 @@
 	];
 </script>
 
-<svelte:head>
-	<title>Sponsors</title>
-	<meta
-		name="description"
-		content="The people supporting Sikandar Bhide's open-source work."
-	/>
-</svelte:head>
+<Seo
+	title="Sponsors"
+	description="Meet the sponsors supporting Bhide Svelte's open-source Svelte components, and learn how to fund continued development through GitHub Sponsors."
+	keywords={[
+		"support open source Svelte",
+		"GitHub Sponsors",
+		"Svelte sponsorship",
+		"Bhide Svelte sponsors",
+		"Svelte components",
+		"Svelte open source",
+		"fund open source development",
+		"Svelte UI library",
+		"Chanhdai components",
+		"Sikandar Bhide"
+	]}
+/>
 
 <main class="font-figtree min-h-[calc(100vh-4rem)] px-4 py-10 sm:py-14">
 	<div class="mx-auto w-full max-w-3xl">
@@ -101,7 +128,7 @@
 				href={sponsorUrl}
 				target="_blank"
 				rel="noreferrer"
-				class="rounded-full md:px-4"
+				class="rounded-full px-4"
 			>
 				Support my work
 			</Button>
@@ -114,7 +141,7 @@
 				</h2>
 			</div>
 
-			<div class="grid gap-x-8 gap-y-5 sm:grid-cols-2">
+			<div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
 				{#each currentSponsors as sponsor (sponsor.handle)}
 					<CurrentSponsor {...sponsor} />
 				{/each}
@@ -131,42 +158,58 @@
 				</h2>
 			</div>
 
-			<div class="grid gap-x-3 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+			<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
 				{#each pastSponsors as sponsor (sponsor.handle)}
-					<article
-						class="group flex items-center gap-3 rounded-lg border border-border p-2 transition-colors duration-150 ease-out hover:bg-muted/50"
-					>
-						<img
-							src={sponsor.avatar}
-							alt=""
-							class="size-10 shrink-0 rounded-md object-cover ring-1 ring-foreground/10"
-							width="40"
-							height="40"
-							loading="lazy"
-						/>
+					<article class="min-w-0 p-2">
+						<div
+							class="relative aspect-square w-full p-1.5 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-dashed after:border-ink/40 after:content-['']"
+						>
+							<img
+								src={sponsor.avatar}
+								alt={sponsor.name}
+								class="size-full rounded-lg border-2 border-border object-cover"
+								loading="lazy"
+							/>
+						</div>
 
-						<div class="min-w-0 flex-1">
+						<div class="mt-3 pl-1">
 							<h3
-								class="truncate text-sm font-medium text-foreground"
+								class="truncate text-sm font-semibold text-foreground"
 							>
 								{sponsor.name}
 							</h3>
 							<p
-								class="truncate font-mono text-xs text-muted-foreground"
+								class="mt-0.5 truncate text-xs text-muted-foreground"
 							>
 								{sponsor.role ?? `@${sponsor.handle}`}
 							</p>
-						</div>
 
-						<a
-							href={sponsor.github}
-							target="_blank"
-							rel="noreferrer"
-							aria-label={`${sponsor.name} on GitHub`}
-							class="rounded-md p-2 text-muted-foreground opacity-70 transition-all group-hover:opacity-100 hover:bg-background hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
-						>
-							<Github class="size-4" />
-						</a>
+							<div class="mt-2 flex items-center gap-1">
+								{#if sponsor.x}
+									<Button
+										href={sponsor.x}
+										target="_blank"
+										rel="noreferrer"
+										variant="ghost"
+										size="icon-xs"
+										aria-label={`${sponsor.name} on X`}
+									>
+										<X class="size-3" />
+									</Button>
+								{/if}
+
+								<Button
+									href={sponsor.github}
+									target="_blank"
+									rel="noreferrer"
+									variant="ghost"
+									size="icon-xs"
+									aria-label={`${sponsor.name} on GitHub`}
+								>
+									<Github class="size-3.5" />
+								</Button>
+							</div>
+						</div>
 					</article>
 				{/each}
 			</div>

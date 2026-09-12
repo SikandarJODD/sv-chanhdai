@@ -16,6 +16,7 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
@@ -34,6 +35,43 @@ const seo: SEO = {
 		"Ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
 	keywords: ["Svelte", "Timescale", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import {
+		Timescale,
+		TimescaleContent,
+		TimescaleItem,
+		TimescaleRail,
+		TimescaleTick,
+		TimescaleTrack,
+		TimescaleYear
+	} from "$chan/timescale";
+</script>
+
+<Timescale orientation="vertical">
+	<TimescaleTrack>
+		<TimescaleRail />
+
+		<TimescaleItem>
+			<TimescaleTick />
+			<TimescaleYear>2024</TimescaleYear>
+			<TimescaleContent>Started the project.</TimescaleContent>
+		</TimescaleItem>
+
+		<TimescaleItem>
+			<TimescaleTick />
+			<TimescaleYear>2025</TimescaleYear>
+			<TimescaleContent>Released version 1.0.</TimescaleContent>
+		</TimescaleItem>
+	</TimescaleTrack>
+</Timescale>`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
@@ -109,6 +147,7 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
 	seo,
 	props: [
 		{
@@ -119,7 +158,8 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "Timescale primitives rendered inside the root."
+					description:
+						"Timescale primitives rendered inside the root."
 				},
 				{
 					name: "orientation",
@@ -131,7 +171,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the root element."
+					description:
+						"Additional classes applied to the root element."
 				},
 				{
 					name: "ref",
@@ -161,19 +202,22 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					default: "undefined",
-					description: "Content rendered inside the selected timescale primitive."
+					description:
+						"Content rendered inside the selected timescale primitive."
 				},
 				{
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the primitive element."
+					description:
+						"Additional classes applied to the primitive element."
 				},
 				{
 					name: "ref",
 					type: "HTMLElement | null",
 					default: "null",
-					description: "Bindable reference to the primitive's underlying element."
+					description:
+						"Bindable reference to the primitive's underlying element."
 				}
 			]
 		}

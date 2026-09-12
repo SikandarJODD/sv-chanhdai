@@ -6,7 +6,11 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
+import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
+import DemoExample from "./examples/demo-example.svelte";
+import DemoExampleCode from "./examples/demo-example.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -24,6 +28,32 @@ const seo: SEO = {
 		"Display GitHub repo star count with formatted numbers and full-count tooltip.",
 	keywords: ["Svelte", "Github Stars", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import { GithubStars } from "$chan/github-stars";
+</script>
+
+<GithubStars repo="SikandarJODD/sv-table" stargazersCount={82} />`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
+
+const examples: Example[] = [
+	{
+		name: "Fetch repository stars",
+		description: "Fetch the latest star count from the GitHub REST API.",
+		preview: DemoExample,
+		code: {
+			name: "demo-example.svelte",
+			code: DemoExampleCode,
+			lang: "svelte"
+		}
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
@@ -49,6 +79,8 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
+	examples,
 	seo,
 	props: [
 		{

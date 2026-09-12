@@ -8,16 +8,15 @@
 	import Button from "../button/button.svelte";
 	import ScrollFadeEffect from "../scroll-area/scroll-fade-effect.svelte";
 	import { untrack } from "svelte";
-	import { ScrollArea } from "$ui/scroll-area";
 
 	type Props = {
 		code: CodeBlock;
 		faded?: boolean;
 	};
 	let { code, faded = false }: Props = $props();
-	let isExpanded = $state(untrack(() => code.isExpand));
-	let updateIsExpanded = () => {
-		isExpanded = !isExpanded;
+	let isCollapsed = $state(untrack(() => code.isExpand ?? false));
+	let toggleCollapsed = () => {
+		isCollapsed = !isCollapsed;
 	};
 </script>
 
@@ -47,8 +46,8 @@
 		</div>
 		<div class="flex items-center gap-1">
 			{#if code.isExpand}
-				<Button variant="ghost" size="sm" onclick={updateIsExpanded}>
-					{#if isExpanded}
+				<Button variant="ghost" size="sm" onclick={toggleCollapsed}>
+					{#if isCollapsed}
 						Expand
 					{:else}
 						Collapse
@@ -59,14 +58,14 @@
 		</div>
 	</Frame.Header>
 	<Frame.Panel class="overflow-hidden p-0">
-		{#if isExpanded}
+		{#if isCollapsed}
 			<Code.Overflow
-				bind:collapsed={isExpanded}
+				bind:collapsed={isCollapsed}
 				class="max-h-[500px]  overflow-auto data-[collapsed=true]:overflow-y-hidden"
 			>
 				<Code.Root
 					lang={code.lang || "svelte"}
-					class="w-full rounded-none border-none bg-secondary min-h-50"
+					class="w-full rounded-none border-none  min-h-50"
 					code={code.code}
 					highlight={code.highlight}
 					hideLines={code.hideLines ?? false}
@@ -86,15 +85,15 @@
 					></Code.Root>
 				</ScrollFadeEffect>
 			{:else}
-				<ScrollArea class="max-h-[600px]">
+				<div class="no-scrollbar max-h-[600px] overflow-auto">
 					<Code.Root
 						lang={code.lang || "svelte"}
-						class="h-auto w-full overflow-visible rounded-none border-none bg-background"
+						class="h-auto w-full overflow-visible rounded-none border-none bg-background [&_pre]:no-scrollbar"
 						code={code.code}
 						highlight={code.highlight}
 						hideLines={code.hideLines ?? false}
 					></Code.Root>
-				</ScrollArea>
+				</div>
 			{/if}
 		{/if}
 	</Frame.Panel>

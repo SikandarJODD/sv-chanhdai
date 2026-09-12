@@ -7,6 +7,7 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
@@ -25,6 +26,33 @@ const seo: SEO = {
 		"iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support.",
 	keywords: ["Svelte", "Wheel Picker", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import {
+		WheelPicker,
+		WheelPickerWrapper,
+		type WheelPickerOption
+	} from "$chan/wheel-picker";
+
+	const options: WheelPickerOption[] = [
+		{ label: "React", value: "react" },
+		{ label: "Vue", value: "vue" },
+		{ label: "Svelte", value: "svelte" }
+	];
+
+	let value = $state("svelte");
+</script>
+
+<WheelPickerWrapper>
+	<WheelPicker {options} bind:value aria-label="Framework" />
+</WheelPickerWrapper>`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: ["runed"],
@@ -59,6 +87,7 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
 	seo,
 	props: [
 		{

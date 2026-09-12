@@ -5,6 +5,8 @@
 	import { components } from "$lib/registry/components";
 	import { Annotation } from "$ui/annotation";
 	import { mode } from "mode-watcher";
+	import { MediaQuery } from "svelte/reactivity";
+
 	let faviconUrl = $derived.by(() => {
 		if (mode.current === "dark") {
 			return "https://assets.chanhdai.com/images/favicon-dark.svg";
@@ -12,6 +14,7 @@
 			return "https://assets.chanhdai.com/images/favicon.ico";
 		}
 	});
+	let large = new MediaQuery("min-width: 800px");
 </script>
 
 <section class="mx-auto w-full max-w-6xl overflow-hidden py-20 sm:py-24">
@@ -21,12 +24,12 @@
 			class="absolute inset-0 size-full overflow-hidden -z-60"
 		>
 			<div
-				class="absolute inset-0 isolate -z-10 bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
+				class="absolute inset-0 isolate -z-10 bg-[radial-gradient(60%_60%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)] md:bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
 			></div>
 		</div>
 	{/if}
 
-	<div class="relative z-10 flex max-w-3xl flex-col px-4">
+	<div class="relative z-10 flex max-w-3xl flex-col px-6 md:px-4">
 		<!-- <a
 			class="group flex w-fit animate-in items-center gap-3 rounded-full border bg-card p-1 shadow-xs transition-all delay-50 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 			href="/"
@@ -46,24 +49,36 @@
 		</a> -->
 
 		<h1
-			class="animate-in font-gp-circle text-4xl leading-tight font-medium text-balance text-foreground delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in md:text-5xl"
+			class="animate-in -ml-1 md:-ml-px font-gp-circle text-4xl leading-tight font-medium text-balance text-foreground delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in md:text-5xl"
 		>
 			Svelte Chan Components
 		</h1>
 
-		<p
+		<div
 			class="mt-5 max-w-3xl animate-in text-sm lg:text-base leading-8 font-medium font-mono text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 		>
 			A Svelte port of {components.length} components from
-			<Annotation
-				note="Original Creator"
-				direction="n"
-				rotate="-2deg"
-				customColor={mode.current === "dark"
-					? "#24DD84"
-					: "lab(36 55.64 -107.68)"}
-				noMark
-			>
+			{#if large.current}
+				<Annotation
+					note="Original Creator"
+					direction="n"
+					rotate="-2deg"
+					customColor={mode.current === "dark"
+						? "#24DD84"
+						: "lab(36 55.64 -107.68)"}
+					noMark
+				>
+					<FaviconLink
+						href="https://chanhdai.com"
+						target="_blank"
+						rel="noreferrer"
+						class="mx-0"
+						faviconSrc={faviconUrl}
+					>
+						Chánh Đại
+					</FaviconLink>
+				</Annotation>’s Portfolio
+			{:else}
 				<FaviconLink
 					href="https://chanhdai.com"
 					target="_blank"
@@ -73,7 +88,8 @@
 				>
 					Chánh Đại
 				</FaviconLink>
-			</Annotation>’s Portfolio
+				’s Portfolio
+			{/if}
 			<br />
 			by
 			<FaviconLink
@@ -85,14 +101,53 @@
 			>
 				Bhide Svelte
 			</FaviconLink>
-		</p>
+		</div>
 
 		<div
 			class="mt-10 flex w-fit animate-in items-center justify-center gap-3 delay-300 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 		>
 			<Button
 				href={resolve("/(main)/components/elastic-slider")}
-				variant="ink">View Components</Button
+				variant="ink"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="20"
+					height="20"
+					viewBox="0 0 20 20"
+					><g fill="currentColor"
+						><circle
+							cx="14.5"
+							cy="8.5"
+							r="2.5"
+							fill="currentColor"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+						></circle><rect
+							x="5"
+							y="12"
+							width="5"
+							height="5"
+							rx="1"
+							ry="1"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							fill="currentColor"
+						></rect><path
+							d="m5.1889,3.7146l-2.1169,3.5282c-.2.3333.0401.7572.4287.7572h4.2338c.3886,0,.6287-.424.4287-.7572l-2.1169-3.5282c-.1942-.3237-.6633-.3237-.8575,0Z"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							fill="currentColor"
+						></path></g
+					></svg
+				>
+				View Components</Button
 			>
 		</div>
 	</div>

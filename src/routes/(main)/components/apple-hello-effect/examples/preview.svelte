@@ -16,9 +16,15 @@
 
 <AnimatePresence mode="wait">
 	{#if index === 0}
-		<AppleHelloEffectEnglish onAnimationComplete={handleAnimationEnd} />
+		<AppleHelloEffectEnglish
+			durationScale={0.9}
+			onAnimationComplete={handleAnimationEnd}
+		/>
 	{:else if index === 1}
-		<AppleHelloEffectHindi onAnimationComplete={handleAnimationEnd} />
+		<AppleHelloEffectHindi
+			durationScale={0.8}
+			onAnimationComplete={handleAnimationEnd}
+		/>
 	{:else if index === 2}
 		<AppleHelloEffectSpanish
 			durationScale={0.8}

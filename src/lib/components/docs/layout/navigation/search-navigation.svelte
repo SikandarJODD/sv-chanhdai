@@ -16,15 +16,21 @@
 
 	// For Now we would use Magic UI - Components, Later on we would update it
 	let docs: Component[] = docsPages;
+
+	import { MediaQuery } from "svelte/reactivity";
+
+	const large = new MediaQuery("min-width: 800px");
 </script>
 
 <svelte:document onkeydown={handleKeydown} />
 
-<div class="text-muted-foreground text-sm mr-2">
+<div class="text-muted-foreground text-sm lg:mr-2">
 	<Button
 		variant="ghost"
-		size="sm"
-		class="bg-secondary rounded-full dark:bg-muted/60 flex justify-between px-1.5 md:min-w-46  md:px-2"
+		size={large.current ? "sm" : "icon"}
+		class={large.current
+			? "bg-secondary rounded-full dark:bg-muted/60 flex justify-between px-1.5 md:min-w-46  md:px-2"
+			: "bg-secondary rounded-full"}
 		onclick={() => (open = true)}
 	>
 		<span class="hidden pl-1 md:block"> Search... </span>

@@ -23,9 +23,9 @@
 </script>
 
 <Toaster position="top-center" />
-{#if browser && dev}
+<!-- {#if browser && dev}
 	<Agentation deleteAllDelayMs={0} />
-{/if}
+{/if} -->
 
 <ModeWatcher defaultMode="dark" />
 <svelte:head>

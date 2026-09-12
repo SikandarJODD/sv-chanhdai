@@ -18,7 +18,7 @@
 				</div>
 				<MiddleTruncation
 					class="font-mono text-foreground/70"
-					text="/Users/ncdai/Code/chanhdai.com/src/components/ui/button.tsx"
+					text="/Users/ncdai/Code/chanhdai.com/src/components/ui/button.svelte"
 				/>
 			</div>
 

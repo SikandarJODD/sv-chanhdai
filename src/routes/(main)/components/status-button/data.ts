@@ -7,6 +7,7 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
@@ -38,6 +39,23 @@ const seo: SEO = {
 		"Add async loading, success, and failure states to a button in Svelte with Status Button.",
 	keywords: ["Svelte", "Status Button", "Component", "Async Button"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import { StatusButton } from "$chan/status-button";
+
+	async function saveChanges() {
+		await new Promise((resolve) => setTimeout(resolve, 1000));
+	}
+</script>
+
+<StatusButton onclick={saveChanges}>Save changes</StatusButton>`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
 
 const examples: Example[] = [
 	{
@@ -125,6 +143,7 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
 	examples,
 	seo,
 	props: [
