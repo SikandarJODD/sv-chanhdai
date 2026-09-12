@@ -3,6 +3,7 @@
 	import Github from "$lib/svg/github.svelte";
 	import X from "$lib/svg/x.svelte";
 	import { cn } from "$lib/utils";
+	import { Annotation } from "$ui/annotation";
 
 	type Sponsor = {
 		name: string;
@@ -164,14 +165,22 @@
 	</div>
 
 	<div class="mt-10 flex justify-center">
-		<Button
-			href={sponsorUrl}
-			target="_blank"
-			rel="noreferrer"
-			variant="outline"
-			class="rounded-full px-4"
+		<Annotation
+			targetGap="0.6rem"
+			lowerLabelGap="0.1rem"
+			note="😁"
+			noMark
+			rotate="-12deg"
 		>
-			Sponsor my work
-		</Button>
+			<Button
+				href={sponsorUrl}
+				target="_blank"
+				rel="noreferrer"
+				variant="outline"
+				class="rounded-full px-4"
+			>
+				Sponsor my work
+			</Button>
+		</Annotation>
 	</div>
 </section>

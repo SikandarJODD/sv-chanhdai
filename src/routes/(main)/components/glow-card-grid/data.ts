@@ -8,9 +8,16 @@ import type {
 	InstallComponentDocs
 } from "$lib/types/structure";
 import type { CodeBlock } from "$lib/types/code";
+import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+import ShapeAndLayoutExample from "./examples/shape-and-layout.svelte";
+import ShapeAndLayoutExampleCode from "./examples/shape-and-layout.svelte?raw";
+import SubtleGlowExample from "./examples/subtle-glow.svelte";
+import SubtleGlowExampleCode from "./examples/subtle-glow.svelte?raw";
+import VibrantGlowExample from "./examples/vibrant-glow.svelte";
+import VibrantGlowExampleCode from "./examples/vibrant-glow.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "glow-card-grid",
@@ -41,6 +48,36 @@ const usage: CodeBlock[] = [
 </GlowCardGrid>`,
 		lang: "svelte",
 		isExpand: false
+	}
+];
+
+const examples: Example[] = [
+	{
+		name: "Subtle glow",
+		preview: SubtleGlowExample,
+		code: {
+			name: "subtle-glow.svelte",
+			code: SubtleGlowExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Vibrant glow",
+		preview: VibrantGlowExample,
+		code: {
+			name: "vibrant-glow.svelte",
+			code: VibrantGlowExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Shape and layout",
+		preview: ShapeAndLayoutExample,
+		code: {
+			name: "shape-and-layout.svelte",
+			code: ShapeAndLayoutExampleCode,
+			lang: "svelte"
+		}
 	}
 ];
 
@@ -75,6 +112,7 @@ export const data: ComponentDoc = {
 	},
 	install_block,
 	usage,
+	examples,
 	seo,
 	props: [
 		{
