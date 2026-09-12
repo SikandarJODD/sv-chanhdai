@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
+	import { ScrollFadeEffect } from "$lib/components/chan/scroll-fade-effect";
 	import SearchNavigation from "$lib/components/docs/layout/navigation/search-navigation.svelte";
 	import { LightSwitch } from "$lib/components/ui/light-switch";
 	import { Portal, PortalBackdrop } from "$lib/components/ui/portal";
@@ -60,47 +61,47 @@
 				)}
 				data-slot={open ? "open" : "closed"}
 			>
-				<nav
-					class="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto pb-4 no-scrollbar"
-				>
-					<a
-						class={linkClass}
-						href="/"
-						onclick={() => (open = false)}
-					>
-						Home
-					</a>
-
-					<div class="flex flex-col gap-1">
+				<ScrollFadeEffect class="min-h-0 flex-1 no-scrollbar">
+					<nav class="flex flex-col gap-1 pb-4">
 						<a
 							class={linkClass}
-							href={components[0].href}
+							href="/"
 							onclick={() => (open = false)}
 						>
-							Components
+							Home
 						</a>
 
-						<div class="flex flex-col pl-4">
-							{#each components as component (component.id)}
-								<a
-									class="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-									href={component.href}
-									onclick={() => (open = false)}
-								>
-									{component.name}
-								</a>
-							{/each}
-						</div>
-					</div>
+						<div class="flex flex-col gap-1">
+							<a
+								class={linkClass}
+								href={components[0].href}
+								onclick={() => (open = false)}
+							>
+								Components
+							</a>
 
-					<a
-						class={linkClass}
-						href="/sponsors"
-						onclick={() => (open = false)}
-					>
-						Sponsors
-					</a>
-				</nav>
+							<div class="flex flex-col pl-4">
+								{#each components as component (component.id)}
+									<a
+										class="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+										href={component.href}
+										onclick={() => (open = false)}
+									>
+										{component.name}
+									</a>
+								{/each}
+							</div>
+						</div>
+
+						<a
+							class={linkClass}
+							href="/sponsors"
+							onclick={() => (open = false)}
+						>
+							Sponsors
+						</a>
+					</nav>
+				</ScrollFadeEffect>
 
 				<div class="flex justify-end gap-1 pb-4 pt-2">
 					<Button
