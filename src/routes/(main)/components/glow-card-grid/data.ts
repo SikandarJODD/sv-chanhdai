@@ -7,6 +7,7 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
@@ -23,6 +24,25 @@ const seo: SEO = {
 	description: "Display cards with glowing border and background effects.",
 	keywords: ["Svelte", "Glow Card Grid", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import { GlowCard, GlowCardGrid } from "$chan/glow-card-grid";
+</script>
+
+<GlowCardGrid>
+	<GlowCard
+		name="Chánh Đại"
+		handle="@iamncdai"
+		avatar="https://unavatar.io/x/iamncdai"
+	/>
+</GlowCardGrid>`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
@@ -49,6 +69,7 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
 	seo,
 	props: [
 		{

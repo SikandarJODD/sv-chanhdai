@@ -8,14 +8,14 @@
 			avatar: "https://unavatar.io/x/shadcn"
 		},
 		{
-			name: "OrcDev",
-			handle: "@orcdev",
-			avatar: "https://unavatar.io/x/orcdev"
+			name: "Guillermo Rauch",
+			handle: "@rauchg",
+			avatar: "https://unavatar.io/x/rauchg"
 		},
 		{
-			name: "David Haz",
-			handle: "@davidhdev",
-			avatar: "https://unavatar.io/x/davidhdev"
+			name: "Bhide Svelte",
+			handle: "@Sikandar_Bhide",
+			avatar: "https://unavatar.io/x/Sikandar_Bhide"
 		},
 		{
 			name: "Shu",

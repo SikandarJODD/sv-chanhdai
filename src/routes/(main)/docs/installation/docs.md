@@ -20,6 +20,17 @@ npx shadcn-svelte@latest init
 
 For more information, visit [shadcn-svelte](https://www.shadcn-svelte.com/).
 
+## 3. Add component aliases
+
+Add these aliases to your Vite or Svelte config.
+
+```ts
+alias: {
+  $chan: "src/lib/components/chan",
+  $ui: "src/lib/components/ui",
+},
+```
+
 ## How to use it
 
 Add a component with the shadcn-svelte CLI. For example, install Status Button:

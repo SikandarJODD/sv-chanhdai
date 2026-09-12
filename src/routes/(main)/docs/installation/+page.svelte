@@ -4,12 +4,22 @@
 	import Seo from "$lib/components/docs/base/main/seo.svelte";
 	import { H1, H2, Paragraph, Steps, Step, Divider, Link } from "$markdown";
 	import { PMCommand } from "$lib/components/ui/pm-command";
+	import FrameSingle from "$lib/components/ui/code/frame-single.svelte";
 
 	let getURLPath = (url: string) => {
 		return url.split("?")[0].split("#")[0];
 	};
 
 	let llmsTxtUrl = $derived(`${getURLPath(page.url.href)}/llms.txt`);
+
+	const aliasConfig = {
+		name: "vite.config.ts / svelte.config.js",
+		lang: "typescript" as const,
+		code: `alias: {
+  $chan: "src/lib/components/chan",
+  $ui: "src/lib/components/ui",
+},`
+	};
 </script>
 
 <Seo
@@ -71,6 +81,13 @@
 						shadcn-svelte
 					</Link>.
 				</p>
+			</Step>
+
+			<Step title="Add component aliases">
+				<p class="mb-4">
+					Add these aliases to your Vite or Svelte config.
+				</p>
+				<FrameSingle code={aliasConfig} />
 			</Step>
 		</Steps>
 	</section>

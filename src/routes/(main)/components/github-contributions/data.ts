@@ -15,6 +15,7 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import CompactGraphExample from "./examples/compact-graph.svelte";
@@ -43,6 +44,19 @@ const seo: SEO = {
 	keywords: ["Svelte", "Github Contributions", "Component"]
 };
 
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import { GitHubContributions } from "$chan/github-contributions";
+</script>
+
+<GitHubContributions username="SikandarJODD" />`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
+
 const examples: Example[] = [
 	{
 		name: "Custom theme",
@@ -63,30 +77,30 @@ const examples: Example[] = [
 			code: LocalizedLabelsExampleCode,
 			lang: "svelte"
 		}
-	},
-	{
-		name: "Compact graph",
-		description:
-			"Hide month labels and use smaller blocks for tight layouts.",
-		preview: CompactGraphExample,
-		previewClass: "min-h-120",
-		code: {
-			name: "compact-graph.svelte",
-			code: CompactGraphExampleCode,
-			lang: "svelte"
-		}
-	},
-	{
-		name: "Custom data",
-		description:
-			"Shape deterministic activity levels into a fading emerald wave.",
-		preview: CustomDataExample,
-		code: {
-			name: "custom-data.svelte",
-			code: CustomDataExampleCode,
-			lang: "svelte"
-		}
 	}
+	// {
+	// 	name: "Compact graph",
+	// 	description:
+	// 		"Hide month labels and use smaller blocks for tight layouts.",
+	// 	preview: CompactGraphExample,
+	// 	previewClass: "min-h-120",
+	// 	code: {
+	// 		name: "compact-graph.svelte",
+	// 		code: CompactGraphExampleCode,
+	// 		lang: "svelte"
+	// 	}
+	// },
+	// {
+	// 	name: "Custom data",
+	// 	description:
+	// 		"Shape deterministic activity levels into a fading emerald wave.",
+	// 	preview: CustomDataExample,
+	// 	code: {
+	// 		name: "custom-data.svelte",
+	// 		code: CustomDataExampleCode,
+	// 		lang: "svelte"
+	// 	}
+	// }
 ];
 
 const install_block: InstallComponentDocs = {
@@ -158,6 +172,7 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
 	examples,
 	seo,
 	props: [

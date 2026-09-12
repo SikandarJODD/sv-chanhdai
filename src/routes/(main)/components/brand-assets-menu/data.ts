@@ -6,6 +6,7 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
@@ -23,6 +24,36 @@ const seo: SEO = {
 	description: "Context menu for copying brand SVGs and opening asset links.",
 	keywords: ["Svelte", "Brand Assets Menu", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import { BrandAssetsMenu } from "$chan/brand-assets-menu";
+
+	const LOGOMARK_SVG = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>';
+	const LOGOTYPE_SVG = '<svg viewBox="0 0 120 24"><text x="0" y="18">Acme</text></svg>';
+</script>
+
+{#snippet logomark()}
+	<span class="size-4 rounded-full bg-current"></span>
+{/snippet}
+
+<BrandAssetsMenu
+	{logomark}
+	logomarkSVG={LOGOMARK_SVG}
+	logotypeSVG={LOGOTYPE_SVG}
+	brandGuidelinesURL="/brand-guidelines"
+	brandAssetsURL="/brand-assets.zip"
+>
+	{#snippet children({ props })}
+		<button type="button" {...props}>Brand assets</button>
+	{/snippet}
+</BrandAssetsMenu>`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: ["@lucide/svelte", "svelte-sonner"],
@@ -48,6 +79,7 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
 	seo,
 	props: [
 		{

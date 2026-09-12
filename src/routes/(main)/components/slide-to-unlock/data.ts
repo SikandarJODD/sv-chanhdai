@@ -27,6 +27,8 @@ import DestructiveConfirmationExample from "./examples/destructive-confirmation.
 import DestructiveConfirmationExampleCode from "./examples/destructive-confirmation.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+import ResetExample from "./examples/reset.svelte";
+import ResetExampleCode from "./examples/reset.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "slide-to-unlock",
@@ -82,6 +84,16 @@ const examples: Example[] = [
 		code: {
 			name: "basic.svelte",
 			code: BasicExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Reset",
+		description: "Return the handle to its starting position with the reset method.",
+		preview: ResetExample,
+		code: {
+			name: "reset.svelte",
+			code: ResetExampleCode,
 			lang: "svelte"
 		}
 	},
