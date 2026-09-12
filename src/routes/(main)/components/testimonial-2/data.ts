@@ -6,6 +6,7 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
@@ -24,6 +25,24 @@ const seo: SEO = {
 		"Display a testimonial quote with author attribution and source link.",
 	keywords: ["Svelte", "Testimonial 2", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import { Testimonial2 } from "$chan/testimonial-2";
+</script>
+
+<Testimonial2
+	authorName="Jane Doe"
+	authorTagline="Product Designer"
+	url="https://example.com"
+	quote="This component library is a joy to use."
+/>`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
@@ -53,6 +72,7 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
 	seo,
 	props: [
 		{

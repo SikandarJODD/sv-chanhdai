@@ -6,6 +6,7 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
@@ -24,6 +25,19 @@ const seo: SEO = {
 		"Text arranged in a circle with a continuous spinning animation.",
 	keywords: ["Svelte", "Spinning Circular Text", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import { SpinningCircularText } from "$chan/spinning-circular-text";
+</script>
+
+<SpinningCircularText text="Port By Bhide Svelte • " />`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
@@ -53,6 +67,7 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
 	seo,
 	props: [
 		{
