@@ -83,7 +83,7 @@
 	<section class="max-w-2xl">
 		<H2 id="sponsor" class="mt-0">Sponsor</H2>
 		<Paragraph>
-			If you like these components, consider sponsoring
+			These components were originally created by
 			<FaviconLink
 				href="https://github.com/sponsors/ncdai"
 				faviconSrc="https://github.com/favicon.ico"
@@ -92,17 +92,18 @@
 			>
 				Chánh Đại
 			</FaviconLink>
-			for his original work.
+			. You can sponsor him to support his work.
 			<br />
-			If you like this Svelte port, you can support me
+			They were ported to Svelte by
 			<FaviconLink
 				href="https://github.com/sponsors/SikandarJODD"
 				faviconSrc="https://github.com/favicon.ico"
 				target="_blank"
 				rel="noreferrer"
 			>
-				Sikandar JODD
-			</FaviconLink>.
+				Bhide Svelte
+			</FaviconLink>
+			. You can sponsor me to support the Svelte port.
 		</Paragraph>
 	</section>
 </div>
