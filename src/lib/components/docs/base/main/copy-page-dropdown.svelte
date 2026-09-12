@@ -82,6 +82,10 @@
 			navigateTo(nav.next);
 		}
 	}
+
+	import { MediaQuery } from "svelte/reactivity";
+
+	const large = new MediaQuery("min-width: 800px");
 </script>
 
 <svelte:window onkeydown={handleArrowNavigation} />
@@ -102,7 +106,7 @@
 					</Button>
 				{/snippet}
 			</DropdownMenu.Trigger>
-			<OpenInContent align="end">
+			<OpenInContent align={large.current ? "end" : "center"}>
 				<OpenInChatGPT />
 				<OpenInClaude />
 				<OpenInScira />
@@ -128,7 +132,7 @@
 
 	{#if nav.isSupported}
 		<div class="ml-auto flex items-center gap-1">
-			<Tooltip.Provider delayDuration={0}>
+			<Tooltip.Provider ignoreNonKeyboardFocus>
 				{#if nav.prev}
 					<Tooltip.Root>
 						<Tooltip.Trigger>
@@ -137,7 +141,7 @@
 									{...props}
 									href={nav.prev?.href}
 									variant="secondary"
-									class="size-8"
+									class="size-8 active:not-aria-[haspopup]:translate-y-0"
 									size="icon-sm"
 									aria-label={`Previous page: ${nav.prev?.name}`}
 								>
@@ -179,7 +183,7 @@
 									{...props}
 									href={nav.next?.href}
 									variant="secondary"
-									class="size-8"
+									class="size-8 active:not-aria-[haspopup]:translate-y-0"
 									size="icon-sm"
 									aria-label={`Next page: ${nav.next?.name}`}
 								>
