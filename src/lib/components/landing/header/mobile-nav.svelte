@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { Button } from "$lib/components/ui/button";
 	import { ScrollFadeEffect } from "$lib/components/chan/scroll-fade-effect";
-	import SearchNavigation from "$lib/components/docs/layout/navigation/search-navigation.svelte";
 	import { LightSwitch } from "$lib/components/ui/light-switch";
 	import { Portal, PortalBackdrop } from "$lib/components/ui/portal";
 	import { github_repo } from "$lib/config/repo";
@@ -19,7 +18,6 @@
 </script>
 
 <div class="flex items-center gap-1 md:hidden">
-	<SearchNavigation />
 	<LightSwitch />
 	<Button
 		aria-controls="mobile-menu"

@@ -46,20 +46,22 @@
 			</a>
 			<DesktopNav />
 		</div>
-		<div class="hidden items-center gap-1 md:flex">
+		<div class="flex items-center gap-1">
 			<SearchNavigation />
-			<Button
-				variant="ghost"
-				size="icon"
-				target="_blank"
-				href="https://x.com/Sikandar_Bhide"
-				rel="noopener noreferrer"
-			>
-				<X />
-			</Button>
-			<GitHubButton {repo} {stars} />
-			<LightSwitch />
+			<div class="hidden items-center gap-1 md:flex">
+				<Button
+					variant="ghost"
+					size="icon"
+					target="_blank"
+					href="https://x.com/Sikandar_Bhide"
+					rel="noopener noreferrer"
+				>
+					<X />
+				</Button>
+				<GitHubButton {repo} {stars} />
+				<LightSwitch />
+			</div>
+			<MobileNav />
 		</div>
-		<MobileNav />
 	</nav>
 </header>
