@@ -23,6 +23,9 @@ importers:
       date-fns:
         specifier: ^4.4.0
         version: 4.4.0
+      dialkit:
+        specifier: ^2.0.2
+        version: 2.0.2(react@19.2.8)(svelte@5.56.10)
       mode-watcher:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.56.10)
@@ -770,6 +773,32 @@ packages:
 
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
+
+  dialkit@2.0.2:
+    resolution: {integrity: sha512-D5ZFLBhcB8WVxI6Q8e7HuPPA4SKQBPfLHpvgZQ5V0ZrqohHjYjTR5JoLfXSCeN8tKvUdemyGnVHy/3EtsaliUw==}
+    peerDependencies:
+      motion: '>=11.0.0'
+      motion-v: '>=2.0.0'
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+      solid-js: '>=1.6.0'
+      svelte: '>=5.8.0'
+      vue: '>=3.3.0'
+    peerDependenciesMeta:
+      motion:
+        optional: true
+      motion-v:
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+      solid-js:
+        optional: true
+      svelte:
+        optional: true
+      vue:
+        optional: true
 
   element-source@0.0.5:
     resolution: {integrity: sha512-04NFHxgZ3SLgvMmcPIMsx8bvbIvZZ2F2xNtxiBByACNXFiTJWU8ujz5M1PIVbBuKyKLwmXbPJsu2V2qRNhdXGQ==}
@@ -2018,6 +2047,11 @@ snapshots:
   devlop@1.1.0:
     dependencies:
       dequal: 2.0.3
+
+  dialkit@2.0.2(react@19.2.8)(svelte@5.56.10):
+    optionalDependencies:
+      react: 19.2.8
+      svelte: 5.56.10
 
   element-source@0.0.5(react@19.2.8):
     dependencies:

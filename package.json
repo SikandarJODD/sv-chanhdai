@@ -24,6 +24,7 @@
 		"@sveltecraft/rough": "^0.0.2",
 		"@sveltejs/adapter-vercel": "^6.3.4",
 		"date-fns": "^4.4.0",
+		"dialkit": "^2.0.2",
 		"mode-watcher": "^1.1.0",
 		"motion-sv": "^0.1.13",
 		"runed": "^0.37.1",
