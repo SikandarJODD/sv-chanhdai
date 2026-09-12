@@ -59,6 +59,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Adjustable character spacing and font size",
+		"Container size scales automatically to fit the text ring",
+		"Announces the full text to screen readers via hidden content"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",
@@ -96,19 +101,22 @@ export const data: ComponentDoc = {
 					name: "spinClass",
 					type: "ClassValue",
 					default: "undefined",
-					description: "Classes applied to the spinning character ring."
+					description:
+						"Classes applied to the spinning character ring."
 				},
 				{
 					name: "renderChar",
 					type: "Snippet<[{ char: string; index: number }]>",
 					default: "undefined",
-					description: "Custom renderer for each positioned character."
+					description:
+						"Custom renderer for each positioned character."
 				},
 				{
 					name: "class",
 					type: "ClassValue",
 					default: "undefined",
-					description: "Additional classes applied to the outer container."
+					description:
+						"Additional classes applied to the outer container."
 				},
 				{
 					name: "ref",

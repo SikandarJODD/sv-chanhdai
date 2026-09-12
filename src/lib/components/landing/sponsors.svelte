@@ -3,6 +3,7 @@
 	import Github from "$lib/svg/github.svelte";
 	import X from "$lib/svg/x.svelte";
 	import { cn } from "$lib/utils";
+	import { Annotation } from "$ui/annotation";
 
 	type Sponsor = {
 		name: string;
@@ -110,7 +111,7 @@
 		{#each sponsors as sponsor (sponsor.handle)}
 			<article class="min-w-0 p-2">
 				<div
-					class="relative aspect-square w-full p-1.5 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-ink/40 after:content-[''] after:border-dashed"
+					class="relative aspect-square w-full p-1.5 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-ink/40 after:content-[''] after:border-dashed dark:after:border-emerald-500/40"
 				>
 					<img
 						src={sponsor.avatar}
@@ -140,7 +141,7 @@
 								target="_blank"
 								rel="noreferrer"
 								variant="ghost"
-								size="icon-xs"
+								size="icon-sm"
 								aria-label={`${sponsor.name} on X`}
 							>
 								<X class="size-3" />
@@ -152,7 +153,7 @@
 							target="_blank"
 							rel="noreferrer"
 							variant="ghost"
-							size="icon-xs"
+							size="icon-sm"
 							aria-label={`${sponsor.name} on GitHub`}
 						>
 							<Github class="size-3.5" />
@@ -164,14 +165,22 @@
 	</div>
 
 	<div class="mt-10 flex justify-center">
-		<Button
-			href={sponsorUrl}
-			target="_blank"
-			rel="noreferrer"
-			variant="outline"
-			class="rounded-full px-4"
+		<Annotation
+			targetGap="0.6rem"
+			lowerLabelGap="0.1rem"
+			note="😁"
+			noMark
+			rotate="-12deg"
 		>
-			Sponsor my work
-		</Button>
+			<Button
+				href={sponsorUrl}
+				target="_blank"
+				rel="noreferrer"
+				variant="outline"
+				class="rounded-full px-4"
+			>
+				Sponsor my work
+			</Button>
+		</Annotation>
 	</div>
 </section>

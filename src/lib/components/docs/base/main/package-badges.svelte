@@ -11,7 +11,10 @@
 </script>
 
 {#if packages.length > 0}
-	<div class={cn("mt-4 flex flex-wrap gap-2", className)} data-toc-ignore="true">
+	<div
+		class={cn("mt-4 flex flex-wrap gap-2", className)}
+		data-toc-ignore="true"
+	>
 		{#each packages as pkg (pkg)}
 			<Badge
 				variant="secondary"

@@ -45,6 +45,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Content fades in and out smoothly as you scroll",
+		"Supports both vertical and horizontal scrolling",
+		"Deprecated in favor of the shadcn/ui scroll-fade utility"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",
@@ -63,13 +68,15 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "Content rendered inside the scrollable container."
+					description:
+						"Content rendered inside the scrollable container."
 				},
 				{
 					name: "orientation",
 					type: "'vertical' | 'horizontal' | 'both'",
 					default: "'vertical'",
-					description: "Direction in which scrolling and edge fades are enabled."
+					description:
+						"Direction in which scrolling and edge fades are enabled."
 				},
 				{
 					name: "ref",
@@ -81,7 +88,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the scroll container."
+					description:
+						"Additional classes applied to the scroll container."
 				}
 			]
 		}

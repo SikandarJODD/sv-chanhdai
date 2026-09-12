@@ -135,6 +135,12 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Works from an async click handler, or follows a status you control from form state",
+		"Keeps focus while busy, so keyboard focus is not lost when the action finishes",
+		"Announces loading and success to screen readers",
+		"Swaps states without motion when reduced motion is preferred"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

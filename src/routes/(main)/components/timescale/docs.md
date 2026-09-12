@@ -1,44 +1,102 @@
 # Timescale
 
-TODO: Add a concise description for Timescale.
+Ruler-style timeline for plotting milestones along a horizontal or vertical axis.
+
+Packages: None
 
 ## Installation
 
-<Tabs items={["CLI", "Manual"]}>
-<Tab value="CLI">
-
-### Using CLI
+### npm
 
 ```bash
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/timescale.json
 ```
 
-</Tab>
-<Tab value="Manual">
+### pnpm
 
-### Manual Installation
+```bash
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/timescale.json
+```
 
-Copy the component source files into your project and update the example files with real usage.
+### yarn
 
-</Tab>
-</Tabs>
+```bash
+yarn dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/timescale.json
+```
+
+### bun
+
+```bash
+bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/timescale.json
+```
 
 ## Usage
 
 ```svelte
 <script lang="ts">
-  import { Timescale } from "$lib/components/chan/timescale";
+  import {
+    Timescale,
+    TimescaleContent,
+    TimescaleItem,
+    TimescaleRail,
+    TimescaleTick,
+    TimescaleTrack,
+    TimescaleYear
+  } from "$chan/timescale";
 </script>
 
-<Timescale />
+<Timescale orientation="vertical">
+  <TimescaleTrack>
+    <TimescaleRail />
+
+    <TimescaleItem>
+      <TimescaleTick />
+      <TimescaleYear>2024</TimescaleYear>
+      <TimescaleContent>Started the project.</TimescaleContent>
+    </TimescaleItem>
+
+    <TimescaleItem>
+      <TimescaleTick />
+      <TimescaleYear>2025</TimescaleYear>
+      <TimescaleContent>Released version 1.0.</TimescaleContent>
+    </TimescaleItem>
+  </TimescaleTrack>
+</Timescale>
 ```
 
 ## Props
 
-Document the Timescale props here.
+### Timescale
+
+Root layout that sets the timeline orientation for its primitives.
+
+| Prop          | Type                         | Default        | Required | Description                                     |
+| ------------- | ---------------------------- | -------------- | -------- | ----------------------------------------------- |
+| `children`    | `Snippet`                    | —              | Yes      | Timescale primitives rendered inside the root.  |
+| `orientation` | `'horizontal' \| 'vertical'` | `'horizontal'` | No       | Direction used to lay out the timeline.         |
+| `class`       | `string`                     | `undefined`    | No       | Additional classes applied to the root element. |
+| `ref`         | `HTMLDivElement \| null`     | `null`         | No       | Bindable reference to the root element.         |
+
+### TimescaleIntroScroll
+
+Wrapper that performs the initial horizontal scroll animation.
+
+| Prop       | Type      | Default | Required | Description                              |
+| ---------- | --------- | ------- | -------- | ---------------------------------------- |
+| `children` | `Snippet` | —       | Yes      | Timescale content containing a viewport. |
+
+### Timescale layout primitives
+
+Shared API for Age, Content, Header, Item, Rail, Tick, Track, Viewport, and Year.
+
+| Prop       | Type                  | Default     | Required | Description                                               |
+| ---------- | --------------------- | ----------- | -------- | --------------------------------------------------------- |
+| `children` | `Snippet`             | `undefined` | No       | Content rendered inside the selected timescale primitive. |
+| `class`    | `string`              | `undefined` | No       | Additional classes applied to the primitive element.      |
+| `ref`      | `HTMLElement \| null` | `null`      | No       | Bindable reference to the primitive's underlying element. |
 
 ## Features
 
-- Replace this placeholder bullet with a real Timescale feature.
-- Add one or two implementation details that matter to consumers.
-- Include usage constraints or accessibility notes if they apply.
+- Ruler-style timeline for plotting milestones along a horizontal or vertical axis
+- Composable subcomponents for header, track, ticks, and content
+- TimescaleIntroScroll auto-scrolls a horizontal timeline to its latest item on mount, respecting prefers-reduced-motion

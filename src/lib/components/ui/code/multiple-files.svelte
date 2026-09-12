@@ -21,7 +21,11 @@
 				class="dark:hover:bg-muted/50 flex items-center gap-1.5 py-2 pr-5.5 pl-4 font-mono text-xs hover:bg-white/5"
 			>
 				<!-- <ChevronDown class="size-4 opacity-50" /> -->
-				<svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 16 16">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="size-4"
+					viewBox="0 0 16 16"
+				>
 					<path
 						fill="none"
 						stroke="#cad3f5"
@@ -64,14 +68,16 @@
 							"transition-all duration-200",
 							selectedIndex === index
 								? "text-black! dark:text-white!"
-								: "text-muted-foreground",
+								: "text-muted-foreground"
 						]}>{item?.name || "Svelte"}</span
 					>
 				</Button>
 			{/each}
 		</div>
 	</div>
-	<div class="relative max-h-[550px] min-h-128 w-full overflow-auto border-none sm:w-full">
+	<div
+		class="relative max-h-[550px] min-h-128 w-full overflow-auto border-none sm:w-full"
+	>
 		<!-- <Code.Overflow> -->
 		<Code.Root
 			lang={selectedCode.lang}

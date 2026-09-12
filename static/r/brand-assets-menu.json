@@ -24,7 +24,7 @@
 			"target": "chan/brand-assets-menu/brand-assets-menu.svelte"
 		},
 		{
-			"content": "import BrandAssetsMenu, { type BrandAssetsMenuProps } from \"./brand-assets-menu.svelte\";\n\nexport { BrandAssetsMenu, type BrandAssetsMenuProps };\n",
+			"content": "import BrandAssetsMenu, {\n\ttype BrandAssetsMenuProps\n} from \"./brand-assets-menu.svelte\";\n\nexport { BrandAssetsMenu, type BrandAssetsMenuProps };\n",
 			"type": "registry:file",
 			"target": "chan/brand-assets-menu/index.ts"
 		}

@@ -166,6 +166,12 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Track stretches with rubber-band tension when dragged past bounds",
+		"Snaps magnetically to exact steps or continuous deciles",
+		"Inline label and value text dynamically fade to avoid handle overlap",
+		"Supports keyboard navigation and respects prefers-reduced-motion"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

@@ -8,9 +8,16 @@ import type {
 	InstallComponentDocs
 } from "$lib/types/structure";
 import type { CodeBlock } from "$lib/types/code";
+import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+import ShapeAndLayoutExample from "./examples/shape-and-layout.svelte";
+import ShapeAndLayoutExampleCode from "./examples/shape-and-layout.svelte?raw";
+import SubtleGlowExample from "./examples/subtle-glow.svelte";
+import SubtleGlowExampleCode from "./examples/subtle-glow.svelte?raw";
+import VibrantGlowExample from "./examples/vibrant-glow.svelte";
+import VibrantGlowExampleCode from "./examples/vibrant-glow.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "glow-card-grid",
@@ -44,6 +51,36 @@ const usage: CodeBlock[] = [
 	}
 ];
 
+const examples: Example[] = [
+	{
+		name: "Subtle glow",
+		preview: SubtleGlowExample,
+		code: {
+			name: "subtle-glow.svelte",
+			code: SubtleGlowExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Vibrant glow",
+		preview: VibrantGlowExample,
+		code: {
+			name: "vibrant-glow.svelte",
+			code: VibrantGlowExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Shape and layout",
+		preview: ShapeAndLayoutExample,
+		code: {
+			name: "shape-and-layout.svelte",
+			code: ShapeAndLayoutExampleCode,
+			lang: "svelte"
+		}
+	}
+];
+
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
@@ -61,6 +98,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Displays cards with glowing border and background effects",
+		"Fine-tunable icon and border blur, saturation, brightness, and contrast parameters",
+		"Composable GlowCard and GlowCardGrid components"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",
@@ -70,6 +112,7 @@ export const data: ComponentDoc = {
 	},
 	install_block,
 	usage,
+	examples,
 	seo,
 	props: [
 		{
@@ -92,19 +135,22 @@ export const data: ComponentDoc = {
 					name: "iconBlur",
 					type: "number",
 					default: "25",
-					description: "Blur radius applied to the moving background image."
+					description:
+						"Blur radius applied to the moving background image."
 				},
 				{
 					name: "iconSaturate",
 					type: "number",
 					default: "5",
-					description: "Saturation multiplier for the background image."
+					description:
+						"Saturation multiplier for the background image."
 				},
 				{
 					name: "iconBrightness",
 					type: "number",
 					default: "1.3",
-					description: "Brightness multiplier for the background image."
+					description:
+						"Brightness multiplier for the background image."
 				},
 				{
 					name: "iconScale",
@@ -134,13 +180,15 @@ export const data: ComponentDoc = {
 					name: "borderSaturate",
 					type: "number",
 					default: "4.2",
-					description: "Backdrop saturation multiplier for the border."
+					description:
+						"Backdrop saturation multiplier for the border."
 				},
 				{
 					name: "borderBrightness",
 					type: "number",
 					default: "2.5",
-					description: "Backdrop brightness multiplier for the border."
+					description:
+						"Backdrop brightness multiplier for the border."
 				},
 				{
 					name: "borderContrast",
@@ -182,7 +230,8 @@ export const data: ComponentDoc = {
 					name: "avatar",
 					type: "string",
 					required: true,
-					description: "Avatar image URL used by the card and glow effect."
+					description:
+						"Avatar image URL used by the card and glow effect."
 				},
 				{
 					name: "class",

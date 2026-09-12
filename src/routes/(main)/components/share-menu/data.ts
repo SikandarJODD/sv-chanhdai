@@ -49,6 +49,12 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Copy the link to the clipboard with toast feedback",
+		"Share directly to X and LinkedIn in a new tab",
+		"Resolves relative URLs against the current origin",
+		"Shows the native share option only when the Web Share API is available"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",
@@ -73,7 +79,8 @@ export const data: ComponentDoc = {
 					name: "url",
 					type: "string",
 					required: true,
-					description: "URL to share; relative values are resolved against the current origin."
+					description:
+						"URL to share; relative values are resolved against the current origin."
 				}
 			]
 		}

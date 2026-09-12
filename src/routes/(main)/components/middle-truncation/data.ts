@@ -85,6 +85,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Three truncation strategies: fixed end, flexible with minimum, or even split",
+		"Pixel-accurate measurement based on actual rendered text width",
+		"Automatically recalculates when container resizes"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",
@@ -111,25 +116,29 @@ export const data: ComponentDoc = {
 					name: "ellipsis",
 					type: "string",
 					default: "'...'",
-					description: "Custom separator shown between the preserved text segments."
+					description:
+						"Custom separator shown between the preserved text segments."
 				},
 				{
 					name: "end",
 					type: "number",
 					default: "undefined",
-					description: "Fixed number of characters preserved at the end; cannot be combined with minEnd."
+					description:
+						"Fixed number of characters preserved at the end; cannot be combined with minEnd."
 				},
 				{
 					name: "minEnd",
 					type: "number",
 					default: "undefined",
-					description: "Minimum trailing characters preserved during an even split; cannot be combined with end."
+					description:
+						"Minimum trailing characters preserved during an even split; cannot be combined with end."
 				},
 				{
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the wrapper span."
+					description:
+						"Additional classes applied to the wrapper span."
 				}
 			]
 		}

@@ -17,7 +17,9 @@
 		class="w-72 rounded-full bg-violet-500/10"
 	>
 		<SlideToUnlockTrack>
-			<SlideToUnlockText class="text-base text-violet-700 dark:text-violet-300">
+			<SlideToUnlockText
+				class="text-base text-violet-700 dark:text-violet-300"
+			>
 				{#snippet children({ isDragging })}
 					{isDragging ? "Release to launch" : "Slide to launch"}
 				{/snippet}
@@ -31,6 +33,8 @@
 	</SlideToUnlock>
 
 	<p class="text-muted-foreground text-sm" aria-live="polite">
-		{launched ? "Launch confirmed." : "Custom handle with a 48px drag width"}
+		{launched
+			? "Launch confirmed."
+			: "Custom handle with a 48px drag width"}
 	</p>
 </div>

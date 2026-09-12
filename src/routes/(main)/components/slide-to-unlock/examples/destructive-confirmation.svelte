@@ -45,7 +45,9 @@
 				exit={exitVariant}
 				transition={swapTransition}
 			>
-				<p class="text-sm font-medium" role="status">Project deleted.</p>
+				<p class="text-sm font-medium" role="status">
+					Project deleted.
+				</p>
 				<button
 					type="button"
 					class="text-muted-foreground hover:text-foreground text-sm underline underline-offset-4"
@@ -70,12 +72,18 @@
 					class="w-72 rounded-full bg-red-500/10"
 				>
 					<SlideToUnlockTrack>
-						<SlideToUnlockText class="text-base text-red-700 dark:text-red-300">
+						<SlideToUnlockText
+							class="text-base text-red-700 dark:text-red-300"
+						>
 							{#snippet children({ isDragging })}
-								{isDragging ? "Release to delete" : "Slide to delete project"}
+								{isDragging
+									? "Release to delete"
+									: "Slide to delete project"}
 							{/snippet}
 						</SlideToUnlockText>
-						<SlideToUnlockHandle class="size-10 rounded-full bg-red-600 text-white">
+						<SlideToUnlockHandle
+							class="size-10 rounded-full bg-red-600 text-white"
+						>
 							{#snippet children()}
 								<Trash2Icon class="size-5" />
 							{/snippet}

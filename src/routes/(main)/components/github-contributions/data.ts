@@ -164,6 +164,12 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Shows a full year of daily activity with a color legend and total count",
+		"Shows the contribution count and date in a tooltip for each day",
+		"Links the contribution total to the requested user's GitHub profile",
+		"Works with any API compatible with the GitHub Contributions API"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

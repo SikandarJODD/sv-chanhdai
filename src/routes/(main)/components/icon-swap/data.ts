@@ -41,6 +41,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Animate icon swaps with scale, blur, and fade transitions",
+		"Compound component structure with IconSwap and IconSwapItem",
+		"Swap triggers automatically when the item's key changes"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",
@@ -59,19 +64,22 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "Keyed IconSwapItem content to animate between."
+					description:
+						"Keyed IconSwapItem content to animate between."
 				},
 				{
 					name: "mode",
 					type: "AnimatePresenceProps['mode']",
 					default: "'popLayout'",
-					description: "Controls how entering and exiting items are sequenced."
+					description:
+						"Controls how entering and exiting items are sequenced."
 				},
 				{
 					name: "initial",
 					type: "boolean",
 					default: "false",
-					description: "Whether content should animate on its initial render."
+					description:
+						"Whether content should animate on its initial render."
 				}
 			]
 		},
@@ -83,7 +91,8 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description: "Icon content rendered inside the motion element."
+					description:
+						"Icon content rendered inside the motion element."
 				},
 				{
 					name: "as",
