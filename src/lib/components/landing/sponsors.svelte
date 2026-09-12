@@ -27,6 +27,22 @@
 			current: true
 		},
 		{
+			name: "Aidan Bleser",
+			handle: "ieedan",
+			avatar: "https://avatars.githubusercontent.com/u/117548273?v=4",
+			github: "https://github.com/ieedan",
+			role: "Frontend Engineer",
+			x: "https://x.com/ieeeedan"
+		},
+		{
+			name: "Nono Martínez Alonso",
+			handle: "nonoesp",
+			avatar: "https://avatars.githubusercontent.com/u/1243210?v=4",
+			github: "https://github.com/nonoesp",
+			role: "Host of Getting Simple",
+			x: "https://x.com/nonoesp"
+		},
+		{
 			name: "ZerGo0",
 			handle: "ZerGo0",
 			avatar: "https://avatars.githubusercontent.com/u/18653821?v=4",
