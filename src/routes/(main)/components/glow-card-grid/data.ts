@@ -64,8 +64,7 @@ export const data: ComponentDoc = {
 	features: [
 		"Displays cards with glowing border and background effects",
 		"Fine-tunable icon and border blur, saturation, brightness, and contrast parameters",
-		"Composable GlowCard and GlowCardGrid components",
-		"Supports live parameter tuning via the DialKit integration"
+		"Composable GlowCard and GlowCardGrid components"
 	],
 	preview: Preview,
 	preview_code: {

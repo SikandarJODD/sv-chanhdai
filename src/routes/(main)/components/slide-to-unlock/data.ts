@@ -190,7 +190,7 @@ const install_block: InstallComponentDocs = {
 export const data: ComponentDoc = {
 	...meta,
 	features: [
-		"Smooth drag interaction with spring physics via Motion",
+		"Smooth drag interaction with spring physics via Motion Svelte",
 		"Composable compound components (track, handle, text)",
 		"Customizable handle and colors",
 		"Built-in shimmering text effect"

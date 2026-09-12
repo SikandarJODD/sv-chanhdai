@@ -166,8 +166,8 @@ export const data: ComponentDoc = {
 	...meta,
 	features: [
 		"Shows a full year of daily activity with a color legend and total count",
-		"Caches fetched contributions for a day, so repeat visits do not hit the API",
-		"Streams in behind a Suspense boundary with a spinner fallback while data loads",
+		"Shows the contribution count and date in a tooltip for each day",
+		"Links the contribution total to the requested user's GitHub profile",
 		"Works with any API compatible with the GitHub Contributions API"
 	],
 	preview: Preview,
