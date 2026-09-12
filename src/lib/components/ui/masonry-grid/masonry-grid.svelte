@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
 	import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+	import { BrandAssetsMenu } from "$chan/brand-assets-menu";
 	import { ElasticSlider } from "$chan/elastic-slider";
 	import GitHubContributions from "$chan/github-contributions/github-contributions.svelte";
+	import { MiddleTruncation } from "$chan/middle-truncation";
 	import {
 		SlideToUnlock,
 		SlideToUnlockHandle,
@@ -28,7 +30,30 @@
 		type WheelPickerOption
 	} from "$chan/wheel-picker";
 	import Annotation from "$ui/annotation/annotation.svelte";
+	import {
+		ResizableHandle,
+		ResizablePane,
+		ResizablePaneGroup
+	} from "$ui/resizable";
 	import MasonryCard from "./masonry-card.svelte";
+
+	const LOGOMARK_SVG =
+		'<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 256 128"><path fill="currentColor" d="M96 128H32V96h64v32ZM224 32h-64v64h64v32h-96V0h96v32ZM32 96H0V32h32v64ZM256 96h-32V32h32v64ZM96 32H32V0h64v32Z"/></svg>';
+
+	const LOGOTYPE_SVG =
+		'<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 640 128"><path fill="currentColor" d="M96 128H32V96h64v32ZM224 32h-64v64h64v32h-96V0h96v32ZM32 96H0V32h32v64ZM256 96h-32V32h32v64ZM96 32H32V0h64v32Z"/><text x="288" y="86" fill="currentColor" font-family="monospace" font-size="64">chanhdai</text></svg>';
+
+	const exampleFiles = [
+		{
+			name: "building-accessible-command-menus-in-svelte.md",
+			className: "text-foreground/70"
+		},
+		{
+			name: "responsive-component-preview.svelte",
+			className: "text-orange-500"
+		},
+		{ name: "masonry-grid-layout.ts", className: "text-info" }
+	];
 
 	const wheelOptions: WheelPickerOption[] = [
 		{ label: "React", value: "react" },
@@ -46,6 +71,21 @@
 		});
 	}
 </script>
+
+{#snippet chanhDaiMark(className = "")}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		class={className}
+		fill="none"
+		viewBox="0 0 512 256"
+		aria-hidden="true"
+	>
+		<path
+			fill="currentColor"
+			d="M192 256H64v-64h128v64ZM448 64H320v128h128v64H256V0h192v64ZM64 192H0V64h64v128ZM512 192h-64V64h64v128ZM192 64H64V0h128v64Z"
+		/>
+	</svg>
+{/snippet}
 
 <section
 	class="mx-auto w-full animate-in fade-in delay-500 duration-200 ease-out fill-mode-backwards slide-in-from-bottom-[6px] max-w-6xl px-4 pb-20 sm:pb-24 z-[300]"
@@ -218,6 +258,74 @@
 					/>
 				</WheelPickerWrapper>
 			</div>
+		</MasonryCard>
+
+		<MasonryCard
+			name="Brand Assets Menu"
+			href={resolve("/(main)/components/brand-assets-menu")}
+			class="md:col-span-6"
+		>
+			<div class="flex flex-col items-center gap-4">
+				<BrandAssetsMenu
+					logomark={chanhDaiMark}
+					logomarkSVG={LOGOMARK_SVG}
+					logotypeSVG={LOGOTYPE_SVG}
+					brandGuidelinesURL="https://chanhdai.com/blog/chanhdai-brand"
+					brandAssetsURL="https://assets.chanhdai.com/chanhdai-brand.zip"
+				>
+					{#snippet children({ props })}
+						<button
+							type="button"
+							class="rounded-xl p-3 transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+							aria-label="Open brand assets menu"
+							{...props}
+						>
+							{@render chanhDaiMark("h-12 text-foreground")}
+						</button>
+					{/snippet}
+				</BrandAssetsMenu>
+
+				<p class="text-sm text-muted-foreground">
+					<span class="hidden pointer-fine:inline"
+						>Right-click the logo</span
+					>
+					<span class="hidden pointer-coarse:inline"
+						>Press & hold the logo</span
+					>
+				</p>
+			</div>
+		</MasonryCard>
+
+		<MasonryCard
+			name="Middle Truncation"
+			href={resolve("/(main)/components/middle-truncation")}
+			class="md:col-span-6"
+		>
+			<ResizablePaneGroup direction="horizontal" class="w-full max-w-md">
+				<ResizablePane
+					minSize={35}
+					defaultSize={100}
+					class="flex items-center pr-0.5"
+				>
+					<div
+						class="relative flex w-full min-w-0 flex-col gap-3 rounded-xl border bg-card p-5 after:pointer-events-none after:absolute after:inset-1 after:rounded-lg after:border after:border-border/50"
+					>
+						{#each exampleFiles as file}
+							<MiddleTruncation
+								text={file.name}
+								end={file.name.endsWith(".svelte") ? 7 : 3}
+								class={`relative z-10 font-mono text-sm ${file.className}`}
+							/>
+						{/each}
+					</div>
+				</ResizablePane>
+
+				<ResizableHandle
+					class="relative w-2 bg-transparent p-0 after:absolute after:top-1/2 after:right-0 after:left-0.5 after:h-12 after:w-1.5 after:translate-x-0 after:-translate-y-1/2 after:rounded-full after:bg-foreground/10 after:transition-all hover:after:bg-foreground/20 focus-visible:ring-0 focus-visible:ring-offset-0 data-active:after:scale-y-125 data-active:after:bg-foreground/30"
+				/>
+
+				<ResizablePane minSize={0} defaultSize={0} />
+			</ResizablePaneGroup>
 		</MasonryCard>
 	</div>
 </section>

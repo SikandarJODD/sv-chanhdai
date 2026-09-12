@@ -5,6 +5,8 @@
 	import { components } from "$lib/registry/components";
 	import { Annotation } from "$ui/annotation";
 	import { mode } from "mode-watcher";
+	import { MediaQuery } from "svelte/reactivity";
+
 	let faviconUrl = $derived.by(() => {
 		if (mode.current === "dark") {
 			return "https://assets.chanhdai.com/images/favicon-dark.svg";
@@ -12,6 +14,7 @@
 			return "https://assets.chanhdai.com/images/favicon.ico";
 		}
 	});
+	let large = new MediaQuery("min-width: 800px");
 </script>
 
 <section class="mx-auto w-full max-w-6xl overflow-hidden py-20 sm:py-24">
@@ -51,19 +54,31 @@
 			Svelte Chan Components
 		</h1>
 
-		<p
+		<div
 			class="mt-5 max-w-3xl animate-in text-sm lg:text-base leading-8 font-medium font-mono text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 		>
 			A Svelte port of {components.length} components from
-			<Annotation
-				note="Original Creator"
-				direction="n"
-				rotate="-2deg"
-				customColor={mode.current === "dark"
-					? "#24DD84"
-					: "lab(36 55.64 -107.68)"}
-				noMark
-			>
+			{#if large.current}
+				<Annotation
+					note="Original Creator"
+					direction="n"
+					rotate="-2deg"
+					customColor={mode.current === "dark"
+						? "#24DD84"
+						: "lab(36 55.64 -107.68)"}
+					noMark
+				>
+					<FaviconLink
+						href="https://chanhdai.com"
+						target="_blank"
+						rel="noreferrer"
+						class="mx-0"
+						faviconSrc={faviconUrl}
+					>
+						Chánh Đại
+					</FaviconLink>
+				</Annotation>’s Portfolio
+			{:else}
 				<FaviconLink
 					href="https://chanhdai.com"
 					target="_blank"
@@ -73,7 +88,8 @@
 				>
 					Chánh Đại
 				</FaviconLink>
-			</Annotation>’s Portfolio
+				’s Portfolio
+			{/if}
 			<br />
 			by
 			<FaviconLink
@@ -85,7 +101,7 @@
 			>
 				Bhide Svelte
 			</FaviconLink>
-		</p>
+		</div>
 
 		<div
 			class="mt-10 flex w-fit animate-in items-center justify-center gap-3 delay-300 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
