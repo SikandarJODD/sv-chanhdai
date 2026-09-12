@@ -137,6 +137,7 @@
 									{...props}
 									href={nav.prev?.href}
 									variant="secondary"
+									class="size-8"
 									size="icon-sm"
 									aria-label={`Previous page: ${nav.prev?.name}`}
 								>
@@ -178,6 +179,7 @@
 									{...props}
 									href={nav.next?.href}
 									variant="secondary"
+									class="size-8"
 									size="icon-sm"
 									aria-label={`Next page: ${nav.next?.name}`}
 								>

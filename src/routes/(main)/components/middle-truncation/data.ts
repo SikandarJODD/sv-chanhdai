@@ -7,7 +7,11 @@ import type {
 	ComponentMeta,
 	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
+import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
+import DemoExample from "./examples/demo-example.svelte";
+import DemoExampleCode from "./examples/demo-example.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -23,6 +27,38 @@ const seo: SEO = {
 	description: "Truncate text in the middle while preserving start and end.",
 	keywords: ["Svelte", "Middle Truncation", "Component"]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import { MiddleTruncation } from "$chan/middle-truncation";
+</script>
+
+<div class="w-64">
+	<MiddleTruncation
+		text="responsive-component-preview.svelte"
+		end={7}
+	/>
+</div>`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
+
+const examples: Example[] = [
+	{
+		name: "File names",
+		description:
+			"Preserve file extensions while truncating names inside a resizable container.",
+		preview: DemoExample,
+		code: {
+			name: "demo-example.svelte",
+			code: DemoExampleCode,
+			lang: "svelte"
+		}
+	}
+];
 
 const install_block: InstallComponentDocs = {
 	packages: ["runed"],
@@ -57,6 +93,8 @@ export const data: ComponentDoc = {
 		hideLines: true
 	},
 	install_block,
+	usage,
+	examples,
 	seo,
 	props: [
 		{
