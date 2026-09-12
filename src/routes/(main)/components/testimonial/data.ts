@@ -128,6 +128,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Composable testimonial layout with quote, author info, and avatar",
+		"Built-in verified badge for the author name",
+		"Composable via Testimonial, TestimonialAuthor, TestimonialAvatar, and related subcomponents"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

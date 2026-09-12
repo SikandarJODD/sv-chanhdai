@@ -19,6 +19,7 @@
 		installFolderStructure?: string;
 		installTailwindCode?: CodeBlock;
 		usage?: CodeBlock[];
+		features?: string[];
 		examples?: Example[];
 		propsTables?: PropsTable[];
 		descriptionClass?: string;
@@ -49,6 +50,7 @@
 		installFolderStructure,
 		installTailwindCode,
 		usage = [],
+		features = [],
 		examples = [],
 		propsTables = [],
 		descriptionClass = ""
@@ -110,6 +112,17 @@
 					<FrameSingle {code} faded={false} />
 				{/each}
 			</div>
+		</section>
+	{/if}
+
+	{#if features.length > 0}
+		<section>
+			<H2 id="features">Features</H2>
+			<ul class="mt-4 list-disc space-y-2 pl-5">
+				{#each features as feature}
+					<li>{feature}</li>
+				{/each}
+			</ul>
 		</section>
 	{/if}
 

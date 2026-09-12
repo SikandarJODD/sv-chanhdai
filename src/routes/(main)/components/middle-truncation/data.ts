@@ -85,6 +85,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Three truncation strategies: fixed end, flexible with minimum, or even split",
+		"Pixel-accurate measurement based on actual rendered text width",
+		"Automatically recalculates when container resizes"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

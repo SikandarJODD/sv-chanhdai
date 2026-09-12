@@ -139,6 +139,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Ruler-style timeline for plotting milestones along a horizontal or vertical axis",
+		"Composable subcomponents for header, track, ticks, and content",
+		"TimescaleIntroScroll auto-scrolls a horizontal timeline to its latest item on mount, respecting prefers-reduced-motion"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

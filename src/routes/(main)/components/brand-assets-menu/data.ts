@@ -71,6 +71,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Copy mark and logotype SVGs to the clipboard with toast feedback",
+		"Link out to brand guidelines and asset downloads from one menu",
+		"Wrap any element to use it as a right-click or press-and-hold trigger"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

@@ -64,6 +64,10 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Displays a testimonial quote with author name and tagline",
+		"Links out to the original source (e.g., a tweet) via a url prop"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

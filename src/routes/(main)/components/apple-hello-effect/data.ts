@@ -134,6 +134,12 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"SVG writing/path animation inspired by Apple's \"Hello\" welcome screen",
+		"Ships with English, Hindi, Spanish, and Vietnamese language variants",
+		"onAnimationComplete callback to trigger logic after the animation finishes",
+		"durationScale prop to control animation speed"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

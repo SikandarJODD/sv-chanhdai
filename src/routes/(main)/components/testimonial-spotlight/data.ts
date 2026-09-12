@@ -62,6 +62,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Wraps testimonial cards with a cursor-hover spotlight effect",
+		"Customizable spotlight color, size, and opacity via CSS variables",
+		"Composable with the base Testimonial component"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

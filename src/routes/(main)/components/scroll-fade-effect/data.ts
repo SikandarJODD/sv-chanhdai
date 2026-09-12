@@ -45,6 +45,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Content fades in and out smoothly as you scroll",
+		"Supports both vertical and horizontal scrolling",
+		"Deprecated in favor of the shadcn/ui scroll-fade utility"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

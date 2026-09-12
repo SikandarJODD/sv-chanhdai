@@ -41,6 +41,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Animate icon swaps with scale, blur, and fade transitions",
+		"Compound component structure with IconSwap and IconSwapItem",
+		"Swap triggers automatically when the item's key changes"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

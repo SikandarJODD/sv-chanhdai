@@ -72,6 +72,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Interactive dot grid with a cursor-tracking spotlight effect",
+		"Customizable dot color, active color, spacing, and radius via props",
+		"Adjustable interaction radius and alpha range for the spotlight glow"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

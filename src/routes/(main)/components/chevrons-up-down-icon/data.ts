@@ -41,6 +41,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Animated chevrons icon that morphs between up and down directions",
+		"Imperative ref control via startAnimation and stopAnimation methods",
+		"Based on the Lucide chevrons-up-down icon"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

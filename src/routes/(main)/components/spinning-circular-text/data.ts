@@ -59,6 +59,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Adjustable character spacing and font size",
+		"Container size scales automatically to fit the text ring",
+		"Announces the full text to screen readers via hidden content"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

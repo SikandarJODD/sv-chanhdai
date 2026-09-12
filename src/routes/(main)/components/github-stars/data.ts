@@ -71,6 +71,12 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Displays the star count of a specified GitHub repository",
+		"Optical alignment for better visual balance with the GitHub icon",
+		"Formats large numbers for better readability (e.g., 1.2k for 1200)",
+		"Includes a tooltip that shows the full star count on hover"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

@@ -79,6 +79,12 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Natural touch scrolling with smooth inertia, mouse drag and scroll for desktop",
+		"Infinite loop scrolling",
+		"Unstyled core for complete style customization",
+		"Full keyboard navigation and type-ahead search"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",

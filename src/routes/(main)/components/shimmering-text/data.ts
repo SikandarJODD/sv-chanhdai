@@ -34,6 +34,11 @@ const install_block: InstallComponentDocs = {
 
 export const data: ComponentDoc = {
 	...meta,
+	features: [
+		"Smooth, light-sweeping shimmer animation for text",
+		"Customizable animation duration and a stop control via isStopped",
+		"Customizable base and peak highlight colors via CSS variables"
+	],
 	preview: Preview,
 	preview_code: {
 		name: "preview.svelte",
