@@ -32,17 +32,17 @@ import ResetExampleCode from "./examples/reset.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "slide-to-unlock",
-	title: "Slide To Unlock",
+	title: "Slide to Unlock",
 	description:
 		"Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
 	category: "chan"
 };
 
 const seo: SEO = {
-	title: "Slide To Unlock",
+	title: "Slide to Unlock",
 	description:
 		"Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
-	keywords: ["Svelte", "Slide To Unlock", "Component"]
+	keywords: ["Svelte", "Slide to Unlock", "Component"]
 };
 
 const usage: CodeBlock[] = [

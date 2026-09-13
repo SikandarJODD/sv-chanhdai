@@ -66,7 +66,7 @@ export const data: ComponentDoc = {
 	...meta,
 	features: [
 		"Displays a testimonial quote with author name and tagline",
-		"Links out to the original source (e.g., a tweet) via a url prop"
+		"Links out to the original source (e.g., a tweet) through its URL prop"
 	],
 	preview: Preview,
 	preview_code: {

@@ -162,7 +162,7 @@
 					variant="outline"
 				>
 					<Github />
-					Github</Button
+					GitHub</Button
 				>
 			</div>
 		</div>

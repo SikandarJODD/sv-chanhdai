@@ -62,4 +62,4 @@ Quote and author attribution with an external profile link.
 ## Features
 
 - Displays a testimonial quote with author name and tagline
-- Links out to the original source (e.g., a tweet) via a url prop
+- Links out to the original source (e.g., a tweet) through its URL prop

@@ -148,7 +148,7 @@
 				/>
 			</Rough.SVG>
 			<span class="absolute inset-0 grid place-items-center"
-				>Install via Shadcn CLI</span
+				>Install via shadcn-svelte CLI</span
 			>
 		</li>
 	</ul>
