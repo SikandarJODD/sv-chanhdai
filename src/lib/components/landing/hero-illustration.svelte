@@ -72,7 +72,7 @@
 	</Rough.SVG>
 
 	<ul
-		class="contents font-cursive text-[0.925rem] leading-none font-semibold whitespace-nowrap"
+		class="contents font-cursive text-[0.925rem] leading-none font-medium whitespace-nowrap"
 	>
 		<li
 			class="absolute top-8 left-5 h-14 w-[204px] -rotate-3 text-ink dark:text-info"
@@ -83,7 +83,7 @@
 				class="pointer-events-none absolute inset-0 size-full"
 				aria-hidden="true"
 				stroke="currentColor"
-				strokeWidth={1.8}
+				strokeWidth={1.2}
 				roughness={1.5}
 				bowing={1.2}
 				seed={7}
@@ -109,7 +109,7 @@
 				class="pointer-events-none absolute inset-0 size-full"
 				aria-hidden="true"
 				stroke="var(--color-orange-500)"
-				strokeWidth={1.8}
+				strokeWidth={1.2}
 				roughness={1.55}
 				bowing={1.3}
 				seed={13}
@@ -135,7 +135,7 @@
 				class="pointer-events-none absolute inset-0 size-full"
 				aria-hidden="true"
 				stroke="currentColor"
-				strokeWidth={1.8}
+				strokeWidth={1.2}
 				roughness={1.6}
 				bowing={1.2}
 				seed={19}
