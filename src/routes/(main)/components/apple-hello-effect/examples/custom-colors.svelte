@@ -3,5 +3,5 @@
 </script>
 
 <AppleHelloEffectEnglish
-	class="text-ink dark:text-emerald-400 bg-ink/5 p-1 border border-dashed border"
+	class="text-ink dark:text-emerald-400 bg-ink/5 p-1 dark:bg-emerald-500/5 border-dashed border"
 />

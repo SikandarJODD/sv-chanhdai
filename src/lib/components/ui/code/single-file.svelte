@@ -4,7 +4,6 @@
 	import * as Code from "$lib/components/ui/code";
 	import type { CodeBlock } from "$lib/types/code";
 	import CopyButton from "../copy-button/copy-button.svelte";
-	import * as ButtonGroup from "$lib/components/ui/button-group/index.js";
 	import Button from "../button/button.svelte";
 	import { untrack } from "svelte";
 
@@ -60,7 +59,7 @@
 			<Code.Overflow bind:collapsed={isExpanded}>
 				<Code.Root
 					lang={code.lang || "svelte"}
-					class="w-full rounded-none border-none bg-secondary"
+					class="w-full rounded-none border-none bg-background"
 					code={code.code}
 					highlight={code.highlight}
 					hideLines={code.hideLines ?? false}
