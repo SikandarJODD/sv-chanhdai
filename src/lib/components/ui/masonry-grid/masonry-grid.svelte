@@ -57,15 +57,28 @@
 		{ name: "masonry-grid-layout.ts", className: "text-info" }
 	];
 
-	const wheelOptions: WheelPickerOption[] = [
-		{ label: "React", value: "react" },
-		{ label: "Vue", value: "vue" },
-		{ label: "Svelte", value: "svelte" }
+	const createWheelOptions = (
+		length: number,
+		add = 0
+	): WheelPickerOption<number>[] =>
+		Array.from({ length }, (_, i) => {
+			const value = i + add;
+
+			return {
+				label: value.toString().padStart(2, "0"),
+				value
+			};
+		});
+
+	const hourOptions = createWheelOptions(12, 1);
+	const minuteOptions = createWheelOptions(60);
+	const meridiemOptions: WheelPickerOption[] = [
+		{ label: "AM", value: "AM" },
+		{ label: "PM", value: "PM" }
 	];
 
 	let unlocked = $state(false);
 	let sliderValue = $state(50);
-	let wheelValue = $state("svelte");
 	let slideToUnlock = $state<{ reset: () => void }>();
 
 	function save() {
@@ -278,12 +291,24 @@
 			href={resolve("/(main)/components/wheel-picker")}
 			class="md:col-span-5"
 		>
-			<div class="w-64 max-w-full">
+			<div class="w-56 max-w-full">
 				<WheelPickerWrapper>
 					<WheelPicker
-						options={wheelOptions}
-						bind:value={wheelValue}
-						aria-label="Framework"
+						options={hourOptions}
+						defaultValue={9}
+						infinite
+						aria-label="Hour"
+					/>
+					<WheelPicker
+						options={minuteOptions}
+						defaultValue={41}
+						infinite
+						aria-label="Minute"
+					/>
+					<WheelPicker
+						options={meridiemOptions}
+						defaultValue="AM"
+						aria-label="AM or PM"
 					/>
 				</WheelPickerWrapper>
 			</div>

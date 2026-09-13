@@ -8,7 +8,10 @@ import type {
 	InstallComponentDocs
 } from "$lib/types/structure";
 import type { CodeBlock } from "$lib/types/code";
+import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
+import DemoExample from "./examples/demo-example.svelte";
+import DemoExampleCode from "./examples/demo-example.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -54,6 +57,20 @@ const usage: CodeBlock[] = [
 	}
 ];
 
+const examples: Example[] = [
+	{
+		name: "Time picker",
+		description:
+			"Combine three wheel pickers to select an hour, minute, and meridiem.",
+		preview: DemoExample,
+		code: {
+			name: "demo-example.svelte",
+			code: DemoExampleCode,
+			lang: "svelte"
+		}
+	}
+];
+
 const install_block: InstallComponentDocs = {
 	packages: ["runed"],
 	install_code: [
@@ -94,6 +111,7 @@ export const data: ComponentDoc = {
 	},
 	install_block,
 	usage,
+	examples,
 	seo,
 	props: [
 		{
