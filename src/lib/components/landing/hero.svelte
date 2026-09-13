@@ -4,6 +4,7 @@
 	import HeroIllustration from "$lib/components/landing/hero-illustration.svelte";
 	import { Button } from "$lib/components/ui/button";
 	import { components } from "$lib/registry/components";
+	import { Github } from "$lib/svg";
 	import { Annotation } from "$ui/annotation";
 	import { mode } from "mode-watcher";
 	import { MediaQuery } from "svelte/reactivity";
@@ -108,7 +109,7 @@
 			</div>
 
 			<div
-				class="mt-10 flex w-fit animate-in items-center justify-center gap-3 delay-300 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
+				class="mt-10 -ml-1.5 lg:ml-0 flex w-fit animate-in items-center justify-center gap-3 delay-300 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
 			>
 				<Button
 					href={resolve("/(main)/components/elastic-slider")}
@@ -152,6 +153,16 @@
 						></svg
 					>
 					View Components</Button
+				>
+				<Button
+					href="https://github.com/SikandarJODD/sv-chanhdai"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="rounded-full px-4 shadow-none"
+					variant="outline"
+				>
+					<Github />
+					Github</Button
 				>
 			</div>
 		</div>

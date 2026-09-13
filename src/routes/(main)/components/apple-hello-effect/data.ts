@@ -48,15 +48,6 @@ const seo: SEO = {
 
 const examples: Example[] = [
 	{
-		name: "Custom colors",
-		preview: CustomColorsExample,
-		code: {
-			name: "custom-colors.svelte",
-			code: CustomColorsExampleCode,
-			lang: "svelte"
-		}
-	},
-	{
 		name: "English",
 		preview: EnglishExample,
 		code: {
@@ -87,6 +78,15 @@ const examples: Example[] = [
 			code: VietnameseExampleCode,
 			lang: "svelte"
 		}
+	},
+	{
+		name: "Custom colors",
+		preview: CustomColorsExample,
+		code: {
+			name: "custom-colors.svelte",
+			code: CustomColorsExampleCode,
+			lang: "svelte"
+		}
 	}
 ];
 
@@ -115,17 +115,20 @@ const install_block: InstallComponentDocs = {
 		{
 			name: "apple-hello-effect-hindi.svelte",
 			code: AppleHelloEffectHindiSvelteRaw,
-			lang: "svelte"
+			lang: "svelte",
+			isExpand: true
 		},
 		{
 			name: "apple-hello-effect-spanish.svelte",
 			code: AppleHelloEffectSpanishSvelteRaw,
-			lang: "svelte"
+			lang: "svelte",
+			isExpand: true
 		},
 		{
 			name: "apple-hello-effect-vietnamese.svelte",
 			code: AppleHelloEffectVietnameseSvelteRaw,
-			lang: "svelte"
+			lang: "svelte",
+			isExpand: true
 		},
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" }
 	],

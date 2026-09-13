@@ -135,7 +135,8 @@
 			{/if}
 		{/each}
 		<NavigationMenu.Item id="other-projects">
-			<NavigationMenu.Trigger class="h-fit py-1.5! hover:bg-accent/60!"
+			<NavigationMenu.Trigger
+				class="h-fit py-1.5! px-2.5 hover:bg-accent/60! font-normal"
 				>Other Projects</NavigationMenu.Trigger
 			>
 			<NavigationMenu.Content class="p-0">
