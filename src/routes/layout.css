@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "tw-animate-css";
 @import "shadcn-svelte/tailwind.css";
 @import "@fontsource-variable/inter";
@@ -6,9 +7,7 @@
 @import "@fontsource-variable/jetbrains-mono";
 @import "@fontsource-variable/shantell-sans";
 @import "../lib/styles/neat-annotations.css";
-
 @custom-variant dark (&:is(.dark *));
-
 @font-face {
 	font-family: "GeistPixel";
 	src: url("/fonts/GeistPixel-Square.woff2") format("woff2");
@@ -16,7 +15,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "GeistPixel Circle";
 	src: url("/fonts/GeistPixel-Circle.woff2") format("woff2");
@@ -24,7 +22,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "GeistPixel Grid";
 	src: url("/fonts/GeistPixel-Grid.woff2") format("woff2");
@@ -32,7 +29,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "GeistPixel Line";
 	src: url("/fonts/GeistPixel-Line.woff2") format("woff2");
@@ -40,7 +36,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "GeistPixel Square";
 	src: url("/fonts/GeistPixel-Square.woff2") format("woff2");
@@ -48,7 +43,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @font-face {
 	font-family: "GeistPixel Triangle";
 	src: url("/fonts/GeistPixel-Triangle.woff2") format("woff2");
@@ -56,7 +50,6 @@
 	font-style: normal;
 	font-display: swap;
 }
-
 @custom-variant retina {
 	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2x) {
 		@slot;
@@ -96,8 +89,6 @@
 	--sidebar-accent-foreground: oklch(0.205 0 0);
 	--sidebar-border: oklch(0.922 0 0);
 	--sidebar-ring: oklch(0.708 0 0);
-
-	/* Ink Color */
 	--ink: lab(36 55.64 -107.68);
 	--ink-dim: lab(93 0 -8);
 	--info: oklch(0.67 0.17 244.98);
@@ -141,14 +132,12 @@
 	--font-sans: "Inter Variable", sans-serif;
 	--font-cursive: "Shantell Sans Variable", cursive;
 	--font-mono: "JetBrains Mono Variable", monospace;
-	/* Geist Pixel */
 	--font-gp: "GeistPixel", monospace;
 	--font-gp-circle: "GeistPixel Circle", monospace;
 	--font-gp-grid: "GeistPixel Grid", monospace;
 	--font-gp-line: "GeistPixel Line", monospace;
 	--font-gp-square: "GeistPixel Square", monospace;
 	--font-gp-triangle: "GeistPixel Triangle", monospace;
-
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -187,22 +176,14 @@
 	--radius-2xl: calc(var(--radius) * 1.8);
 	--radius-3xl: calc(var(--radius) * 2.2);
 	--radius-4xl: calc(var(--radius) * 2.6);
-
-	/* Ink Color */
 	--color-ink: var(--ink);
 	--color-ink-dim: var(--ink-dim);
 	--color-info: var(--info);
-
-	/* Chanhdai Animations */
-	/* Status Button */
 	--animate-spinner-opacity: spinner-opacity
 		var(--tw-animation-duration, var(--tw-duration, 1s)) linear infinite;
-
-	/* Spinning Circular Text */
 	--animate-spin-ccw: spin-ccw
 		var(--tw-animation-duration, var(--tw-duration, 6s)) linear infinite;
 }
-
 @layer base {
 	* {
 		@apply border-border outline-ring/50;
@@ -216,17 +197,14 @@
 		scroll-behavior: smooth;
 		@apply font-sans;
 	}
-
 	::selection {
 		background-color: var(--ink-dim);
 		color: var(--ink);
 	}
-
 	.dark ::selection {
 		background-color: var(--primary);
 		color: var(--primary-foreground);
 	}
-	/* Custom scrollbar styling. Thanks @pranathiperii. */
 	::-webkit-scrollbar {
 		width: 5px;
 		height: 5px;
@@ -234,11 +212,9 @@
 	::-webkit-scrollbar-corner {
 		background: transparent;
 	}
-
 	::-webkit-scrollbar-track {
 		background: transparent;
 	}
-
 	::-webkit-scrollbar-thumb {
 		@apply rounded-md bg-muted-foreground/40;
 	}
@@ -249,36 +225,29 @@
 		@apply bg-muted-foreground/80;
 	}
 }
-
 @utility no-scrollbar {
 	-ms-overflow-style: none;
-
 	scrollbar-width: none;
-
 	&::-webkit-scrollbar {
 		display: none;
 	}
 }
-/* Scroll Fade Effect  */
 @layer base {
 	@keyframes show-top-mask {
 		to {
 			--top-mask-height: var(--mask-height);
 		}
 	}
-
 	@keyframes hide-bottom-mask {
 		to {
 			--bottom-mask-height: 0px;
 		}
 	}
-
 	@keyframes show-left-mask {
 		to {
 			--left-mask-width: var(--mask-width);
 		}
 	}
-
 	@keyframes hide-right-mask {
 		to {
 			--right-mask-width: 0px;
@@ -286,16 +255,12 @@
 	}
 }
 
-/* ::selection {
-	background-color: var(--color-primary);
-	color: var(--color-background);
-} */
 .no-scrollbar {
 	&::-webkit-scrollbar {
 		display: none;
 	}
-	-ms-overflow-style: none; /* IE and Edge */
-	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 @property --top-mask-height {
@@ -303,37 +268,30 @@
 	inherits: true;
 	initial-value: 0px;
 }
-
 @property --bottom-mask-height {
 	syntax: "<length>";
 	inherits: true;
 	initial-value: 64px;
 }
-
 @property --left-mask-width {
 	syntax: "<length>";
 	inherits: true;
 	initial-value: 0px;
 }
-
 @property --right-mask-width {
 	syntax: "<length>";
 	inherits: true;
 	initial-value: 64px;
 }
-
 @utility scroll-fade-effect-y {
 	--mask-height: 64px;
 	--mask-offset-top: 0px;
 	--mask-offset-bottom: 0px;
 	--scroll-buffer: 2rem;
-
-	/* Set up the mask layers */
 	mask-image:
 		linear-gradient(to top, transparent, black 90%),
 		linear-gradient(to bottom, transparent 0%, black 100%),
 		linear-gradient(black, black);
-
 	mask-size:
 		100% var(--top-mask-height),
 		100% var(--bottom-mask-height),
@@ -343,9 +301,7 @@
 		0 var(--mask-offset-top),
 		0 calc(100% - var(--mask-offset-bottom)),
 		0 0;
-	/* Exclude the gradient areas from the solid mask */
 	mask-composite: exclude;
-
 	animation-name: show-top-mask, hide-bottom-mask;
 	animation-timeline: scroll(self), scroll(self);
 	animation-range:
@@ -353,18 +309,15 @@
 		calc(100% - var(--scroll-buffer)) 100%;
 	animation-fill-mode: both;
 }
-
 @utility scroll-fade-effect-x {
 	--mask-width: 64px;
 	--mask-offset-left: 0px;
 	--mask-offset-right: 0px;
 	--scroll-buffer: 2rem;
-
 	mask-image:
 		linear-gradient(to left, transparent, black 90%),
 		linear-gradient(to right, transparent 0%, black 100%),
 		linear-gradient(black, black);
-
 	mask-size:
 		var(--left-mask-width) 100%,
 		var(--right-mask-width) 100%,
@@ -375,7 +328,6 @@
 		calc(100% - var(--mask-offset-right)) 0,
 		0 0;
 	mask-composite: exclude;
-
 	animation-name: show-left-mask, hide-right-mask;
 	animation-timeline: scroll(self inline), scroll(self inline);
 	animation-range:
@@ -383,7 +335,6 @@
 		calc(100% - var(--scroll-buffer)) 100%;
 	animation-fill-mode: both;
 }
-
 @keyframes spinner-opacity {
 	from {
 		opacity: 1;
@@ -392,9 +343,23 @@
 		opacity: 0.15;
 	}
 }
-
 @keyframes spin-ccw {
 	to {
 		rotate: -360deg;
 	}
+}
+
+@utility link {
+	@apply decoration-1 underline-offset-3 hover:underline;
+}
+
+@utility link-underline {
+	@apply underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current;
+}
+
+@utility prose-ncdai {
+	@apply prose-headings:tracking-tight prose-headings:text-balance prose-h2:font-semibold;
+	@apply prose-a:link-underline prose-a:font-normal prose-a:wrap-break-word prose-a:text-foreground;
+	@apply prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none;
+	@apply prose-strong:font-medium;
 }

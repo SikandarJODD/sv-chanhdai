@@ -7,7 +7,7 @@
 <Seo
 	title="Svelte Chanhdai Components & Blocks"
 	titleTemplate="%s"
-	description="Explore free, open-source Svelte 5 components and animated UI blocks ported from Chánh Đại, with live previews, examples, and installation guides."
+	description="Explore free, open-source Svelte 5 components ported from Chánh Đại, with live previews, examples, and installation guides."
 	keywords={[
 		"Svelte components",
 		"Svelte UI components",
