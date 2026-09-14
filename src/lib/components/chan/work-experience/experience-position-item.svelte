@@ -3,6 +3,7 @@
 	import BriefcaseBusinessIcon from "@lucide/svelte/icons/briefcase-business";
 	import InfinityIcon from "@lucide/svelte/icons/infinity";
 	import { untrack } from "svelte";
+	import { slide } from "svelte/transition";
 	import {
 		ChevronsUpDownIcon,
 		type ChevronsUpDownIconHandle
@@ -124,12 +125,18 @@
 		</dl>
 	</CollapsibleTrigger>
 
-	<CollapsibleContent class="overflow-hidden">
-		{#if position.description}
-			<Prose class="pt-2 pl-9">
-				<Markdown value={position.description} />
-			</Prose>
-		{/if}
+	<CollapsibleContent class="overflow-hidden" forceMount>
+		{#snippet child({ props, open })}
+			{#if open}
+				<div {...props} transition:slide={{ duration: 200 }}>
+					{#if position.description}
+						<Prose class="pt-2 pl-9">
+							<Markdown value={position.description} />
+						</Prose>
+					{/if}
+				</div>
+			{/if}
+		{/snippet}
 	</CollapsibleContent>
 
 	{#if position.skills && position.skills.length > 0}

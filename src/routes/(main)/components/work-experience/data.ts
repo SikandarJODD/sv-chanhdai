@@ -2,7 +2,6 @@ import ExperienceItemSvelteRaw from "$lib/components/chan/work-experience/experi
 import ExperiencePositionItemSvelteRaw from "$lib/components/chan/work-experience/experience-position-item.svelte?raw";
 import IndexTsRaw from "$lib/components/chan/work-experience/index.ts?raw";
 import ProseSvelteRaw from "$lib/components/chan/work-experience/prose.svelte?raw";
-import ReactCodeMdRaw from "$lib/components/chan/work-experience/react-code.md?raw";
 import SkillSvelteRaw from "$lib/components/chan/work-experience/skill.svelte?raw";
 import WorkExperienceTypesTsRaw from "$lib/components/chan/work-experience/work-experience-types.ts?raw";
 import WorkExperienceUtilsTsRaw from "$lib/components/chan/work-experience/work-experience-utils.ts?raw";
@@ -11,54 +10,143 @@ import WorkExperienceSvelteRaw from "$lib/components/chan/work-experience/work-e
 import type {
 	ComponentDoc,
 	ComponentMeta,
-	InstallComponentDocs,
+	InstallComponentDocs
 } from "$lib/types/structure";
+import type { CodeBlock } from "$lib/types/code";
 import type { Example } from "$lib/types/example";
 import type { SEO } from "$lib/types/seo";
+import CareerProgressionExample from "./examples/career-progression.svelte";
+import CareerProgressionExampleCode from "./examples/career-progression.svelte?raw";
+import DemoExample from "./examples/demo-example.svelte";
+import DemoExampleCode from "./examples/demo-example.svelte?raw";
+import DetailedHistoryExample from "./examples/detailed-history.svelte";
+import DetailedHistoryExampleCode from "./examples/detailed-history.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import DemoExample from "./examples/demo-example.svelte";
-import DemoExampleRaw from "./examples/demo-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "work-experience",
 	title: "Work Experience",
-	description: "TODO: Add a concise description for Work Experience.",
-	category: "chan",
+	description:
+		"Display work experiences with role details, company logos, and durations.",
+	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Work Experience",
-	description: "TODO: Add an SEO description for Work Experience.",
-	keywords: ["Svelte", "Work Experience", "Component"],
+	description:
+		"Display work experiences with role details, company logos, and durations.",
+	keywords: [
+		"Svelte",
+		"Svelte 5",
+		"Work Experience",
+		"Career Timeline",
+		"Resume",
+		"Portfolio",
+		"Component"
+	]
 };
+
+const usage: CodeBlock[] = [
+	{
+		name: "usage.svelte",
+		code: `<script lang="ts">
+	import {
+		WorkExperience,
+		type ExperienceItemType
+	} from "$chan/work-experience";
+
+	const experiences: ExperienceItemType[] = [
+		{
+			id: "acme",
+			companyName: "Acme",
+			companyLogo: "/acme-logo.svg",
+			positions: [
+				{
+					id: "engineer",
+					title: "Software Engineer",
+					employmentPeriod: { start: "2023" },
+					employmentType: "Full-time"
+				}
+			],
+			isCurrentEmployer: true
+		}
+	];
+</script>
+
+<WorkExperience {experiences} />`,
+		lang: "svelte",
+		isExpand: false
+	}
+];
 
 const examples: Example[] = [
 	{
-		name: "Demo",
+		name: "Single role",
 		preview: DemoExample,
 		code: {
 			name: "demo-example.svelte",
-			code: DemoExampleRaw,
-			lang: "svelte",
-		},
+			code: DemoExampleCode,
+			lang: "svelte"
+		}
 	},
+	{
+		name: "Career progression",
+		preview: CareerProgressionExample,
+		code: {
+			name: "career-progression.svelte",
+			code: CareerProgressionExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Detailed history",
+		description:
+			"Show multiple companies, roles, responsibilities, and skills.",
+		preview: DetailedHistoryExample,
+		code: {
+			name: "detailed-history.svelte",
+			code: DetailedHistoryExampleCode,
+			lang: "svelte"
+		}
+	}
 ];
 
 const install_block: InstallComponentDocs = {
 	packages: [],
 	install_code: [
-		{ name: "experience-item.svelte", code: ExperienceItemSvelteRaw, lang: "svelte", isExpand: true, },
-		{ name: "experience-position-item.svelte", code: ExperiencePositionItemSvelteRaw, lang: "svelte", },
-		{ name: "index.ts", code: IndexTsRaw, lang: "typescript", },
-		{ name: "prose.svelte", code: ProseSvelteRaw, lang: "svelte", },
-		{ name: "react-code.md", code: ReactCodeMdRaw, lang: "markdown", },
-		{ name: "skill.svelte", code: SkillSvelteRaw, lang: "svelte", },
-		{ name: "work-experience-types.ts", code: WorkExperienceTypesTsRaw, lang: "typescript", },
-		{ name: "work-experience-utils.ts", code: WorkExperienceUtilsTsRaw, lang: "typescript", },
-		{ name: "work-experience.svelte", code: WorkExperienceSvelteRaw, lang: "svelte", }
+		{
+			name: "experience-item.svelte",
+			code: ExperienceItemSvelteRaw,
+			lang: "svelte",
+			isExpand: true
+		},
+		{
+			name: "experience-position-item.svelte",
+			code: ExperiencePositionItemSvelteRaw,
+			lang: "svelte"
+		},
+		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" },
+		{ name: "prose.svelte", code: ProseSvelteRaw, lang: "svelte" },
+
+		{ name: "skill.svelte", code: SkillSvelteRaw, lang: "svelte" },
+		{
+			name: "work-experience-types.ts",
+			code: WorkExperienceTypesTsRaw,
+			lang: "typescript"
+		},
+		{
+			name: "work-experience-utils.ts",
+			code: WorkExperienceUtilsTsRaw,
+			lang: "typescript"
+		},
+		{
+			name: "work-experience.svelte",
+			code: WorkExperienceSvelteRaw,
+			lang: "svelte"
+		}
 	],
-	folder_structure: "src/\n`-- lib/\n    `-- components/\n        `-- chan/\n            `-- work-experience/\n                |-- experience-item.svelte\n                |-- experience-position-item.svelte\n                |-- index.ts\n                |-- prose.svelte\n                |-- react-code.md\n                |-- skill.svelte\n                |-- work-experience-types.ts\n                |-- work-experience-utils.ts\n                `-- work-experience.svelte",
+	folder_structure: ""
 };
 
 export const data: ComponentDoc = {
@@ -68,10 +156,65 @@ export const data: ComponentDoc = {
 		name: "preview.svelte",
 		code: PreviewCode,
 		lang: "svelte",
-		hideLines: true,
+		hideLines: true
 	},
 	install_block,
+	usage,
 	examples,
 	seo,
-	props: [],
+	props: [
+		{
+			name: "WorkExperience",
+			desc: "Container that renders a list of work experiences.",
+			props: [
+				{
+					name: "experiences",
+					type: "ExperienceItemType[]",
+					required: true,
+					description:
+						"Companies and positions displayed in the work experience list."
+				},
+				{
+					name: "class",
+					type: "string",
+					default: "undefined",
+					description:
+						"Additional classes applied to the container."
+				},
+				{
+					name: "ref",
+					type: "HTMLDivElement | null",
+					default: "null",
+					description:
+						"Bindable reference to the container element."
+				}
+			]
+		},
+		{
+			name: "ExperienceItem",
+			desc: "Company entry containing one or more positions.",
+			props: [
+				{
+					name: "experience",
+					type: "ExperienceItemType",
+					required: true,
+					description:
+						"Company name, logo, website, positions, and current-employer state."
+				}
+			]
+		},
+		{
+			name: "ExperiencePositionItem",
+			desc: "Individual role with its dates, details, and skills.",
+			props: [
+				{
+					name: "position",
+					type: "ExperiencePositionItemType",
+					required: true,
+					description:
+						"Role title, employment period, type, description, icon, skills, and initial expanded state."
+				}
+			]
+		}
+	]
 };
