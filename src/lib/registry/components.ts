@@ -148,6 +148,12 @@ let components: Component[] = [
     href: "/components/work-experience",
     desc: "TODO: Add a concise description for Work Experience.",
   },
+  {
+    id: "toc-minimap",
+    name: "Toc Minimap",
+    href: "/components/toc-minimap",
+    desc: "TODO: Add a concise description for Toc Minimap.",
+  },
 ];
 
 export { components };
