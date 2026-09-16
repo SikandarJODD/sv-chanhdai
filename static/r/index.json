@@ -266,5 +266,24 @@
 			"local:svelte-wheel-picker"
 		],
 		"relativeUrl": "wheel-picker.json"
+	},
+	{
+		"name": "work-experience",
+		"title": "Work Experience",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Display work experiences with role details, company logos, and durations.",
+		"dependencies": [
+			"@comark/svelte",
+			"@lucide/svelte",
+			"@tailwindcss/typography",
+			"date-fns"
+		],
+		"registryDependencies": [
+			"collapsible",
+			"separator",
+			"local:chevrons-up-down-icon"
+		],
+		"relativeUrl": "work-experience.json"
 	}
 ]

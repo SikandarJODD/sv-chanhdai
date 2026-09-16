@@ -154,6 +154,18 @@ const install_block: InstallComponentDocs = {
 		code: `@import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+:root {
+  --line: color-mix(in oklab, var(--border) 64%, var(--background));
+}
+
+.dark {
+  --line: color-mix(in oklab, var(--border) 100%, var(--background));
+}
+
+@theme inline {
+  --color-line: var(--line);
+}
+
 @utility link {
   @apply decoration-1 underline-offset-3 hover:underline;
 }

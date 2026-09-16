@@ -135,7 +135,9 @@
 
 	/* zinc-50 */
 	--surface-foreground: oklch(0.985 0 0);
-	/* --line: color-mix(in oklab, var(--border) 64%, var(--background)); */
+
+	--line: color-mix(in oklab, var(--border) 100%, var(--background));
+
 	--chart-1: oklch(0.87 0 0);
 	--chart-2: oklch(0.556 0 0);
 	--chart-3: oklch(0.439 0 0);

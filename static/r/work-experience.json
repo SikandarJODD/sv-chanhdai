@@ -1,0 +1,87 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "work-experience",
+	"title": "Work Experience",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "Display work experiences with role details, company logos, and durations.",
+	"dependencies": [
+		"@comark/svelte",
+		"@lucide/svelte",
+		"@tailwindcss/typography",
+		"date-fns"
+	],
+	"devDependencies": [
+		"@lucide/svelte@^1.37.0"
+	],
+	"registryDependencies": [
+		"collapsible",
+		"separator",
+		"./chevrons-up-down-icon.json"
+	],
+	"css": {
+		"@plugin \"@tailwindcss/typography\"": {},
+		"@utility link": {
+			"@apply": "decoration-1 underline-offset-3 hover:underline"
+		},
+		"@utility link-underline": {
+			"@apply": "underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current"
+		},
+		"@utility prose-ncdai": {
+			"@apply": "prose-headings:tracking-tight prose-headings:text-balance prose-h2:font-semibold prose-a:font-normal prose-a:wrap-break-word prose-a:text-foreground prose-a:link-underline prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-strong:font-medium"
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"color-line": "var(--line)"
+		},
+		"light": {
+			"line": "color-mix(in oklab, var(--border) 64%, var(--background))"
+		},
+		"dark": {
+			"line": "color-mix(in oklab, var(--border) 100%, var(--background))"
+		}
+	},
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport ExperienceItem from \"./experience-item.svelte\";\n\timport type { WorkExperienceProps } from \"./work-experience-types\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\texperiences,\n\t\t...restProps\n\t}: WorkExperienceProps = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tclass={cn(\"bg-background px-4 text-foreground\", className)}\n\t{...restProps}\n>\n\t{#each experiences as experience (experience.id)}\n\t\t<ExperienceItem {experience} />\n\t{/each}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/work-experience/work-experience.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport ExperiencePositionItem from \"./experience-position-item.svelte\";\n\timport type { ExperienceItemProps } from \"./work-experience-types\";\n\n\tlet { experience }: ExperienceItemProps = $props();\n</script>\n\n<div class=\"space-y-4 py-4\">\n\t<div class=\"not-prose flex items-center gap-3\">\n\t\t<div class=\"flex size-6 shrink-0 items-center justify-center\">\n\t\t\t{#if experience.companyLogo}\n\t\t\t\t<img\n\t\t\t\t\tsrc={experience.companyLogo}\n\t\t\t\t\talt={experience.companyName}\n\t\t\t\t\tclass=\"size-6 rounded-full\"\n\t\t\t\t\taria-hidden=\"true\"\n\t\t\t\t/>\n\t\t\t{:else}\n\t\t\t\t<span\n\t\t\t\t\tclass=\"flex size-2 rounded-full bg-zinc-300 dark:bg-zinc-600\"\n\t\t\t\t></span>\n\t\t\t{/if}\n\t\t</div>\n\n\t\t<h3 class=\"text-lg leading-snug font-semibold\">\n\t\t\t{#if experience.companyWebsite}\n\t\t\t\t<a\n\t\t\t\t\tclass=\"link\"\n\t\t\t\t\thref={experience.companyWebsite}\n\t\t\t\t\ttarget=\"_blank\"\n\t\t\t\t\trel=\"noopener noreferrer\"\n\t\t\t\t>\n\t\t\t\t\t{experience.companyName}\n\t\t\t\t</a>\n\t\t\t{:else}\n\t\t\t\t{experience.companyName}\n\t\t\t{/if}\n\t\t</h3>\n\n\t\t{#if experience.isCurrentEmployer}\n\t\t\t<span\n\t\t\t\tclass=\"relative flex items-center justify-center\"\n\t\t\t\taria-label=\"Current Employer\"\n\t\t\t>\n\t\t\t\t<span\n\t\t\t\t\tclass=\"absolute inline-flex size-3 animate-ping rounded-full bg-sky-500 opacity-50\"\n\t\t\t\t></span>\n\t\t\t\t<span\n\t\t\t\t\tclass=\"relative inline-flex size-2 rounded-full bg-sky-500\"\n\t\t\t\t></span>\n\t\t\t</span>\n\t\t{/if}\n\t</div>\n\n\t<div\n\t\tclass=\"relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border\"\n\t>\n\t\t{#each experience.positions as position (position.id)}\n\t\t\t<ExperiencePositionItem {position} />\n\t\t{/each}\n\t</div>\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/work-experience/experience-item.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport { Markdown } from \"@comark/svelte\";\n\timport BriefcaseBusinessIcon from \"@lucide/svelte/icons/briefcase-business\";\n\timport InfinityIcon from \"@lucide/svelte/icons/infinity\";\n\timport { untrack } from \"svelte\";\n\timport { slide } from \"svelte/transition\";\n\timport {\n\t\tChevronsUpDownIcon,\n\t\ttype ChevronsUpDownIconHandle\n\t} from \"$COMPONENTS$/chan/chevrons-up-down-icon\";\n\timport {\n\t\tCollapsible,\n\t\tCollapsibleContent,\n\t\tCollapsibleTrigger\n\t} from \"$COMPONENTS$/ui/collapsible\";\n\timport { Separator } from \"$COMPONENTS$/ui/separator\";\n\timport { cn } from \"$UTILS$\";\n\timport Prose from \"./prose.svelte\";\n\timport Skill from \"./skill.svelte\";\n\timport type { ExperiencePositionItemProps } from \"./work-experience-types\";\n\timport { formatDuration } from \"./work-experience-utils\";\n\n\tlet { position }: ExperiencePositionItemProps = $props();\n\n\tlet open = $state(untrack(() => position.isExpanded ?? false));\n\tlet chevronsUpDownIconRef = $state<ChevronsUpDownIconHandle | undefined>();\n\n\tconst PositionIcon = $derived(position.icon ?? BriefcaseBusinessIcon);\n\tconst start = $derived(position.employmentPeriod.start);\n\tconst end = $derived(position.employmentPeriod.end);\n\tconst isOngoing = $derived(!end);\n\tconst duration = $derived(formatDuration(start, end));\n\n\tfunction handleOpenChange(isOpen: boolean): void {\n\t\tif (isOpen) {\n\t\t\tchevronsUpDownIconRef?.startAnimation();\n\t\t} else {\n\t\t\tchevronsUpDownIconRef?.stopAnimation();\n\t\t}\n\t}\n</script>\n\n<Collapsible\n\tbind:open\n\tonOpenChange={handleOpenChange}\n\tdisabled={!position.description}\n\tclass=\"relative last:before:absolute last:before:h-full last:before:w-4 last:before:bg-background\"\n>\n\t<CollapsibleTrigger\n\t\tclass={cn(\n\t\t\t\"group/experience-position not-prose block w-full text-left select-none\",\n\t\t\t\"relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:rounded-lg hover:before:bg-muted/30\",\n\t\t\t\"data-disabled:before:content-none\"\n\t\t)}\n\t>\n\t\t<div class=\"relative z-1 mb-1 flex items-start gap-3 text-base\">\n\t\t\t<div\n\t\t\t\tclass={cn(\n\t\t\t\t\t\"flex size-6 shrink-0 items-center justify-center rounded-lg\",\n\t\t\t\t\t\"bg-muted text-muted-foreground\",\n\t\t\t\t\t\"ring-line border border-muted-foreground/15 ring-1 ring-offset-1 ring-offset-background\",\n\t\t\t\t\t\"[&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\"\n\t\t\t\t)}\n\t\t\t>\n\t\t\t\t<PositionIcon />\n\t\t\t</div>\n\n\t\t\t<h4 class=\"flex-1 font-medium text-balance text-foreground\">\n\t\t\t\t{position.title}\n\t\t\t</h4>\n\n\t\t\t<div\n\t\t\t\tclass=\"shrink-0 text-muted-foreground group-disabled/experience-position:hidden [&_svg]:h-lh [&_svg]:w-4\"\n\t\t\t>\n\t\t\t\t<ChevronsUpDownIcon\n\t\t\t\t\tbind:this={chevronsUpDownIconRef}\n\t\t\t\t\tduration={0.15}\n\t\t\t\t/>\n\t\t\t</div>\n\t\t</div>\n\n\t\t<dl\n\t\t\tclass=\"relative z-1 flex items-center gap-2 pl-9 text-sm text-muted-foreground\"\n\t\t>\n\t\t\t{#if position.employmentType}\n\t\t\t\t<div>\n\t\t\t\t\t<dt class=\"sr-only\">Employment Type</dt>\n\t\t\t\t\t<dd>{position.employmentType}</dd>\n\t\t\t\t</div>\n\n\t\t\t\t<Separator\n\t\t\t\t\tclass=\"data-[orientation=vertical]:h-4 data-[orientation=vertical]:self-center\"\n\t\t\t\t\torientation=\"vertical\"\n\t\t\t\t\taria-hidden=\"true\"\n\t\t\t\t/>\n\t\t\t{/if}\n\n\t\t\t<div>\n\t\t\t\t<dt class=\"sr-only\">Employment Period</dt>\n\t\t\t\t<dd class=\"flex items-center gap-0.5 tabular-nums\">\n\t\t\t\t\t<span>{start}</span>\n\t\t\t\t\t<span class=\"font-mono\">—</span>\n\t\t\t\t\t{#if isOngoing}\n\t\t\t\t\t\t<InfinityIcon\n\t\t\t\t\t\t\tclass=\"size-4.5 translate-y-[0.5px]\"\n\t\t\t\t\t\t\taria-label=\"Present\"\n\t\t\t\t\t\t/>\n\t\t\t\t\t{:else}\n\t\t\t\t\t\t<span>{end}</span>\n\t\t\t\t\t{/if}\n\t\t\t\t</dd>\n\t\t\t</div>\n\n\t\t\t{#if duration}\n\t\t\t\t<Separator\n\t\t\t\t\tclass=\"data-[orientation=vertical]:h-4 data-[orientation=vertical]:self-center\"\n\t\t\t\t\torientation=\"vertical\"\n\t\t\t\t\taria-hidden=\"true\"\n\t\t\t\t/>\n\t\t\t\t<div>\n\t\t\t\t\t<dt class=\"sr-only\">Duration</dt>\n\t\t\t\t\t<dd class=\"tabular-nums\">{duration}</dd>\n\t\t\t\t</div>\n\t\t\t{/if}\n\t\t</dl>\n\t</CollapsibleTrigger>\n\n\t<CollapsibleContent class=\"overflow-hidden\" forceMount>\n\t\t{#snippet child({ props, open })}\n\t\t\t{#if open}\n\t\t\t\t<div {...props} transition:slide={{ duration: 200 }}>\n\t\t\t\t\t{#if position.description}\n\t\t\t\t\t\t<Prose class=\"pt-2 pl-9\">\n\t\t\t\t\t\t\t<Markdown value={position.description} />\n\t\t\t\t\t\t</Prose>\n\t\t\t\t\t{/if}\n\t\t\t\t</div>\n\t\t\t{/if}\n\t\t{/snippet}\n\t</CollapsibleContent>\n\n\t{#if position.skills && position.skills.length > 0}\n\t\t<ul class=\"not-prose flex flex-wrap gap-1.5 pt-3 pl-9\">\n\t\t\t{#each position.skills as skill}\n\t\t\t\t<li class=\"flex\">\n\t\t\t\t\t<Skill>{skill}</Skill>\n\t\t\t\t</li>\n\t\t\t{/each}\n\t\t</ul>\n\t{/if}\n</Collapsible>\n",
+			"type": "registry:component",
+			"target": "chan/work-experience/experience-position-item.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { ProseProps } from \"./work-experience-types\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: ProseProps = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tclass={cn(\n\t\t\"prose max-w-none prose-ncdai prose-zinc dark:prose-invert\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children()}\n</div>\n",
+			"type": "registry:component",
+			"target": "chan/work-experience/prose.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { SkillProps } from \"./work-experience-types\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: SkillProps = $props();\n</script>\n\n<span\n\tbind:this={ref}\n\tclass={cn(\n\t\t\"inline-flex items-center rounded-md border bg-muted/50 px-1.5 py-0.5 font-mono text-xs text-muted-foreground\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children()}\n</span>\n",
+			"type": "registry:component",
+			"target": "chan/work-experience/skill.svelte"
+		},
+		{
+			"content": "import type { LucideIcon } from \"@lucide/svelte\";\nimport type { Snippet } from \"svelte\";\nimport type { HTMLAttributes } from \"svelte/elements\";\nimport type { WithElementRef } from \"$UTILS$\";\n\nexport type ExperiencePositionItemType = {\n\t/** Unique identifier for the position. */\n\tid: string;\n\t/** The job title or position name. */\n\ttitle: string;\n\t/** Employment period. Use \"MM.YYYY\" or \"YYYY\" and omit `end` for current roles. */\n\temploymentPeriod: {\n\t\t/** Start date, for example \"10.2022\" or \"2020\". */\n\t\tstart: string;\n\t\t/** End date; leave undefined for \"Present\". */\n\t\tend?: string;\n\t};\n\t/** The type of employment, for example \"Full-time\" or \"Contract\". */\n\temploymentType?: string;\n\t/** A Markdown description of the position or responsibilities. */\n\tdescription?: string;\n\t/** An icon representing the position. */\n\ticon?: LucideIcon;\n\t/** Skills associated with the position. */\n\tskills?: string[];\n\t/** Whether the position details are expanded initially. */\n\tisExpanded?: boolean;\n};\n\nexport type ExperienceItemType = {\n\t/** Unique identifier for the experience item. */\n\tid: string;\n\t/** Name of the company where the experience was gained. */\n\tcompanyName: string;\n\t/** URL or path to the company's logo image. */\n\tcompanyLogo?: string;\n\t/** URL to the company's website. */\n\tcompanyWebsite?: string;\n\t/** Positions held at the company. */\n\tpositions: ExperiencePositionItemType[];\n\t/** Whether this is the current employer. */\n\tisCurrentEmployer?: boolean;\n};\n\nexport type WorkExperienceProps = WithElementRef<\n\tOmit<HTMLAttributes<HTMLDivElement>, \"children\">\n> & {\n\texperiences: ExperienceItemType[];\n};\n\nexport type ExperienceItemProps = {\n\texperience: ExperienceItemType;\n};\n\nexport type ExperiencePositionItemProps = {\n\tposition: ExperiencePositionItemType;\n};\n\nexport type ProseProps = WithElementRef<\n\tOmit<HTMLAttributes<HTMLDivElement>, \"children\">\n> & {\n\tchildren: Snippet;\n};\n\nexport type SkillProps = WithElementRef<\n\tOmit<HTMLAttributes<HTMLSpanElement>, \"children\">\n> & {\n\tchildren: Snippet;\n};\n",
+			"type": "registry:file",
+			"target": "chan/work-experience/work-experience-types.ts"
+		},
+		{
+			"content": "import { differenceInMonths, parse } from \"date-fns\";\n\nexport function formatDuration(start: string, end?: string): string {\n\tconst startHasMonth = start.includes(\".\");\n\tconst endHasMonth = end ? end.includes(\".\") : true;\n\n\tif (!startHasMonth && end && !endHasMonth) {\n\t\tconst years = Number.parseInt(end, 10) - Number.parseInt(start, 10);\n\t\treturn years > 0 ? `${years}y` : \"\";\n\t}\n\n\tconst startDate = parsePeriodDate(start, \"first\");\n\tconst endDate = end ? parsePeriodDate(end, \"last\") : new Date();\n\tconst totalMonths = differenceInMonths(endDate, startDate) + 1;\n\n\tif (totalMonths <= 0) return \"\";\n\tif (totalMonths < 12) return `${totalMonths}m`;\n\n\tconst years = Math.floor(totalMonths / 12);\n\tconst months = totalMonths % 12;\n\n\treturn months === 0 ? `${years}y` : `${years}y ${months}m`;\n}\n\nfunction parsePeriodDate(value: string, fallbackMonth: \"first\" | \"last\"): Date {\n\tif (value.includes(\".\")) {\n\t\treturn parse(value, \"MM.yyyy\", new Date());\n\t}\n\n\tconst month = fallbackMonth === \"last\" ? \"12\" : \"01\";\n\treturn parse(`${month}.${value}`, \"MM.yyyy\", new Date());\n}\n",
+			"type": "registry:file",
+			"target": "chan/work-experience/work-experience-utils.ts"
+		},
+		{
+			"content": "import ExperienceItem from \"./experience-item.svelte\";\nimport ExperiencePositionItem from \"./experience-position-item.svelte\";\nimport WorkExperience from \"./work-experience.svelte\";\n\nexport { ExperienceItem, ExperiencePositionItem, WorkExperience };\n\nexport type {\n\tExperienceItemProps,\n\tExperienceItemType,\n\tExperiencePositionItemProps,\n\tExperiencePositionItemType,\n\tProseProps,\n\tSkillProps,\n\tWorkExperienceProps\n} from \"./work-experience-types\";\n",
+			"type": "registry:file",
+			"target": "chan/work-experience/index.ts"
+		}
+	]
+}
