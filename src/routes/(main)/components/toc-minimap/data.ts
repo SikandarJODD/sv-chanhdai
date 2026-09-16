@@ -1,5 +1,4 @@
 import IndexTsRaw from "$lib/components/chan/toc-minimap/index.ts?raw";
-import ReactCodeMdRaw from "$lib/components/chan/toc-minimap/react-code.md?raw";
 import TocMinimapSvelteRaw from "$lib/components/chan/toc-minimap/toc-minimap.svelte?raw";
 
 import type {
@@ -26,7 +25,8 @@ export const meta: ComponentMeta = {
 
 const seo: SEO = {
 	title: "Toc Minimap",
-	description: "Display a minimap of the table of contents for easy navigation.",
+	description:
+		"Display a minimap of the table of contents for easy navigation.",
 	keywords: ["Svelte", "Toc Minimap", "Component"]
 };
 
@@ -82,7 +82,6 @@ const install_block: InstallComponentDocs = {
 			lang: "typescript",
 			isExpand: true
 		},
-		{ name: "react-code.md", code: ReactCodeMdRaw, lang: "markdown" },
 		{
 			name: "toc-minimap.svelte",
 			code: TocMinimapSvelteRaw,
