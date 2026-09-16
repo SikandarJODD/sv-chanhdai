@@ -124,7 +124,8 @@ const install_block: InstallComponentDocs = {
 		{
 			name: "experience-position-item.svelte",
 			code: ExperiencePositionItemSvelteRaw,
-			lang: "svelte"
+			lang: "svelte",
+			isExpand: true
 		},
 		{ name: "index.ts", code: IndexTsRaw, lang: "typescript" },
 		{ name: "prose.svelte", code: ProseSvelteRaw, lang: "svelte" },
@@ -133,12 +134,14 @@ const install_block: InstallComponentDocs = {
 		{
 			name: "work-experience-types.ts",
 			code: WorkExperienceTypesTsRaw,
-			lang: "typescript"
+			lang: "typescript",
+			isExpand: true
 		},
 		{
 			name: "work-experience-utils.ts",
 			code: WorkExperienceUtilsTsRaw,
-			lang: "typescript"
+			lang: "typescript",
+			isExpand: true
 		},
 		{
 			name: "work-experience.svelte",
@@ -146,7 +149,29 @@ const install_block: InstallComponentDocs = {
 			lang: "svelte"
 		}
 	],
-	folder_structure: ""
+	folder_structure: "",
+	tailwind: {
+		code: `@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@utility link {
+  @apply decoration-1 underline-offset-3 hover:underline;
+}
+
+@utility link-underline {
+  @apply underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current;
+}
+
+@utility prose-ncdai {
+  @apply prose-headings:tracking-tight prose-headings:text-balance prose-h2:font-semibold;
+  @apply prose-a:font-normal prose-a:wrap-break-word prose-a:text-foreground prose-a:link-underline;
+  @apply prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none;
+  @apply prose-strong:font-medium;
+}
+`,
+		name: "tailwind.css",
+		lang: "css"
+	}
 };
 
 export const data: ComponentDoc = {
@@ -178,15 +203,13 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description:
-						"Additional classes applied to the container."
+					description: "Additional classes applied to the container."
 				},
 				{
 					name: "ref",
 					type: "HTMLDivElement | null",
 					default: "null",
-					description:
-						"Bindable reference to the container element."
+					description: "Bindable reference to the container element."
 				}
 			]
 		},

@@ -8,7 +8,7 @@
 		{
 			id: "vercel",
 			companyName: "Vercel",
-			companyLogo: "/vercel-logo.svg",
+			companyLogo: "https://vercel.com/favicon.ico",
 			companyWebsite: "https://vercel.com",
 			positions: [
 				{
@@ -16,7 +16,8 @@
 					title: "Senior Frontend Engineer",
 					employmentPeriod: { start: "2024" },
 					employmentType: "Full-time",
-					description: "Leading the design system and frontend platform.",
+					description:
+						"Leading the design system and frontend platform.",
 					skills: ["Svelte", "TypeScript"],
 					isExpanded: true
 				},

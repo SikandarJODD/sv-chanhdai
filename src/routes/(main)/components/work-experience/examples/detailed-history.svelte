@@ -8,10 +8,10 @@
 
 	const experiences: ExperienceItemType[] = [
 		{
-			id: "figma",
-			companyName: "Figma",
-			companyLogo: "https://cdn.simpleicons.org/figma",
-			companyWebsite: "https://figma.com",
+			id: "linear",
+			companyName: "Linear",
+			companyLogo: "https://cdn.simpleicons.org/linear",
+			companyWebsite: "https://linear.app",
 			positions: [
 				{
 					id: "design-engineer",
