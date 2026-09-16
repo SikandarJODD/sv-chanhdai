@@ -406,6 +406,32 @@
 			"author": "Bhide Svelte"
 		},
 		{
+			"name": "line-nav",
+			"type": "registry:block",
+			"title": "Line Nav",
+			"description": "An animated vertical line navigation component with active and hover states.",
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/line-nav/line-nav.svelte",
+					"type": "registry:component",
+					"target": "chan/line-nav/line-nav.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/line-nav/line-nav-item.svelte",
+					"type": "registry:component",
+					"target": "chan/line-nav/line-nav-item.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/line-nav/index.ts",
+					"type": "registry:file",
+					"target": "chan/line-nav/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
 			"name": "status-button",
 			"type": "registry:block",
 			"title": "Status Button",

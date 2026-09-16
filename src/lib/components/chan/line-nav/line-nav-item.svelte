@@ -14,7 +14,7 @@
 	import type { Variants } from "motion-sv";
 
 	let {
-		ref = $bindable(null),
+		ref = $bindable(),
 		title,
 		href,
 		active = false,

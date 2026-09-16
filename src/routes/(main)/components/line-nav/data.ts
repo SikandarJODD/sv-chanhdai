@@ -15,14 +15,15 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "line-nav",
 	title: "Line Nav",
-	description: "Animated line navigation with active and hover states.",
+	description:
+		"Vertical navigation with a line marker that expands on hover and active state.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Line Nav",
 	description:
-		"Animated line navigation for highlighting and linking to page sections in Svelte.",
+		"Vertical navigation with a line marker that expands on hover and active state.",
 	keywords: ["Svelte", "Line Nav", "Navigation", "Component"]
 };
 
@@ -73,7 +74,6 @@ const install_block: InstallComponentDocs = {
 export const data: ComponentDoc = {
 	...meta,
 	features: [
-		"Animated line length for active and hovered navigation items",
 		"Controlled active state through activeHref and onItemClick",
 		"Optional automatic scrolling to the active item on mount"
 	],
@@ -86,6 +86,7 @@ export const data: ComponentDoc = {
 	},
 	install_block,
 	usage,
+	examples: [],
 	seo,
 	props: [
 		{

@@ -11,7 +11,7 @@
 		"@lucide/svelte"
 	],
 	"devDependencies": [
-		"@lucide/svelte@^1.37.0",
+		"@lucide/svelte@^1.46.0",
 		"svelte-sonner@^1.1.1"
 	],
 	"registryDependencies": [

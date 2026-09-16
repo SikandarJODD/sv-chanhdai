@@ -11,7 +11,7 @@
 		"runed"
 	],
 	"devDependencies": [
-		"@lucide/svelte@^1.37.0"
+		"@lucide/svelte@^1.46.0"
 	],
 	"registryDependencies": [
 		"button"

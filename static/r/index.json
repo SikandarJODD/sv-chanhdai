@@ -150,6 +150,18 @@
 		"relativeUrl": "middle-truncation.json"
 	},
 	{
+		"name": "line-nav",
+		"title": "Line Nav",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An animated vertical line navigation component with active and hover states.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "line-nav.json"
+	},
+	{
 		"name": "status-button",
 		"title": "Status Button",
 		"type": "registry:block",
