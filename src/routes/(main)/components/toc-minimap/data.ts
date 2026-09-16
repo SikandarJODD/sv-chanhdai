@@ -14,17 +14,19 @@ import ArticleOutline from "./examples/article-outline.svelte";
 import ArticleOutlineCode from "./examples/article-outline.svelte?raw";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+import StaticOutline from "./examples/static-outline.svelte";
+import StaticOutlineCode from "./examples/static-outline.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "toc-minimap",
 	title: "Toc Minimap",
-	description: "TODO: Add a concise description for Toc Minimap.",
+	description: "Navigate page headings with a compact, hoverable minimap.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Toc Minimap",
-	description: "TODO: Add an SEO description for Toc Minimap.",
+	description: "Display a minimap of the table of contents for easy navigation.",
 	keywords: ["Svelte", "Toc Minimap", "Component"]
 };
 
@@ -36,12 +38,8 @@ const usage: CodeBlock[] = [
 	import { TOCMinimap } from "$chan/toc-minimap";
 
 	const items: TOCItemType[] = [
-		{ title: "Installation", url: "#installation", depth: 2 },
-		{ title: "Usage", url: "#usage", depth: 2 },
-		{ title: "API reference", url: "#api-reference", depth: 2 },
-		{ title: "TOCMinimap", url: "#tocminimap", depth: 3 },
-		{ title: "TOCItemType", url: "#tocitemtype", depth: 3 },
-		{ title: "References", url: "#references", depth: 2 }
+		{ title: "Overview", url: "#overview", depth: 2 },
+		{ title: "API reference", url: "#api-reference", depth: 2 }
 	];
 </script>
 
@@ -53,8 +51,19 @@ const usage: CodeBlock[] = [
 
 const examples: Example[] = [
 	{
-		name: "Article outline",
-		description: "Use the minimap beside a short article or project brief.",
+		name: "Static items",
+		description: "Provide the minimap items directly for known headings.",
+		preview: StaticOutline,
+		code: {
+			name: "static-outline.svelte",
+			code: StaticOutlineCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "Generated from headings",
+		description:
+			"Generate minimap items from the headings rendered inside an article.",
 		preview: ArticleOutline,
 		code: {
 			name: "article-outline.svelte",

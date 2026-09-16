@@ -131,7 +131,13 @@ function createHeading(element: HTMLHeadingElement, index: number): Heading {
 function getToc(el: HTMLElement): Heading[] {
 	const headings = Array.from(el.querySelectorAll("h1, h2, h3, h4, h5, h6"))
 		.map((h, i) => createHeading(h as HTMLHeadingElement, i))
-		.filter((h) => h.ref.closest(`[${TOC_IGNORE_ATTRIBUTE}]`) === null);
+		.filter((heading) => {
+			const ignoredAncestor = heading.ref.closest(
+				`[${TOC_IGNORE_ATTRIBUTE}]`
+			);
+
+			return ignoredAncestor === null || !el.contains(ignoredAncestor);
+		});
 	if (headings.length === 0) return [];
 
 	const toc: Heading[] = [];

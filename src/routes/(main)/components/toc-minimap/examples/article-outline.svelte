@@ -1,16 +1,34 @@
 <script lang="ts">
+	import type { Heading } from "$lib/hooks/use-toc.svelte";
+	import { UseToc } from "$lib/hooks/use-toc.svelte";
 	import type { TOCItemType } from "$chan/toc-minimap";
 	import { TOCMinimap } from "$chan/toc-minimap";
 
-	const ITEMS: TOCItemType[] = [
-		{ title: "Project overview", url: "#project-overview", depth: 2 },
-		{ title: "Requirements", url: "#requirements", depth: 2 },
-		{ title: "Milestones", url: "#milestones", depth: 3 }
-	];
+	let toc = new UseToc();
+
+	function toMinimapItems(headings: Heading[]): TOCItemType[] {
+		return headings.flatMap((heading) => [
+			...(heading.id
+				? [
+						{
+							title: heading.label,
+							url: `#${heading.id}`,
+							depth: heading.level
+						}
+					]
+				: []),
+			...toMinimapItems(heading.children)
+		]);
+	}
+
+	let items = $derived(toMinimapItems(toc.current));
 </script>
 
 <div class="mx-auto flex w-full max-w-lg items-start gap-6">
-	<article class="min-w-0 flex-1 space-y-6 text-sm text-muted-foreground">
+	<article
+		bind:this={toc.ref}
+		class="min-w-0 flex-1 space-y-6 text-sm text-muted-foreground"
+	>
 		<section class="space-y-2">
 			<h2
 				id="project-overview"
@@ -39,5 +57,5 @@
 		</section>
 	</article>
 
-	<TOCMinimap items={ITEMS} class="sticky top-4" />
+	<TOCMinimap {items} class="sticky top-4" />
 </div>

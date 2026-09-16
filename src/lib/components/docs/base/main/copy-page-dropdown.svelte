@@ -170,6 +170,7 @@
 						size="icon-sm"
 						disabled
 						aria-label="Previous page unavailable"
+						class="size-8"
 					>
 						<ChevronLeft class="size-4" />
 					</Button>
@@ -212,6 +213,7 @@
 						size="icon-sm"
 						disabled
 						aria-label="Next page unavailable"
+						class="size-8"
 					>
 						<ChevronRight class="size-4" />
 					</Button>
