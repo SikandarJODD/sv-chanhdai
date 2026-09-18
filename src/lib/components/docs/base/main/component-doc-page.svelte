@@ -98,6 +98,7 @@
 		<H2 id="installation">Installation</H2>
 		<InstallComponent
 			{installUrl}
+			componentId={id}
 			tailwindConfig={installTailwindCode
 				? { code: installTailwindCode }
 				: undefined}

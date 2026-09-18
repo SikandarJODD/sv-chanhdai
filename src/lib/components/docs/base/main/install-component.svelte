@@ -5,6 +5,7 @@
 
 	export type InstallComponentProps = {
 		installUrl: string;
+		componentId: string;
 		tailwindConfig?: TailwindConfig;
 		codeBlocks?: CodeBlock[] | CodeBlock;
 		class?: string;
@@ -28,6 +29,7 @@
 
 	let {
 		installUrl,
+		componentId,
 		tailwindConfig,
 		codeBlocks = [],
 		class: className,
@@ -87,6 +89,7 @@
 			<PMCommand
 				command="execute"
 				args={["shadcn-svelte@latest", "add", installUrl]}
+				name="install:{componentId}"
 				bind:agent={agent.current}
 			/>
 		</Tabs.Content>
