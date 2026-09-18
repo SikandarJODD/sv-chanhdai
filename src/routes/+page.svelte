@@ -7,7 +7,7 @@
 <MetaTags
 	title="Svelte Chanhdai Components & Blocks"
 	description="Free, open-source Svelte 5 and SvelteKit UI components with polished animations, live previews, examples, and copy-paste installation guides."
-	canonical="https://sv-dai.vercel.app/"
+	canonical="https://sv-chan.vercel.app/"
 	keywords={[
 		"Svelte components",
 		"Svelte 5 components",
@@ -24,13 +24,13 @@
 	robots="index,follow"
 	openGraph={{
 		type: "website",
-		url: "https://sv-dai.vercel.app/",
+		url: "https://sv-chan.vercel.app/",
 		title: "Svelte Chanhdai Components & Blocks",
 		description:
 			"Free, open-source Svelte 5 and SvelteKit UI components with polished animations, live previews, examples, and copy-paste installation guides.",
 		images: [
 			{
-				url: "https://sv-dai.vercel.app/og.png",
+				url: "https://sv-chan.vercel.app/og.png",
 				width: 1728,
 				height: 910,
 				alt: "Svelte Chanhdai component library preview"
@@ -46,7 +46,7 @@
 		title: "Svelte Chanhdai Components & Blocks",
 		description:
 			"Free, open-source Svelte 5 and SvelteKit UI components with polished animations, live previews, examples, and copy-paste installation guides.",
-		image: "https://sv-dai.vercel.app/og.png",
+		image: "https://sv-chan.vercel.app/og.png",
 		imageAlt: "Svelte Chanhdai component library preview"
 	}}
 	additionalMetaTags={[

@@ -11,5 +11,5 @@ export let seo_config: SeoConfig = {
 		"Svelte Port of Chanhdai Components & Blocks, a collection of reusable UI components and blocks for building web applications.",
 	title_template: "%s | Svelte Chanhdai Components",
 	site_name: "Svelte Chanhdai Components & Blocks",
-	url: "https://sv-dai.vercel.app"
+	url: "https://sv-chan.vercel.app"
 };
