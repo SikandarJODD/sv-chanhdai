@@ -1,4 +1,4 @@
-# Github Stars
+# GitHub Stars
 
 Display GitHub repo star count with formatted numbers and full-count tooltip.
 

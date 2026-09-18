@@ -150,6 +150,18 @@
 		"relativeUrl": "middle-truncation.json"
 	},
 	{
+		"name": "line-nav",
+		"title": "Line Nav",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "An animated vertical line navigation component with active and hover states.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "line-nav.json"
+	},
+	{
 		"name": "status-button",
 		"title": "Status Button",
 		"type": "registry:block",
@@ -266,5 +278,24 @@
 			"local:svelte-wheel-picker"
 		],
 		"relativeUrl": "wheel-picker.json"
+	},
+	{
+		"name": "work-experience",
+		"title": "Work Experience",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Display work experiences with role details, company logos, and durations.",
+		"dependencies": [
+			"@comark/svelte",
+			"@lucide/svelte",
+			"@tailwindcss/typography",
+			"date-fns"
+		],
+		"registryDependencies": [
+			"collapsible",
+			"separator",
+			"local:chevrons-up-down-icon"
+		],
+		"relativeUrl": "work-experience.json"
 	}
 ]

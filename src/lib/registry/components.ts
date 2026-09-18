@@ -44,17 +44,18 @@ let components: Component[] = [
 		id: "elastic-slider",
 		name: "Elastic Slider",
 		href: "/components/elastic-slider",
-		desc: "Slider with elastic rubber-band drag and magnetic snap feedback."
+		desc: "Slider with elastic rubber-band drag and magnetic snap feedback.",
+		badge: "New"
 	},
 	{
 		id: "github-contributions",
-		name: "Github Contributions",
+		name: "GitHub Contributions",
 		href: "/components/github-contributions",
 		desc: "Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link."
 	},
 	{
 		id: "github-stars",
-		name: "Github Stars",
+		name: "GitHub Stars",
 		href: "/components/github-stars",
 		desc: "Display GitHub repo star count with formatted numbers and full-count tooltip."
 	},
@@ -96,9 +97,10 @@ let components: Component[] = [
 	// },
 	{
 		id: "slide-to-unlock",
-		name: "Slide To Unlock",
+		name: "Slide to Unlock",
 		href: "/components/slide-to-unlock",
-		desc: "Interactive slider inspired by the classic iPhone “slide to unlock” gesture."
+		desc: "Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
+		badge: "New"
 	},
 	{
 		id: "spinning-circular-text",
@@ -110,7 +112,7 @@ let components: Component[] = [
 		id: "status-button",
 		name: "Status Button",
 		href: "/components/status-button",
-		desc: "TODO: Add a concise description for Status Button."
+		desc: "A button that transitions through idle, loading, success, and failure states."
 	},
 	{
 		id: "testimonial",
@@ -140,7 +142,28 @@ let components: Component[] = [
 		id: "wheel-picker",
 		name: "Wheel Picker",
 		href: "/components/wheel-picker",
-		desc: "iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support."
+		desc: "iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support.",
+		badge: "New"
+	},
+	{
+		id: "work-experience",
+		name: "Work Experience",
+		href: "/components/work-experience",
+		desc: "Display work experiences with role details, company logos, and durations."
+	},
+	{
+		id: "toc-minimap",
+		name: "Toc Minimap",
+		href: "/components/toc-minimap",
+		desc: "Navigate page sections with a compact, hoverable TOC minimap.",
+		badge: "New"
+	},
+	{
+		id: "line-nav",
+		name: "Line Nav",
+		href: "/components/line-nav",
+		desc: "Vertical navigation with a line marker that expands on hover and active state.",
+		badge: "New"
 	}
 ];
 

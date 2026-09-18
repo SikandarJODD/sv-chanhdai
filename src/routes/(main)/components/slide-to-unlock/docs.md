@@ -1,4 +1,4 @@
-# Slide To Unlock
+# Slide to Unlock
 
 Interactive slider inspired by the classic iPhone “slide to unlock” gesture.
 

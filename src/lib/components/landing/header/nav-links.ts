@@ -15,10 +15,6 @@ let navs: NavType[] = [
 		href: resolve("/sponsors")
 	}
 	// {
-	// 	name: "Docs",
-	// 	href: "/docs"
-	// },
-	// {
 	// 	name: "Changelog",
 	// 	href: "/changelog"
 	// }

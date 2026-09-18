@@ -16,6 +16,7 @@
 	export type PMCommandProps = {
 		variant?: Variant;
 		class?: string;
+		name?: string;
 		agents?: Agent[];
 		agent?: Agent;
 		command: Command;
@@ -36,6 +37,7 @@
 	let {
 		variant = "secondary",
 		class: className,
+		name,
 		command,
 		agents = ["pnpm", "npm", "yarn", "bun"],
 		args,
@@ -77,6 +79,7 @@
 						<CopyButton
 							{...props}
 							text={commandText}
+							data-s-event={name}
 							class="size-6 [&_svg]:size-3"
 						>
 							{#snippet icon()}

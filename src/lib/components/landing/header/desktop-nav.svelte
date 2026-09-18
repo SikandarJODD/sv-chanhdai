@@ -56,7 +56,7 @@
 			slug: "svelte-particles"
 		},
 		{
-			title: "Svelte Data-tables Components",
+			title: "Svelte Data Table Components",
 			description:
 				"Data table components, patterns, and practical examples.",
 			url: "https://sv-table.vercel.app/",

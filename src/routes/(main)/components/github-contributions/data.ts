@@ -31,17 +31,17 @@ import PreviewCode from "./examples/preview.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "github-contributions",
-	title: "Github Contributions",
+	title: "GitHub Contributions",
 	description:
 		"Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link.",
 	category: "chan"
 };
 
 const seo: SEO = {
-	title: "Github Contributions",
+	title: "GitHub Contributions",
 	description:
 		"Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link.",
-	keywords: ["Svelte", "Github Contributions", "Component"]
+	keywords: ["Svelte", "GitHub Contributions", "Component"]
 };
 
 const usage: CodeBlock[] = [

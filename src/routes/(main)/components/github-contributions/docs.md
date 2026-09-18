@@ -1,4 +1,4 @@
-# Github Contributions
+# GitHub Contributions
 
 Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link.
 

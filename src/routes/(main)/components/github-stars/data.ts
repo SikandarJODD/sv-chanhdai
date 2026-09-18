@@ -16,17 +16,17 @@ import PreviewCode from "./examples/preview.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "github-stars",
-	title: "Github Stars",
+	title: "GitHub Stars",
 	description:
 		"Display GitHub repo star count with formatted numbers and full-count tooltip.",
 	category: "chan"
 };
 
 const seo: SEO = {
-	title: "Github Stars",
+	title: "GitHub Stars",
 	description:
 		"Display GitHub repo star count with formatted numbers and full-count tooltip.",
-	keywords: ["Svelte", "Github Stars", "Component"]
+	keywords: ["Svelte", "GitHub Stars", "Component"]
 };
 
 const usage: CodeBlock[] = [

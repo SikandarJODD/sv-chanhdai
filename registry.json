@@ -406,6 +406,32 @@
 			"author": "Bhide Svelte"
 		},
 		{
+			"name": "line-nav",
+			"type": "registry:block",
+			"title": "Line Nav",
+			"description": "An animated vertical line navigation component with active and hover states.",
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/line-nav/line-nav.svelte",
+					"type": "registry:component",
+					"target": "chan/line-nav/line-nav.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/line-nav/line-nav-item.svelte",
+					"type": "registry:component",
+					"target": "chan/line-nav/line-nav-item.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/line-nav/index.ts",
+					"type": "registry:file",
+					"target": "chan/line-nav/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
 			"name": "status-button",
 			"type": "registry:block",
 			"title": "Status Button",
@@ -820,6 +846,89 @@
 					"path": "src/lib/components/chan/wheel-picker/index.ts",
 					"type": "registry:file",
 					"target": "chan/wheel-picker/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "work-experience",
+			"type": "registry:block",
+			"title": "Work Experience",
+			"description": "Display work experiences with role details, company logos, and durations.",
+			"registryDependencies": [
+				"collapsible",
+				"separator",
+				"local:chevrons-up-down-icon"
+			],
+			"dependencies": [
+				"@comark/svelte",
+				"@lucide/svelte",
+				"@tailwindcss/typography",
+				"date-fns"
+			],
+			"cssVars": {
+				"theme": {
+					"color-line": "var(--line)"
+				},
+				"light": {
+					"line": "color-mix(in oklab, var(--border) 64%, var(--background))"
+				},
+				"dark": {
+					"line": "color-mix(in oklab, var(--border) 100%, var(--background))"
+				}
+			},
+			"css": {
+				"@plugin \"@tailwindcss/typography\"": {},
+				"@utility link": {
+					"@apply": "decoration-1 underline-offset-3 hover:underline"
+				},
+				"@utility link-underline": {
+					"@apply": "underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current"
+				},
+				"@utility prose-ncdai": {
+					"@apply": "prose-headings:tracking-tight prose-headings:text-balance prose-h2:font-semibold prose-a:font-normal prose-a:wrap-break-word prose-a:text-foreground prose-a:link-underline prose-code:rounded-md prose-code:border prose-code:bg-muted/50 prose-code:px-[0.3rem] prose-code:py-[0.2rem] prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-strong:font-medium"
+				}
+			},
+			"files": [
+				{
+					"path": "src/lib/components/chan/work-experience/work-experience.svelte",
+					"type": "registry:component",
+					"target": "chan/work-experience/work-experience.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/work-experience/experience-item.svelte",
+					"type": "registry:component",
+					"target": "chan/work-experience/experience-item.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/work-experience/experience-position-item.svelte",
+					"type": "registry:component",
+					"target": "chan/work-experience/experience-position-item.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/work-experience/prose.svelte",
+					"type": "registry:component",
+					"target": "chan/work-experience/prose.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/work-experience/skill.svelte",
+					"type": "registry:component",
+					"target": "chan/work-experience/skill.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/work-experience/work-experience-types.ts",
+					"type": "registry:file",
+					"target": "chan/work-experience/work-experience-types.ts"
+				},
+				{
+					"path": "src/lib/components/chan/work-experience/work-experience-utils.ts",
+					"type": "registry:file",
+					"target": "chan/work-experience/work-experience-utils.ts"
+				},
+				{
+					"path": "src/lib/components/chan/work-experience/index.ts",
+					"type": "registry:file",
+					"target": "chan/work-experience/index.ts"
 				}
 			],
 			"author": "Bhide Svelte"

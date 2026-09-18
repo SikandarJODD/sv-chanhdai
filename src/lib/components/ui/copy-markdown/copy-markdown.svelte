@@ -37,7 +37,7 @@
 <Button
 	variant="secondary"
 	onclick={copyMarkdown}
-	class="gap-1.5 [&_svg:not([class*='size-'])]:size-3 lg:[&_svg:not([class*='size-'])]:size-3.5"
+	class="gap-1.5 active:not-aria-[haspopup]:translate-y-0! [&_svg:not([class*='size-'])]:size-3 lg:[&_svg:not([class*='size-'])]:size-3.5"
 	aria-label="Copy as Markdown"
 	{size}
 >

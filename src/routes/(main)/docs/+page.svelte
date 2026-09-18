@@ -58,7 +58,7 @@
 	<section class="max-w-2xl">
 		<H2 id="inspiration" class="mt-0">Inspiration</H2>
 		<Paragraph>
-			Inspired by the
+			Inspired by
 			<FaviconLink
 				href="https://chanhdai.com"
 				target="_blank"
@@ -66,8 +66,9 @@
 				class="text-amber-500 bg-amber-50 px-1 rounded-sm dark:bg-amber-700/20 -ml-px"
 				faviconSrc={faviconUrl}
 			>
-				Chánh Đại
-			</FaviconLink>Portfolio. Ported to Svelte by
+				Chánh Đại's
+			</FaviconLink>
+			portfolio. Ported to Svelte by
 			<FaviconLink
 				href="https://bhide.dev"
 				target="_blank"
