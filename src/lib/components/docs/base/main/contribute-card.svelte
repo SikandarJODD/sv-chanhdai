@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { github_repo } from "$lib/config/repo";
+	import { X } from "$lib/svg";
 	import BugIcon from "@lucide/svelte/icons/bug";
 	import LightbulbIcon from "@lucide/svelte/icons/lightbulb";
 	let { class: className = "" }: { class?: string } = $props();
@@ -17,7 +18,7 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					<BugIcon class="size-3.5 shrink-0" />
+					<BugIcon class="size-4 shrink-0" strokeWidth="1.5" />
 					<span>Report an issue</span>
 				</a>
 			</li>
@@ -28,8 +29,19 @@
 					target="_blank"
 					rel="noreferrer"
 				>
-					<LightbulbIcon class="size-3.5 shrink-0" />
+					<LightbulbIcon class="size-4 shrink-0" strokeWidth="1.5" />
 					<span>Request a feature</span>
+				</a>
+			</li>
+			<li>
+				<a
+					class="inline-flex items-center gap-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
+					href="https://x.com/Sikandar_Bhide"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<X class="ml-0.5 size-3 shrink-0" />
+					<span>DM me on X</span>
 				</a>
 			</li>
 		</ul>

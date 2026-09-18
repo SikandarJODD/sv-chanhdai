@@ -44,7 +44,8 @@ let components: Component[] = [
 		id: "elastic-slider",
 		name: "Elastic Slider",
 		href: "/components/elastic-slider",
-		desc: "Slider with elastic rubber-band drag and magnetic snap feedback."
+		desc: "Slider with elastic rubber-band drag and magnetic snap feedback.",
+		badge: "New"
 	},
 	{
 		id: "github-contributions",
@@ -76,29 +77,30 @@ let components: Component[] = [
 		href: "/components/middle-truncation",
 		desc: "Truncate text in the middle while preserving start and end."
 	},
-	{
-		id: "scroll-fade-effect",
-		name: "Scroll Fade Effect",
-		href: "/components/scroll-fade-effect",
-		desc: "TODO: Add a concise description for Scroll Fade Effect."
-	},
+	// {
+	// 	id: "scroll-fade-effect",
+	// 	name: "Scroll Fade Effect",
+	// 	href: "/components/scroll-fade-effect",
+	// 	desc: "TODO: Add a concise description for Scroll Fade Effect."
+	// },
 	{
 		id: "share-menu",
 		name: "Share Menu",
 		href: "/components/share-menu",
 		desc: "Share menu to copy a link or post to X, LinkedIn, and the native share sheet."
 	},
-	{
-		id: "shimmering-text",
-		name: "Shimmering Text",
-		href: "/components/shimmering-text",
-		desc: "TODO: Add a concise description for Shimmering Text."
-	},
+	// {
+	// 	id: "shimmering-text",
+	// 	name: "Shimmering Text",
+	// 	href: "/components/shimmering-text",
+	// 	desc: "TODO: Add a concise description for Shimmering Text."
+	// },
 	{
 		id: "slide-to-unlock",
 		name: "Slide to Unlock",
 		href: "/components/slide-to-unlock",
-		desc: "Interactive slider inspired by the classic iPhone “slide to unlock” gesture."
+		desc: "Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
+		badge: "New"
 	},
 	{
 		id: "spinning-circular-text",
@@ -140,7 +142,8 @@ let components: Component[] = [
 		id: "wheel-picker",
 		name: "Wheel Picker",
 		href: "/components/wheel-picker",
-		desc: "iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support."
+		desc: "iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support.",
+		badge: "New"
 	},
 	{
 		id: "work-experience",
@@ -152,13 +155,15 @@ let components: Component[] = [
 		id: "toc-minimap",
 		name: "Toc Minimap",
 		href: "/components/toc-minimap",
-		desc: "Navigate page sections with a compact, hoverable TOC minimap."
+		desc: "Navigate page sections with a compact, hoverable TOC minimap.",
+		badge: "New"
 	},
 	{
 		id: "line-nav",
 		name: "Line Nav",
 		href: "/components/line-nav",
-		desc: "Vertical navigation with a line marker that expands on hover and active state."
+		desc: "Vertical navigation with a line marker that expands on hover and active state.",
+		badge: "New"
 	}
 ];
 
