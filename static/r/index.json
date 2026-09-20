@@ -178,6 +178,22 @@
 		"relativeUrl": "status-button.json"
 	},
 	{
+		"name": "copy-button",
+		"title": "Copy Button",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "Copy text to the clipboard with animated status feedback.",
+		"dependencies": [
+			"@lucide/svelte",
+			"motion-sv"
+		],
+		"registryDependencies": [
+			"button",
+			"local:icon-swap"
+		],
+		"relativeUrl": "copy-button.json"
+	},
+	{
 		"name": "share-menu",
 		"title": "Share Menu",
 		"type": "registry:block",

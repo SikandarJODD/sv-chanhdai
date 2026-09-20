@@ -50,7 +50,7 @@
 	<AnimatePresence mode="wait" initial={false}>
 		{#if status === "processing"}
 			<motion.div
-				class="text-muted-foreground flex items-center gap-2 text-sm"
+				class="flex items-center gap-2 text-sm text-muted-foreground"
 				role="status"
 				variants={shouldReduceMotion.current
 					? reducedMotionVariants

@@ -14,7 +14,7 @@
 	bind:this={ref}
 	data-slot="testimonial-author-tagline"
 	class={cn(
-		"text-muted-foreground text-xs leading-4 text-balance",
+		"text-xs leading-4 text-balance text-muted-foreground",
 		className
 	)}
 	{...restProps}

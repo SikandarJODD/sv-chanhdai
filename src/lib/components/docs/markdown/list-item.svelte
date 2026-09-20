@@ -15,6 +15,6 @@
 	}: ComponentProps = $props();
 </script>
 
-<li {...restProps} class={cn("text-foreground/70 leading-relaxed", className)}>
+<li {...restProps} class={cn("leading-relaxed text-foreground/70", className)}>
 	{@render children?.()}
 </li>

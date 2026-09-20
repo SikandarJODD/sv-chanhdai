@@ -4,7 +4,7 @@
 
 <aside
 	aria-label="Project highlights"
-	class="relative hidden h-80 w-full animate-in delay-400 duration-700 ease-out fill-mode-backwards slide-in-from-bottom-8 fade-in lg:block"
+	class="relative hidden h-80 w-full animate-in delay-400 duration-700 ease-out fill-mode-backwards fade-in slide-in-from-bottom-8 lg:block"
 >
 	<Rough.SVG
 		width={400}

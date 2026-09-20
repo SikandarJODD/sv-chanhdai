@@ -14,7 +14,7 @@
 	bind:this={ref}
 	data-slot="testimonial-author-name"
 	class={cn(
-		"text-foreground flex items-center gap-1.5 text-sm leading-4.5 font-semibold",
+		"flex items-center gap-1.5 text-sm leading-4.5 font-semibold text-foreground",
 		className
 	)}
 	{...restProps}

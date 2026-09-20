@@ -7,7 +7,7 @@
 </script>
 
 <Card.Root
-	class="gap-2 py-4 ring-emerald-200 bg-emerald-50/30 dark:bg-secondary dark:ring-0"
+	class="gap-2 bg-emerald-50/30 py-4 ring-emerald-200 dark:bg-secondary dark:ring-0"
 >
 	<Card.Header class="px-4">
 		<Card.Title class="text-sm">Support My Work</Card.Title>

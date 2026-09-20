@@ -118,7 +118,7 @@
 {/snippet}
 
 <section
-	class="mx-auto w-full animate-in fade-in delay-500 duration-200 ease-out fill-mode-backwards slide-in-from-bottom-[6px] max-w-6xl px-4 pb-20 sm:pb-24 z-[300]"
+	class="z-[300] mx-auto w-full max-w-6xl animate-in px-4 pb-20 delay-500 duration-200 ease-out fill-mode-backwards fade-in slide-in-from-bottom-[6px] sm:pb-24"
 >
 	<h2
 		class="font-gp-circle text-2xl leading-tight font-medium text-balance sm:text-3xl lg:text-4xl"
@@ -162,7 +162,7 @@
 			class="md:col-span-5"
 		>
 			<div
-				class="inset-ring-foreground/10 w-80 max-w-full rounded-xl inset-ring-1"
+				class="w-80 max-w-full rounded-xl inset-ring-1 inset-ring-foreground/10"
 			>
 				<Testimonial>
 					<TestimonialQuote class="font-serif">
@@ -227,7 +227,7 @@
 					<SlideToUnlock
 						bind:this={slideToUnlock}
 						onUnlock={() => (unlocked = true)}
-						class="w-56 md:w-64 max-w-full rounded-full"
+						class="w-56 max-w-full rounded-full md:w-64"
 					>
 						<SlideToUnlockTrack>
 							<SlideToUnlockText>
@@ -330,7 +330,7 @@
 					{#snippet children({ props })}
 						<button
 							type="button"
-							class="rounded-xl p-3 transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+							class="rounded-xl p-3 transition-colors hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
 							aria-label="Open brand assets menu"
 							{...props}
 						>

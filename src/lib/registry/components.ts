@@ -44,8 +44,8 @@ let components: Component[] = [
 		id: "elastic-slider",
 		name: "Elastic Slider",
 		href: "/components/elastic-slider",
-		desc: "Slider with elastic rubber-band drag and magnetic snap feedback.",
-		badge: "New"
+		badge: "New",
+		desc: "Slider with elastic rubber-band drag and magnetic snap feedback."
 	},
 	{
 		id: "github-contributions",
@@ -78,10 +78,10 @@ let components: Component[] = [
 		desc: "Truncate text in the middle while preserving start and end."
 	},
 	// {
-	// 	id: "scroll-fade-effect",
-	// 	name: "Scroll Fade Effect",
-	// 	href: "/components/scroll-fade-effect",
-	// 	desc: "TODO: Add a concise description for Scroll Fade Effect."
+	//   id: "scroll-fade-effect",
+	//   name: "Scroll Fade Effect",
+	//   href: "/components/scroll-fade-effect",
+	//   desc: "TODO: Add a concise description for Scroll Fade Effect.",
 	// },
 	{
 		id: "share-menu",
@@ -90,17 +90,17 @@ let components: Component[] = [
 		desc: "Share menu to copy a link or post to X, LinkedIn, and the native share sheet."
 	},
 	// {
-	// 	id: "shimmering-text",
-	// 	name: "Shimmering Text",
-	// 	href: "/components/shimmering-text",
-	// 	desc: "TODO: Add a concise description for Shimmering Text."
+	//   id: "shimmering-text",
+	//   name: "Shimmering Text",
+	//   href: "/components/shimmering-text",
+	//   desc: "TODO: Add a concise description for Shimmering Text.",
 	// },
 	{
 		id: "slide-to-unlock",
 		name: "Slide to Unlock",
 		href: "/components/slide-to-unlock",
-		desc: "Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
-		badge: "New"
+		badge: "New",
+		desc: "Interactive slider inspired by the classic iPhone “slide to unlock” gesture."
 	},
 	{
 		id: "spinning-circular-text",
@@ -142,8 +142,8 @@ let components: Component[] = [
 		id: "wheel-picker",
 		name: "Wheel Picker",
 		href: "/components/wheel-picker",
-		desc: "iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support.",
-		badge: "New"
+		badge: "New",
+		desc: "iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support."
 	},
 	{
 		id: "work-experience",
@@ -155,15 +155,21 @@ let components: Component[] = [
 		id: "toc-minimap",
 		name: "Toc Minimap",
 		href: "/components/toc-minimap",
-		desc: "Navigate page sections with a compact, hoverable TOC minimap.",
-		badge: "New"
+		badge: "New",
+		desc: "Navigate page sections with a compact, hoverable TOC minimap."
 	},
 	{
 		id: "line-nav",
 		name: "Line Nav",
 		href: "/components/line-nav",
-		desc: "Vertical navigation with a line marker that expands on hover and active state.",
-		badge: "New"
+		badge: "New",
+		desc: "Vertical navigation with a line marker that expands on hover and active state."
+	},
+	{
+		id: "copy-button",
+		name: "Copy Button",
+		href: "/components/copy-button",
+		desc: "Copy text to the clipboard with animated status feedback."
 	}
 ];
 

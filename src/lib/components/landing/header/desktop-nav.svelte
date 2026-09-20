@@ -102,7 +102,7 @@
 </script>
 
 <NavigationMenu.Root class="hidden md:flex">
-	<NavigationMenu.List class="gap-2">
+	<NavigationMenu.List class="gap-1">
 		{#each navs as nav}
 			{#if nav.sub}
 				<NavigationMenu.Item>
@@ -112,7 +112,7 @@
 					>
 					<NavigationMenu.Content class="p-0">
 						<div
-							class="grid w-lg grid-cols-2 gap-2 rounded-lg bg-popover p-1 shadow"
+							class="grid w-lg grid-cols-2 gap-2 rounded-full bg-popover p-1 shadow"
 						>
 							{#each nav.sub as item, i}
 								<NavigationMenu.Link class="rounded-lg!">
@@ -125,7 +125,7 @@
 			{:else}
 				<NavigationMenu.Item>
 					<NavigationMenu.Link
-						class="rounded-md py-1.5 hover:bg-accent/60!"
+						class="rounded-full px-3 py-1.5 hover:bg-accent!"
 					>
 						{#snippet child({ props })}
 							<a href={nav.href} {...props}>{nav.name}</a>
@@ -136,7 +136,7 @@
 		{/each}
 		<NavigationMenu.Item id="other-projects">
 			<NavigationMenu.Trigger
-				class="h-fit py-1.5! px-2.5 hover:bg-accent/60! font-normal"
+				class="h-fit rounded-full py-1.5! pr-2.5 pl-3 font-normal hover:bg-accent/80!"
 				>Other Projects</NavigationMenu.Trigger
 			>
 			<NavigationMenu.Content class="p-0">
@@ -144,7 +144,7 @@
 					<ul class="grid grid-cols-2 gap-1 p-2">
 						{#each projectItems as project (project.url)}
 							<li
-								class="hover:bg-accent focus-within:bg-accent group/project-card relative flex min-w-0 items-start gap-2 rounded-md p-2.5 transition-colors"
+								class="group/project-card relative flex min-w-0 items-start gap-2 rounded-md p-2.5 transition-colors focus-within:bg-accent hover:bg-accent"
 							>
 								<a
 									href={withUtm(
@@ -169,7 +169,7 @@
 										{/if}
 									</div>
 									<p
-										class="text-muted-foreground mt-1 line-clamp-2 text-xs leading-snug"
+										class="mt-1 line-clamp-2 text-xs leading-snug text-muted-foreground"
 									>
 										{project.description}
 									</p>
@@ -182,13 +182,13 @@
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label={`View ${project.title} on GitHub`}
-									class="text-muted-foreground hover:text-foreground focus-visible:ring-ring/50 -mt-0.5 shrink-0 rounded-sm p-1 transition-colors outline-none focus-visible:ring-[3px]"
+									class="-mt-0.5 shrink-0 rounded-sm p-1 text-muted-foreground transition-colors outline-none hover:text-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50"
 								>
 									<Github class="size-3" />
 								</a>
 								<span
 									aria-hidden="true"
-									class="bg-muted text-muted-foreground pointer-events-none absolute right-2 bottom-2 translate-y-1 rounded-md p-1 opacity-0 shadow-xs transition-all duration-200 group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100"
+									class="pointer-events-none absolute right-2 bottom-2 translate-y-1 rounded-md bg-muted p-1 text-muted-foreground opacity-0 shadow-xs transition-all duration-200 group-hover/project-card:translate-y-0 group-hover/project-card:opacity-100"
 								>
 									<ArrowUpRightIcon class="size-3" />
 								</span>
@@ -196,14 +196,14 @@
 						{/each}
 					</ul>
 					<div
-						class="text-muted-foreground flex items-center justify-center gap-1.5 border-t px-3 py-2.5 text-xs"
+						class="flex items-center justify-center gap-1.5 border-t px-3 py-2.5 text-xs text-muted-foreground"
 					>
 						<span>Built by</span>
 						<a
 							href={withUtm("https://bhide.dev", "navbar-owner")}
 							target="_blank"
 							rel="noopener noreferrer"
-							class="text-foreground hover:text-primary focus-visible:ring-ring/50 inline-flex items-center gap-1.5 rounded-sm font-medium transition-colors outline-none focus-visible:ring-[3px]"
+							class="inline-flex items-center gap-1.5 rounded-sm font-medium text-foreground transition-colors outline-none hover:text-primary focus-visible:ring-[3px] focus-visible:ring-ring/50"
 						>
 							<img
 								src="https://github.com/SikandarJODD.png"

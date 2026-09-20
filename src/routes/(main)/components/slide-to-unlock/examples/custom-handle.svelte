@@ -32,7 +32,7 @@
 		</SlideToUnlockTrack>
 	</SlideToUnlock>
 
-	<p class="text-muted-foreground text-sm" aria-live="polite">
+	<p class="text-sm text-muted-foreground" aria-live="polite">
 		{launched
 			? "Launch confirmed."
 			: "Custom handle with a 48px drag width"}

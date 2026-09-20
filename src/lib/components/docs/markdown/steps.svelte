@@ -10,7 +10,7 @@
 
 <div
 	class={cn(
-		"border-border relative mb-12 ml-4 border-l [counter-reset:step]",
+		"relative mb-12 ml-4 border-l border-border [counter-reset:step]",
 		className
 	)}
 >

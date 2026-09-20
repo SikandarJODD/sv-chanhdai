@@ -39,11 +39,11 @@
 
 			<div class="flex flex-col items-center gap-1">
 				<h2
-					class="text-foreground text-base leading-none font-semibold"
+					class="text-base leading-none font-semibold text-foreground"
 				>
 					{name}
 				</h2>
-				<p class="text-foreground/50 text-sm leading-none">{handle}</p>
+				<p class="text-sm leading-none text-foreground/50">{handle}</p>
 			</div>
 		</div>
 	</div>

@@ -47,7 +47,7 @@
 			title={`Retry ${name}`}
 		>
 			<RotateCw
-				class="transition-transform duration-200 ease-out group-hover:rotate-45 opacity-50"
+				class="opacity-50 transition-transform duration-200 ease-out group-hover:rotate-45"
 				aria-hidden="true"
 			/>
 		</Button>
@@ -57,7 +57,7 @@
 		{/key}
 	</Frame.Panel>
 
-	<Frame.Footer class="flex items-center justify-between pl-2 pr-1 py-1.5">
+	<Frame.Footer class="flex items-center justify-between py-1.5 pr-1 pl-2">
 		<h3 class="font-mono text-xs font-medium text-muted-foreground">
 			{name}
 		</h3>

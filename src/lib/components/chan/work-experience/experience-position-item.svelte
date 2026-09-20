@@ -58,7 +58,7 @@
 				class={cn(
 					"flex size-6 shrink-0 items-center justify-center rounded-lg",
 					"bg-muted text-muted-foreground",
-					"ring-line border border-muted-foreground/15 ring-1 ring-offset-1 ring-offset-background",
+					"border border-muted-foreground/15 ring-1 ring-line ring-offset-1 ring-offset-background",
 					"[&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
 				)}
 			>

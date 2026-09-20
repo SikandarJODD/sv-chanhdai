@@ -13,7 +13,7 @@
 </script>
 
 <a
-	class="inset-ring-foreground/10 hover:bg-accent/50 block w-80 max-w-full rounded-xl inset-ring-1 transition-[background-color] ease-out"
+	class="block w-80 max-w-full rounded-xl inset-ring-1 inset-ring-foreground/10 transition-[background-color] ease-out hover:bg-accent/50"
 	href="https://x.com/rauchg/status/1978913158514237669"
 	target="_blank"
 	rel="noopener noreferrer"

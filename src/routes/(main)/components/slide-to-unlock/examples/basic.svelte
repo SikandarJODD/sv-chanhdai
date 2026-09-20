@@ -21,7 +21,7 @@
 		</SlideToUnlockTrack>
 	</SlideToUnlock>
 
-	<p class="text-muted-foreground text-sm" aria-live="polite">
+	<p class="text-sm text-muted-foreground" aria-live="polite">
 		{unlocked ? "Unlocked" : "Waiting for the gesture"}
 	</p>
 </div>

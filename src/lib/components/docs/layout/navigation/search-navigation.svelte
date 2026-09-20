@@ -28,7 +28,7 @@
 <svelte:document onkeydown={handleKeydown} />
 
 <div
-	class="text-muted-foreground h-9 w-9 text-sm min-[800px]:h-8 min-[800px]:w-46 lg:mr-2"
+	class="h-9 w-9 text-sm text-muted-foreground min-[800px]:h-8 min-[800px]:w-46 lg:mr-2"
 >
 	{#if isMounted.current}
 		<div class="size-full" in:blur={{ opacity: 0.7, duration: 150 }}>
@@ -36,8 +36,8 @@
 				variant="ghost"
 				size={large.current ? "sm" : "icon"}
 				class={large.current
-					? "bg-secondary flex justify-between rounded-full px-1.5 min-[800px]:min-w-46 min-[800px]:px-2 dark:bg-muted/60"
-					: "bg-secondary rounded-full"}
+					? "flex justify-between rounded-full bg-secondary px-1.5 min-[800px]:min-w-46 min-[800px]:px-2 dark:bg-muted/60"
+					: "rounded-full bg-secondary"}
 				onclick={() => (open = true)}
 			>
 				<span class="hidden pl-1 min-[800px]:block"> Search... </span>

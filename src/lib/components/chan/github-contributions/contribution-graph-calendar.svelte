@@ -39,7 +39,7 @@
 	bind:this={ref}
 	data-slot="contribution-graph-calendar"
 	class={cn(
-		"no-scrollbar scroll-fade-x max-w-full overflow-x-auto overflow-y-hidden",
+		"no-scrollbar max-w-full scroll-fade-x overflow-x-auto overflow-y-hidden",
 		className
 	)}
 	{...restProps}
@@ -54,7 +54,7 @@
 		{#if !hideMonthLabels}
 			<g
 				data-slot="month-labels"
-				class="fill-current selection:fill-selection-foreground"
+				class="selection:fill-selection-foreground fill-current"
 			>
 				{#each monthLabels as { label, weekIndex } (weekIndex)}
 					<text

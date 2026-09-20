@@ -14,7 +14,7 @@
 	bind:this={ref}
 	data-slot="testimonial-quote"
 	class={cn(
-		"text-foreground grow px-4 py-3 text-base text-pretty",
+		"grow px-4 py-3 text-base text-pretty text-foreground",
 		className
 	)}
 	{...restProps}

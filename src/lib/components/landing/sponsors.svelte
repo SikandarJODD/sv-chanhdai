@@ -100,18 +100,18 @@
 >
 	<h2
 		id="landing-sponsors"
-		class="font-gp-circle pl-1 text-3xl font-medium text-foreground sm:text-4xl"
+		class="pl-1 font-gp-circle text-3xl font-medium text-foreground sm:text-4xl"
 	>
 		Sponsors
 	</h2>
 
 	<div
-		class="mt-4 md:mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
+		class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3 md:mt-8 lg:grid-cols-6"
 	>
 		{#each sponsors as sponsor (sponsor.handle)}
 			<article class="min-w-0 p-2">
 				<div
-					class="relative aspect-square w-full p-1.5 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-ink/40 after:content-[''] after:border-dashed dark:after:border-emerald-500/40"
+					class="relative aspect-square w-full p-1.5 after:pointer-events-none after:absolute after:inset-0 after:rounded-xl after:border after:border-dashed after:border-ink/40 after:content-[''] dark:after:border-emerald-500/40"
 				>
 					<img
 						src={sponsor.avatar}

@@ -141,7 +141,7 @@ Run a callback when the handle reaches the end of the track.
     </SlideToUnlockTrack>
   </SlideToUnlock>
 
-  <p class="text-muted-foreground text-sm" aria-live="polite">
+  <p class="text-sm text-muted-foreground" aria-live="polite">
     {unlocked ? "Unlocked" : "Waiting for the gesture"}
   </p>
 </div>
@@ -187,7 +187,7 @@ Return the handle to its starting position with the reset method.
 
   <button
     type="button"
-    class="text-muted-foreground hover:text-foreground text-sm underline underline-offset-4 disabled:pointer-events-none disabled:opacity-50"
+    class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground disabled:pointer-events-none disabled:opacity-50"
     disabled={!unlocked}
     onclick={reset}
   >
@@ -272,7 +272,7 @@ Provide custom handle content, colors, and drag width.
     </SlideToUnlockTrack>
   </SlideToUnlock>
 
-  <p class="text-muted-foreground text-sm" aria-live="polite">
+  <p class="text-sm text-muted-foreground" aria-live="polite">
     {launched ? "Launch confirmed." : "Custom handle with a 48px drag width"}
   </p>
 </div>
@@ -427,7 +427,7 @@ Show processing and success states after the gesture completes.
   <AnimatePresence mode="wait" initial={false}>
     {#if status === "processing"}
       <motion.div
-        class="text-muted-foreground flex items-center gap-2 text-sm"
+        class="flex items-center gap-2 text-sm text-muted-foreground"
         role="status"
         variants={shouldReduceMotion.current
           ? reducedMotionVariants
@@ -542,7 +542,7 @@ Add deliberate friction before a destructive action.
         <p class="text-sm font-medium" role="status">Project deleted.</p>
         <button
           type="button"
-          class="text-muted-foreground hover:text-foreground text-sm underline underline-offset-4"
+          class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
           onclick={() => (deleted = false)}
         >
           Restore example

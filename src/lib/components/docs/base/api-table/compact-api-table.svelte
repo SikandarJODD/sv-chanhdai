@@ -31,7 +31,7 @@
 		{/if}
 		{#if data.desc}
 			<p
-				class="text-muted-foreground m-0 max-w-3xl text-sm leading-relaxed"
+				class="m-0 max-w-3xl text-sm leading-relaxed text-muted-foreground"
 			>
 				{data.desc}
 			</p>
@@ -39,7 +39,7 @@
 	</div>
 {/if}
 
-<div class={cn("border-border overflow-hidden rounded-lg border", className)}>
+<div class={cn("overflow-hidden rounded-lg border border-border", className)}>
 	<div class="overflow-x-auto">
 		<table
 			class="w-full min-w-[780px] table-fixed text-left text-xs sm:text-sm"
@@ -50,7 +50,7 @@
 				<col class="w-[20%]" />
 				<col class="w-[32%]" />
 			</colgroup>
-			<thead class="bg-muted/40 text-muted-foreground border-b">
+			<thead class="border-b bg-muted/40 text-muted-foreground">
 				<tr>
 					<th class="px-3 py-2 font-medium">Prop</th>
 					<th class="px-3 py-2 font-medium">Type</th>
@@ -58,26 +58,26 @@
 					<th class="py-2 pl-2 font-medium">Description</th>
 				</tr>
 			</thead>
-			<tbody class="divide-border divide-y">
+			<tbody class="divide-y divide-border">
 				{#each tableData as row (row.name ?? row.type)}
 					<tr class="align-top">
 						<td class="px-3 py-3">
 							<code
-								class="bg-muted/70 text-foreground inline-block max-w-full rounded-md px-1.5 py-0.5 font-mono leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap"
+								class="inline-block max-w-full rounded-md bg-muted/70 px-1.5 py-0.5 font-mono leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap text-foreground"
 							>
 								{row.name}
 							</code>
 						</td>
 						<td class="px-3 py-3">
 							<code
-								class="bg-muted/50 text-muted-foreground inline-block max-w-full rounded-md px-1.5 py-0.5 font-mono text-xs leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap"
+								class="inline-block max-w-full rounded-md bg-muted/50 px-1.5 py-0.5 font-mono text-xs leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap text-muted-foreground"
 							>
 								{row.type}
 							</code>
 						</td>
 						<td class="px-3 py-3">
 							<code
-								class="bg-muted/50 text-muted-foreground inline-block max-w-full rounded-md px-1.5 py-0.5 font-mono text-xs leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap"
+								class="inline-block max-w-full rounded-md bg-muted/50 px-1.5 py-0.5 font-mono text-xs leading-5 [overflow-wrap:anywhere] break-words whitespace-pre-wrap text-muted-foreground"
 							>
 								{row.required
 									? "required"
@@ -85,7 +85,7 @@
 							</code>
 						</td>
 						<td
-							class="text-muted-foreground py-3 pr-3 pl-2 leading-5 [overflow-wrap:anywhere] break-words"
+							class="py-3 pr-3 pl-2 leading-5 [overflow-wrap:anywhere] break-words text-muted-foreground"
 						>
 							{row.description ?? "-"}
 						</td>

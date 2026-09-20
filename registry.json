@@ -473,6 +473,32 @@
 			"author": "Bhide Svelte"
 		},
 		{
+			"name": "copy-button",
+			"type": "registry:block",
+			"title": "Copy Button",
+			"description": "Copy text to the clipboard with animated status feedback.",
+			"registryDependencies": ["button", "local:icon-swap"],
+			"dependencies": ["@lucide/svelte", "motion-sv"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/copy-button/copy-button.svelte",
+					"type": "registry:component",
+					"target": "chan/copy-button/copy-button.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/copy-button/copy-state-icon.svelte",
+					"type": "registry:component",
+					"target": "chan/copy-button/copy-state-icon.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/copy-button/index.ts",
+					"type": "registry:file",
+					"target": "chan/copy-button/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
 			"name": "share-menu",
 			"type": "registry:block",
 			"title": "Share Menu",

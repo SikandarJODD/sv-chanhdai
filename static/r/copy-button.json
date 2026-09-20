@@ -1,0 +1,36 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "copy-button",
+	"title": "Copy Button",
+	"type": "registry:block",
+	"author": "Bhide Svelte",
+	"description": "Copy text to the clipboard with animated status feedback.",
+	"dependencies": [
+		"@lucide/svelte",
+		"motion-sv"
+	],
+	"devDependencies": [
+		"@lucide/svelte@^1.46.0"
+	],
+	"registryDependencies": [
+		"button",
+		"./icon-swap.json"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { ButtonProps } from \"$UI$/button\";\n\timport type { CopyStateIconProps } from \"./copy-state-icon.svelte\";\n\n\texport type CopyButtonProps = Omit<ButtonProps, \"onclick\"> &\n\t\tOmit<CopyStateIconProps, \"state\"> & {\n\t\t\t/** The text to copy, or a function that returns it. */\n\t\t\ttext: string | (() => string);\n\t\t\t/** Called with the copied text after a successful copy. */\n\t\t\tonCopySuccess?: (text: string) => void;\n\t\t\t/** Called when the copy operation fails. */\n\t\t\tonCopyError?: (error: Error) => void;\n\t\t\tonclick?: (event: MouseEvent) => void;\n\t\t};\n</script>\n\n<script lang=\"ts\">\n\timport { UseClipboard } from \"$HOOKS$/use-clipboard.svelte\";\n\timport { cn } from \"$UTILS$.js\";\n\timport { Button } from \"$UI$/button\";\n\timport CopyStateIcon, { type CopyState } from \"./copy-state-icon.svelte\";\n\n\tlet {\n\t\tclass: className,\n\t\tsize = \"icon\",\n\t\tchildren,\n\t\ttext,\n\t\tidleIcon,\n\t\tdoneIcon,\n\t\terrorIcon,\n\t\tonclick,\n\t\tonCopySuccess,\n\t\tonCopyError,\n\t\t\"aria-label\": ariaLabel = \"Copy\",\n\t\t...restProps\n\t}: CopyButtonProps = $props();\n\n\tconst clipboard = new UseClipboard();\n\tconst state = $derived<CopyState>(\n\t\tclipboard.status === \"success\"\n\t\t\t? \"done\"\n\t\t\t: clipboard.status === \"failure\"\n\t\t\t\t? \"error\"\n\t\t\t\t: \"idle\"\n\t);\n\n\tasync function copy() {\n\t\tlet value: string;\n\n\t\ttry {\n\t\t\tvalue = typeof text === \"function\" ? text() : text;\n\t\t} catch (error) {\n\t\t\tonCopyError?.(\n\t\t\t\terror instanceof Error\n\t\t\t\t\t? error\n\t\t\t\t\t: new Error(\"Failed to copy text to the clipboard.\")\n\t\t\t);\n\t\t\treturn;\n\t\t}\n\n\t\tconst status = await clipboard.copy(value);\n\n\t\tif (status === \"success\") {\n\t\t\tonCopySuccess?.(value);\n\t\t} else {\n\t\t\tonCopyError?.(new Error(\"Failed to copy text to the clipboard.\"));\n\t\t}\n\t}\n\n\tfunction handleClick(event: MouseEvent) {\n\t\tvoid copy();\n\t\tonclick?.(event);\n\t}\n</script>\n\n<Button\n\tclass={cn(\"will-change-transform\", className)}\n\t{size}\n\taria-label={ariaLabel}\n\tonclick={handleClick}\n\t{...restProps}\n>\n\t<CopyStateIcon {state} {idleIcon} {doneIcon} {errorIcon} />\n\t{@render children?.()}\n</Button>\n",
+			"type": "registry:component",
+			"target": "chan/copy-button/copy-button.svelte"
+		},
+		{
+			"content": "<script lang=\"ts\" module>\n\timport type { Snippet } from \"svelte\";\n\n\texport type CopyState = \"idle\" | \"done\" | \"error\";\n\n\texport type CopyStateIconProps = {\n\t\tstate: CopyState;\n\t\t/** Custom icon for the idle state. */\n\t\tidleIcon?: Snippet;\n\t\t/** Custom icon for the done state. */\n\t\tdoneIcon?: Snippet;\n\t\t/** Custom icon for the error state. */\n\t\terrorIcon?: Snippet;\n\t};\n</script>\n\n<script lang=\"ts\">\n\timport { CheckIcon, CircleXIcon, CopyIcon } from \"@lucide/svelte\";\n\timport { IconSwap, IconSwapItem } from \"$chan/icon-swap\";\n\timport { motion } from \"motion-sv\";\n\n\tlet { state, idleIcon, doneIcon, errorIcon }: CopyStateIconProps = $props();\n</script>\n\n<IconSwap>\n\t{#key state}\n\t\t<IconSwapItem as={motion.span}>\n\t\t\t{#if state === \"idle\"}\n\t\t\t\t{#if idleIcon}\n\t\t\t\t\t{@render idleIcon()}\n\t\t\t\t{:else}\n\t\t\t\t\t<CopyIcon data-slot=\"idle-icon\" />\n\t\t\t\t{/if}\n\t\t\t{:else if state === \"done\"}\n\t\t\t\t{#if doneIcon}\n\t\t\t\t\t{@render doneIcon()}\n\t\t\t\t{:else}\n\t\t\t\t\t<CheckIcon data-slot=\"done-icon\" />\n\t\t\t\t{/if}\n\t\t\t{:else}\n\t\t\t\t{#if errorIcon}\n\t\t\t\t\t{@render errorIcon()}\n\t\t\t\t{:else}\n\t\t\t\t\t<CircleXIcon data-slot=\"error-icon\" />\n\t\t\t\t{/if}\n\t\t\t{/if}\n\t\t</IconSwapItem>\n\t{/key}\n</IconSwap>\n",
+			"type": "registry:component",
+			"target": "chan/copy-button/copy-state-icon.svelte"
+		},
+		{
+			"content": "import CopyButton from \"./copy-button.svelte\";\nimport CopyStateIcon from \"./copy-state-icon.svelte\";\n\nexport { CopyButton, CopyStateIcon };\n\nexport type { CopyButtonProps } from \"./copy-button.svelte\";\nexport type {\n\tCopyState,\n\tCopyStateIconProps\n} from \"./copy-state-icon.svelte\";\n",
+			"type": "registry:file",
+			"target": "chan/copy-button/index.ts"
+		}
+	]
+}

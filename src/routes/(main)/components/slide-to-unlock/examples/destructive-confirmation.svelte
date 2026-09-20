@@ -50,7 +50,7 @@
 				</p>
 				<button
 					type="button"
-					class="text-muted-foreground hover:text-foreground text-sm underline underline-offset-4"
+					class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground"
 					onclick={() => (deleted = false)}
 				>
 					Restore example
