@@ -262,7 +262,7 @@
 
 						{#if milestone.content}
 							<TimescaleContent
-								class="text-muted-foreground space-y-4 text-sm leading-6 text-pretty [&_a]:text-foreground [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-4 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5"
+								class="space-y-4 text-sm leading-6 text-pretty text-muted-foreground [&_a]:font-medium [&_a]:text-foreground [&_a]:underline [&_a]:underline-offset-4 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5"
 							>
 								{#each milestone.content as block}
 									{#if block.type === "paragraph"}

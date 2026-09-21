@@ -18,7 +18,7 @@
 	>
 		<div>
 			<div
-				class="dark:hover:bg-muted/50 flex items-center gap-1.5 py-2 pr-5.5 pl-4 font-mono text-xs hover:bg-white/5"
+				class="flex items-center gap-1.5 py-2 pr-5.5 pl-4 font-mono text-xs hover:bg-white/5 dark:hover:bg-muted/50"
 			>
 				<!-- <ChevronDown class="size-4 opacity-50" /> -->
 				<svg
@@ -51,7 +51,7 @@
 					class={cn(
 						`flex w-full items-center justify-start gap-1.5 rounded-none border-l-2 border-transparent pl-6! text-xs hover:bg-neutral-200/70 hover:dark:bg-zinc-900 [&_svg:not([class*='size-'])]:size-3`,
 						selectedIndex === index &&
-							"border-muted-foreground border-l-2 bg-neutral-200/40 dark:bg-zinc-800/50"
+							"border-l-2 border-muted-foreground bg-neutral-200/40 dark:bg-zinc-800/50"
 					)}
 					variant="ghost"
 					onclick={() => (selectedIndex = index)}

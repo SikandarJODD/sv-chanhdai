@@ -65,7 +65,7 @@
 			>
 				<Code.Root
 					lang={code.lang || "svelte"}
-					class="w-full rounded-none border-none  min-h-50"
+					class="min-h-50 w-full rounded-none  border-none"
 					code={code.code}
 					highlight={code.highlight}
 					hideLines={code.hideLines ?? false}

@@ -18,7 +18,7 @@
 		{#each packages as pkg (pkg)}
 			<Badge
 				variant="secondary"
-				class="border-border/60 bg-muted/60 text-muted-foreground rounded-full px-2 py-1 font-mono text-xs leading-none"
+				class="rounded-full border-border/60 bg-muted/60 px-2 py-1 font-mono text-xs leading-none text-muted-foreground"
 			>
 				{pkg}
 			</Badge>

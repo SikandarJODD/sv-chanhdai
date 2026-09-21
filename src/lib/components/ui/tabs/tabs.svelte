@@ -15,7 +15,7 @@
 	bind:value
 	data-slot="tabs"
 	class={cn(
-		"gap-2 group/tabs flex data-[orientation=horizontal]:flex-col",
+		"group/tabs flex gap-2 data-[orientation=horizontal]:flex-col",
 		className
 	)}
 	{...restProps}

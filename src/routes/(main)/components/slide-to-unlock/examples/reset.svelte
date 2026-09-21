@@ -33,7 +33,7 @@
 
 	<button
 		type="button"
-		class="text-muted-foreground hover:text-foreground text-sm underline underline-offset-4 disabled:pointer-events-none disabled:opacity-50"
+		class="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground disabled:pointer-events-none disabled:opacity-50"
 		disabled={!unlocked}
 		onclick={reset}
 	>

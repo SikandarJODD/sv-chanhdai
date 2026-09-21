@@ -23,7 +23,7 @@
 	{#if mode.current === "dark"}
 		<div
 			aria-hidden="true"
-			class="absolute inset-0 size-full overflow-hidden -z-60"
+			class="absolute inset-0 -z-60 size-full overflow-hidden"
 		>
 			<div
 				class="absolute inset-0 isolate -z-10 bg-[radial-gradient(60%_60%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)] md:bg-[radial-gradient(20%_80%_at_20%_0%,color-mix(in_oklab,var(--foreground)_10%,transparent),transparent)]"
@@ -54,13 +54,13 @@
 		</a> -->
 
 			<h1
-				class="animate-in -ml-1 md:-ml-px font-gp-circle text-4xl leading-tight font-medium text-balance text-foreground delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in md:text-5xl"
+				class="-ml-1 animate-in font-gp-circle text-4xl leading-tight font-medium text-balance text-foreground delay-100 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in md:-ml-px md:text-5xl"
 			>
 				Svelte Chanhdai Components
 			</h1>
 
 			<div
-				class="mt-5 max-w-3xl animate-in text-sm lg:text-base leading-8 font-medium font-mono text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
+				class="mt-5 max-w-3xl animate-in font-mono text-sm leading-8 font-medium text-muted-foreground delay-200 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in lg:text-base"
 			>
 				A Svelte port of 20+ components from
 				{#if large.current}
@@ -101,7 +101,7 @@
 					href="https://bhide.dev"
 					target="_blank"
 					rel="noreferrer"
-					class=" text-orange-500 dark:text-orange-500 hover:text-orange-500/80"
+					class=" text-orange-500 hover:text-orange-500/80 dark:text-orange-500"
 					imageClass="rounded-full size-4.5"
 				>
 					Bhide Svelte
@@ -109,7 +109,7 @@
 			</div>
 
 			<div
-				class="mt-10 -ml-1.5 lg:ml-0 flex w-fit animate-in items-center justify-center gap-3 delay-300 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in"
+				class="mt-10 -ml-1.5 flex w-fit animate-in items-center justify-center gap-3 delay-300 duration-500 ease-out fill-mode-backwards slide-in-from-bottom-10 fade-in lg:ml-0"
 			>
 				<Button
 					href={resolve("/(main)/components/elastic-slider")}

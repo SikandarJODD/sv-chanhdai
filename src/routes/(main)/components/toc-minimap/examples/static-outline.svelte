@@ -16,7 +16,10 @@
 <div class="mx-auto flex w-full max-w-lg items-start gap-6">
 	<article class="min-w-0 flex-1 space-y-6 text-sm text-muted-foreground">
 		<section class="space-y-2">
-			<h2 id="static-features" class="text-base font-medium text-foreground">
+			<h2
+				id="static-features"
+				class="text-base font-medium text-foreground"
+			>
 				Features
 			</h2>
 			<p>A compact overview of the product's main capabilities.</p>

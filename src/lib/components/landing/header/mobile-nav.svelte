@@ -59,7 +59,7 @@
 				)}
 				data-slot={open ? "open" : "closed"}
 			>
-				<ScrollFadeEffect class="min-h-0 flex-1 no-scrollbar">
+				<ScrollFadeEffect class="no-scrollbar min-h-0 flex-1">
 					<nav class="flex flex-col gap-1 pb-4">
 						<a
 							class={linkClass}
@@ -81,7 +81,7 @@
 							<div class="flex flex-col pl-4">
 								{#each components as component (component.id)}
 									<a
-										class="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+										class="rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
 										href={component.href}
 										onclick={() => (open = false)}
 									>
@@ -101,7 +101,7 @@
 					</nav>
 				</ScrollFadeEffect>
 
-				<div class="flex justify-end gap-1 pb-4 pt-2">
+				<div class="flex justify-end gap-1 pt-2 pb-4">
 					<Button
 						aria-label="GitHub"
 						href={github_repo.url}

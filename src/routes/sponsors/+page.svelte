@@ -118,8 +118,8 @@
 			class="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center"
 		>
 			<div class="max-w-2xl">
-				<h1 class="text-3xl font-gp-circle sm:text-4xl">Sponsors</h1>
-				<p class="mt-3 text-muted-foreground font-cursive">
+				<h1 class="font-gp-circle text-3xl sm:text-4xl">Sponsors</h1>
+				<p class="mt-3 font-cursive text-muted-foreground">
 					If you like my work, consider supporting me on GitHub.
 				</p>
 			</div>
@@ -149,7 +149,7 @@
 		</section>
 
 		<section
-			class="py-4 border-t border-dashed border-ink/40 dark:border-muted"
+			class="border-t border-dashed border-ink/40 py-4 dark:border-muted"
 			aria-labelledby="past-sponsors"
 		>
 			<div class="mb-5">

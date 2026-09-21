@@ -38,13 +38,13 @@
 		<Tabs.List class="bg-transparent">
 			<Tabs.Trigger
 				value="preview"
-				class="border-none cursor-pointer bg-transparent! pl-0 text-base shadow-none! "
+				class="cursor-pointer border-none bg-transparent! pl-0 text-base shadow-none! "
 			>
 				Preview
 			</Tabs.Trigger>
 			<Tabs.Trigger
 				value="code"
-				class="group border-none cursor-pointer bg-transparent! text-base shadow-none! "
+				class="group cursor-pointer border-none bg-transparent! text-base shadow-none! "
 			>
 				Code
 			</Tabs.Trigger>
@@ -55,7 +55,7 @@
 			<!-- <ComponentView> -->
 			<div
 				class={cn(
-					"border-border relative flex min-h-64 w-full overflow-hidden rounded-lg border p-6",
+					"relative flex min-h-64 w-full overflow-hidden rounded-lg border border-border p-6",
 					isCentered ? "items-center justify-center" : "",
 					className
 				)}

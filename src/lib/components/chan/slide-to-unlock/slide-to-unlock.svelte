@@ -100,7 +100,7 @@
 	{@attach attachRef}
 	data-slot="slide-to-unlock"
 	class={cn(
-		"bg-muted inset-ring-foreground/10 w-54 rounded-xl p-1 shadow-inner inset-ring-1",
+		"w-54 rounded-xl bg-muted p-1 shadow-inner inset-ring-1 inset-ring-foreground/10",
 		className
 	)}
 	{...restProps}

@@ -69,7 +69,7 @@
 			</H3>
 		{/if}
 		{#if data.desc}
-			<p class="text-muted-foreground m-0 leading-relaxed">
+			<p class="m-0 leading-relaxed text-muted-foreground">
 				{data.desc}
 			</p>
 		{/if}
@@ -80,7 +80,7 @@
 	<Thead>
 		<Tr>
 			{#each tableHeaders as header (header)}
-				<Th class="px-4 h-10 text-sm">{header}</Th>
+				<Th class="h-10 px-4 text-sm">{header}</Th>
 			{/each}
 		</Tr>
 	</Thead>

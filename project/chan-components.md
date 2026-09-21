@@ -13,7 +13,7 @@
 - [✅] [Glow Card Grid](https://chanhdai.com/components/glow-card-grid)
 - [ ] [Haptic Feedback](https://chanhdai.com/components/haptic-feedback)
 - [✅] [Icon Swap](https://chanhdai.com/components/icon-swap)
-- [ ] [Line Nav](https://chanhdai.com/components/line-nav)
+- [✅] [Line Nav](https://chanhdai.com/components/line-nav)
 - [ ] [Logos Carousel](https://chanhdai.com/components/logos-carousel)
 - [✅] [Middle Truncation](https://chanhdai.com/components/middle-truncation)
 - [ ] [Mobius Loop Icon](https://chanhdai.com/components/mobius-loop-icon)
@@ -33,7 +33,7 @@
 - [ ] [Theme Switcher](https://chanhdai.com/components/theme-switcher)
 - [ ] [Theme Toggle Effect](https://chanhdai.com/components/theme-toggle-effect)
 - [✅] [Timescale](https://chanhdai.com/components/timescale)
-- [ ] [TOC Minimap](https://chanhdai.com/components/toc-minimap)
+- [✅] [TOC Minimap](https://chanhdai.com/components/toc-minimap)
 - [ ] [Twemoji](https://chanhdai.com/components/twemoji)
-- [ ] [Work Experience](https://chanhdai.com/components/work-experience)
+- [✅] [Work Experience](https://chanhdai.com/components/work-experience)
 ```

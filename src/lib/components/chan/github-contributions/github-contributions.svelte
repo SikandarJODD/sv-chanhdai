@@ -113,7 +113,7 @@
 		<ContributionGraphFooter class="px-2">
 			<ContributionGraphTotalCount>
 				{#snippet children({ totalCount, year })}
-					<div class="text-muted-foreground text-sm">
+					<div class="text-sm text-muted-foreground">
 						{totalCount.toLocaleString("en")} contributions in {year}
 						on
 						<a

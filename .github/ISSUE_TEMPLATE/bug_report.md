@@ -8,9 +8,6 @@ assignees: ""
 
 ## What happened?
 
-
 ## How can we reproduce it?
 
-
 ## What did you expect?
-

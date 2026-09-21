@@ -69,7 +69,7 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 </script>
 
 <AppleHelloEffectEnglish
-  class="text-ink dark:text-emerald-400 bg-ink/5 p-1 border border-dashed border"
+  class="border border-dashed bg-ink/5 p-1 text-ink dark:text-emerald-400"
 />
 ```
 

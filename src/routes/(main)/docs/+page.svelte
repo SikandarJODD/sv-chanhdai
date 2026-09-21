@@ -63,7 +63,7 @@
 				href="https://chanhdai.com"
 				target="_blank"
 				rel="noreferrer"
-				class="text-amber-500 bg-amber-50 px-1 rounded-sm dark:bg-amber-700/20 -ml-px"
+				class="-ml-px rounded-sm bg-amber-50 px-1 text-amber-500 dark:bg-amber-700/20"
 				faviconSrc={faviconUrl}
 			>
 				Chánh Đại's
@@ -73,7 +73,7 @@
 				href="https://bhide.dev"
 				target="_blank"
 				rel="noreferrer"
-				class="text-emerald-500 px-1 bg-emerald-50 dark:bg-emerald-700/20 rounded-sm -ml-px"
+				class="-ml-px rounded-sm bg-emerald-50 px-1 text-emerald-500 dark:bg-emerald-700/20"
 			>
 				Bhide Svelte
 			</FaviconLink>

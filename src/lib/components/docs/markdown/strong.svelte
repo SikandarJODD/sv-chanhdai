@@ -17,7 +17,7 @@
 
 <strong
 	{...restProps}
-	class={cn("text-foreground text-base font-medium", className)}
+	class={cn("text-base font-medium text-foreground", className)}
 >
 	{@render children?.()}
 </strong>
