@@ -43,7 +43,8 @@
 	class={cn("flex flex-col gap-2 py-5.25", className)}
 	style="--line-nav-width: 24px;"
 >
-	{#each items as item, index (item.href)}
+	<!-- (item.href) -->
+	{#each items as item, index}
 		<LineNavItemComponent
 			bind:ref={itemRefs[index]}
 			{...item}
