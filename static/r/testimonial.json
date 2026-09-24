@@ -22,12 +22,12 @@
 			"target": "chan/testimonial/testimonial-author.svelte"
 		},
 		{
-			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"testimonial-author-name\"\n\tclass={cn(\n\t\t\"text-foreground flex items-center gap-1.5 text-sm leading-4.5 font-semibold\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"testimonial-author-name\"\n\tclass={cn(\n\t\t\"flex items-center gap-1.5 text-sm leading-4.5 font-semibold text-foreground\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
 			"type": "registry:component",
 			"target": "chan/testimonial/testimonial-author-name.svelte"
 		},
 		{
-			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"testimonial-author-tagline\"\n\tclass={cn(\n\t\t\"text-muted-foreground text-xs leading-4 text-balance\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLDivElement>> = $props();\n</script>\n\n<div\n\tbind:this={ref}\n\tdata-slot=\"testimonial-author-tagline\"\n\tclass={cn(\n\t\t\"text-xs leading-4 text-balance text-muted-foreground\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</div>\n",
 			"type": "registry:component",
 			"target": "chan/testimonial/testimonial-author-tagline.svelte"
 		},
@@ -47,7 +47,7 @@
 			"target": "chan/testimonial/testimonial-avatar-ring.svelte"
 		},
 		{
-			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<blockquote\n\tbind:this={ref}\n\tdata-slot=\"testimonial-quote\"\n\tclass={cn(\n\t\t\"text-foreground grow px-4 py-3 text-base text-pretty\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</blockquote>\n",
+			"content": "<script lang=\"ts\">\n\timport type { HTMLAttributes } from \"svelte/elements\";\n\timport { cn, type WithElementRef } from \"$UTILS$\";\n\n\tlet {\n\t\tref = $bindable(null),\n\t\tclass: className,\n\t\tchildren,\n\t\t...restProps\n\t}: WithElementRef<HTMLAttributes<HTMLElement>> = $props();\n</script>\n\n<blockquote\n\tbind:this={ref}\n\tdata-slot=\"testimonial-quote\"\n\tclass={cn(\n\t\t\"grow px-4 py-3 text-base text-pretty text-foreground\",\n\t\tclassName\n\t)}\n\t{...restProps}\n>\n\t{@render children?.()}\n</blockquote>\n",
 			"type": "registry:component",
 			"target": "chan/testimonial/testimonial-quote.svelte"
 		},
