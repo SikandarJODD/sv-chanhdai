@@ -92,16 +92,19 @@
 						<span class="inline-flex items-center gap-1">
 							<code
 								class={cn(
-									"rounded-md px-0 font-mono text-sm text-neutral-600 dark:text-neutral-300"
+									"rounded-md px-0 font-mono text-sm text-muted-foreground",
+									key.includes("description")
+										? "min-w-50"
+										: ""
 								)}
 							>
 								{key === "default" && row.required
 									? "required"
 									: (row as any)[key] || ""}
 							</code>
-							{#if index === 0 && row.description}
+							<!-- {#if index === 0 && row.description}
 								<InfoPopover description={row.description} />
-							{/if}
+							{/if} -->
 						</span>
 					</Td>
 				{/each}

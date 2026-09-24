@@ -101,8 +101,7 @@
 					href="https://bhide.dev"
 					target="_blank"
 					rel="noreferrer"
-					class=" text-orange-500 hover:text-orange-500/80 dark:text-orange-500"
-					imageClass="rounded-full size-4.5"
+					imageClass="rounded-full size-4 mr-0.5"
 				>
 					Bhide Svelte
 				</FaviconLink>
@@ -114,6 +113,7 @@
 				<Button
 					href={resolve("/(main)/components/elastic-slider")}
 					variant="ink"
+					size="lg"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -158,8 +158,9 @@
 					href="https://github.com/SikandarJODD/sv-chanhdai"
 					target="_blank"
 					rel="noopener noreferrer"
-					class="rounded-full px-4 shadow-none"
+					class="rounded-full px-4 font-normal shadow-none"
 					variant="outline"
+					size="lg"
 				>
 					<Github />
 					GitHub</Button
