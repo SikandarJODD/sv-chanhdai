@@ -5,6 +5,7 @@
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/figtree";
 @import "@fontsource-variable/jetbrains-mono";
+@import "@fontsource-variable/geist-mono";
 @import "@fontsource-variable/shantell-sans";
 @import "../lib/styles/neat-annotations.css";
 @custom-variant dark (&:is(.dark *));
@@ -175,7 +176,7 @@
 @theme inline {
 	--font-sans: "Inter Variable", sans-serif;
 	--font-cursive: "Shantell Sans Variable", cursive;
-	--font-mono: "JetBrains Mono Variable", monospace;
+	--font-mono: "Geist Mono Variable", monospace;
 	--font-gp: "GeistPixel", monospace;
 	--font-gp-circle: "GeistPixel Circle", monospace;
 	--font-gp-grid: "GeistPixel Grid", monospace;

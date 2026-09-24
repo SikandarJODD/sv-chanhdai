@@ -26,7 +26,8 @@
 		},
 		{
 			title: "Svelte Marketing Blocks",
-			description: "Reusable marketing sections and landing-page blocks.",
+			description:
+				"150+ Reusable marketing sections and landing-page blocks.",
 			url: "https://sv-blocks.vercel.app/",
 			github: "https://github.com/SikandarJODD/cnblocks",
 			slug: "svelte-marketing-blocks"
@@ -34,7 +35,7 @@
 		{
 			title: "Svelte Premium Marketing Blocks",
 			description:
-				"Polished marketing blocks for high-quality Svelte sites.",
+				"60+ Polished marketing blocks for high-quality Svelte sites.",
 			url: "https://sv-efferd.pages.dev/",
 			github: "https://github.com/SikandarJODD/sv-efferd",
 			slug: "svelte-quality-marketing-blocks"
@@ -58,7 +59,7 @@
 		{
 			title: "Svelte Data Table Components",
 			description:
-				"Data table components, patterns, and practical examples.",
+				"20+ Data table components, patterns, and practical examples.",
 			url: "https://sv-table.vercel.app/",
 			github: "https://github.com/SikandarJODD/sv-table",
 			slug: "svelte-data-table"
@@ -72,8 +73,7 @@
 		},
 		{
 			title: "Svelte Dot Matrix Loaders",
-			description:
-				"Customizable dot-matrix loading animations for Svelte.",
+			description: "50+ Dot-matrix loaders | free & open-source.",
 			url: "https://sv-matrix.vercel.app/",
 			github: "https://github.com/SikandarJODD/sv-matrix",
 			slug: "svelte-dot-matrix-loaders"
