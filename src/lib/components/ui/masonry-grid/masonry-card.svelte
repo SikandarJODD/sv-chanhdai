@@ -61,8 +61,12 @@
 		{/key}
 	</Frame.Panel>
 
-	<Frame.Footer class="flex items-center justify-between py-1.5 pr-1 pl-2">
-		<h3 class="font-mono text-xs font-medium text-muted-foreground">
+	<Frame.Footer
+		class="flex items-center justify-between pt-1 pr-0.5 pb-0.5 pl-2"
+	>
+		<h3
+			class="font-mono text-xs font-medium text-muted-foreground md:text-sm"
+		>
 			{name}
 		</h3>
 
@@ -78,8 +82,8 @@
 			variant="outline"
 			size={large.current ? "sm" : "icon-sm"}
 			class={cn(
-				"font-normal shadow-none",
-				large.current ? "rounded-full px-3 py-1 text-xs" : ""
+				"shadow-none",
+				large.current ? "rounded-full px-4 py-1 text-xs" : ""
 			)}
 		>
 			{#if large.current}
