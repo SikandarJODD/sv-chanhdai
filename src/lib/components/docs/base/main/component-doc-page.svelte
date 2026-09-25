@@ -163,7 +163,7 @@
 	{#if propsTables.length > 0}
 		<section>
 			<H2 id="props">Props</H2>
-			<div class="mt-3 space-y-6">
+			<div class="mt-3 space-y-6" data-toc-ignore="true">
 				<div>
 					{#each propsTables as prop}
 						<ApiTable data={prop} />

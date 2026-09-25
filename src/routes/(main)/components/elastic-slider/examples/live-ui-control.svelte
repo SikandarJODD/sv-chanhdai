@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { ElasticSlider } from "$chan/elastic-slider";
+	import { Spring } from "svelte/motion";
 
 	let opacity = $state(0.8);
 	let blur = $state(0);
 	let rotation = $state(0);
+	const rotationSpring = Spring.of(() => rotation);
 </script>
 
 <div
@@ -46,7 +48,7 @@
 			class="grid size-20 place-items-center rounded-xl bg-foreground text-sm font-semibold text-background shadow-lg"
 			style:opacity
 			style:filter={`blur(${blur}px)`}
-			style:transform={`rotate(${rotation}deg)`}
+			style:transform={`rotate(${rotationSpring.current}deg)`}
 		>
 			Hehe
 		</div>
