@@ -24,6 +24,12 @@ import CustomDataExample from "./examples/custom-data.svelte";
 import CustomDataExampleCode from "./examples/custom-data.svelte?raw";
 import CustomThemeExample from "./examples/custom-theme.svelte";
 import CustomThemeExampleCode from "./examples/custom-theme.svelte?raw";
+import GithubDefaultThemeExample from "./examples/github-default-theme.svelte";
+import GithubDefaultThemeExampleCode from "./examples/github-default-theme.svelte?raw";
+import GithubHalloweenThemeExample from "./examples/github-halloween-theme.svelte";
+import GithubHalloweenThemeExampleCode from "./examples/github-halloween-theme.svelte?raw";
+import GithubWinterThemeExample from "./examples/github-winter-theme.svelte";
+import GithubWinterThemeExampleCode from "./examples/github-winter-theme.svelte?raw";
 import LocalizedLabelsExample from "./examples/localized-labels.svelte";
 import LocalizedLabelsExampleCode from "./examples/localized-labels.svelte?raw";
 import Preview from "./examples/preview.svelte";
@@ -58,6 +64,36 @@ const usage: CodeBlock[] = [
 ];
 
 const examples: Example[] = [
+	{
+		name: "GitHub default theme",
+		description: "Use GitHub's default green contribution palette.",
+		preview: GithubDefaultThemeExample,
+		code: {
+			name: "github-default-theme.svelte",
+			code: GithubDefaultThemeExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "GitHub winter theme",
+		description: "Use GitHub's blue winter contribution palette.",
+		preview: GithubWinterThemeExample,
+		code: {
+			name: "github-winter-theme.svelte",
+			code: GithubWinterThemeExampleCode,
+			lang: "svelte"
+		}
+	},
+	{
+		name: "GitHub Halloween theme",
+		description: "Use GitHub's seasonal Halloween contribution palette.",
+		preview: GithubHalloweenThemeExample,
+		code: {
+			name: "github-halloween-theme.svelte",
+			code: GithubHalloweenThemeExampleCode,
+			lang: "svelte"
+		}
+	},
 	{
 		name: "Custom theme",
 		description: "Apply a warm orange palette to every contribution level.",

@@ -7,6 +7,7 @@
 
 <script lang="ts">
 	import { onMount } from "svelte";
+	import { Tooltip as TooltipPrimitive } from "bits-ui";
 	import { format } from "date-fns";
 	import { cn } from "$lib/utils";
 	import * as Tooltip from "$lib/components/ui/tooltip";
@@ -26,6 +27,7 @@
 	let { username, class: className }: GitHubContributionsProps = $props();
 	let contributions = $state<Activity[] | null>(null);
 	let error = $state<string | null>(null);
+	const tooltipTether = TooltipPrimitive.createTether<Activity>();
 
 	const githubProfileUrl = $derived(
 		`https://github.com/${encodeURIComponent(username)}`
@@ -80,34 +82,42 @@
 		blockRadius={2}
 	>
 		<Tooltip.Provider>
-			<ContributionGraphCalendar
-				class="no-scrollbar px-2"
-				title="GitHub Contributions"
-			>
-				{#snippet children({ activity, dayIndex, weekIndex })}
-					<Tooltip.Root delayDuration={400}>
-						<Tooltip.Trigger>
-							{#snippet child({ props })}
-								<g {...props}>
-									<ContributionGraphBlock
-										{activity}
-										{dayIndex}
-										{weekIndex}
-									/>
-								</g>
-							{/snippet}
-						</Tooltip.Trigger>
-						<Tooltip.Content class="font-sans font-light">
+			<TooltipPrimitive.Root tether={tooltipTether} delayDuration={400}>
+				{#snippet children({ payload })}
+					<ContributionGraphCalendar
+						class="no-scrollbar px-2"
+						title="GitHub Contributions"
+					>
+						{#snippet children({ activity, dayIndex, weekIndex })}
+							<TooltipPrimitive.Trigger
+								tether={tooltipTether}
+								payload={activity}
+							>
+								{#snippet child({ props })}
+									<g {...props}>
+										<ContributionGraphBlock
+											{activity}
+											{dayIndex}
+											{weekIndex}
+										/>
+									</g>
+								{/snippet}
+							</TooltipPrimitive.Trigger>
+						{/snippet}
+					</ContributionGraphCalendar>
+
+					<Tooltip.Content class="font-sans font-light">
+						{#if payload}
 							<p>
-								{activity.count} contribution{activity.count > 1
+								{payload.count} contribution{payload.count > 1
 									? "s"
 									: ""} on
-								{format(new Date(activity.date), "dd.MM.yyyy")}
+								{format(new Date(payload.date), "dd.MM.yyyy")}
 							</p>
-						</Tooltip.Content>
-					</Tooltip.Root>
+						{/if}
+					</Tooltip.Content>
 				{/snippet}
-			</ContributionGraphCalendar>
+			</TooltipPrimitive.Root>
 		</Tooltip.Provider>
 
 		<ContributionGraphFooter class="px-2">
