@@ -5,8 +5,6 @@
 	import { cn } from "$lib/utils";
 	import type { CodeBlock } from "$lib/types/code";
 	import { MultipleFiles, SingleFile } from "$lib/components/ui/code";
-	import { watch } from "runed";
-	import { page } from "$app/state";
 
 	interface PreviewComponentProps {
 		children: Snippet;

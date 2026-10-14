@@ -8,12 +8,17 @@
 	import Button from "../button/button.svelte";
 	import ScrollFadeEffect from "../scroll-area/scroll-fade-effect.svelte";
 	import { untrack } from "svelte";
+	import { transformImportAliases } from "$lib/components/docs/base/import-alias/import-alias.js";
+	import { importAliasStyle } from "$lib/components/docs/base/import-alias/import-alias.svelte.js";
 
 	type Props = {
 		code: CodeBlock;
 		faded?: boolean;
 	};
 	let { code, faded = false }: Props = $props();
+	let displayedCode = $derived(
+		transformImportAliases(code.code, importAliasStyle.current)
+	);
 	let isCollapsed = $state(untrack(() => code.isExpand ?? false));
 	let toggleCollapsed = () => {
 		isCollapsed = !isCollapsed;
@@ -54,7 +59,7 @@
 					{/if}
 				</Button>
 			{/if}
-			<CopyButton size="icon-sm" text={code.code} />
+			<CopyButton size="icon-sm" text={displayedCode} />
 		</div>
 	</Frame.Header>
 	<Frame.Panel class="overflow-hidden p-0">

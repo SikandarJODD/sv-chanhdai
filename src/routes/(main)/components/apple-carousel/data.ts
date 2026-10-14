@@ -51,7 +51,7 @@ const examples: Example[] = [
 		description:
 			"Overlay responsive captions and actions on each carousel image.",
 		preview: CaptionsExample,
-		previewClass: "p-0",
+		previewClass: "px-0 py-10!",
 		code: {
 			name: "captions.svelte",
 			code: CaptionsExampleCode,

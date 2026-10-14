@@ -6,11 +6,16 @@
 	import CopyButton from "../copy-button/copy-button.svelte";
 	import Button from "../button/button.svelte";
 	import { untrack } from "svelte";
+	import { transformImportAliases } from "$lib/components/docs/base/import-alias/import-alias.js";
+	import { importAliasStyle } from "$lib/components/docs/base/import-alias/import-alias.svelte.js";
 
 	type Props = {
 		code: CodeBlock;
 	};
 	let { code }: Props = $props();
+	let displayedCode = $derived(
+		transformImportAliases(code.code, importAliasStyle.current)
+	);
 	let isExpanded = $state(untrack(() => code.isExpand));
 	let updateIsExpanded = () => {
 		isExpanded = !isExpanded;
@@ -52,7 +57,7 @@
 						{/if}
 					</Button>
 				{/if}
-				<CopyButton text={code.code} />
+				<CopyButton text={displayedCode} />
 			</div>
 		</div>
 		{#if isExpanded}

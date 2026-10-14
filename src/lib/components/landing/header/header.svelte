@@ -12,6 +12,8 @@
 	import { github_repo } from "$lib/config/repo";
 	import { page } from "$app/state";
 	import SearchNavigation from "$lib/components/docs/layout/navigation/search-navigation.svelte";
+	import ImportAliasToggle from "$lib/components/docs/base/import-alias/ImportAliasToggle.svelte";
+	import { importAliasStyle } from "$lib/components/docs/base/import-alias/import-alias.svelte.js";
 
 	let scroll = createScroll(50);
 	let isComponentorDocsPage = $derived.by(() => {
@@ -47,6 +49,9 @@
 			<DesktopNav />
 		</div>
 		<div class="flex items-center gap-1">
+			{#if isComponentorDocsPage}
+				<ImportAliasToggle bind:value={importAliasStyle.current} />
+			{/if}
 			<SearchNavigation />
 			<div class="hidden items-center gap-1 md:flex">
 				<Button
