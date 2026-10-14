@@ -67,12 +67,13 @@
 >
 	<svg
 		aria-hidden="true"
+		focusable="false"
 		viewBox="0 0 24 24"
 		fill="currentColor"
 		stroke="currentColor"
 		stroke-width={ICON_STROKE_WIDTH}
 		stroke-linejoin="round"
-		class="size-6 group-data-[size=sm]/apple-carousel-controls:size-5"
+		class="pointer-events-none size-6 group-data-[size=sm]/apple-carousel-controls:size-5"
 	>
 		<motion.path initial={false} animate={{ d: icon.left }} {transition} />
 		<motion.path initial={false} animate={{ d: icon.right }} {transition} />
