@@ -4,6 +4,9 @@
 	import type { CodeRootProps } from "./types";
 	import { useCode } from "./code.svelte.js";
 	import { box } from "svelte-toolbelt";
+	import type { Attachment } from "svelte/attachments";
+	import { transformImportAliases } from "$lib/components/docs/base/import-alias/import-alias.js";
+	import { importAliasStyle } from "$lib/components/docs/base/import-alias/import-alias.svelte.js";
 	// import '../../../../routes/layout.css'
 
 	let {
@@ -19,14 +22,28 @@
 	}: CodeRootProps = $props();
 
 	const codeState = useCode({
-		code: box.with(() => code.trimEnd()),
+		code: box.with(() =>
+			transformImportAliases(code, importAliasStyle.current).trimEnd()
+		),
 		hideLines: box.with(() => hideLines),
 		highlight: box.with(() => highlight),
 		lang: box.with(() => lang)
 	});
+
+	const setRef: Attachment<HTMLDivElement> = (node) => {
+		ref = node;
+
+		return () => {
+			if (ref === node) ref = null;
+		};
+	};
 </script>
 
-<div {...rest} bind:this={ref} class={cn(codeVariants({ variant }), className)}>
+<div
+	{...rest}
+	{@attach setRef}
+	class={cn(codeVariants({ variant }), className)}
+>
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html codeState.highlighted}
 	{@render children?.()}
