@@ -8,8 +8,9 @@
 	title={data.title}
 	description={data.description}
 	seo={data.seo}
-	preview={data.preview}
-	previewCode={data.preview_code}
+	preview={data.preview_config?.component}
+	previewCode={data.preview_config?.code}
+	previewClass={data.preview_config?.class}
 	installCodeBlocks={data.install_block?.install_code}
 	installPackages={data.install_block?.packages}
 	installFolderStructure={data.install_block?.folder_structure}

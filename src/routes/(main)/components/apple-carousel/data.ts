@@ -51,6 +51,7 @@ const examples: Example[] = [
 		description:
 			"Overlay responsive captions and actions on each carousel image.",
 		preview: CaptionsExample,
+		previewClass: "p-0",
 		code: {
 			name: "captions.svelte",
 			code: CaptionsExampleCode,
@@ -136,12 +137,16 @@ export const data: ComponentDoc = {
 		"Swipe, scroll, click a dot, or use arrow keys, even mid-slide.",
 		"Respects reduced motion: no autoplay until Play is pressed, and cards jump instead of sliding."
 	],
-	preview: Preview,
-	preview_code: {
-		name: "preview.svelte",
-		code: PreviewCode,
-		lang: "svelte",
-		hideLines: true
+	preview_config: {
+		show_retry: false,
+		component: Preview,
+		class: "px-0",
+		code: {
+			name: "preview.svelte",
+			code: PreviewCode,
+			lang: "svelte",
+			hideLines: true
+		}
 	},
 	install_block,
 	examples,
@@ -168,7 +173,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the root element."
+					description:
+						"Additional classes applied to the root element."
 				},
 				{
 					name: "ref",
@@ -199,7 +205,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the scroll viewport."
+					description:
+						"Additional classes applied to the scroll viewport."
 				},
 				{
 					name: "ref",
@@ -253,7 +260,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the controls wrapper."
+					description:
+						"Additional classes applied to the controls wrapper."
 				},
 				{
 					name: "ref",
@@ -338,7 +346,8 @@ export const data: ComponentDoc = {
 					name: "class",
 					type: "string",
 					default: "undefined",
-					description: "Additional classes applied to the play button."
+					description:
+						"Additional classes applied to the play button."
 				},
 				{
 					name: "ref",

@@ -958,6 +958,68 @@
 				}
 			],
 			"author": "Bhide Svelte"
+		},
+		{
+			"name": "apple-carousel",
+			"type": "registry:component",
+			"title": "Apple Carousel",
+			"description": "Infinite autoplay carousel with progress dots, inspired by Apple’s website.",
+			"dependencies": ["motion-sv", "runed"],
+			"registryDependencies": [],
+			"files": [
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel.svelte",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-content.svelte",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-context.svelte.ts",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-controls.svelte",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-item.svelte",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-play-button.svelte",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-provider.svelte",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-state.svelte.ts",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-tab.svelte",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-tab-list.svelte",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-types.ts",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/apple-carousel-utils.ts",
+					"type": "registry:component"
+				},
+				{
+					"path": "src/lib/components/chan/apple-carousel/index.ts",
+					"type": "registry:component"
+				}
+			]
 		}
 	]
 }
