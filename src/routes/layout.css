@@ -243,6 +243,11 @@
 		font-synthesis-weight: none;
 		text-rendering: optimizeLegibility;
 	}
+	@media (pointer: fine) {
+		html {
+			overscroll-behavior-y: none;
+		}
+	}
 	html {
 		scroll-behavior: smooth;
 		@apply font-sans;

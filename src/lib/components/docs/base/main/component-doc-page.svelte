@@ -14,6 +14,7 @@
 		installPathPrefix?: "r" | "s" | "f";
 		preview?: Component;
 		previewCode?: CodeBlock | CodeBlock[];
+		previewClass?: string;
 		installCodeBlocks?: CodeBlock | CodeBlock[];
 		installPackages?: string[];
 		installFolderStructure?: string;
@@ -53,7 +54,8 @@
 		features = [],
 		examples = [],
 		propsTables = [],
-		descriptionClass = ""
+		descriptionClass = "",
+		previewClass = ""
 	}: ComponentDocPageProps = $props();
 
 	let PreviewComp = $derived(preview);
@@ -87,7 +89,7 @@
 	</section>
 
 	<section>
-		<PreviewComponent code={previewCode}>
+		<PreviewComponent code={previewCode} class={previewClass}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}

@@ -313,5 +313,17 @@
 			"local:chevrons-up-down-icon"
 		],
 		"relativeUrl": "work-experience.json"
+	},
+	{
+		"name": "apple-carousel",
+		"title": "Apple Carousel",
+		"type": "registry:component",
+		"description": "Infinite autoplay carousel with progress dots, inspired by Apple’s website.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "apple-carousel.json"
 	}
 ]

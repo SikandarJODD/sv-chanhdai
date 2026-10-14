@@ -10,7 +10,7 @@
 		class="flex flex-col items-center justify-center gap-1 px-4 py-3 text-center text-xs text-muted-foreground sm:flex-row sm:gap-2"
 	>
 		<p>&copy; {currentYear} {seo_config.title}.</p>
-		<p class="flex items-center justify-center gap-2">
+		<p class="flex items-center justify-center gap-1">
 			<span>Built by</span>
 			<a
 				class="inline-flex items-center gap-1.5 font-medium text-foreground transition-colors hover:text-muted-foreground"

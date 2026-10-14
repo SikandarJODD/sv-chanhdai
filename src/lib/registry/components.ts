@@ -17,6 +17,13 @@ export interface DocPage {
 
 let components: Component[] = [
 	{
+		id: "apple-carousel",
+		name: "Apple Carousel",
+		href: "/components/apple-carousel",
+		desc: "Infinite autoplay carousel with progress dots, inspired by Apple’s website.",
+		badge: "New"
+	},
+	{
 		id: "apple-hello-effect",
 		name: "Apple Hello Effect",
 		href: "/components/apple-hello-effect",
@@ -78,10 +85,10 @@ let components: Component[] = [
 		desc: "Truncate text in the middle while preserving start and end."
 	},
 	// {
-	//   id: "scroll-fade-effect",
-	//   name: "Scroll Fade Effect",
-	//   href: "/components/scroll-fade-effect",
-	//   desc: "TODO: Add a concise description for Scroll Fade Effect.",
+	// 	id: "scroll-fade-effect",
+	// 	name: "Scroll Fade Effect",
+	// 	href: "/components/scroll-fade-effect",
+	// 	desc: "TODO: Add a concise description for Scroll Fade Effect."
 	// },
 	{
 		id: "share-menu",
@@ -90,10 +97,10 @@ let components: Component[] = [
 		desc: "Share menu to copy a link or post to X, LinkedIn, and the native share sheet."
 	},
 	// {
-	//   id: "shimmering-text",
-	//   name: "Shimmering Text",
-	//   href: "/components/shimmering-text",
-	//   desc: "TODO: Add a concise description for Shimmering Text.",
+	// 	id: "shimmering-text",
+	// 	name: "Shimmering Text",
+	// 	href: "/components/shimmering-text",
+	// 	desc: "TODO: Add a concise description for Shimmering Text."
 	// },
 	{
 		id: "slide-to-unlock",

@@ -252,7 +252,7 @@
 			class="md:col-span-7"
 		>
 			<AppleHelloEffectEnglish
-				class="w-full max-w-sm text-orange-500 dark:text-emerald-500"
+				class="w-full max-w-sm  dark:text-emerald-500"
 			/>
 		</MasonryCard>
 
