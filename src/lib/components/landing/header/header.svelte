@@ -49,10 +49,10 @@
 			<DesktopNav />
 		</div>
 		<div class="flex items-center gap-1">
-			<SearchNavigation />
 			{#if isComponentorDocsPage}
 				<ImportAliasToggle bind:value={importAliasStyle.current} />
 			{/if}
+			<SearchNavigation />
 			<div class="hidden items-center gap-1 md:flex">
 				<Button
 					variant="ghost"
