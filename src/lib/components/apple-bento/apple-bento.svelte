@@ -1,4 +1,5 @@
 <script lang="ts">
+	import BentoReveal from "./bento-reveal.svelte";
 	import ComponentCountTile from "./component-count-tile.svelte";
 	import ElasticSlidersTile from "./elastic-sliders-tile.svelte";
 	import GithubTile from "./github-tile.svelte";
@@ -18,19 +19,35 @@
 		aria-label="Svelte Chan component collection"
 		class="mx-auto grid w-full max-w-[92rem] grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-12 lg:grid-rows-[13.5rem_21rem_13.5rem]"
 	>
-		<GithubTile class="md:col-span-2 lg:col-span-5" />
-		<MiddleTruncationTile class="lg:col-span-4" />
-		<StatusButtonTile class="lg:col-span-3" />
+		<BentoReveal class="md:col-span-2 lg:col-span-5" x={-28} y={-20} delay={0.16}>
+			<GithubTile class="h-full" />
+		</BentoReveal>
+		<BentoReveal class="lg:col-span-4" y={-26} delay={0.205}>
+			<MiddleTruncationTile class="h-full" />
+		</BentoReveal>
+		<BentoReveal class="lg:col-span-3" x={28} y={-20} delay={0.25}>
+			<StatusButtonTile class="h-full" />
+		</BentoReveal>
 
-		<LineNavTile class="lg:col-span-3" />
-		<HeroTile class="md:col-span-2 lg:col-span-6" />
-		<WheelPickerTile class="lg:col-span-3" />
+		<BentoReveal class="lg:col-span-3" x={-28} delay={0.295}>
+			<LineNavTile class="h-full" />
+		</BentoReveal>
+		<BentoReveal class="md:col-span-2 lg:col-span-6" y={6} center>
+			<HeroTile class="h-full" />
+		</BentoReveal>
+		<BentoReveal class="lg:col-span-3" x={28} delay={0.34}>
+			<WheelPickerTile class="h-full" />
+		</BentoReveal>
 
-		<ComponentCountTile
-			class="bg-blue-50/20 hover:border-ink/40 lg:col-span-3"
-		/>
-		<ElasticSlidersTile class="lg:col-span-5" />
+		<BentoReveal class="lg:col-span-3" x={-24} y={20} delay={0.385}>
+			<ComponentCountTile class="h-full bg-blue-50/20 hover:border-ink/40" />
+		</BentoReveal>
+		<BentoReveal class="lg:col-span-5" y={24} delay={0.43}>
+			<ElasticSlidersTile class="h-full" />
+		</BentoReveal>
 		<!-- <RoughCrosslinesTile class="lg:col-span-2" /> -->
-		<SlideToUnlockTile class="lg:col-span-4" />
+		<BentoReveal class="lg:col-span-4" x={28} y={20} delay={0.475}>
+			<SlideToUnlockTile class="h-full" />
+		</BentoReveal>
 	</section>
 </main>

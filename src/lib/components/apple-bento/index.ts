@@ -1,4 +1,5 @@
 export { default as AppleBento } from "./apple-bento.svelte";
+export { default as BentoReveal } from "./bento-reveal.svelte";
 export { default as BentoTile } from "./bento-tile.svelte";
 export { default as ComponentCountTile } from "./component-count-tile.svelte";
 export { default as ElasticSlidersTile } from "./elastic-sliders-tile.svelte";
@@ -12,3 +13,4 @@ export { default as StatusButtonTile } from "./status-button-tile.svelte";
 export { default as WheelPickerTile } from "./wheel-picker-tile.svelte";
 
 export type { BentoTileProps } from "./bento-tile.svelte";
+export type { BentoRevealProps } from "./bento-reveal.svelte";
