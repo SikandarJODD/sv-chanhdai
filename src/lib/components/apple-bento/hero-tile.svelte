@@ -67,9 +67,9 @@
 			<motion.span
 				initial={shouldReduceMotion.current
 					? false
-					: { opacity: 0, x: -8 }}
-				animate={{ opacity: 1, x: 0 }}
-				transition={springTransition(0.13)}
+					: { opacity: 0, y: 6 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={springTransition(0.16)}
 			>
 				<FaviconLink
 					href="https://chanhdai.com"
@@ -86,9 +86,9 @@
 			<motion.span
 				initial={shouldReduceMotion.current
 					? false
-					: { opacity: 0, x: 8 }}
-				animate={{ opacity: 1, x: 0 }}
-				transition={springTransition(0.13)}
+					: { opacity: 0, y: 6 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={springTransition(0.205)}
 			>
 				<FaviconLink
 					href="https://bhide.dev"
