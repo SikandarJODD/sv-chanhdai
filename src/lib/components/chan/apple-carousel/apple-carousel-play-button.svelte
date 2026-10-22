@@ -75,7 +75,6 @@
 		stroke-linejoin="round"
 		class="pointer-events-none size-6 group-data-[size=sm]/apple-carousel-controls:size-5"
 	>
-		<motion.path initial={false} animate={{ d: icon.left }} {transition} />
 		<motion.path initial={false} animate={{ d: icon.right }} {transition} />
 	</svg>
 </button>
