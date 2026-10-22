@@ -28,7 +28,7 @@
 
 <BentoTile
 	class={[
-		"relative min-h-80 border-primary/20 bg-muted/30 p-6 sm:p-8",
+		"relative min-h-80 border-ink/20 bg-muted/30 p-6 hover:border-ink/50! sm:p-8",
 		className
 	]}
 >

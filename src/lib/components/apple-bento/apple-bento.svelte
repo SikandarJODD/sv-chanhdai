@@ -19,7 +19,12 @@
 		aria-label="Svelte Chan component collection"
 		class="mx-auto grid w-full max-w-[92rem] grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-12 lg:grid-rows-[13.5rem_21rem_13.5rem]"
 	>
-		<BentoReveal class="md:col-span-2 lg:col-span-5" x={-28} y={-20} delay={0.16}>
+		<BentoReveal
+			class="md:col-span-2 lg:col-span-5"
+			x={-28}
+			y={-20}
+			delay={0.16}
+		>
 			<GithubTile class="h-full" />
 		</BentoReveal>
 		<BentoReveal class="lg:col-span-4" y={-26} delay={0.205}>
@@ -32,7 +37,7 @@
 		<BentoReveal class="lg:col-span-3" x={-28} delay={0.295}>
 			<LineNavTile class="h-full" />
 		</BentoReveal>
-		<BentoReveal class="md:col-span-2 lg:col-span-6" y={6} center>
+		<BentoReveal class=" md:col-span-2 lg:col-span-6" y={6} center>
 			<HeroTile class="h-full" />
 		</BentoReveal>
 		<BentoReveal class="lg:col-span-3" x={28} delay={0.34}>
@@ -40,7 +45,9 @@
 		</BentoReveal>
 
 		<BentoReveal class="lg:col-span-3" x={-24} y={20} delay={0.385}>
-			<ComponentCountTile class="h-full bg-blue-50/20 hover:border-ink/40" />
+			<ComponentCountTile
+				class="h-full bg-blue-50/20 hover:border-ink/40"
+			/>
 		</BentoReveal>
 		<BentoReveal class="lg:col-span-5" y={24} delay={0.43}>
 			<ElasticSlidersTile class="h-full" />

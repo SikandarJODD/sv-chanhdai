@@ -14,6 +14,7 @@
 <script lang="ts">
 	import { motion, useReducedMotion } from "motion-sv";
 	import type { Transition } from "motion-sv";
+	import { cn } from "$lib/utils";
 
 	let {
 		children,
@@ -44,7 +45,7 @@
 </script>
 
 <motion.div
-	class={["min-w-0", className]}
+	class={cn("min-w-0", className)}
 	initial={shouldReduceMotion.current
 		? false
 		: {
