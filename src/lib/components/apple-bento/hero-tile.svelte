@@ -28,14 +28,18 @@
 
 <BentoTile
 	class={[
-		"relative min-h-80 border-ink/20 bg-muted/30 p-6 hover:border-ink/50! sm:p-8",
+		"relative min-h-80 border-primary/20 p-6 transition-all duration-150 hover:border-primary/40! sm:p-8",
 		className
 	]}
 >
+	<!-- <div
+		class="absolute top-0 right-5 h-px w-1/2 bg-linear-to-l from-transparent via-primary/30 via-10% to-transparent"
+	></div> -->
+
 	<div class="flex h-full w-full items-center justify-center text-center">
 		<div class="flex max-w-2xl flex-col items-center">
 			<motion.h1
-				class="font-baloo-bhai-2 text-4xl leading-none font-semibold tracking-tight text-balance text-ink sm:text-5xl lg:text-[3.5rem]"
+				class="bg-linear-to-b from-primary via-primary/90 to-primary/60 bg-clip-text text-4xl leading-none font-semibold tracking-tighter text-balance text-transparent sm:text-5xl lg:text-5xl"
 				initial={shouldReduceMotion.current
 					? false
 					: { opacity: 0, y: 8, scale: 0.98 }}
@@ -46,19 +50,19 @@
 			</motion.h1>
 
 			<motion.p
-				class="mt-4 font-jetbrains text-base leading-6 font-medium text-ink/80 sm:text-lg"
+				class="mt-4 font-jetbrains text-base leading-6 font-medium tracking-tighter text-muted-foreground sm:text-lg"
 				initial={shouldReduceMotion.current
 					? false
 					: { opacity: 0, y: 6 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={springTransition(0.075)}
 			>
-				Interactive &amp; Open Source (MIT)
+				Free &amp; Open Source (MIT)
 			</motion.p>
 		</div>
 
 		<div
-			class="absolute inset-x-2 bottom-2 flex items-center justify-between gap-4 font-mono text-xs"
+			class="absolute inset-x-2 bottom-2 flex items-center justify-between gap-0 font-mono text-xs"
 		>
 			<motion.span
 				initial={shouldReduceMotion.current
@@ -72,7 +76,7 @@
 					faviconSrc="https://assets.chanhdai.com/images/favicon.ico"
 					target="_blank"
 					rel="noreferrer"
-					class="mx-0 rounded-full bg-muted px-2.5 py-1.5 text-foreground"
+					class="mx-0 rounded-full bg-muted py-1.5 pr-2.5 pl-1.5 text-foreground"
 					imageClass="rounded-full"
 				>
 					Chánh Đại
@@ -90,7 +94,7 @@
 					href="https://bhide.dev"
 					target="_blank"
 					rel="noreferrer"
-					class="mx-0 rounded-full bg-muted px-2.5 py-1.5 text-foreground"
+					class="mx-0 rounded-full bg-muted py-1.5 pr-2.5 pl-1.5 text-foreground"
 					imageClass="rounded-full"
 				>
 					Bhide Svelte
