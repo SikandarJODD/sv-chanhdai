@@ -1,12 +1,36 @@
 <script lang="ts">
 	import FaviconLink from "$lib/components/docs/base/main/favicon-link.svelte";
+	import { gsap } from "gsap";
 	import { motion, useReducedMotion } from "motion-sv";
 	import type { Transition } from "motion-sv";
+	import type { Attachment } from "svelte/attachments";
 	import BentoTile from "./bento-tile.svelte";
 
 	let { class: className }: { class?: string } = $props();
 
 	const shouldReduceMotion = useReducedMotion();
+	const titleWords = ["Svelte", "Chan", "Components"];
+
+	const titleAnimation: Attachment<HTMLHeadingElement> = (node) => {
+		const media = gsap.matchMedia();
+
+		media.add("(prefers-reduced-motion: no-preference)", () => {
+			gsap.fromTo(
+				node.querySelectorAll("[data-title-word]"),
+				{ yPercent: 110 },
+				{
+					yPercent: 0,
+					duration: 0.36,
+					stagger: 0.05,
+					ease: "power3.out",
+					delay: 0.02,
+					clearProps: "transform"
+				}
+			);
+		});
+
+		return () => media.revert();
+	};
 
 	function springTransition(delay: number): Transition {
 		if (shouldReduceMotion.current) return { duration: 0 };
@@ -38,16 +62,25 @@
 
 	<div class="flex h-full w-full items-center justify-center text-center">
 		<div class="flex max-w-2xl flex-col items-center">
-			<motion.h1
-				class="bg-linear-to-b from-primary via-primary/90 to-primary/60 bg-clip-text text-4xl leading-none font-semibold tracking-tighter text-balance text-transparent sm:text-5xl lg:text-5xl"
-				initial={shouldReduceMotion.current
-					? false
-					: { opacity: 0, y: 8, scale: 0.98 }}
-				animate={{ opacity: 1, y: 0, scale: 1 }}
-				transition={springTransition(0.02)}
+			<h1
+				{@attach titleAnimation}
+				aria-label="Svelte Chan Components"
+				class="text-4xl leading-none font-semibold tracking-tighter text-balance sm:text-5xl lg:text-5xl"
 			>
-				Svelte Chan Components
-			</motion.h1>
+				{#each titleWords as word (word)}
+					<span
+						aria-hidden="true"
+						class="mr-[0.22em] inline-flex overflow-hidden pb-[0.08em] align-bottom last:mr-0"
+					>
+						<span
+							data-title-word
+							class="inline-block bg-linear-to-b from-primary via-primary/90 to-primary/60 bg-clip-text text-transparent will-change-transform"
+						>
+							{word}
+						</span>
+					</span>
+				{/each}
+			</h1>
 
 			<motion.p
 				class="mt-4 font-jetbrains text-base leading-6 font-medium tracking-tighter text-muted-foreground sm:text-lg"
@@ -55,7 +88,7 @@
 					? false
 					: { opacity: 0, y: 6 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={springTransition(0.075)}
+				transition={springTransition(0.175)}
 			>
 				Free &amp; Open Source (MIT)
 			</motion.p>
@@ -69,7 +102,7 @@
 					? false
 					: { opacity: 0, y: 6 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={springTransition(0.16)}
+				transition={springTransition(0.26)}
 			>
 				<FaviconLink
 					href="https://chanhdai.com"
@@ -88,7 +121,7 @@
 					? false
 					: { opacity: 0, y: 6 }}
 				animate={{ opacity: 1, y: 0 }}
-				transition={springTransition(0.205)}
+				transition={springTransition(0.305)}
 			>
 				<FaviconLink
 					href="https://bhide.dev"

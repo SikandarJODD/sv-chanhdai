@@ -5,6 +5,7 @@
 		children: Snippet;
 		class?: string;
 		settled?: boolean;
+		visible?: boolean;
 	};
 </script>
 
@@ -17,7 +18,8 @@
 	let {
 		children,
 		class: className,
-		settled = false
+		settled = false,
+		visible = true
 	}: HeroStageProps = $props();
 
 	const shouldReduceMotion = useReducedMotion();
@@ -26,18 +28,39 @@
 	const transition = $derived<Transition>(
 		shouldReduceMotion.current
 			? { duration: 0 }
-			: {
+			: visible
+				? {
 					type: "spring",
 					visualDuration: 0.45,
-					bounce: 0.04
+					bounce: 0.04,
+					opacity: {
+						type: "tween",
+						duration: 0.2,
+						ease: "easeOut"
+					}
+				}
+				: {
+					type: "tween",
+					duration: 0.16,
+					ease: "easeIn"
 				}
 	);
 </script>
 
 <motion.div
-	class={cn("relative z-10 min-w-0 transform-gpu", className)}
-	initial={false}
-	animate={{ scale: settled ? 1 : introScale }}
+	class={cn(
+		"relative z-10 min-w-0 transform-gpu",
+		!visible && "pointer-events-none",
+		className
+	)}
+	aria-hidden={!visible}
+	inert={!visible}
+	initial={shouldReduceMotion.current
+		? false
+		: { opacity: 0, y: 14, scale: introScale * 0.96 }}
+	animate={visible
+		? { opacity: 1, y: 0, scale: settled ? 1 : introScale }
+		: { opacity: 0, y: 14, scale: introScale * 0.96 }}
 	{transition}
 >
 	{@render children()}

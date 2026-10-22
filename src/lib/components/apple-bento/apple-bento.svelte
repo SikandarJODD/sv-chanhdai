@@ -12,6 +12,7 @@
 	import StatusButtonTile from "./status-button-tile.svelte";
 	import WheelPickerTile from "./wheel-picker-tile.svelte";
 
+	let showHero = $state(false);
 	let showBoard = $state(false);
 
 	function handleKeydown(event: KeyboardEvent) {
@@ -19,8 +20,7 @@
 			event.repeat ||
 			event.metaKey ||
 			event.ctrlKey ||
-			event.altKey ||
-			event.key.toLowerCase() !== "v"
+			event.altKey
 		) {
 			return;
 		}
@@ -33,7 +33,16 @@
 			return;
 		}
 
-		showBoard = !showBoard;
+		const key = event.key.toLowerCase();
+
+		if (key === "b") {
+			showHero = true;
+			return;
+		}
+
+		if (key === "v" && showHero) {
+			showBoard = !showBoard;
+		}
 	}
 </script>
 
@@ -81,8 +90,14 @@
 		>
 			<LineNavTile class="h-full" />
 		</BentoReveal>
-		<HeroStage class="md:col-span-2 lg:col-span-6" settled={showBoard}>
-			<HeroTile class="h-full" />
+		<HeroStage
+			class="md:col-span-2 lg:col-span-6"
+			settled={showBoard}
+			visible={showHero}
+		>
+			{#if showHero}
+				<HeroTile class="h-full" />
+			{/if}
 		</HeroStage>
 		<BentoReveal
 			class="lg:col-span-3"

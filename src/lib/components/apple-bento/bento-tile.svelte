@@ -19,7 +19,7 @@
 <article
 	{...restProps}
 	class={cn(
-		"relative flex min-h-56 items-center justify-center overflow-hidden rounded-2xl border bg-background p-5 transition-colors hover:border-primary/40 lg:min-h-0",
+		"relative flex min-h-56 items-center justify-center overflow-hidden rounded-2xl border bg-background p-5 transition-colors hover:border-primary/20 lg:min-h-0",
 		className
 	)}
 >
