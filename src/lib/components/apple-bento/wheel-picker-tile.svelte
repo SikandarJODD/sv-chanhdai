@@ -30,7 +30,9 @@
 </script>
 
 <BentoTile class={className}>
-	<WheelPickerWrapper class="w-full max-w-56 shadow-none">
+	<WheelPickerWrapper
+		class="w-full max-w-56 rounded-xl shadow-none [corner-shape:superellipse(1)]"
+	>
 		<WheelPicker
 			options={hourOptions}
 			defaultValue={9}

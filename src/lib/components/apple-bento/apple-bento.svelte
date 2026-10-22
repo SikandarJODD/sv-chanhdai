@@ -11,7 +11,9 @@
 	import WheelPickerTile from "./wheel-picker-tile.svelte";
 </script>
 
-<main class="min-h-screen bg-background px-3 py-8 sm:px-5 sm:py-12 lg:px-8 lg:py-16">
+<main
+	class="min-h-screen bg-background px-3 py-8 sm:px-5 sm:py-12 lg:px-8 lg:py-12"
+>
 	<section
 		aria-label="Svelte Chan component collection"
 		class="mx-auto grid w-full max-w-[92rem] grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-12 lg:grid-rows-[13.5rem_21rem_13.5rem]"
@@ -24,9 +26,11 @@
 		<HeroTile class="md:col-span-2 lg:col-span-6" />
 		<WheelPickerTile class="lg:col-span-3" />
 
-		<ComponentCountTile class="lg:col-span-3" />
-		<ElasticSlidersTile class="lg:col-span-4" />
-		<RoughCrosslinesTile class="lg:col-span-2" />
-		<SlideToUnlockTile class="lg:col-span-3" />
+		<ComponentCountTile
+			class="bg-blue-50/20 hover:border-ink/40 lg:col-span-3"
+		/>
+		<ElasticSlidersTile class="lg:col-span-5" />
+		<!-- <RoughCrosslinesTile class="lg:col-span-2" /> -->
+		<SlideToUnlockTile class="lg:col-span-4" />
 	</section>
 </main>

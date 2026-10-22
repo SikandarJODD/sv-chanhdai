@@ -5,13 +5,16 @@
 	let { class: className }: { class?: string } = $props();
 
 	const items: LineNavItem[] = [
-		{ title: "Contribution", href: "#contribution" },
-		{ title: "Slider", href: "#slider" },
-		{ title: "Picker", href: "#picker" },
-		{ title: "Unlock", href: "#unlock" }
+		{ title: "Apple Carousel", href: "#apple-carousel" },
+		{ title: "Elastic Slider", href: "#elastic-slider" },
+		{ title: "Slide to Unlock", href: "#slide-to-unlock" },
+		{ title: "Wheel Picker", href: "#wheel-picker" },
+		{ title: "Status Button", href: "#status-button" },
+		{ title: "GitHub Contributions", href: "#github-contributions" },
+		{ title: "Middle Truncation", href: "#middle-truncation" }
 	];
 
-	let activeHref = $state("#slider");
+	let activeHref = $state("#elastic-slider");
 
 	function selectItem(item: LineNavItem, event: MouseEvent) {
 		event.preventDefault();

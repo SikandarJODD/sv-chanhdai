@@ -2,7 +2,10 @@
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 
-	export type BentoTileProps = Omit<HTMLAttributes<HTMLElement>, "children"> & {
+	export type BentoTileProps = Omit<
+		HTMLAttributes<HTMLElement>,
+		"children"
+	> & {
 		children: Snippet;
 	};
 </script>
@@ -16,7 +19,7 @@
 <article
 	{...restProps}
 	class={cn(
-		"relative flex min-h-56 items-center justify-center overflow-hidden rounded-2xl border bg-background p-5 transition-colors hover:border-ink/80 focus-within:border-ink/80 lg:min-h-0",
+		"relative flex min-h-56 items-center justify-center overflow-hidden rounded-2xl border bg-background p-5 transition-colors focus-within:border-ink/50 hover:border-primary/40 lg:min-h-0",
 		className
 	)}
 >
