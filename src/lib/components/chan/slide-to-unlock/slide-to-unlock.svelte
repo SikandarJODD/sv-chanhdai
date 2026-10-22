@@ -60,8 +60,10 @@
 
 		const trackWidth = trackRef?.offsetWidth ?? 0;
 		const maxX = trackWidth - handleWidth;
+		const unlockThreshold = maxX * 0.9;
 
-		if (x.get() >= maxX) {
+		if (maxX > 0 && x.get() >= unlockThreshold) {
+			animate(x, maxX, { type: "spring", bounce: 0, duration: 0.2 });
 			onUnlock?.();
 		} else {
 			animate(x, 0, { type: "spring", bounce: 0, duration: 0.25 });

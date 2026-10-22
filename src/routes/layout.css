@@ -7,6 +7,7 @@
 @import "@fontsource-variable/jetbrains-mono";
 @import "@fontsource-variable/geist-mono";
 @import "@fontsource-variable/shantell-sans";
+@import "@fontsource-variable/baloo-bhai-2";
 @import "../lib/styles/neat-annotations.css";
 @custom-variant dark (&:is(.dark *));
 @font-face {
@@ -183,6 +184,9 @@
 	--font-gp-line: "GeistPixel Line", monospace;
 	--font-gp-square: "GeistPixel Square", monospace;
 	--font-gp-triangle: "GeistPixel Triangle", monospace;
+	--font-jetbrains: "JetBrains Mono Variable", monospace;
+	--font-figtree: "Figtree Variable", sans-serif;
+	--font-baloo-bhai-2: "Baloo Bhai 2 Variable", cursive;
 
 	--color-sidebar-ring: var(--sidebar-ring);
 	--color-sidebar-border: var(--sidebar-border);
