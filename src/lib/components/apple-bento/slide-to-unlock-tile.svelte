@@ -5,13 +5,35 @@
 		SlideToUnlockText,
 		SlideToUnlockTrack
 	} from "$chan/slide-to-unlock";
+	import { SuccessIcon } from "$chan/status-button";
+	import { gsap } from "gsap";
 	import { watch } from "runed";
-	import { fade, slide } from "svelte/transition";
+	import type { Attachment } from "svelte/attachments";
 	import BentoTile from "./bento-tile.svelte";
 
 	let { class: className }: { class?: string } = $props();
 	let unlocked = $state(false);
 	let slideToUnlock = $state<{ reset: () => void }>();
+
+	const animateSuccess: Attachment<HTMLElement> = (node) => {
+		const media = gsap.matchMedia();
+
+		media.add("(prefers-reduced-motion: no-preference)", () => {
+			gsap.fromTo(
+				node,
+				{ opacity: 0, y: 8 },
+				{
+					opacity: 1,
+					y: 0,
+					duration: 0.24,
+					ease: "power2.out",
+					clearProps: "transform,opacity"
+				}
+			);
+		});
+
+		return () => media.revert();
+	};
 
 	watch(
 		() => unlocked,
@@ -48,11 +70,11 @@
 		<div class="flex h-5 items-center" aria-live="polite">
 			{#if unlocked}
 				<p
-					in:slide={{ duration: 220 }}
-					out:fade={{ duration: 120 }}
-					class="text-sm font-medium"
+					{@attach animateSuccess}
+					class="flex items-center gap-1.5 text-sm font-medium text-emerald-600"
 				>
-					Unlocked!
+					<SuccessIcon />
+					Unlocked
 				</p>
 			{/if}
 		</div>
