@@ -88,7 +88,7 @@
 	const large = new MediaQuery("min-width: 800px");
 </script>
 
-<svelte:window onkeydown={handleArrowNavigation} />
+<!-- <svelte:window onkeydown={handleArrowNavigation} /> -->
 
 <div class={["flex items-center gap-2", className].filter(Boolean).join(" ")}>
 	<ButtonGroup.Root>
