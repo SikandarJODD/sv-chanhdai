@@ -14,9 +14,9 @@ export default defineConfig({
 						? undefined
 						: true
 			},
-			vitePlugin: {
-				inspector: { toggleKeyCombo: "meta-shift", holdMode: true }
-			},
+			// vitePlugin: {
+			// 	inspector: { toggleKeyCombo: "meta-shift", holdMode: true }
+			// },
 			alias: {
 				$markdown: "src/lib/components/docs/markdown",
 				$chan: "src/lib/components/chan",

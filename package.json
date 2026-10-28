@@ -50,6 +50,7 @@
 		"@tailwindcss/vite": "^4.3.0",
 		"bits-ui": "^2.20.2",
 		"clsx": "^2.1.1",
+		"cn": "^0.5.0",
 		"package-manager-detector": "^1.9.0",
 		"paneforge": "^1.0.2",
 		"prettier": "^3.9.10",
@@ -70,6 +71,14 @@
 	},
 	"imports": {
 		"#lib": "./src/lib/index.js",
-		"#lib/*": "./src/lib/*"
+		"#lib/*": "./src/lib/*",
+		"#markdown": "./src/lib/components/docs/markdown/index.js",
+		"#markdown/*": "./src/lib/components/docs/markdown/*",
+		"#chan": "./src/lib/components/chan",
+		"#chan/*": "./src/lib/components/chan/*",
+		"#ui": "./src/lib/components/ui",
+		"#ui/*": "./src/lib/components/ui/*",
+		"#icons": "./src/lib/components/icons",
+		"#icons/*": "./src/lib/components/icons/*"
 	}
 }
