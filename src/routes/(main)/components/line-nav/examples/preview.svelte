@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { LineNav } from "#lib/components/chan/line-nav";
+	import { LineNav } from "#lib/components/chan/line-nav/index.js";
 
 	const ITEMS = [
 		{ title: "Apple Hello Effect", href: "" },

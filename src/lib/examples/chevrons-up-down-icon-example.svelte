@@ -2,7 +2,7 @@
 	import {
 		ChevronsUpDownIcon,
 		type ChevronsUpDownIconHandle
-	} from "#lib/components/chan/chevrons-up-down-icon";
+	} from "#lib/components/chan/chevrons-up-down-icon/index.js";
 	import { Button } from "#lib/components/ui/button/index.js";
 	import { watch } from "runed";
 

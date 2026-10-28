@@ -4,7 +4,7 @@
 	import { activeElement, PressedKeys } from "runed";
 	import { ModeWatcher, toggleMode } from "mode-watcher";
 	import { Header } from "#lib/components/landing/header/index.js";
-	import { Toaster } from "#lib/components/ui/sonner";
+	import { Toaster } from "#lib/components/ui/sonner/index.js";
 
 	let { children } = $props();
 	let keys = new PressedKeys();

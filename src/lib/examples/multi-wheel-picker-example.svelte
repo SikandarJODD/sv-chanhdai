@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { WheelPickerOption } from "#lib/components/chan/svelte-wheel-picker";
+	import type { WheelPickerOption } from "#lib/components/chan/svelte-wheel-picker/index.js";
 	import {
 		WheelPicker,
 		WheelPickerWrapper
-	} from "#lib/components/chan/wheel-picker";
+	} from "#lib/components/chan/wheel-picker/index.js";
 
 	const createArray = (
 		length: number,

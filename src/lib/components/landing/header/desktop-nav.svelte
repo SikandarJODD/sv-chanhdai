@@ -3,7 +3,7 @@
 	import { ArrowUpRightIcon, PackageIcon } from "@lucide/svelte";
 	import LinkItem from "./link-item.svelte";
 	import { navs } from "./nav-links";
-	import Github from "#lib/components/icons/index.js/github.svelte";
+	import Github from "#lib/components/icons/github.svelte";
 	import { Button } from "#lib/components/ui/button/index.js";
 
 	type ProjectItem = {
@@ -103,7 +103,7 @@
 
 <NavigationMenu.Root class="hidden md:flex">
 	<NavigationMenu.List class="gap-1">
-		{#each navs as nav}
+		{#each navs as nav (nav.href)}
 			{#if nav.sub}
 				<NavigationMenu.Item>
 					<NavigationMenu.Trigger
@@ -114,7 +114,7 @@
 						<div
 							class="grid w-lg grid-cols-2 gap-2 rounded-full bg-popover p-1 shadow"
 						>
-							{#each nav.sub as item, i}
+							{#each nav.sub as item, i (item.href)}
 								<NavigationMenu.Link class="rounded-lg!">
 									<LinkItem {...item} />
 								</NavigationMenu.Link>

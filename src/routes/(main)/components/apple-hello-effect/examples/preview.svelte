@@ -4,7 +4,7 @@
 		AppleHelloEffectHindi,
 		AppleHelloEffectSpanish,
 		AppleHelloEffectVietnamese
-	} from "#lib/components/chan/apple-hello-effect";
+	} from "#lib/components/chan/apple-hello-effect/index.js";
 	import { AnimatePresence } from "motion-sv";
 
 	let index = $state(0);

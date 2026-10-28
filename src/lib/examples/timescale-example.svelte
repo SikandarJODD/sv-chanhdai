@@ -11,7 +11,7 @@
 		TimescaleTrack,
 		TimescaleViewport,
 		TimescaleYear
-	} from "#lib/components/chan/timescale";
+	} from "#lib/components/chan/timescale/index.js";
 
 	type Link = {
 		text: string;
@@ -264,10 +264,10 @@
 							<TimescaleContent
 								class="space-y-4 text-sm leading-6 text-pretty text-muted-foreground [&_a]:font-medium [&_a]:text-foreground [&_a]:underline [&_a]:underline-offset-4 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5"
 							>
-								{#each milestone.content as block}
+								{#each milestone.content as block, blockIndex (blockIndex)}
 									{#if block.type === "paragraph"}
 										<p>
-											{#each block.content as part}
+											{#each block.content as part, partIndex (partIndex)}
 												{#if typeof part === "string"}
 													{part}
 												{:else}
@@ -279,7 +279,7 @@
 										</p>
 									{:else}
 										<ul>
-											{#each block.items as item}
+											{#each block.items as item, itemIndex (itemIndex)}
 												<li>{item}</li>
 											{/each}
 										</ul>

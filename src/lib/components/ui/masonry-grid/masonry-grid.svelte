@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
-	import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect";
-	import { BrandAssetsMenu } from "#lib/components/chan/brand-assets-menu";
-	import { ElasticSlider } from "#lib/components/chan/elastic-slider";
+	import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect/index.js";
+	import { BrandAssetsMenu } from "#lib/components/chan/brand-assets-menu/index.js";
+	import { ElasticSlider } from "#lib/components/chan/elastic-slider/index.js";
 	import GitHubContributions from "#lib/components/chan/github-contributions/github-contributions.svelte";
-	import { MiddleTruncation } from "#lib/components/chan/middle-truncation";
+	import { MiddleTruncation } from "#lib/components/chan/middle-truncation/index.js";
 	import {
 		SlideToUnlock,
 		SlideToUnlockHandle,
 		SlideToUnlockText,
 		SlideToUnlockTrack
-	} from "#lib/components/chan/slide-to-unlock";
-	import { StatusButton } from "#lib/components/chan/status-button";
+	} from "#lib/components/chan/slide-to-unlock/index.js";
+	import { StatusButton } from "#lib/components/chan/status-button/index.js";
 	import {
 		Testimonial,
 		TestimonialAuthor,
@@ -22,19 +22,19 @@
 		TestimonialAvatarRing,
 		TestimonialQuote,
 		TestimonialVerifiedBadge
-	} from "#lib/components/chan/testimonial";
-	import { Testimonial2 } from "#lib/components/chan/testimonial-2";
+	} from "#lib/components/chan/testimonial/index.js";
+	import { Testimonial2 } from "#lib/components/chan/testimonial-2/index.js";
 	import {
 		WheelPicker,
 		WheelPickerWrapper,
 		type WheelPickerOption
-	} from "#lib/components/chan/wheel-picker";
+	} from "#lib/components/chan/wheel-picker/index.js";
 	import Annotation from "#lib/components/ui/annotation/annotation.svelte";
 	import {
 		ResizableHandle,
 		ResizablePane,
 		ResizablePaneGroup
-	} from "#lib/components/ui/resizable";
+	} from "#lib/components/ui/resizable/index.js";
 	import { watch } from "runed";
 	import MasonryCard from "./masonry-card.svelte";
 	import { fade, slide } from "svelte/transition";
@@ -209,7 +209,6 @@
 				{#if unlocked}
 					<p
 						class="h-5 text-sm font-medium transition-opacity"
-						class:opacity-0={!unlocked}
 						aria-live="polite"
 						transition:slide={{ duration: 200 }}
 					>

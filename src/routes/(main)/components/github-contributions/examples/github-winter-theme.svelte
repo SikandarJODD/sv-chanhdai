@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GitHubContributions } from "#lib/components/chan/github-contributions";
+	import { GitHubContributions } from "#lib/components/chan/github-contributions/index.js";
 </script>
 
 <GitHubContributions

@@ -36,7 +36,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { GlowCard, GlowCardGrid } from "#lib/components/chan/glow-card-grid";
+	import { GlowCard, GlowCardGrid } from "#lib/components/chan/glow-card-grid/index.js";
 </script>
 
 <GlowCardGrid>

@@ -28,7 +28,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { TestimonialSpotlight } from "#lib/components/chan/testimonial-spotlight";
+	import { TestimonialSpotlight } from "#lib/components/chan/testimonial-spotlight/index.js";
 </script>
 
 <TestimonialSpotlight class="max-w-sm p-6">

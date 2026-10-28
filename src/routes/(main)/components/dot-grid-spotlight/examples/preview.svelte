@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DotGridSpotlight } from "#lib/components/chan/dot-grid-spotlight";
+	import { DotGridSpotlight } from "#lib/components/chan/dot-grid-spotlight/index.js";
 	import { mode } from "mode-watcher";
 
 	const DOT_COLOR = {

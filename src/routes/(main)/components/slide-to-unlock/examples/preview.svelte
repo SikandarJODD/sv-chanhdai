@@ -4,7 +4,7 @@
 		SlideToUnlockHandle,
 		SlideToUnlockText,
 		SlideToUnlockTrack
-	} from "#lib/components/chan/slide-to-unlock";
+	} from "#lib/components/chan/slide-to-unlock/index.js";
 	import { fade, slide } from "svelte/transition";
 	let unlocked = $state(false);
 </script>

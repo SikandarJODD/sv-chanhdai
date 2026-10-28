@@ -34,8 +34,8 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import type { TOCItemType } from "#lib/components/chan/toc-minimap";
-	import { TOCMinimap } from "#lib/components/chan/toc-minimap";
+	import type { TOCItemType } from "#lib/components/chan/toc-minimap/index.js";
+	import { TOCMinimap } from "#lib/components/chan/toc-minimap/index.js";
 
 	const items: TOCItemType[] = [
 		{ title: "Overview", url: "#overview", depth: 2 },

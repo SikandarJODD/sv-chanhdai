@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { MiddleTruncation } from "#lib/components/chan/middle-truncation";
+	import { MiddleTruncation } from "#lib/components/chan/middle-truncation/index.js";
 	import {
 		ResizableHandle,
 		ResizablePane,
 		ResizablePaneGroup
-	} from "#lib/components/ui/resizable";
+	} from "#lib/components/ui/resizable/index.js";
 
 	const files = [
 		{

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { ScrollFadeEffect } from "#lib/components/chan/scroll-fade-effect";
-	import { Separator } from "#lib/components/ui/separator";
+	import { ScrollFadeEffect } from "#lib/components/chan/scroll-fade-effect/index.js";
+	import { Separator } from "#lib/components/ui/separator/index.js";
 
 	const tags = Array.from({ length: 50 }).map(
 		(_, i, a) => `v1.2.0-beta.${a.length - i}`
@@ -11,7 +11,7 @@
 	<ScrollFadeEffect class="h-72 w-48">
 		<div class="p-4">
 			<h4 class="mb-4 text-sm leading-none font-medium">Tags</h4>
-			{#each tags as item}
+			{#each tags as item (item)}
 				<div class="text-sm">{item}</div>
 				<Separator class="my-2" />
 			{/each}

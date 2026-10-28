@@ -9,7 +9,7 @@
 		TestimonialAvatarRing,
 		TestimonialQuote,
 		TestimonialVerifiedBadge
-	} from "#lib/components/chan/testimonial";
+	} from "#lib/components/chan/testimonial/index.js";
 </script>
 
 <a

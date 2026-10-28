@@ -29,7 +29,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { BrandAssetsMenu } from "#lib/components/chan/brand-assets-menu";
+	import { BrandAssetsMenu } from "#lib/components/chan/brand-assets-menu/index.js";
 
 	const LOGOMARK_SVG = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>';
 	const LOGOTYPE_SVG = '<svg viewBox="0 0 120 24"><text x="0" y="18">Acme</text></svg>';

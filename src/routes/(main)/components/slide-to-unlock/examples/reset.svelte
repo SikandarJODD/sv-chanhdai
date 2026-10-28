@@ -4,7 +4,7 @@
 		SlideToUnlockHandle,
 		SlideToUnlockText,
 		SlideToUnlockTrack
-	} from "#lib/components/chan/slide-to-unlock";
+	} from "#lib/components/chan/slide-to-unlock/index.js";
 
 	let slideToUnlock = $state<{ reset: () => void }>();
 	let unlocked = $state(false);
@@ -23,9 +23,7 @@
 	>
 		<SlideToUnlockTrack>
 			<SlideToUnlockText>
-				{#snippet children()}
-					Slide to unlock
-				{/snippet}
+				Slide to unlock
 			</SlideToUnlockText>
 			<SlideToUnlockHandle class="rounded-full" />
 		</SlideToUnlockTrack>

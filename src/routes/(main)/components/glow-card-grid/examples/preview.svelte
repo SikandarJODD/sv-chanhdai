@@ -2,7 +2,7 @@
 	import {
 		GlowCard,
 		GlowCardGrid
-	} from "#lib/components/chan/glow-card-grid";
+	} from "#lib/components/chan/glow-card-grid/index.js";
 
 	const CARDS = [
 		{

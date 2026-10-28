@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { MiddleTruncation } from "#lib/components/chan/middle-truncation";
+	import { MiddleTruncation } from "#lib/components/chan/middle-truncation/index.js";
 	import {
 		ResizableHandle,
 		ResizablePane,
 		ResizablePaneGroup
-	} from "#lib/components/ui/resizable";
+	} from "#lib/components/ui/resizable/index.js";
 </script>
 
 <ResizablePaneGroup direction="horizontal" class="w-full max-w-md">
@@ -14,7 +14,7 @@
 				<div
 					class="truncate font-mono text-xs whitespace-nowrap text-muted-foreground"
 				>
-					{"<MiddleTruncation>"}
+					&lt;MiddleTruncation&gt;
 				</div>
 				<MiddleTruncation
 					class="font-mono text-foreground/70"
@@ -52,7 +52,7 @@
 				<div
 					class="truncate font-mono text-xs whitespace-nowrap text-muted-foreground"
 				>
-					{'<MiddleTruncation ellipsis=" ... ">'}
+					&lt;MiddleTruncation ellipsis=" ... "&gt;
 				</div>
 				<MiddleTruncation
 					class="font-mono text-foreground/70"
