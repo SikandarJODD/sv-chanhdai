@@ -960,6 +960,108 @@
 			"author": "Bhide Svelte"
 		},
 		{
+			"name": "swipe-actions",
+			"type": "registry:block",
+			"title": "Swipe Actions",
+			"description": "A composable swipe actions component for revealing contextual actions.",
+			"registryDependencies": [],
+			"dependencies": ["motion-sv", "runed"],
+			"files": [
+				{
+					"path": "src/lib/components/chan/swipe-actions/swipe-action.svelte",
+					"type": "registry:component",
+					"target": "chan/swipe-actions/swipe-action.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/swipe-content.svelte",
+					"type": "registry:component",
+					"target": "chan/swipe-actions/swipe-content.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-action-content.svelte",
+					"type": "registry:component",
+					"target": "chan/swipe-actions/primitives/swipe-action-content.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-action.svelte",
+					"type": "registry:component",
+					"target": "chan/swipe-actions/primitives/swipe-action.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-actions.svelte",
+					"type": "registry:component",
+					"target": "chan/swipe-actions/primitives/swipe-actions.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-actions-context.svelte.ts",
+					"type": "registry:file",
+					"target": "chan/swipe-actions/primitives/swipe-actions-context.svelte.ts"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-actions-state.svelte.ts",
+					"type": "registry:file",
+					"target": "chan/swipe-actions/primitives/swipe-actions-state.svelte.ts"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-actions-types.ts",
+					"type": "registry:file",
+					"target": "chan/swipe-actions/primitives/swipe-actions-types.ts"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-actions-utils.ts",
+					"type": "registry:file",
+					"target": "chan/swipe-actions/primitives/swipe-actions-utils.ts"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-content.svelte",
+					"type": "registry:component",
+					"target": "chan/swipe-actions/primitives/swipe-content.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-item.svelte",
+					"type": "registry:component",
+					"target": "chan/swipe-actions/primitives/swipe-item.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/swipe-root.svelte",
+					"type": "registry:component",
+					"target": "chan/swipe-actions/primitives/swipe-root.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/primitives/index.ts",
+					"type": "registry:file",
+					"target": "chan/swipe-actions/primitives/index.ts"
+				},
+				{
+					"path": "src/lib/components/chan/swipe-actions/index.ts",
+					"type": "registry:file",
+					"target": "chan/swipe-actions/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
+			"name": "toc-minimap",
+			"type": "registry:block",
+			"title": "TOC Minimap",
+			"description": "A compact table-of-contents minimap with active heading tracking.",
+			"registryDependencies": ["hover-card"],
+			"dependencies": [],
+			"files": [
+				{
+					"path": "src/lib/components/chan/toc-minimap/toc-minimap.svelte",
+					"type": "registry:component",
+					"target": "chan/toc-minimap/toc-minimap.svelte"
+				},
+				{
+					"path": "src/lib/components/chan/toc-minimap/index.ts",
+					"type": "registry:file",
+					"target": "chan/toc-minimap/index.ts"
+				}
+			],
+			"author": "Bhide Svelte"
+		},
+		{
 			"name": "apple-carousel",
 			"type": "registry:component",
 			"title": "Apple Carousel",

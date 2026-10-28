@@ -315,6 +315,31 @@
 		"relativeUrl": "work-experience.json"
 	},
 	{
+		"name": "swipe-actions",
+		"title": "Swipe Actions",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A composable swipe actions component for revealing contextual actions.",
+		"dependencies": [
+			"motion-sv",
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "swipe-actions.json"
+	},
+	{
+		"name": "toc-minimap",
+		"title": "TOC Minimap",
+		"type": "registry:block",
+		"author": "Bhide Svelte",
+		"description": "A compact table-of-contents minimap with active heading tracking.",
+		"dependencies": [],
+		"registryDependencies": [
+			"hover-card"
+		],
+		"relativeUrl": "toc-minimap.json"
+	},
+	{
 		"name": "apple-carousel",
 		"title": "Apple Carousel",
 		"type": "registry:component",
