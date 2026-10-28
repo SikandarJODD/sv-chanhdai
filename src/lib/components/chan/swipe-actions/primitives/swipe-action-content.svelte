@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
+	import { untrack } from "svelte";
 	import {
 		useSwipeActionId,
 		useSwipeActions
@@ -17,7 +18,7 @@
 	const actions = useSwipeActions();
 
 	function attachContent(element: HTMLSpanElement) {
-		ref = element;
+		untrack(() => (ref = element));
 		const observer = new ResizeObserver(() => {
 			actions.measure(id, element.offsetWidth);
 		});
@@ -26,7 +27,9 @@
 		return () => {
 			observer.disconnect();
 			actions.forget(id);
-			if (ref === element) ref = null;
+			untrack(() => {
+				if (ref === element) ref = null;
+			});
 		};
 	}
 </script>

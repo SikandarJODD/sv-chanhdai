@@ -13,6 +13,10 @@
 	}: SwipeContentProps = $props();
 
 	const item = useSwipeItem();
+	const dragConstraints = $derived({
+		left: -(item.fullSwipeSides.right ? item.itemWidth : item.rightWidth),
+		right: item.fullSwipeSides.left ? item.itemWidth : item.leftWidth
+	});
 </script>
 
 <motion.div
@@ -23,10 +27,7 @@
 	class={cn("relative z-1", className)}
 	style={{ ...style, x: item.x }}
 	drag={item.disabled ? false : "x"}
-	dragConstraints={{
-		left: -(item.fullSwipeSides.right ? item.itemWidth : item.rightWidth),
-		right: item.fullSwipeSides.left ? item.itemWidth : item.leftWidth
-	}}
+	{dragConstraints}
 	dragElastic={0.2}
 	dragMomentum={false}
 	onDragStart={item.onDragStart}

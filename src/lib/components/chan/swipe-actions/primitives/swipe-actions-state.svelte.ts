@@ -1,5 +1,5 @@
 import { animate, useMotionValue } from "motion-sv";
-import { watch } from "runed";
+import { SvelteMap } from "svelte/reactivity";
 import type {
 	DragHandler,
 	SwipeId,
@@ -18,7 +18,7 @@ import {
 } from "./swipe-actions-utils";
 
 export class SwipeRootState implements SwipeRootContextValue {
-	#registry = new Map<SwipeId, () => void>();
+	#registry = new SvelteMap<SwipeId, () => void>();
 
 	register = (id: SwipeId, close: () => void): VoidFunction => {
 		this.#registry.set(id, close);
@@ -59,24 +59,14 @@ export class SwipeItemState implements SwipeItemContextValue {
 	readonly collapse = useMotionValue(1);
 
 	#dragged = false;
-	#fullSwipeActions: Partial<Record<SwipeSide, () => void>> = {};
+	#fullSwipeActions: Record<SwipeSide, SvelteMap<SwipeId, () => void>> = {
+		left: new SvelteMap(),
+		right: new SvelteMap()
+	};
 	#options: SwipeItemOptions;
 
 	constructor(options: SwipeItemOptions) {
 		this.#options = options;
-
-		watch(
-			() => this.armed,
-			(armed) => {
-				animate(
-					this.collapse,
-					armed ? 0 : 1,
-					options.shouldReduceMotion()
-						? { duration: 0 }
-						: TAKEOVER_TWEEN
-				);
-			}
-		);
 	}
 
 	get disabled() {
@@ -84,10 +74,14 @@ export class SwipeItemState implements SwipeItemContextValue {
 	}
 
 	setItemWidth = (width: number) => {
+		if (this.itemWidth === width) return;
 		this.itemWidth = width;
 	};
 
 	setStripWidth = (side: SwipeSide, width: number) => {
+		const current = side === "left" ? this.leftWidth : this.rightWidth;
+		if (current === width) return;
+
 		if (side === "left") this.leftWidth = width;
 		else this.rightWidth = width;
 
@@ -96,15 +90,37 @@ export class SwipeItemState implements SwipeItemContextValue {
 		}
 	};
 
-	registerFullSwipe = (side: SwipeSide, run: () => void): VoidFunction => {
-		this.#fullSwipeActions[side] = run;
-		this.fullSwipeSides[side] = true;
+	registerFullSwipe = (
+		side: SwipeSide,
+		id: SwipeId,
+		run: () => void
+	): VoidFunction => {
+		const actions = this.#fullSwipeActions[side];
+		actions.set(id, run);
+		if (!this.fullSwipeSides[side]) this.fullSwipeSides[side] = true;
 
 		return () => {
-			delete this.#fullSwipeActions[side];
-			this.fullSwipeSides[side] = false;
+			actions.delete(id);
+			if (actions.size === 0) this.fullSwipeSides[side] = false;
 		};
 	};
+
+	#getFullSwipeAction(side: SwipeSide) {
+		const actions = this.#fullSwipeActions[side];
+		return Array.from(actions.values()).at(-1);
+	}
+
+	#setArmed(side: SwipeSide | null) {
+		if (this.armed === side) return;
+		this.armed = side;
+		animate(
+			this.collapse,
+			side ? 0 : 1,
+			this.#options.shouldReduceMotion()
+				? { duration: 0 }
+				: TAKEOVER_TWEEN
+		);
+	}
 
 	settle = (next: SwipeState, releaseVelocity?: number) => {
 		const widths = { left: this.leftWidth, right: this.rightWidth };
@@ -114,6 +130,10 @@ export class SwipeItemState implements SwipeItemContextValue {
 			: releaseVelocity === undefined
 				? SNAP_SPRING
 				: { ...GESTURE_SPRING, velocity: releaseVelocity };
+
+		const isSettled =
+			this.state === next && Math.abs(this.x.get() - target) < 0.5;
+		if (isSettled) return;
 
 		animate(this.x, target, transition);
 		if (next !== "closed")
@@ -137,14 +157,17 @@ export class SwipeItemState implements SwipeItemContextValue {
 
 		const reach = this.#options.fullSwipeThreshold() * this.itemWidth;
 		const travel = this.x.get();
-		if (reach <= 0) return;
+		if (reach <= 0) {
+			this.#setArmed(null);
+			return;
+		}
 
-		if (travel <= -reach && this.#fullSwipeActions.right) {
-			this.armed = "right";
-		} else if (travel >= reach && this.#fullSwipeActions.left) {
-			this.armed = "left";
+		if (travel <= -reach && this.fullSwipeSides.right) {
+			this.#setArmed("right");
+		} else if (travel >= reach && this.fullSwipeSides.left) {
+			this.#setArmed("left");
 		} else {
-			this.armed = null;
+			this.#setArmed(null);
 		}
 	};
 
@@ -153,9 +176,9 @@ export class SwipeItemState implements SwipeItemContextValue {
 
 		if (this.armed) {
 			const side = this.armed;
-			this.armed = null;
+			this.#setArmed(null);
 			this.#dragged = false;
-			this.#fullSwipeActions[side]?.();
+			this.#getFullSwipeAction(side)?.();
 			this.settle("closed", info.velocity.x);
 			return;
 		}

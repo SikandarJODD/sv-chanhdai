@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
-	import { onDestroy } from "svelte";
+	import { onDestroy, untrack } from "svelte";
 	import { useReducedMotion } from "motion-sv";
 	import { watch } from "runed";
 	import {
@@ -76,7 +76,7 @@
 	);
 
 	function attachItem(element: HTMLDivElement) {
-		ref = element;
+		untrack(() => (ref = element));
 		const observer = new ResizeObserver(() => {
 			item.setItemWidth(element.offsetWidth);
 		});
@@ -84,7 +84,9 @@
 
 		return () => {
 			observer.disconnect();
-			if (ref === element) ref = null;
+			untrack(() => {
+				if (ref === element) ref = null;
+			});
 		};
 	}
 

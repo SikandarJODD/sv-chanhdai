@@ -114,7 +114,11 @@ export type SwipeItemContextValue = {
 	readonly fullSwipeSides: Record<SwipeSide, boolean>;
 	setItemWidth: (width: number) => void;
 	setStripWidth: (side: SwipeSide, width: number) => void;
-	registerFullSwipe: (side: SwipeSide, run: () => void) => VoidFunction;
+	registerFullSwipe: (
+		side: SwipeSide,
+		id: SwipeId,
+		run: () => void
+	) => VoidFunction;
 	close: () => void;
 	onDragStart: DragHandler;
 	onDrag: DragHandler;

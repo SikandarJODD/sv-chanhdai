@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
+	import { untrack } from "svelte";
 	import { useMotionValueEvent } from "motion-sv";
 	import { watch } from "runed";
 	import {
@@ -39,14 +40,17 @@
 		ref.style.transform = `translate3d(${offset.toFixed(2)}px, 0, 0)`;
 	}
 
-	watch([() => primary, () => actions.side], ([isPrimary, currentSide]) => {
-		if (!isPrimary) return;
-		return item.registerFullSwipe(currentSide, () => {
-			ref?.dispatchEvent(
-				new MouseEvent("click", { bubbles: true, cancelable: true })
-			);
-		});
-	});
+	watch(
+		[() => actions.fullSwipe, () => actions.side],
+		([fullSwipe, currentSide]) => {
+			if (!fullSwipe) return;
+			return item.registerFullSwipe(currentSide, id, () => {
+				ref?.dispatchEvent(
+					new MouseEvent("click", { bubbles: true, cancelable: true })
+				);
+			});
+		}
+	);
 
 	watch(
 		[
@@ -66,10 +70,14 @@
 	}
 
 	function attachAction(element: HTMLButtonElement) {
-		ref = element;
-		place();
+		untrack(() => {
+			ref = element;
+			place();
+		});
 		return () => {
-			if (ref === element) ref = null;
+			untrack(() => {
+				if (ref === element) ref = null;
+			});
 		};
 	}
 </script>

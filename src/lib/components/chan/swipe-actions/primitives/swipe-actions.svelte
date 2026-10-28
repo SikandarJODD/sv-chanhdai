@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { cn } from "#lib/utils.js";
+	import { onDestroy, untrack } from "svelte";
 	import { useMotionValueEvent } from "motion-sv";
 	import { watch } from "runed";
 	import {
@@ -19,6 +20,7 @@
 
 	const item = useSwipeItem();
 	let contents = $state<{ id: SwipeId; width: number }[]>([]);
+	let measuredSide: SwipeActionsProps["side"] | undefined;
 	const total = $derived(
 		contents.reduce((sum, content) => sum + content.width, 0)
 	);
@@ -60,8 +62,14 @@
 	});
 
 	watch([() => side, () => total], ([currentSide, currentTotal]) => {
+		if (measuredSide && measuredSide !== currentSide) {
+			item.setStripWidth(measuredSide, 0);
+		}
+		measuredSide = currentSide;
 		item.setStripWidth(currentSide, currentTotal);
-		return () => item.setStripWidth(currentSide, 0);
+	});
+	onDestroy(() => {
+		if (measuredSide) item.setStripWidth(measuredSide, 0);
 	});
 
 	useMotionValueEvent(item.x, "change", (value) => {
@@ -71,10 +79,14 @@
 	});
 
 	function attachActions(element: HTMLDivElement) {
-		ref = element;
-		element.style.transform = `translate3d(${Math.round(item.x.get())}px, 0, 0)`;
+		untrack(() => {
+			ref = element;
+			element.style.transform = `translate3d(${Math.round(item.x.get())}px, 0, 0)`;
+		});
 		return () => {
-			if (ref === element) ref = null;
+			untrack(() => {
+				if (ref === element) ref = null;
+			});
 		};
 	}
 </script>
