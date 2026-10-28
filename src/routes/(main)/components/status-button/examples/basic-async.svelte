@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StatusButton } from "$chan/status-button";
+	import { StatusButton } from "#lib/components/chan/status-button";
 
 	function save() {
 		return new Promise<void>((resolve) => setTimeout(resolve, 1000));

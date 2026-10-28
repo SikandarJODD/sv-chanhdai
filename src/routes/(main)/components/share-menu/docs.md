@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/share-menu.json
 
 ```svelte
 <script>
-  import { ShareMenu } from "$chan/share-menu";
+  import { ShareMenu } from "#lib/components/chan/share-menu";
 </script>
 
 <ShareMenu title="Share Menu" url="/components/share-menu" />

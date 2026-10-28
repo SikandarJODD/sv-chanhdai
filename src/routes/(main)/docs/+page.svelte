@@ -3,7 +3,7 @@
 	import CopyPageDropdown from "#lib/components/docs/base/main/copy-page-dropdown.svelte";
 	import FaviconLink from "#lib/components/docs/base/main/favicon-link.svelte";
 	import Seo from "#lib/components/docs/base/main/seo.svelte";
-	import { H1, H2, Paragraph } from "$markdown";
+	import { H1, H2, Paragraph } from "#lib/components/docs/markdown/index.js";
 	import { mode } from "mode-watcher";
 
 	let getURLPath = (url: string) => {

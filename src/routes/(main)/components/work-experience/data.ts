@@ -54,7 +54,7 @@ const usage: CodeBlock[] = [
 	import {
 		WorkExperience,
 		type ExperienceItemType
-	} from "$chan/work-experience";
+	} from "#lib/components/chan/work-experience";
 
 	const experiences: ExperienceItemType[] = [
 		{

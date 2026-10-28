@@ -32,7 +32,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { MiddleTruncation } from "$chan/middle-truncation";
+	import { MiddleTruncation } from "#lib/components/chan/middle-truncation";
 </script>
 
 <div class="w-64">

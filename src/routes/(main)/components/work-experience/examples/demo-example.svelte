@@ -2,7 +2,7 @@
 	import {
 		WorkExperience,
 		type ExperienceItemType
-	} from "$chan/work-experience";
+	} from "#lib/components/chan/work-experience/index.js";
 
 	const experiences: ExperienceItemType[] = [
 		{

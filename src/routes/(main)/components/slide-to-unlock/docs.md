@@ -39,7 +39,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/slide-to-unlock
     SlideToUnlockHandle,
     SlideToUnlockText,
     SlideToUnlockTrack
-  } from "$chan/slide-to-unlock";
+  } from "#lib/components/chan/slide-to-unlock";
 
   function handleUnlock() {
     console.log("Unlocked");
@@ -124,7 +124,7 @@ Run a callback when the handle reaches the end of the track.
     SlideToUnlockHandle,
     SlideToUnlockText,
     SlideToUnlockTrack
-  } from "$chan/slide-to-unlock";
+  } from "#lib/components/chan/slide-to-unlock";
 
   let unlocked = $state(false);
 </script>
@@ -158,7 +158,7 @@ Return the handle to its starting position with the reset method.
     SlideToUnlockHandle,
     SlideToUnlockText,
     SlideToUnlockTrack
-  } from "$chan/slide-to-unlock";
+  } from "#lib/components/chan/slide-to-unlock";
 
   let slideToUnlock = $state<{ reset: () => void }>();
   let unlocked = $state(false);
@@ -207,7 +207,7 @@ Change the instruction while the handle is being dragged.
     SlideToUnlockHandle,
     SlideToUnlockText,
     SlideToUnlockTrack
-  } from "$chan/slide-to-unlock";
+  } from "#lib/components/chan/slide-to-unlock";
 
   let checkedIn = $state(false);
 </script>
@@ -247,7 +247,7 @@ Provide custom handle content, colors, and drag width.
     SlideToUnlockHandle,
     SlideToUnlockText,
     SlideToUnlockTrack
-  } from "$chan/slide-to-unlock";
+  } from "#lib/components/chan/slide-to-unlock";
 
   let launched = $state(false);
 </script>
@@ -294,7 +294,7 @@ Replace a one-time confirmation gesture with completion feedback.
     SlideToUnlockHandle,
     SlideToUnlockText,
     SlideToUnlockTrack
-  } from "$chan/slide-to-unlock";
+  } from "#lib/components/chan/slide-to-unlock";
 
   let published = $state(false);
 
@@ -387,7 +387,7 @@ Show processing and success states after the gesture completes.
     SlideToUnlockHandle,
     SlideToUnlockText,
     SlideToUnlockTrack
-  } from "$chan/slide-to-unlock";
+  } from "#lib/components/chan/slide-to-unlock";
 
   let status = $state<"idle" | "processing" | "complete">("idle");
   const shouldReduceMotion = useReducedMotion();
@@ -502,7 +502,7 @@ Add deliberate friction before a destructive action.
     SlideToUnlockHandle,
     SlideToUnlockText,
     SlideToUnlockTrack
-  } from "$chan/slide-to-unlock";
+  } from "#lib/components/chan/slide-to-unlock";
 
   let deleted = $state(false);
 

@@ -5,7 +5,7 @@
 		ContributionGraphBlock,
 		ContributionGraphCalendar,
 		type Activity
-	} from "$chan/github-contributions";
+	} from "#lib/components/chan/github-contributions";
 
 	const startDate = new Date(2025, 0, 5);
 	const data: Activity[] = Array.from({ length: 18 * 7 }, (_, index) => {

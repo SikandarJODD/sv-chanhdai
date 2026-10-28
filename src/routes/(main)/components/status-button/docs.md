@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/status-button.j
 
 ```svelte
 <script lang="ts">
-  import { StatusButton } from "$chan/status-button";
+  import { StatusButton } from "#lib/components/chan/status-button";
 
   async function saveChanges() {
     await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -78,7 +78,7 @@ Async button with loading, success, and failure transitions.
 
 ```svelte
 <script lang="ts">
-  import { StatusButton } from "$chan/status-button";
+  import { StatusButton } from "#lib/components/chan/status-button";
 
   function save() {
     return new Promise<void>((resolve) => setTimeout(resolve, 1000));
@@ -93,7 +93,10 @@ Async button with loading, success, and failure transitions.
 
 ```svelte
 <script lang="ts">
-  import { StatusButton, type ButtonStatus } from "$chan/status-button";
+  import {
+    StatusButton,
+    type ButtonStatus
+  } from "#lib/components/chan/status-button";
 
   let status = $state<ButtonStatus>("idle");
 
@@ -122,7 +125,7 @@ Async button with loading, success, and failure transitions.
 
 ```svelte
 <script lang="ts">
-  import { StatusButton } from "$chan/status-button";
+  import { StatusButton } from "#lib/components/chan/status-button";
 
   function publish() {
     return new Promise<void>((resolve) => setTimeout(resolve, 1200));
@@ -145,7 +148,7 @@ Async button with loading, success, and failure transitions.
 
 ```svelte
 <script lang="ts">
-  import { StatusButton } from "$chan/status-button";
+  import { StatusButton } from "#lib/components/chan/status-button";
 
   let attempts = $state(0);
   let errorMessage = $state("Failed to save · Retry");
@@ -185,7 +188,7 @@ Async button with loading, success, and failure transitions.
 ```svelte
 <script lang="ts">
   import CreditCardIcon from "@lucide/svelte/icons/credit-card";
-  import { StatusButton } from "$chan/status-button";
+  import { StatusButton } from "#lib/components/chan/status-button";
 
   function pay() {
     return new Promise<void>((resolve) => setTimeout(resolve, 1200));
@@ -213,7 +216,7 @@ Async button with loading, success, and failure transitions.
 ```svelte
 <script lang="ts">
   import CloudUploadIcon from "@lucide/svelte/icons/cloud-upload";
-  import { StatusButton } from "$chan/status-button";
+  import { StatusButton } from "#lib/components/chan/status-button";
 
   let progress = $state(0);
 

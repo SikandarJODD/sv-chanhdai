@@ -42,7 +42,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/timescale.json
     TimescaleTick,
     TimescaleTrack,
     TimescaleYear
-  } from "$chan/timescale";
+  } from "#lib/components/chan/timescale";
 </script>
 
 <Timescale orientation="vertical">

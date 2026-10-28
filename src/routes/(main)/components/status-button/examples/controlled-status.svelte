@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { StatusButton, type ButtonStatus } from "$chan/status-button";
+	import {
+		StatusButton,
+		type ButtonStatus
+	} from "#lib/components/chan/status-button";
 
 	let status = $state<ButtonStatus>("idle");
 

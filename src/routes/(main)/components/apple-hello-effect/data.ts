@@ -94,7 +94,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "preview.svelte",
 		code: `<script lang="ts">
-	import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+	import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect";
 </script>
 
 <AppleHelloEffectEnglish />`,

@@ -33,7 +33,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { GithubStars } from "$chan/github-stars";
+	import { GithubStars } from "#lib/components/chan/github-stars";
 </script>
 
 <GithubStars repo="SikandarJODD/sv-table" stargazersCount={82} />`,

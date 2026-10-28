@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/brand-assets-me
 
 ```svelte
 <script lang="ts">
-  import { BrandAssetsMenu } from "$chan/brand-assets-menu";
+  import { BrandAssetsMenu } from "#lib/components/chan/brand-assets-menu";
 
   const LOGOMARK_SVG =
     '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>';

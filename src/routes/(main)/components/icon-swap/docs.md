@@ -35,8 +35,11 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/icon-swap.json
 ```svelte
 <script lang="ts">
   import { MonitorIcon, MoonIcon, SunIcon } from "@lucide/svelte";
-  import { IconSwap, IconSwapItem } from "$chan/icon-swap";
-  import { Button } from "$ui/button";
+  import {
+    IconSwap,
+    IconSwapItem
+  } from "#lib/components/chan/icon-swap/index.js";
+  import { Button } from "#lib/components/ui/button/index.js";
   const ICONS = {
     sun: SunIcon,
     moon: MoonIcon,

@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dot-grid-spotli
 
 ```svelte
 <script lang="ts">
-  import { DotGridSpotlight } from "$chan/dot-grid-spotlight";
+  import { DotGridSpotlight } from "#lib/components/chan/dot-grid-spotlight";
 </script>
 
 <div class="relative h-80 w-full overflow-hidden">
@@ -73,7 +73,7 @@ Canvas dot grid with a pointer-driven spotlight.
 
 ```svelte
 <script lang="ts">
-  import { DotGridSpotlight } from "$chan/dot-grid-spotlight";
+  import { DotGridSpotlight } from "#lib/components/chan/dot-grid-spotlight";
   import { mode } from "mode-watcher";
 
   const DOT_COLORS = {

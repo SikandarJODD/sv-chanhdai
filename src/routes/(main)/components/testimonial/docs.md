@@ -43,7 +43,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial.jso
     TestimonialAvatarImg,
     TestimonialAvatarRing,
     TestimonialQuote
-  } from "$chan/testimonial";
+  } from "#lib/components/chan/testimonial";
 </script>
 
 <Testimonial>

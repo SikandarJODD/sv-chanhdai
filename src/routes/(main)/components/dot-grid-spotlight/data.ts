@@ -33,7 +33,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "preview.svelte",
 		code: `<script lang="ts">
-	import { DotGridSpotlight } from "$chan/dot-grid-spotlight";
+	import { DotGridSpotlight } from "#lib/components/chan/dot-grid-spotlight";
 </script>
 
 <div class="relative h-80 w-full overflow-hidden">

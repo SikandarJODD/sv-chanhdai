@@ -34,8 +34,8 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/toc-minimap.jso
 
 ```svelte
 <script lang="ts">
-  import type { TOCItemType } from "$chan/toc-minimap";
-  import { TOCMinimap } from "$chan/toc-minimap";
+  import type { TOCItemType } from "#lib/components/chan/toc-minimap";
+  import { TOCMinimap } from "#lib/components/chan/toc-minimap";
 
   const items: TOCItemType[] = [
     { title: "Overview", url: "#overview", depth: 2 },
@@ -58,8 +58,8 @@ Provide the minimap items directly for known headings.
 
 ```svelte
 <script lang="ts">
-  import type { TOCItemType } from "$chan/toc-minimap";
-  import { TOCMinimap } from "$chan/toc-minimap";
+  import type { TOCItemType } from "#lib/components/chan/toc-minimap";
+  import { TOCMinimap } from "#lib/components/chan/toc-minimap";
 
   const items: TOCItemType[] = [
     { title: "Features", url: "#static-features", depth: 2 },
@@ -114,8 +114,8 @@ Generate minimap items from the headings rendered inside an article.
 <script lang="ts">
   import type { Heading } from "#lib/hooks/use-toc.svelte.js";
   import { UseToc } from "#lib/hooks/use-toc.svelte.js";
-  import type { TOCItemType } from "$chan/toc-minimap";
-  import { TOCMinimap } from "$chan/toc-minimap";
+  import type { TOCItemType } from "#lib/components/chan/toc-minimap";
+  import { TOCMinimap } from "#lib/components/chan/toc-minimap";
 
   let toc = new UseToc();
 

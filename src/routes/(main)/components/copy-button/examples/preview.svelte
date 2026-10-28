@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CopyButton } from "$chan/copy-button";
+	import { CopyButton } from "#lib/components/chan/copy-button";
 </script>
 
 <div class="flex items-center gap-2">

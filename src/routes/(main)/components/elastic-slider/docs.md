@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/elastic-slider.
 
 ```svelte
 <script lang="ts">
-  import { ElasticSlider } from "$chan/elastic-slider";
+  import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 </script>
 
 <ElasticSlider label="Volume" min={0} max={100} step={1} defaultValue={50} />
@@ -74,7 +74,7 @@ Set the initial value while letting the slider manage its own state.
 
 ```svelte
 <script lang="ts">
-  import { ElasticSlider } from "$chan/elastic-slider";
+  import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 </script>
 
 <div class="w-72">
@@ -95,7 +95,7 @@ Keep the value in parent state with value and onValueChange.
 
 ```svelte
 <script lang="ts">
-  import { ElasticSlider } from "$chan/elastic-slider";
+  import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 
   let volume = $state(35);
 </script>
@@ -130,7 +130,7 @@ Format the displayed value with Intl.NumberFormat.
 
 ```svelte
 <script lang="ts">
-  import { ElasticSlider } from "$chan/elastic-slider";
+  import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 
   const currency = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -157,7 +157,7 @@ Combine a fractional step with a custom unit and fixed precision.
 
 ```svelte
 <script lang="ts">
-  import { ElasticSlider } from "$chan/elastic-slider";
+  import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 </script>
 
 <div class="w-72">
@@ -178,7 +178,7 @@ Use a short integer range for exact, visible stops.
 
 ```svelte
 <script lang="ts">
-  import { ElasticSlider } from "$chan/elastic-slider";
+  import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 </script>
 
 <div class="w-72">
@@ -199,7 +199,7 @@ Configure a range that spans values below and above zero.
 
 ```svelte
 <script lang="ts">
-  import { ElasticSlider } from "$chan/elastic-slider";
+  import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 </script>
 
 <div class="w-72">
@@ -220,7 +220,7 @@ Connect multiple controlled sliders to a visual preview.
 
 ```svelte
 <script lang="ts">
-  import { ElasticSlider } from "$chan/elastic-slider";
+  import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 
   let opacity = $state(0.8);
   let blur = $state(0);

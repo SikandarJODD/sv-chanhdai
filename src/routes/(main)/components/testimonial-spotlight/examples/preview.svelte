@@ -9,8 +9,8 @@
 		TestimonialAvatarRing,
 		TestimonialQuote,
 		TestimonialVerifiedBadge
-	} from "$chan/testimonial";
-	import { TestimonialSpotlight } from "$chan/testimonial-spotlight";
+	} from "#lib/components/chan/testimonial";
+	import { TestimonialSpotlight } from "#lib/components/chan/testimonial-spotlight";
 </script>
 
 <a

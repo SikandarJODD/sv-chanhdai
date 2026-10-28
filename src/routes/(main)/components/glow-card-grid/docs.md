@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/glow-card-grid.
 
 ```svelte
 <script lang="ts">
-  import { GlowCard, GlowCardGrid } from "$chan/glow-card-grid";
+  import { GlowCard, GlowCardGrid } from "#lib/components/chan/glow-card-grid";
 </script>
 
 <GlowCardGrid>
@@ -92,7 +92,7 @@ Profile card rendered within a GlowCardGrid.
 
 ```svelte
 <script lang="ts">
-  import { GlowCard, GlowCardGrid } from "$chan/glow-card-grid";
+  import { GlowCard, GlowCardGrid } from "#lib/components/chan/glow-card-grid";
 
   const PROFILES = [
     {
@@ -131,7 +131,7 @@ Profile card rendered within a GlowCardGrid.
 
 ```svelte
 <script lang="ts">
-  import { GlowCard, GlowCardGrid } from "$chan/glow-card-grid";
+  import { GlowCard, GlowCardGrid } from "#lib/components/chan/glow-card-grid";
 
   const PROFILES = [
     {
@@ -172,7 +172,7 @@ Profile card rendered within a GlowCardGrid.
 
 ```svelte
 <script lang="ts">
-  import { GlowCard, GlowCardGrid } from "$chan/glow-card-grid";
+  import { GlowCard, GlowCardGrid } from "#lib/components/chan/glow-card-grid";
 
   const PROFILES = [
     {

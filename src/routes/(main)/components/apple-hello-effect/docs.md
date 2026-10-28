@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/apple-hello-eff
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+  import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect";
 </script>
 
 <AppleHelloEffectEnglish />
@@ -65,7 +65,7 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+  import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect";
 </script>
 
 <AppleHelloEffectEnglish
@@ -77,7 +77,7 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+  import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect";
 </script>
 
 <AppleHelloEffectEnglish />
@@ -87,7 +87,7 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectHindi } from "$chan/apple-hello-effect";
+  import { AppleHelloEffectHindi } from "#lib/components/chan/apple-hello-effect";
 </script>
 
 <AppleHelloEffectHindi />
@@ -97,7 +97,7 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectSpanish } from "$chan/apple-hello-effect";
+  import { AppleHelloEffectSpanish } from "#lib/components/chan/apple-hello-effect";
 </script>
 
 <AppleHelloEffectSpanish />
@@ -107,7 +107,7 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectVietnamese } from "$chan/apple-hello-effect";
+  import { AppleHelloEffectVietnamese } from "#lib/components/chan/apple-hello-effect";
 </script>
 
 <AppleHelloEffectVietnamese />

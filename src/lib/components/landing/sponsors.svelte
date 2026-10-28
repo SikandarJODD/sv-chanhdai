@@ -3,7 +3,7 @@
 	import Github from "#lib/svg/github.svelte";
 	import X from "#lib/svg/x.svelte";
 	import { cn } from "#lib/utils.js";
-	import { Annotation } from "$ui/annotation";
+	import { Annotation } from "#lib/components/ui/annotation";
 
 	type Sponsor = {
 		name: string;

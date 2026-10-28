@@ -47,7 +47,7 @@ const usage: CodeBlock[] = [
 		TestimonialAvatarImg,
 		TestimonialAvatarRing,
 		TestimonialQuote
-	} from "$chan/testimonial";
+	} from "#lib/components/chan/testimonial";
 </script>
 
 <Testimonial>

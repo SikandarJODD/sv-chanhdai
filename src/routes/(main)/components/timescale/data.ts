@@ -48,7 +48,7 @@ const usage: CodeBlock[] = [
 		TimescaleTick,
 		TimescaleTrack,
 		TimescaleYear
-	} from "$chan/timescale";
+	} from "#lib/components/chan/timescale";
 </script>
 
 <Timescale orientation="vertical">

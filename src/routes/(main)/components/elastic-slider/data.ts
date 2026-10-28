@@ -47,7 +47,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { ElasticSlider } from "$chan/elastic-slider";
+	import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 </script>
 
 <ElasticSlider

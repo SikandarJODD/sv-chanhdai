@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ElasticSlider } from "$chan/elastic-slider";
+	import { ElasticSlider } from "#lib/components/chan/elastic-slider";
 
 	const currency = new Intl.NumberFormat("en-US", {
 		style: "currency",

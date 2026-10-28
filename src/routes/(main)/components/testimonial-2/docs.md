@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial-2.j
 
 ```svelte
 <script lang="ts">
-  import { Testimonial2 } from "$chan/testimonial-2";
+  import { Testimonial2 } from "#lib/components/chan/testimonial-2";
 </script>
 
 <Testimonial2

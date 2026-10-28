@@ -29,7 +29,12 @@
 
 <script lang="ts">
 	import { page } from "$app/state";
-	import { H1, H2, Paragraph, H3 } from "$markdown";
+	import {
+		H1,
+		H2,
+		Paragraph,
+		H3
+	} from "#lib/components/docs/markdown/index.js";
 	import PackageBadges from "./package-badges.svelte";
 	import InstallComponent from "./install-component.svelte";
 	import ApiTable from "../api-table/api-table.svelte";

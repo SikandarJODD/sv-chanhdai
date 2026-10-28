@@ -14,7 +14,7 @@
 	import RotateCw from "@lucide/svelte/icons/rotate-cw";
 	import { cn } from "#lib/utils.js";
 	import * as Frame from "#lib/components/ui/frame/index.js";
-	import { Button } from "$ui/button";
+	import { Button } from "#lib/components/ui/button/index.js";
 
 	let {
 		name,

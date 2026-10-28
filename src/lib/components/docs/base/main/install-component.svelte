@@ -19,7 +19,7 @@
 	import { cn } from "#lib/utils.js";
 	import * as Tabs from "#lib/components/ui/tabs/index.js";
 	import type { CodeBlock } from "#lib/types/code.js";
-	import { Steps, Step } from "$markdown";
+	import { Steps, Step } from "#lib/components/docs/markdown/index.js";
 	import { SingleFile } from "#lib/components/ui/code/index.js";
 	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
 	import { PersistedState } from "runed";

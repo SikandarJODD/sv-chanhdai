@@ -5,7 +5,7 @@
 	import { Button } from "#lib/components/ui/button/index.js";
 	import { components } from "#lib/registry/components.js";
 	import { Github } from "#lib/svg/index.js";
-	import { Annotation } from "$ui/annotation";
+	import { Annotation } from "#lib/components/ui/annotation";
 	import { mode } from "mode-watcher";
 	import { MediaQuery } from "svelte/reactivity";
 

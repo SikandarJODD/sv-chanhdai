@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Button, buttonVariants } from "$ui/button";
-	import * as Tooltip from "$ui/tooltip/index.js";
+	import { Button, buttonVariants } from "#lib/components/ui/button/index.js";
+	import * as Tooltip from "#lib/components/ui/tooltip/index.js";
 
 	type GitHubStarsProps = {
 		/** GitHub repository in `owner/repo` format. */

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Heading } from "#lib/hooks/use-toc.svelte.js";
 	import { UseToc } from "#lib/hooks/use-toc.svelte.js";
-	import type { TOCItemType } from "$chan/toc-minimap";
-	import { TOCMinimap } from "$chan/toc-minimap";
+	import type { TOCItemType } from "#lib/components/chan/toc-minimap";
+	import { TOCMinimap } from "#lib/components/chan/toc-minimap";
 
 	let toc = new UseToc();
 

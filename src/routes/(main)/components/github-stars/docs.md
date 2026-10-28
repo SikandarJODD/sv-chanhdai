@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/github-stars.js
 
 ```svelte
 <script lang="ts">
-  import { GithubStars } from "$chan/github-stars";
+  import { GithubStars } from "#lib/components/chan/github-stars";
 </script>
 
 <GithubStars repo="SikandarJODD/sv-table" stargazersCount={82} />
@@ -68,7 +68,7 @@ Fetch the latest star count from the GitHub REST API.
 ```svelte
 <script lang="ts">
   import { onMount } from "svelte";
-  import { GithubStars } from "$chan/github-stars";
+  import { GithubStars } from "#lib/components/chan/github-stars";
 
   type GitHubRepository = {
     stargazers_count: number;

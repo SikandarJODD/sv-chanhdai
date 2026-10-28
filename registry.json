@@ -7,7 +7,7 @@
 		"utils": "$lib/utils",
 		"hooks": "$lib/hooks",
 		"components": "$lib/components",
-		"ui": "$ui"
+		"ui": "#lib/components/ui"
 	},
 	"items": [
 		{

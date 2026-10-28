@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { StatusButton } from "$chan/status-button";
+	import { StatusButton } from "#lib/components/chan/status-button";
 
 	let attempts = $state(0);
 	let errorMessage = $state("Failed to save · Retry");

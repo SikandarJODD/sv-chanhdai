@@ -3,7 +3,7 @@
 		WheelPicker,
 		WheelPickerWrapper,
 		type WheelPickerOption
-	} from "$chan/wheel-picker";
+	} from "#lib/components/chan/wheel-picker";
 
 	const createArray = (
 		length: number,

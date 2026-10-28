@@ -30,7 +30,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { Testimonial2 } from "$chan/testimonial-2";
+	import { Testimonial2 } from "#lib/components/chan/testimonial-2";
 </script>
 
 <Testimonial2

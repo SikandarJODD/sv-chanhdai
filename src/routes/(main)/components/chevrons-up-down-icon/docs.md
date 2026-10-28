@@ -37,8 +37,8 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/chevrons-up-dow
   import {
     ChevronsUpDownIcon,
     type ChevronsUpDownIconHandle
-  } from "$chan/chevrons-up-down-icon";
-  import { Button } from "$ui/button";
+  } from "#lib/components/chan/chevrons-up-down-icon";
+  import { Button } from "#lib/components/ui/button/index.js";
   import { watch } from "runed";
 
   let open = $state(false);

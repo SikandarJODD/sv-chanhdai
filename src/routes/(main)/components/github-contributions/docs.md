@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/github-contribu
 
 ```svelte
 <script lang="ts">
-  import { GitHubContributions } from "$chan/github-contributions";
+  import { GitHubContributions } from "#lib/components/chan/github-contributions";
 </script>
 
 <GitHubContributions username="SikandarJODD" />
@@ -133,7 +133,7 @@ Apply a warm orange palette to every contribution level.
 
 ```svelte
 <script lang="ts">
-  import { GitHubContributions } from "$chan/github-contributions";
+  import { GitHubContributions } from "#lib/components/chan/github-contributions";
 </script>
 
 <GitHubContributions
@@ -158,7 +158,7 @@ Translate month, total count, and legend labels.
     ContributionGraphTotalCount,
     type Activity,
     type Labels
-  } from "$chan/github-contributions";
+  } from "#lib/components/chan/github-contributions";
 
   const labels: Labels = {
     months: [

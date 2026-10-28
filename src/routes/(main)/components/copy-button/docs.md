@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/copy-button.jso
 
 ```svelte
 <script lang="ts">
-  import { CopyButton } from "$chan/copy-button";
+  import { CopyButton } from "#lib/components/chan/copy-button";
 </script>
 
 <CopyButton text="Hello, world!">Copy</CopyButton>

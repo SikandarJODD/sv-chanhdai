@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/spinning-circul
 
 ```svelte
 <script lang="ts">
-  import { SpinningCircularText } from "$chan/spinning-circular-text";
+  import { SpinningCircularText } from "#lib/components/chan/spinning-circular-text";
 </script>
 
 <SpinningCircularText text="Port By Bhide Svelte • " />

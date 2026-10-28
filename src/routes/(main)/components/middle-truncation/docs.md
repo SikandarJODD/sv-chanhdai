@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/middle-truncati
 
 ```svelte
 <script lang="ts">
-  import { MiddleTruncation } from "$chan/middle-truncation";
+  import { MiddleTruncation } from "#lib/components/chan/middle-truncation";
 </script>
 
 <div class="w-64">
@@ -70,12 +70,12 @@ Preserve file extensions while truncating names inside a resizable container.
 
 ```svelte
 <script lang="ts">
-  import { MiddleTruncation } from "$chan/middle-truncation";
+  import { MiddleTruncation } from "#lib/components/chan/middle-truncation";
   import {
     ResizableHandle,
     ResizablePane,
     ResizablePaneGroup
-  } from "$ui/resizable";
+  } from "#lib/components/ui/resizable";
 
   const files = [
     {

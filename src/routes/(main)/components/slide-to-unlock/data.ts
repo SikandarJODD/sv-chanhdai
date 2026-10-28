@@ -54,7 +54,7 @@ const usage: CodeBlock[] = [
 		SlideToUnlockHandle,
 		SlideToUnlockText,
 		SlideToUnlockTrack
-	} from "$chan/slide-to-unlock";
+	} from "#lib/components/chan/slide-to-unlock";
 
 	function handleUnlock() {
 		console.log("Unlocked");

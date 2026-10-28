@@ -3,8 +3,8 @@
 	import { ArrowUpRightIcon, PackageIcon } from "@lucide/svelte";
 	import LinkItem from "./link-item.svelte";
 	import { navs } from "./nav-links";
-	import Github from "$icons/github.svelte";
-	import { Button } from "$ui/button";
+	import Github from "#lib/components/icons/index.js/github.svelte";
+	import { Button } from "#lib/components/ui/button/index.js";
 
 	type ProjectItem = {
 		title: string;

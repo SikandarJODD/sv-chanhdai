@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial-spo
 
 ```svelte
 <script lang="ts">
-  import { TestimonialSpotlight } from "$chan/testimonial-spotlight";
+  import { TestimonialSpotlight } from "#lib/components/chan/testimonial-spotlight";
 </script>
 
 <TestimonialSpotlight class="max-w-sm p-6">

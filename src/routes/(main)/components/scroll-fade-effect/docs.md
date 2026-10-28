@@ -34,8 +34,8 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/scroll-fade-eff
 
 ```svelte
 <script lang="ts">
-  import { ScrollFadeEffect } from "$chan/scroll-fade-effect";
-  import { Separator } from "$ui/separator";
+  import { ScrollFadeEffect } from "#lib/components/chan/scroll-fade-effect";
+  import { Separator } from "#lib/components/ui/separator";
 
   const tags = Array.from({ length: 50 }).map(
     (_, i, a) => `v1.2.0-beta.${a.length - i}`

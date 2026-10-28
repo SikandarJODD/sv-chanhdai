@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { DollarIcon } from "$icons";
+	import { DollarIcon } from "#lib/components/icons/index.js";
 	import { Button } from "#lib/components/ui/button/index.js";
 	import * as Card from "#lib/components/ui/card/index.js";
 	import * as Sidebar from "#lib/components/ui/sidebar/index.js";

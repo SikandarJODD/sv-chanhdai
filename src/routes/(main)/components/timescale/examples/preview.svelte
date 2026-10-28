@@ -11,7 +11,7 @@
 		TimescaleTrack,
 		TimescaleViewport,
 		TimescaleYear
-	} from "$chan/timescale";
+	} from "#lib/components/chan/timescale";
 
 	type Link = {
 		text: string;

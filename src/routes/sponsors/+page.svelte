@@ -3,7 +3,7 @@
 	import CurrentSponsor from "#lib/components/sponsors/current-sponsor.svelte";
 	import Github from "#lib/svg/github.svelte";
 	import X from "#lib/svg/x.svelte";
-	import Button from "$ui/button/button.svelte";
+	import Button from "#lib/components/ui/button/button.svelte";
 
 	type Sponsor = {
 		name: string;

@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { MiddleTruncation } from "$chan/middle-truncation";
+	import { MiddleTruncation } from "#lib/components/chan/middle-truncation";
 	import {
 		ResizableHandle,
 		ResizablePane,
 		ResizablePaneGroup
-	} from "$ui/resizable";
+	} from "#lib/components/ui/resizable";
 </script>
 
 <ResizablePaneGroup direction="horizontal" class="w-full max-w-md">

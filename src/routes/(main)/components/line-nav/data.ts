@@ -31,7 +31,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { LineNav } from "$chan/line-nav";
+	import { LineNav } from "#lib/components/chan/line-nav";
 
 	const items = [
 		{ title: "Introduction", href: "#introduction" },

@@ -1,5 +1,8 @@
 <script lang="ts">
-	import { GlowCard, GlowCardGrid } from "$chan/glow-card-grid";
+	import {
+		GlowCard,
+		GlowCardGrid
+	} from "#lib/components/chan/glow-card-grid";
 
 	const CARDS = [
 		{

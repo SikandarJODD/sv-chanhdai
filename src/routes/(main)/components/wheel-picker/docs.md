@@ -38,7 +38,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/wheel-picker.js
     WheelPicker,
     WheelPickerWrapper,
     type WheelPickerOption
-  } from "$chan/wheel-picker";
+  } from "#lib/components/chan/wheel-picker";
 
   const options: WheelPickerOption[] = [
     { label: "React", value: "react" },
@@ -103,7 +103,7 @@ Combine three wheel pickers to select an hour, minute, and meridiem.
     WheelPicker,
     WheelPickerWrapper,
     type WheelPickerOption
-  } from "$chan/wheel-picker";
+  } from "#lib/components/chan/wheel-picker";
 
   const createArray = (length: number, add = 0): WheelPickerOption<number>[] =>
     Array.from({ length }, (_, i) => {

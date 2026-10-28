@@ -38,7 +38,7 @@ const usage: CodeBlock[] = [
 		WheelPicker,
 		WheelPickerWrapper,
 		type WheelPickerOption
-	} from "$chan/wheel-picker";
+	} from "#lib/components/chan/wheel-picker";
 
 	const options: WheelPickerOption[] = [
 		{ label: "React", value: "react" },

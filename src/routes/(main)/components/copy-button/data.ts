@@ -29,7 +29,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { CopyButton } from "$chan/copy-button";
+	import { CopyButton } from "#lib/components/chan/copy-button";
 </script>
 
 <CopyButton text="Hello, world!">Copy</CopyButton>`,
