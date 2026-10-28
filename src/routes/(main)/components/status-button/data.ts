@@ -36,7 +36,7 @@ export const meta: ComponentMeta = {
 const seo: SEO = {
 	title: "Status Button",
 	description:
-		"Add async loading, success, and failure states to a button in Svelte with Status Button.",
+		"An async Svelte button with idle, loading, success, failure, and controlled states.",
 	keywords: ["Svelte", "Status Button", "Component", "Async Button"]
 };
 

@@ -1,4 +1,4 @@
-# Testimonial 2
+# Testimonial Quote
 
 Display a testimonial quote with author attribution and source link.
 

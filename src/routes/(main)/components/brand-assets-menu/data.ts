@@ -15,13 +15,15 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "brand-assets-menu",
 	title: "Brand Assets Menu",
-	description: "Context menu for copying brand SVGs and opening asset links.",
+	description:
+		"A context menu for copying brand SVGs or opening their asset links.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Brand Assets Menu",
-	description: "Context menu for copying brand SVGs and opening asset links.",
+	description:
+		"A context menu for copying brand SVGs or opening their asset links.",
 	keywords: ["Svelte", "Brand Assets Menu", "Component"]
 };
 

@@ -30,14 +30,14 @@ export const meta: ComponentMeta = {
 	id: "swipe-actions",
 	title: "Swipe Actions",
 	description:
-		"Swipe a row in a list to reveal actions on the left or right.",
+		"Swipe a list row left or right to reveal configurable actions.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Swipe Actions",
 	description:
-		"Swipe a row in a list to reveal actions on the left or right.",
+		"Swipe a list row left or right to reveal configurable actions.",
 	keywords: [
 		"Svelte",
 		"Swipe Actions",

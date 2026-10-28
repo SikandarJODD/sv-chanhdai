@@ -28,14 +28,14 @@ export const meta: ComponentMeta = {
 	id: "work-experience",
 	title: "Work Experience",
 	description:
-		"Display work experiences with role details, company logos, and durations.",
+		"A work-history timeline for roles, companies, dates, descriptions, and related links.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Work Experience",
 	description:
-		"Display work experiences with role details, company logos, and durations.",
+		"A work-history timeline for roles, companies, dates, descriptions, and related links.",
 	keywords: [
 		"Svelte",
 		"Svelte 5",

@@ -8,7 +8,12 @@
 		description: string;
 		keywords?: string[];
 		titleTemplate?: string;
-		schemaType?: "WebPage" | "CollectionPage";
+		schemaType?:
+			| "WebPage"
+			| "CollectionPage"
+			| "TechArticle"
+			| "AboutPage"
+			| "WebSite";
 		images?: {
 			url: string;
 			secureUrl?: string;
@@ -29,8 +34,8 @@
 				url: seo_config.url + "/og.png",
 				secureUrl: seo_config.url + "/og.png",
 				type: "image/png",
-				width: 1730,
-				height: 909,
+				width: 1728,
+				height: 910,
 				alt: `${seo_config.site_name} preview`
 			}
 		]
@@ -40,6 +45,73 @@
 		new URL(page.url.pathname, `${seo_config.url}/`).href
 	);
 	let primaryImage = $derived(images[0]);
+	let websiteId = `${seo_config.url}/#website`;
+	let breadcrumbs = $derived.by(() => {
+		if (page.url.pathname === "/") return [];
+
+		let items = [{ name: "Home", item: `${seo_config.url}/` }];
+
+		if (page.url.pathname.startsWith("/docs/")) {
+			items.push({ name: "Documentation", item: `${seo_config.url}/docs` });
+		}
+
+		items.push({ name: title, item: canonical });
+		return items;
+	});
+	let schema = $derived.by(() => {
+		let website = {
+			"@type": "WebSite",
+			"@id": websiteId,
+			url: `${seo_config.url}/`,
+			name: seo_config.site_name,
+			description: seo_config.description,
+			inLanguage: "en"
+		};
+
+		if (schemaType === "WebSite") {
+			return { "@context": "https://schema.org", "@graph": [website] };
+		}
+
+		let webpage = {
+			"@type": schemaType,
+			"@id": `${canonical}#webpage`,
+			url: canonical,
+			name: title,
+			description,
+			inLanguage: "en",
+			isPartOf: { "@id": websiteId },
+			image: primaryImage
+				? {
+						"@type": "ImageObject",
+						url: primaryImage.url,
+						width: primaryImage.width,
+						height: primaryImage.height
+					}
+				: undefined,
+			author: {
+				"@type": "Person",
+				name: "Sikandar Bhide",
+				url: "https://bhide.dev"
+			},
+			...(schemaType === "TechArticle" ? { headline: title } : {})
+		};
+
+		let breadcrumb = {
+			"@type": "BreadcrumbList",
+			"@id": `${canonical}#breadcrumb`,
+			itemListElement: breadcrumbs.map((item, index) => ({
+				"@type": "ListItem",
+				position: index + 1,
+				name: item.name,
+				item: item.item
+			}))
+		};
+
+		return {
+			"@context": "https://schema.org",
+			"@graph": [website, webpage, breadcrumb]
+		};
+	});
 </script>
 
 <MetaTags
@@ -78,24 +150,4 @@
 	]}
 />
 
-<JsonLd
-	schema={{
-		"@context": "https://schema.org",
-		"@type": schemaType,
-		name: title,
-		description,
-		url: canonical,
-		inLanguage: "en",
-		image: primaryImage?.url,
-		isPartOf: {
-			"@type": "WebSite",
-			name: seo_config.site_name,
-			url: seo_config.url
-		},
-		author: {
-			"@type": "Person",
-			name: "Sikandar Bhide",
-			url: "https://bhide.dev"
-		}
-	}}
-/>
+<JsonLd {schema} />

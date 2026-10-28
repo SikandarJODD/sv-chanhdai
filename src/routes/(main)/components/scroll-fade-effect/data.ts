@@ -14,14 +14,14 @@ export const meta: ComponentMeta = {
 	id: "scroll-fade-effect",
 	title: "Scroll Fade Effect",
 	description:
-		"Fade content edges as you scroll, for both vertical and horizontal layouts.",
+		"A CSS scroll mask that fades content at vertical or horizontal edges.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Scroll Fade Effect",
 	description:
-		"Fade content edges as you scroll, for both vertical and horizontal layouts.",
+		"A CSS scroll mask that fades content at vertical or horizontal edges.",
 	keywords: ["Svelte", "Scroll Fade Effect", "Component"]
 };
 

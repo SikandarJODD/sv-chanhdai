@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { MetaTags } from "svelte-meta-tags";
+	import Seo from "#lib/components/docs/base/main/seo.svelte";
 	import { Footer, Hero, Sponsors } from "#lib/components/landing/index.js";
 	import MasonryGrid from "#lib/components/ui/masonry-grid/masonry-grid.svelte";
 </script>
 
-<MetaTags
+<Seo
 	title="Svelte Chanhdai Components & Blocks"
-	description="Free, open-source Svelte 5 and SvelteKit UI components with polished animations, live previews, examples, and copy-paste installation guides."
-	canonical="https://sv-chan.vercel.app/"
+	titleTemplate="%s"
+	description="Open-source Svelte 5 components with live demos, source code, examples, and copy-paste installation guides."
 	keywords={[
 		"Svelte components",
 		"Svelte 5 components",
@@ -21,41 +21,7 @@
 		"Chanhdai components",
 		"Chánh Đại components"
 	]}
-	robots="index,follow"
-	openGraph={{
-		type: "website",
-		url: "https://sv-chan.vercel.app/",
-		title: "Svelte Chanhdai Components & Blocks",
-		description:
-			"Free, open-source Svelte 5 and SvelteKit UI components with polished animations, live previews, examples, and copy-paste installation guides.",
-		images: [
-			{
-				url: "https://sv-chan.vercel.app/og.png",
-				width: 1728,
-				height: 910,
-				alt: "Svelte Chanhdai component library preview"
-			}
-		],
-		locale: "en_US",
-		siteName: "Svelte Chanhdai Components & Blocks"
-	}}
-	twitter={{
-		cardType: "summary_large_image",
-		creator: "@Sikandar_Bhide",
-		site: "@Sikandar_Bhide",
-		title: "Svelte Chanhdai Components & Blocks",
-		description:
-			"Free, open-source Svelte 5 and SvelteKit UI components with polished animations, live previews, examples, and copy-paste installation guides.",
-		image: "https://sv-chan.vercel.app/og.png",
-		imageAlt: "Svelte Chanhdai component library preview"
-	}}
-	additionalMetaTags={[
-		{ name: "author", content: "Sikandar Bhide" },
-		{
-			name: "application-name",
-			content: "Svelte Chanhdai Components & Blocks"
-		}
-	]}
+	schemaType="WebSite"
 />
 
 <main>

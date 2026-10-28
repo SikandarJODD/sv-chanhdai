@@ -36,7 +36,7 @@ export const meta: ComponentMeta = {
 const seo: SEO = {
 	title: "Apple Hello Effect",
 	description:
-		"Create a multilingual Apple-inspired hello animation in Svelte with customizable timing and motion props.",
+		"A multilingual hello animation for Svelte with configurable text, colors, timing, and motion.",
 	keywords: [
 		"Svelte",
 		"Apple Hello Effect",

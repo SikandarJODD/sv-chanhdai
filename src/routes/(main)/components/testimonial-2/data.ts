@@ -13,17 +13,17 @@ import PreviewCode from "./examples/preview.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "testimonial-2",
-	title: "Testimonial 2",
+	title: "Testimonial Quote",
 	description:
-		"Display a testimonial quote with author attribution and source link.",
+		"A compact testimonial quote with the author's name, tagline, and original source link.",
 	category: "chan"
 };
 
 const seo: SEO = {
-	title: "Testimonial 2",
+	title: "Testimonial Quote",
 	description:
-		"Display a testimonial quote with author attribution and source link.",
-	keywords: ["Svelte", "Testimonial 2", "Component"]
+		"A compact testimonial quote with the author's name, tagline, and original source link.",
+	keywords: ["Svelte", "Testimonial Quote", "Component"]
 };
 
 const usage: CodeBlock[] = [

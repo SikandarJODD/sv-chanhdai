@@ -14,13 +14,13 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "icon-swap",
 	title: "Icon Swap",
-	description: "Animate icon swaps with scale, blur, and fade transitions.",
+	description: "Animate icon changes with scale, blur, and opacity transitions.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Icon Swap",
-	description: "Animate icon swaps with scale, blur, and fade transitions.",
+	description: "Animate icon changes with scale, blur, and opacity transitions.",
 	keywords: ["Svelte", "Icon Swap", "Component"]
 };
 

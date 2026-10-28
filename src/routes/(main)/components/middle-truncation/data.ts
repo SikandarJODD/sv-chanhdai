@@ -18,13 +18,15 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "middle-truncation",
 	title: "Middle Truncation",
-	description: "Truncate text in the middle while preserving start and end.",
+	description:
+		"Truncate text in the middle while preserving its beginning and ending.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Middle Truncation",
-	description: "Truncate text in the middle while preserving start and end.",
+	description:
+		"Truncate text in the middle while preserving its beginning and ending.",
 	keywords: ["Svelte", "Middle Truncation", "Component"]
 };
 

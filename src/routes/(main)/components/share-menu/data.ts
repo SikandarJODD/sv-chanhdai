@@ -16,14 +16,14 @@ export const meta: ComponentMeta = {
 	id: "share-menu",
 	title: "Share Menu",
 	description:
-		"Share menu to copy a link or post to X, LinkedIn, and the native share sheet.",
+		"A share menu for copying links or posting through X, LinkedIn, and the native share sheet.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Share Menu",
 	description:
-		"Share menu to copy a link or post to X, LinkedIn, and the native share sheet.",
+		"A share menu for copying links or posting through X, LinkedIn, and the native share sheet.",
 	keywords: ["Svelte", "Share Menu", "Component"]
 };
 

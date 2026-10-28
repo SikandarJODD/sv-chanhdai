@@ -21,68 +21,68 @@ let components: Component[] = [
 		name: "Apple Carousel",
 		href: "/components/apple-carousel",
 		badge: "New",
-		desc: "Infinite autoplay carousel with progress dots, inspired by Apple’s website."
+		desc: "An infinite Svelte carousel with autoplay, progress dots, captions, and tab controls."
 	},
 	{
 		id: "apple-hello-effect",
 		name: "Apple Hello Effect",
 		href: "/components/apple-hello-effect",
-		desc: "Animated handwritten 'hello' text in multiple languages with a polished Apple-inspired motion effect."
+		desc: "A multilingual hello animation for Svelte with configurable text, colors, timing, and motion."
 	},
 	{
 		id: "brand-assets-menu",
 		name: "Brand Assets Menu",
 		href: "/components/brand-assets-menu",
-		desc: "Context menu for copying brand SVGs and opening asset links."
+		desc: "A context menu for copying brand SVGs or opening their asset links."
 	},
 	{
 		id: "chevrons-up-down-icon",
 		name: "Chevrons Up Down Icon",
 		href: "/components/chevrons-up-down-icon",
-		desc: "Animated chevrons icon that morphs between up and down directions."
+		desc: "An animated Svelte icon that morphs between up and down chevrons."
 	},
 	{
 		id: "dot-grid-spotlight",
 		name: "Dot Grid Spotlight",
 		href: "/components/dot-grid-spotlight",
-		desc: "Interactive dot grid with a cursor-tracking spotlight effect."
+		desc: "A dot-grid background with a spotlight that follows the pointer."
 	},
 	{
 		id: "elastic-slider",
 		name: "Elastic Slider",
 		href: "/components/elastic-slider",
 		badge: "New",
-		desc: "Slider with elastic rubber-band drag and magnetic snap feedback."
+		desc: "A slider with rubber-band dragging, step support, value formatting, and keyboard controls."
 	},
 	{
 		id: "github-contributions",
 		name: "GitHub Contributions",
 		href: "/components/github-contributions",
-		desc: "Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link."
+		desc: "A year-long GitHub contribution calendar with daily counts, tooltips, themes, and profile links."
 	},
 	{
 		id: "github-stars",
 		name: "GitHub Stars",
 		href: "/components/github-stars",
-		desc: "Display GitHub repo star count with formatted numbers and full-count tooltip."
+		desc: "A GitHub repository star count with compact formatting and a tooltip for the exact total."
 	},
 	{
 		id: "glow-card-grid",
 		name: "Glow Card Grid",
 		href: "/components/glow-card-grid",
-		desc: "Display cards with glowing border and background effects."
+		desc: "A responsive card grid with pointer-driven glow effects on card borders and backgrounds."
 	},
 	{
 		id: "icon-swap",
 		name: "Icon Swap",
 		href: "/components/icon-swap",
-		desc: "Animate icon swaps with scale, blur, and fade transitions."
+		desc: "Animate icon changes with scale, blur, and opacity transitions."
 	},
 	{
 		id: "middle-truncation",
 		name: "Middle Truncation",
 		href: "/components/middle-truncation",
-		desc: "Truncate text in the middle while preserving start and end."
+		desc: "Truncate text in the middle while preserving its beginning and ending."
 	},
 	// {
 	// 	id: "scroll-fade-effect",
@@ -94,7 +94,7 @@ let components: Component[] = [
 		id: "share-menu",
 		name: "Share Menu",
 		href: "/components/share-menu",
-		desc: "Share menu to copy a link or post to X, LinkedIn, and the native share sheet."
+		desc: "A share menu for copying links or posting through X, LinkedIn, and the native share sheet."
 	},
 	// {
 	// 	id: "shimmering-text",
@@ -107,83 +107,83 @@ let components: Component[] = [
 		name: "Slide to Unlock",
 		href: "/components/slide-to-unlock",
 		badge: "New",
-		desc: "Interactive slider inspired by the classic iPhone “slide to unlock” gesture."
+		desc: "A drag-to-confirm control inspired by the original iPhone slide-to-unlock gesture."
 	},
 	{
 		id: "spinning-circular-text",
 		name: "Spinning Circular Text",
 		href: "/components/spinning-circular-text",
-		desc: "Text arranged in a circle with a continuous spinning animation."
+		desc: "Text arranged in a circle with a continuous rotation animation."
 	},
 	{
 		id: "status-button",
 		name: "Status Button",
 		href: "/components/status-button",
-		desc: "A button that transitions through idle, loading, success, and failure states."
+		desc: "An async Svelte button with idle, loading, success, failure, and controlled states."
 	},
 	{
 		id: "testimonial",
 		name: "Testimonial",
 		href: "/components/testimonial",
-		desc: "Display user feedback with author info, avatar, and verified badge."
+		desc: "Composable testimonial primitives for quotes, author details, avatars, and verified badges."
 	},
 	{
 		id: "testimonial-2",
-		name: "Testimonial 2",
+		name: "Testimonial Quote",
 		href: "/components/testimonial-2",
-		desc: "Display a testimonial quote with author attribution and source link."
+		desc: "A compact testimonial quote with the author's name, tagline, and original source link."
 	},
 	{
 		id: "testimonial-spotlight",
 		name: "Testimonial Spotlight",
 		href: "/components/testimonial-spotlight",
-		desc: "Testimonial card with spotlight effect on hover."
+		desc: "A composable testimonial container with a pointer-following radial spotlight."
 	},
 	{
 		id: "timescale",
 		name: "Timescale",
 		href: "/components/timescale",
-		desc: "Ruler-style timeline for plotting milestones along a horizontal or vertical axis."
+		desc: "A ruler-style timeline for plotting milestones along a horizontal or vertical axis."
 	},
 	{
 		id: "wheel-picker",
 		name: "Wheel Picker",
 		href: "/components/wheel-picker",
 		badge: "New",
-		desc: "iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support."
+		desc: "An iOS-style Svelte wheel picker with inertial scrolling, keyboard controls, and optional infinite looping."
 	},
 	{
 		id: "work-experience",
 		name: "Work Experience",
 		href: "/components/work-experience",
-		desc: "Display work experiences with role details, company logos, and durations."
+		desc: "A work-history timeline for roles, companies, dates, descriptions, and related links."
 	},
 	{
 		id: "toc-minimap",
-		name: "Toc Minimap",
+		name: "TOC Minimap",
 		href: "/components/toc-minimap",
 		badge: "New",
-		desc: "Navigate page sections with a compact, hoverable TOC minimap."
+		desc: "A compact table-of-contents minimap that links to headings and expands on hover."
 	},
 	{
 		id: "line-nav",
 		name: "Line Nav",
 		href: "/components/line-nav",
 		badge: "New",
-		desc: "Vertical navigation with a line marker that expands on hover and active state."
+		desc: "Vertical navigation with an animated line marker for hover and active states."
 	},
 	{
 		id: "copy-button",
 		name: "Copy Button",
 		href: "/components/copy-button",
-		desc: "Copy text to the clipboard with animated status feedback."
+		desc: "A Svelte copy button with animated success and error feedback."
 	},
 	{
 		id: "swipe-actions",
 		name: "Swipe Actions",
 		href: "/components/swipe-actions",
 		badge: "New",
-		desc: "Swipe a row in a list to reveal actions on the left or right."
+		desc: "Swipe a list row left or right to reveal configurable actions."
 	}
 ];
 

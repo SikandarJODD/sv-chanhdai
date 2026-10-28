@@ -39,14 +39,14 @@ export const meta: ComponentMeta = {
 	id: "github-contributions",
 	title: "GitHub Contributions",
 	description:
-		"Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link.",
+		"A year-long GitHub contribution calendar with daily counts, tooltips, themes, and profile links.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "GitHub Contributions",
 	description:
-		"Visualize year-long GitHub contribution activity with daily counts, tooltips, and a profile link.",
+		"A year-long GitHub contribution calendar with daily counts, tooltips, themes, and profile links.",
 	keywords: ["Svelte", "GitHub Contributions", "Component"]
 };
 

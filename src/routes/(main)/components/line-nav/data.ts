@@ -16,14 +16,14 @@ export const meta: ComponentMeta = {
 	id: "line-nav",
 	title: "Line Nav",
 	description:
-		"Vertical navigation with a line marker that expands on hover and active state.",
+		"Vertical navigation with an animated line marker for hover and active states.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Line Nav",
 	description:
-		"Vertical navigation with a line marker that expands on hover and active state.",
+		"Vertical navigation with an animated line marker for hover and active states.",
 	keywords: ["Svelte", "Line Nav", "Navigation", "Component"]
 };
 

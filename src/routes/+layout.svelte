@@ -23,6 +23,21 @@
 <Toaster position="top-center" />
 
 <ModeWatcher defaultMode="dark" />
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+	<link rel="icon" href={favicon} type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+	<meta
+		name="theme-color"
+		media="(prefers-color-scheme: light)"
+		content="#ffffff"
+	/>
+	<meta
+		name="theme-color"
+		media="(prefers-color-scheme: dark)"
+		content="#0a0a0a"
+	/>
+	<meta name="color-scheme" content="light dark" />
+</svelte:head>
 <Header />
 {@render children()}

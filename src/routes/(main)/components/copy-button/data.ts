@@ -21,7 +21,7 @@ export const meta: ComponentMeta = {
 
 const seo: SEO = {
 	title: "Copy Button",
-	description: "A Svelte copy button with animated success and error states.",
+	description: "A Svelte copy button with animated success and error feedback.",
 	keywords: ["Svelte", "Copy Button", "Component"]
 };
 

@@ -75,7 +75,12 @@
 	let llmsTxtUrl = $derived(`${getURLPath(page.url.href)}/llms.txt`);
 </script>
 
-<Seo title={seo.title} description={seo.description} keywords={seo.keywords} />
+<Seo
+	title={seo.title}
+	description={seo.description}
+	keywords={seo.keywords}
+	schemaType="TechArticle"
+/>
 <div class="space-y-6 md:space-y-8">
 	<section>
 		<div
@@ -120,7 +125,7 @@
 		<section>
 			<H2 id="usage">Usage</H2>
 			<div class="mt-4 space-y-4">
-				{#each usage as code}
+				{#each usage as code (code.name)}
 					<FrameSingle {code} faded={false} />
 				{/each}
 			</div>
@@ -131,7 +136,7 @@
 		<section>
 			<H2 id="features">Features</H2>
 			<ul class="mt-4 list-disc space-y-2 pl-5">
-				{#each features as feature}
+				{#each features as feature (feature)}
 					<li>{feature}</li>
 				{/each}
 			</ul>
@@ -172,7 +177,7 @@
 			<H2 id="props">Props</H2>
 			<div class="mt-3 space-y-6" data-toc-ignore="true">
 				<div>
-					{#each propsTables as prop}
+					{#each propsTables as prop (prop.name)}
 						<ApiTable data={prop} />
 					{/each}
 				</div>

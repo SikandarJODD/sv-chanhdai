@@ -14,14 +14,14 @@ export const meta: ComponentMeta = {
 	id: "chevrons-up-down-icon",
 	title: "Chevrons Up Down Icon",
 	description:
-		"Animated chevrons icon that morphs between up and down directions.",
+		"An animated Svelte icon that morphs between up and down chevrons.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Chevrons Up Down Icon",
 	description:
-		"Animated chevrons icon that morphs between up and down directions.",
+		"An animated Svelte icon that morphs between up and down chevrons.",
 	keywords: ["Svelte", "Chevrons Up Down Icon", "Component"]
 };
 

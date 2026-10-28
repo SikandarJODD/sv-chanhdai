@@ -32,7 +32,8 @@
 
 <Seo
 	title="Installation Guide"
-	description="Install Svelte Chanhdai components in a SvelteKit project using shadcn-svelte, Tailwind CSS, and the component registry with step-by-step commands."
+	description="Set up Svelte Chanhdai with shadcn-svelte, Tailwind CSS, and the component registry."
+	schemaType="TechArticle"
 	keywords={[
 		"install Svelte components",
 		"SvelteKit installation",

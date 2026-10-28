@@ -14,13 +14,15 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "testimonial-spotlight",
 	title: "Testimonial Spotlight",
-	description: "Testimonial card with spotlight effect on hover.",
+	description:
+		"A composable testimonial container with a pointer-following radial spotlight.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Testimonial Spotlight",
-	description: "Testimonial card with spotlight effect on hover.",
+	description:
+		"A composable testimonial container with a pointer-following radial spotlight.",
 	keywords: ["Svelte", "Testimonial Spotlight", "Component"]
 };
 

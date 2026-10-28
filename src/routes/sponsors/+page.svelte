@@ -97,7 +97,8 @@
 
 <Seo
 	title="Sponsors"
-	description="Meet the sponsors supporting Bhide Svelte's open-source Svelte components, and learn how to fund continued development through GitHub Sponsors."
+	description="Current and past GitHub sponsors who support development of the Svelte component library."
+	schemaType="AboutPage"
 	keywords={[
 		"support open source Svelte",
 		"GitHub Sponsors",

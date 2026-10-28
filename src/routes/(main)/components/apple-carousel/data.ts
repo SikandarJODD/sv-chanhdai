@@ -28,14 +28,14 @@ export const meta: ComponentMeta = {
 	id: "apple-carousel",
 	title: "Apple Carousel",
 	description:
-		"Infinite autoplay carousel with progress dots, inspired by Apple’s website.",
+		"An infinite Svelte carousel with autoplay, progress dots, captions, and tab controls.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Apple Carousel",
 	description:
-		"Infinite autoplay carousel with progress dots, inspired by Apple’s website.",
+		"An infinite Svelte carousel with autoplay, progress dots, captions, and tab controls.",
 	keywords: [
 		"Svelte",
 		"Apple Carousel",
