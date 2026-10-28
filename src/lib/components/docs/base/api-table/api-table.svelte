@@ -7,8 +7,8 @@
 		Th,
 		Td,
 		H3
-	} from "$lib/components/docs/markdown";
-	import { cn } from "$lib/utils";
+	} from "#lib/components/docs/markdown/index.js";
+	import { cn } from "#lib/utils.js";
 	import { page } from "$app/state";
 	import { watch } from "runed";
 	import InfoPopover from "./info-popover.svelte";

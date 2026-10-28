@@ -1,14 +1,14 @@
-import BrandAssetsMenuSvelteRaw from "$lib/components/chan/brand-assets-menu/brand-assets-menu.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/brand-assets-menu/index.ts?raw";
+import BrandAssetsMenuSvelteRaw from "#lib/components/chan/brand-assets-menu/brand-assets-menu.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/brand-assets-menu/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 

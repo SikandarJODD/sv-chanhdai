@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	type Testimonial2Props = {
 		/** Full display name of the person giving the testimonial. */

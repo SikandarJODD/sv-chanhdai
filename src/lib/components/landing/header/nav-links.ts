@@ -2,18 +2,13 @@ import { resolve } from "$app/paths";
 import type { NavType } from "./types";
 
 let navs: NavType[] = [
-	{
-		name: "Home",
-		href: "/"
-	},
+	{ name: "Home", href: "/" },
 	{
 		name: "Components",
 		href: resolve("/(main)/components/apple-hello-effect")
 	},
-	{
-		name: "Sponsors",
-		href: resolve("/sponsors")
-	}
+	{ name: "Sponsors", href: resolve("sponsors") }
+
 	// {
 	// 	name: "Changelog",
 	// 	href: "/changelog"

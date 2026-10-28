@@ -1,12 +1,12 @@
-import IndexTsRaw from "$lib/components/chan/scroll-fade-effect/index.ts?raw";
-import ScrollFadeEffectSvelteRaw from "$lib/components/chan/scroll-fade-effect/scroll-fade-effect.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/scroll-fade-effect/index.ts?raw";
+import ScrollFadeEffectSvelteRaw from "#lib/components/chan/scroll-fade-effect/scroll-fade-effect.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 

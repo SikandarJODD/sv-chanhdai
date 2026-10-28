@@ -16,12 +16,7 @@
 	let showBoard = $state(false);
 
 	function handleKeydown(event: KeyboardEvent) {
-		if (
-			event.repeat ||
-			event.metaKey ||
-			event.ctrlKey ||
-			event.altKey
-		) {
+		if (event.repeat || event.metaKey || event.ctrlKey || event.altKey) {
 			return;
 		}
 

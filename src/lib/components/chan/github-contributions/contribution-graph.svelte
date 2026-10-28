@@ -24,7 +24,7 @@
 
 <script lang="ts">
 	import { getYear, parseISO } from "date-fns";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { setContributionGraphContext } from "./contribution-graph-context.svelte";
 	import { DEFAULT_LABELS, groupByWeeks } from "./contribution-graph-utils";
 

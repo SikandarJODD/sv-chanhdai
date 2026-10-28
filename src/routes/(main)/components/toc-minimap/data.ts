@@ -1,14 +1,14 @@
-import IndexTsRaw from "$lib/components/chan/toc-minimap/index.ts?raw";
-import TocMinimapSvelteRaw from "$lib/components/chan/toc-minimap/toc-minimap.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/toc-minimap/index.ts?raw";
+import TocMinimapSvelteRaw from "#lib/components/chan/toc-minimap/toc-minimap.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import ArticleOutline from "./examples/article-outline.svelte";
 import ArticleOutlineCode from "./examples/article-outline.svelte?raw";
 import Preview from "./examples/preview.svelte";

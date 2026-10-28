@@ -12,7 +12,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { useSlideToUnlock } from "./slide-to-unlock-context";
 
 	let {

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import Github from "$lib/svg/github.svelte";
-	import X from "$lib/svg/x.svelte";
-	import { cn } from "$lib/utils";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import Github from "#lib/svg/github.svelte";
+	import X from "#lib/svg/x.svelte";
+	import { cn } from "#lib/utils.js";
 	import { Annotation } from "$ui/annotation";
 
 	type Sponsor = {

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Badge } from "$lib/components/ui/spell/badge";
-	import { cn } from "$lib/utils";
+	import { Badge } from "#lib/components/ui/spell/badge/index.js";
+	import { cn } from "#lib/utils.js";
 
 	type PackageBadgesProps = {
 		packages?: string[];

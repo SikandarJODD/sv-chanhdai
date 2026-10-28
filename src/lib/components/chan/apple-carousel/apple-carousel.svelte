@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { setAppleCarouselContext } from "./apple-carousel-context.svelte";
 	import { createAppleCarouselState } from "./apple-carousel-state.svelte";
 	import type { AppleCarouselRootProps } from "./apple-carousel-types";

@@ -1,5 +1,5 @@
 <script lang="ts" generics="T extends WheelPickerValue">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import {
 		WheelPicker as WheelPickerPrimitive,
 		type WheelPickerProps,

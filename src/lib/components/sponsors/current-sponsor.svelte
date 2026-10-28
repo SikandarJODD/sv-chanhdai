@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Github from "$lib/svg/github.svelte";
-	import X from "$lib/svg/x.svelte";
-	import { Button } from "$lib/components/ui/button";
+	import Github from "#lib/svg/github.svelte";
+	import X from "#lib/svg/x.svelte";
+	import { Button } from "#lib/components/ui/button/index.js";
 
 	type CurrentSponsorProps = {
 		name: string;

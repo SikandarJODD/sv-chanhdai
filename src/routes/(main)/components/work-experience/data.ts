@@ -1,20 +1,20 @@
-import ExperienceItemSvelteRaw from "$lib/components/chan/work-experience/experience-item.svelte?raw";
-import ExperiencePositionItemSvelteRaw from "$lib/components/chan/work-experience/experience-position-item.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/work-experience/index.ts?raw";
-import ProseSvelteRaw from "$lib/components/chan/work-experience/prose.svelte?raw";
-import SkillSvelteRaw from "$lib/components/chan/work-experience/skill.svelte?raw";
-import WorkExperienceTypesTsRaw from "$lib/components/chan/work-experience/work-experience-types.ts?raw";
-import WorkExperienceUtilsTsRaw from "$lib/components/chan/work-experience/work-experience-utils.ts?raw";
-import WorkExperienceSvelteRaw from "$lib/components/chan/work-experience/work-experience.svelte?raw";
+import ExperienceItemSvelteRaw from "#lib/components/chan/work-experience/experience-item.svelte?raw";
+import ExperiencePositionItemSvelteRaw from "#lib/components/chan/work-experience/experience-position-item.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/work-experience/index.ts?raw";
+import ProseSvelteRaw from "#lib/components/chan/work-experience/prose.svelte?raw";
+import SkillSvelteRaw from "#lib/components/chan/work-experience/skill.svelte?raw";
+import WorkExperienceTypesTsRaw from "#lib/components/chan/work-experience/work-experience-types.ts?raw";
+import WorkExperienceUtilsTsRaw from "#lib/components/chan/work-experience/work-experience-utils.ts?raw";
+import WorkExperienceSvelteRaw from "#lib/components/chan/work-experience/work-experience.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import CareerProgressionExample from "./examples/career-progression.svelte";
 import CareerProgressionExampleCode from "./examples/career-progression.svelte?raw";
 import DemoExample from "./examples/demo-example.svelte";

@@ -1,12 +1,12 @@
 <script lang="ts">
 	import "./layout.css";
-	import favicon from "$lib/assets/favicon.svg";
+	import favicon from "#lib/assets/favicon.svg";
 	import { activeElement, PressedKeys } from "runed";
 	import { ModeWatcher, toggleMode } from "mode-watcher";
-	import { Header } from "$lib/components/landing/header";
+	import { Header } from "#lib/components/landing/header/index.js";
 	import { browser, dev } from "$app/environment";
 	import { Agentation } from "sv-agentation";
-	import Footer from "$lib/components/landing/footer.svelte";
+	import Footer from "#lib/components/landing/footer.svelte";
 	import { Toaster } from "$ui/sonner";
 
 	let { children } = $props();

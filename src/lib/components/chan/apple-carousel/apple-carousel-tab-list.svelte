@@ -1,5 +1,5 @@
 <script lang="ts" generics="T">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import AppleCarouselProvider from "./apple-carousel-provider.svelte";
 	import type { AppleCarouselTabListProps } from "./apple-carousel-types";
 

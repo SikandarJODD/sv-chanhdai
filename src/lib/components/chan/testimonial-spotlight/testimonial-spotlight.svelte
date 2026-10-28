@@ -1,7 +1,7 @@
 <script lang="ts" module>
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
-	import type { WithElementRef } from "$lib/utils";
+	import type { WithElementRef } from "#lib/utils.js";
 
 	export type TestimonialSpotlightProps = Omit<
 		WithElementRef<HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
@@ -13,7 +13,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	const spotlightBackground =
 		"radial-gradient(circle at var(--spotlight-x) var(--spotlight-y), var(--spotlight-color, rgba(255, 255, 255, 0.2)), transparent var(--spotlight-size, 60%))";

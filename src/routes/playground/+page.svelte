@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AppleBento } from "$lib/components/apple-bento";
+	import { AppleBento } from "#lib/components/apple-bento/index.js";
 </script>
 
 <svelte:head>

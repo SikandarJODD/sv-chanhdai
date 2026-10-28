@@ -60,7 +60,9 @@
 			<SlideToUnlockTrack>
 				<SlideToUnlockText class="text-base">
 					{#snippet children({ isDragging })}
-						<span>{isDragging ? "Release…" : "Slide to unlock"}</span>
+						<span
+							>{isDragging ? "Release…" : "Slide to unlock"}</span
+						>
 					{/snippet}
 				</SlideToUnlockText>
 				<SlideToUnlockHandle class="rounded-full" />

@@ -10,7 +10,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { motion, useReducedMotion } from "motion-sv";
 	import type { Transition } from "motion-sv";
 	import { MediaQuery } from "svelte/reactivity";
@@ -30,20 +30,20 @@
 			? { duration: 0 }
 			: visible
 				? {
-					type: "spring",
-					visualDuration: 0.45,
-					bounce: 0.04,
-					opacity: {
-						type: "tween",
-						duration: 0.2,
-						ease: "easeOut"
+						type: "spring",
+						visualDuration: 0.45,
+						bounce: 0.04,
+						opacity: {
+							type: "tween",
+							duration: 0.2,
+							ease: "easeOut"
+						}
 					}
-				}
 				: {
-					type: "tween",
-					duration: 0.16,
-					ease: "easeIn"
-				}
+						type: "tween",
+						duration: 0.16,
+						ease: "easeIn"
+					}
 	);
 </script>
 

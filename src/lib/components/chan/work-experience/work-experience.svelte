@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import ExperienceItem from "./experience-item.svelte";
 	import type { WorkExperienceProps } from "./work-experience-types";
 

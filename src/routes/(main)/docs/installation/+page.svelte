@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import CopyPageDropdown from "$lib/components/docs/base/main/copy-page-dropdown.svelte";
-	import Seo from "$lib/components/docs/base/main/seo.svelte";
+	import CopyPageDropdown from "#lib/components/docs/base/main/copy-page-dropdown.svelte";
+	import Seo from "#lib/components/docs/base/main/seo.svelte";
 	import { H1, H2, Paragraph, Steps, Step, Divider, Link } from "$markdown";
-	import { PMCommand } from "$lib/components/ui/pm-command";
-	import FrameSingle from "$lib/components/ui/code/frame-single.svelte";
+	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
+	import FrameSingle from "#lib/components/ui/code/frame-single.svelte";
 
 	let getURLPath = (url: string) => {
 		return url.split("?")[0].split("#")[0];

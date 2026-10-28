@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Seo from "$lib/components/docs/base/main/seo.svelte";
-	import CurrentSponsor from "$lib/components/sponsors/current-sponsor.svelte";
-	import Github from "$lib/svg/github.svelte";
-	import X from "$lib/svg/x.svelte";
+	import Seo from "#lib/components/docs/base/main/seo.svelte";
+	import CurrentSponsor from "#lib/components/sponsors/current-sponsor.svelte";
+	import Github from "#lib/svg/github.svelte";
+	import X from "#lib/svg/x.svelte";
 	import Button from "$ui/button/button.svelte";
 
 	type Sponsor = {
@@ -112,7 +112,7 @@
 	]}
 />
 
-<main class="font-figtree min-h-[calc(100vh-4rem)] px-4 py-10 sm:py-14">
+<main class="min-h-[calc(100vh-4rem)] px-4 py-10 font-figtree sm:py-14">
 	<div class="mx-auto w-full max-w-3xl">
 		<header
 			class="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center"

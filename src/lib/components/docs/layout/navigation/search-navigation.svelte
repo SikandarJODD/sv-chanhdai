@@ -1,10 +1,10 @@
 <script lang="ts">
-	import Badge from "$lib/components/ui/spell/badge/badge.svelte";
-	import Button from "$lib/components/ui/button/button.svelte";
-	import * as Command from "$lib/components/ui/command/index.js";
-	import * as Kbd from "$lib/components/ui/kbd/index.js";
-	import { components, docsPages } from "$lib/registry/components";
-	import { type Component } from "$lib/registry/components";
+	import Badge from "#lib/components/ui/spell/badge/badge.svelte";
+	import Button from "#lib/components/ui/button/button.svelte";
+	import * as Command from "#lib/components/ui/command/index.js";
+	import * as Kbd from "#lib/components/ui/kbd/index.js";
+	import { components, docsPages } from "#lib/registry/components.js";
+	import { type Component } from "#lib/registry/components.js";
 	import { IsMounted } from "runed";
 	import { blur, fade } from "svelte/transition";
 	let open = $state(false);

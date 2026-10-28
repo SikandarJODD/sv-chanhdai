@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { github_repo } from "$lib/config/repo";
-	import { seo_config } from "$lib/config/seo";
+	import { github_repo } from "#lib/config/repo.js";
+	import { seo_config } from "#lib/config/seo.js";
 
 	const currentYear = new Date().getFullYear();
 </script>

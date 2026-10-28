@@ -20,7 +20,7 @@
 
 <script lang="ts">
 	import { navigating } from "$app/state";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { motion } from "motion-sv";
 
 	let {

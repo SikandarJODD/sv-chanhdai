@@ -1,14 +1,14 @@
-import GithubStarsSvelteRaw from "$lib/components/chan/github-stars/github-stars.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/github-stars/index.ts?raw";
+import GithubStarsSvelteRaw from "#lib/components/chan/github-stars/github-stars.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/github-stars/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import DemoExample from "./examples/demo-example.svelte";
 import DemoExampleCode from "./examples/demo-example.svelte?raw";
 import Preview from "./examples/preview.svelte";

@@ -1,9 +1,13 @@
 <script lang="ts">
 	import * as Code from "./index";
-	import Button from "$lib/components/ui/button/button.svelte";
-	import { cn } from "$lib/utils";
-	import { Svelte, TypeScript, Terminal } from "$lib/components/icons";
-	import type { CodeBlock } from "$lib/types/code";
+	import Button from "#lib/components/ui/button/button.svelte";
+	import { cn } from "#lib/utils.js";
+	import {
+		Svelte,
+		TypeScript,
+		Terminal
+	} from "#lib/components/icons/index.js";
+	import type { CodeBlock } from "#lib/types/code.js";
 	type Props = {
 		code: CodeBlock[];
 	};

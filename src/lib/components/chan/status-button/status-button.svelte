@@ -35,7 +35,7 @@
 	import { navigating } from "$app/state";
 	import XIcon from "@lucide/svelte/icons/x";
 	import { Button } from "$ui/button";
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { AnimatePresence, motion, useReducedMotion } from "motion-sv";
 	import type { Transition, Variants } from "motion-sv";
 	import { watch } from "runed";

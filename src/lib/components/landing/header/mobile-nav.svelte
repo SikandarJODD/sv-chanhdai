@@ -1,13 +1,13 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { ScrollFadeEffect } from "$lib/components/chan/scroll-fade-effect";
-	import { LightSwitch } from "$lib/components/ui/light-switch";
-	import { Portal, PortalBackdrop } from "$lib/components/ui/portal";
-	import { github_repo } from "$lib/config/repo";
-	import { components } from "$lib/registry/components";
-	import Github from "$lib/svg/github.svelte";
-	import X from "$lib/svg/x.svelte";
-	import { cn } from "$lib/utils";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { ScrollFadeEffect } from "#lib/components/chan/scroll-fade-effect/index.js";
+	import { LightSwitch } from "#lib/components/ui/light-switch/index.js";
+	import { Portal, PortalBackdrop } from "#lib/components/ui/portal/index.js";
+	import { github_repo } from "#lib/config/repo.js";
+	import { components } from "#lib/registry/components.js";
+	import Github from "#lib/svg/github.svelte";
+	import X from "#lib/svg/x.svelte";
+	import { cn } from "#lib/utils.js";
 	import MenuIcon from "@lucide/svelte/icons/menu";
 	import XIcon from "@lucide/svelte/icons/x";
 

@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 	import {
 		HoverCard,
 		HoverCardContent,
 		HoverCardTrigger
-	} from "$lib/components/ui/hover-card/index.js";
-	import { Button } from "$lib/components/ui/button/index.js";
+	} from "#lib/components/ui/hover-card/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import type { ImportAliasStyle } from "./import-alias";
 
 	let {

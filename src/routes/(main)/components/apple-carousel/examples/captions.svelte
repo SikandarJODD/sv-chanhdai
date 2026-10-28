@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import {
 		AppleCarouselContent,
 		AppleCarouselControls,
@@ -8,57 +8,52 @@
 		AppleCarouselRoot,
 		AppleCarouselTab,
 		AppleCarouselTabList
-	} from "$lib/components/chan/apple-carousel";
-	import { cn } from "$lib/utils";
+	} from "#lib/components/chan/apple-carousel/index.js";
+	import { cn } from "#lib/utils.js";
 
 	const ITEMS = [
 		{
 			title: "Quang Ninh",
 			description: "Limestone islands rise from emerald water.",
-			image:
-				"https://assets.chanhdai.com/registry/images/components/apple-carousel/1.webp",
+			image: "https://assets.chanhdai.com/registry/images/components/apple-carousel/1.webp",
 			href: "https://en.wikipedia.org/wiki/Quảng_Ninh_province"
 		},
 		{
 			title: "An Giang",
 			description: "Cajuput trees arch over a quiet green waterway.",
-			image:
-				"https://assets.chanhdai.com/registry/images/components/apple-carousel/2.webp?v=2",
+			image: "https://assets.chanhdai.com/registry/images/components/apple-carousel/2.webp?v=2",
 			href: "https://en.wikipedia.org/wiki/An_Giang_province"
 		},
 		{
 			title: "Ninh Binh",
-			description: "A pavilion rests on still water beneath karst cliffs.",
-			image:
-				"https://assets.chanhdai.com/registry/images/components/apple-carousel/3.webp",
+			description:
+				"A pavilion rests on still water beneath karst cliffs.",
+			image: "https://assets.chanhdai.com/registry/images/components/apple-carousel/3.webp",
 			href: "https://en.wikipedia.org/wiki/Ninh_Bình_province"
 		},
 		{
 			title: "Hue",
 			description: "Tiered palace roofs against a pale sky.",
-			image:
-				"https://assets.chanhdai.com/registry/images/components/apple-carousel/4.webp",
+			image: "https://assets.chanhdai.com/registry/images/components/apple-carousel/4.webp",
 			href: "https://en.wikipedia.org/wiki/Huế"
 		},
 		{
 			title: "Ninh Binh",
-			description: "Temple corridors wind toward a lake among the mountains.",
-			image:
-				"https://assets.chanhdai.com/registry/images/components/apple-carousel/5.webp",
+			description:
+				"Temple corridors wind toward a lake among the mountains.",
+			image: "https://assets.chanhdai.com/registry/images/components/apple-carousel/5.webp",
 			href: "https://en.wikipedia.org/wiki/Ninh_Bình_province"
 		},
 		{
 			title: "Ho Chi Minh City",
 			description: "The skyline glows over the river at dusk.",
-			image:
-				"https://assets.chanhdai.com/registry/images/components/apple-carousel/6.webp",
+			image: "https://assets.chanhdai.com/registry/images/components/apple-carousel/6.webp",
 			href: "https://en.wikipedia.org/wiki/Ho_Chi_Minh_City"
 		},
 		{
 			title: "Da Nang",
 			description: "A dragon-shaped bridge lights up the evening river.",
-			image:
-				"https://assets.chanhdai.com/registry/images/components/apple-carousel/7.webp",
+			image: "https://assets.chanhdai.com/registry/images/components/apple-carousel/7.webp",
 			href: "https://en.wikipedia.org/wiki/Da_Nang"
 		}
 	] as const;

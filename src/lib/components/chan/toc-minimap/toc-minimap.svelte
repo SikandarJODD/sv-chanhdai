@@ -12,8 +12,8 @@
 </script>
 
 <script lang="ts">
-	import * as HoverCard from "$lib/components/ui/hover-card";
-	import { cn } from "$lib/utils.js";
+	import * as HoverCard from "#lib/components/ui/hover-card/index.js";
+	import { cn } from "#lib/utils.js";
 	import type { Attachment } from "svelte/attachments";
 
 	let { items, class: className }: TOCMinimapProps = $props();

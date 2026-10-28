@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
 	import { page } from "$app/state";
-	import { getPrevNext } from "$lib/registry/components";
-	import { Button } from "$lib/components/ui/button";
-	import * as ButtonGroup from "$lib/components/ui/button-group";
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
-	import * as Kbd from "$lib/components/ui/kbd";
-	import * as Tooltip from "$lib/components/ui/tooltip";
+	import { getPrevNext } from "#lib/registry/components.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import * as ButtonGroup from "#lib/components/ui/button-group/index.js";
+	import * as DropdownMenu from "#lib/components/ui/dropdown-menu/index.js";
+	import * as Kbd from "#lib/components/ui/kbd/index.js";
+	import * as Tooltip from "#lib/components/ui/tooltip/index.js";
 	import {
 		OpenIn,
 		OpenInContent,
@@ -15,9 +15,9 @@
 		OpenInClaude,
 		OpenInScira,
 		OpenInT3
-	} from "$lib/components/ui/open-in-chat";
-	import { CopyMarkdown } from "$lib/components/ui/copy-markdown";
-	import MarkdownIcon from "$lib/components/icons/markdown.svelte";
+	} from "#lib/components/ui/open-in-chat/index.js";
+	import { CopyMarkdown } from "#lib/components/ui/copy-markdown/index.js";
+	import MarkdownIcon from "#lib/components/icons/markdown.svelte";
 	import {
 		ChevronDown,
 		ChevronLeft,

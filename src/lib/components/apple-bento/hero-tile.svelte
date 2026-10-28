@@ -1,5 +1,5 @@
 <script lang="ts">
-	import FaviconLink from "$lib/components/docs/base/main/favicon-link.svelte";
+	import FaviconLink from "#lib/components/docs/base/main/favicon-link.svelte";
 	import { gsap } from "gsap";
 	import { motion, useReducedMotion } from "motion-sv";
 	import type { Transition } from "motion-sv";

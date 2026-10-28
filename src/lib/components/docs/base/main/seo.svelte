@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import { seo_config } from "$lib/config/seo";
+	import { seo_config } from "#lib/config/seo.js";
 	import { JsonLd, MetaTags } from "svelte-meta-tags";
 
 	type Props = {

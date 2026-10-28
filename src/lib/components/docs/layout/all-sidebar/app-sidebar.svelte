@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import { components, type BadgeType } from "$lib/registry/components";
+	import { components, type BadgeType } from "#lib/registry/components.js";
 
 	type NavItem = {
 		title: string;
@@ -38,14 +38,14 @@
 </script>
 
 <script lang="ts">
-	import BhideSvelteCard from "$lib/components/docs/base/main/bhide-svelte-card.svelte";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import { Button } from "$lib/components/ui/button";
+	import BhideSvelteCard from "#lib/components/docs/base/main/bhide-svelte-card.svelte";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import {
 		ScrollArea,
 		ScrollFadeEffect
-	} from "$lib/components/ui/scroll-area/index.js";
-	import Badge from "$lib/components/ui/spell/badge/badge.svelte";
+	} from "#lib/components/ui/scroll-area/index.js";
+	import Badge from "#lib/components/ui/spell/badge/badge.svelte";
 	import { page } from "$app/state";
 	import type { ComponentProps } from "svelte";
 	import { watch } from "runed";

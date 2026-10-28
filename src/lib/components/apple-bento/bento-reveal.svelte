@@ -12,7 +12,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { motion, useReducedMotion } from "motion-sv";
 	import type { Transition } from "motion-sv";
 
@@ -56,9 +56,7 @@
 	aria-hidden={!visible}
 	inert={!visible}
 	initial={shouldReduceMotion.current ? false : hiddenState}
-	animate={visible
-		? { opacity: 1, x: 0, y: 0, scale: 1 }
-		: hiddenState}
+	animate={visible ? { opacity: 1, x: 0, y: 0, scale: 1 } : hiddenState}
 	{transition}
 >
 	{@render children()}

@@ -3,7 +3,7 @@
 		cn,
 		type WithElementRef,
 		type WithoutChildren
-	} from "$lib/utils.js";
+	} from "#lib/utils.js";
 	import type { HTMLAttributes } from "svelte/elements";
 
 	let {

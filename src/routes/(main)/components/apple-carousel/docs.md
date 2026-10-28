@@ -42,7 +42,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/apple-carousel.
     AppleCarouselRoot,
     AppleCarouselTab,
     AppleCarouselTabList
-  } from "$lib/components/chan/apple-carousel";
+  } from "#lib/components/chan/apple-carousel/index.js";
 
   const ITEMS = [
     {
@@ -213,7 +213,7 @@ Overlay responsive captions and actions on each carousel image.
 
 ```svelte
 <script lang="ts">
-  import { Button } from "$lib/components/ui/button";
+  import { Button } from "#lib/components/ui/button/index.js";
   import {
     AppleCarouselContent,
     AppleCarouselControls,
@@ -222,8 +222,8 @@ Overlay responsive captions and actions on each carousel image.
     AppleCarouselRoot,
     AppleCarouselTab,
     AppleCarouselTabList
-  } from "$lib/components/chan/apple-carousel";
-  import { cn } from "$lib/utils";
+  } from "#lib/components/chan/apple-carousel/index.js";
+  import { cn } from "#lib/utils.js";
 
   const ITEMS = [
     {

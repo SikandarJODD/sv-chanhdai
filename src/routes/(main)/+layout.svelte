@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { page } from "$app/state";
-	import Toc from "$lib/components/docs/base/toc/toc.svelte";
-	import DocsNavigation from "$lib/components/docs/layout/navigation/docs-navigation.svelte";
-	import { UseToc } from "$lib/hooks/use-toc.svelte";
-	import { getPrevNext } from "$lib/registry/components";
-	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import AppSidebar from "$lib/components/docs/layout/all-sidebar/app-sidebar.svelte";
-	import ContributeCard from "$lib/components/docs/base/main/contribute-card.svelte";
-	import SupportWork from "$lib/components/docs/base/main/support-work.svelte";
+	import Toc from "#lib/components/docs/base/toc/toc.svelte";
+	import DocsNavigation from "#lib/components/docs/layout/navigation/docs-navigation.svelte";
+	import { UseToc } from "#lib/hooks/use-toc.svelte.js";
+	import { getPrevNext } from "#lib/registry/components.js";
+	import * as Sidebar from "#lib/components/ui/sidebar/index.js";
+	import AppSidebar from "#lib/components/docs/layout/all-sidebar/app-sidebar.svelte";
+	import ContributeCard from "#lib/components/docs/base/main/contribute-card.svelte";
+	import SupportWork from "#lib/components/docs/base/main/support-work.svelte";
 
 	let { children } = $props();
 

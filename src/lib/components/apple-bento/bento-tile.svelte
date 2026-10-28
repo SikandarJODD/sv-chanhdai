@@ -11,7 +11,7 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 
 	let { children, class: className, ...restProps }: BentoTileProps = $props();
 </script>

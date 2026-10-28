@@ -27,7 +27,7 @@ Copy the component source files into your project and update the example files w
 
 ```svelte
 <script lang="ts">
-  import { LineNav } from "$lib/components/chan/line-nav";
+  import { LineNav } from "#lib/components/chan/line-nav/index.js";
 </script>
 
 <LineNav />

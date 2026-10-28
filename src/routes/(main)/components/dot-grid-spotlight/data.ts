@@ -1,14 +1,14 @@
-import DotGridSpotlightSvelteRaw from "$lib/components/chan/dot-grid-spotlight/dot-grid-spotlight.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/dot-grid-spotlight/index.ts?raw";
+import DotGridSpotlightSvelteRaw from "#lib/components/chan/dot-grid-spotlight/dot-grid-spotlight.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/dot-grid-spotlight/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import CustomColorsExample from "./examples/custom-colors.svelte";
 import CustomColorsExampleCode from "./examples/custom-colors.svelte?raw";
 import Preview from "./examples/preview.svelte";

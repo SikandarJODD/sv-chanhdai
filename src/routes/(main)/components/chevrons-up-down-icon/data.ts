@@ -1,12 +1,12 @@
-import ChevronsUpDownIconSvelteRaw from "$lib/components/chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/chevrons-up-down-icon/index.ts?raw";
+import ChevronsUpDownIconSvelteRaw from "#lib/components/chan/chevrons-up-down-icon/chevrons-up-down-icon.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/chevrons-up-down-icon/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 

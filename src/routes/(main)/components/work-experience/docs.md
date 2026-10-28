@@ -27,7 +27,7 @@ Copy the component source files into your project and update the example files w
 
 ```svelte
 <script lang="ts">
-  import { WorkExperience } from "$lib/components/chan/work-experience";
+  import { WorkExperience } from "#lib/components/chan/work-experience/index.js";
 </script>
 
 <WorkExperience />

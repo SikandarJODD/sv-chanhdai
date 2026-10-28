@@ -15,8 +15,8 @@
 </script>
 
 <script lang="ts">
-	import { UseClipboard } from "$lib/hooks/use-clipboard.svelte";
-	import { cn } from "$lib/utils.js";
+	import { UseClipboard } from "#lib/hooks/use-clipboard.svelte.js";
+	import { cn } from "#lib/utils.js";
 	import { Button } from "$ui/button";
 	import CopyStateIcon, { type CopyState } from "./copy-state-icon.svelte";
 

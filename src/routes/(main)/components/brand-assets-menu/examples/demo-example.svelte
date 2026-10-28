@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BrandAssetsMenu } from "$lib/components/chan/brand-assets-menu";
+	import { BrandAssetsMenu } from "#lib/components/chan/brand-assets-menu/index.js";
 
 	const DemoComponent: any = BrandAssetsMenu;
 </script>

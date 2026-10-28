@@ -1,24 +1,24 @@
-import AppleCarouselContentSvelteRaw from "$lib/components/chan/apple-carousel/apple-carousel-content.svelte?raw";
-import AppleCarouselContextSvelteTsRaw from "$lib/components/chan/apple-carousel/apple-carousel-context.svelte.ts?raw";
-import AppleCarouselControlsSvelteRaw from "$lib/components/chan/apple-carousel/apple-carousel-controls.svelte?raw";
-import AppleCarouselItemSvelteRaw from "$lib/components/chan/apple-carousel/apple-carousel-item.svelte?raw";
-import AppleCarouselPlayButtonSvelteRaw from "$lib/components/chan/apple-carousel/apple-carousel-play-button.svelte?raw";
-import AppleCarouselProviderSvelteRaw from "$lib/components/chan/apple-carousel/apple-carousel-provider.svelte?raw";
-import AppleCarouselStateSvelteTsRaw from "$lib/components/chan/apple-carousel/apple-carousel-state.svelte.ts?raw";
-import AppleCarouselTabListSvelteRaw from "$lib/components/chan/apple-carousel/apple-carousel-tab-list.svelte?raw";
-import AppleCarouselTabSvelteRaw from "$lib/components/chan/apple-carousel/apple-carousel-tab.svelte?raw";
-import AppleCarouselTypesTsRaw from "$lib/components/chan/apple-carousel/apple-carousel-types.ts?raw";
-import AppleCarouselUtilsTsRaw from "$lib/components/chan/apple-carousel/apple-carousel-utils.ts?raw";
-import AppleCarouselSvelteRaw from "$lib/components/chan/apple-carousel/apple-carousel.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/apple-carousel/index.ts?raw";
+import AppleCarouselContentSvelteRaw from "#lib/components/chan/apple-carousel/apple-carousel-content.svelte?raw";
+import AppleCarouselContextSvelteTsRaw from "#lib/components/chan/apple-carousel/apple-carousel-context.svelte.ts?raw";
+import AppleCarouselControlsSvelteRaw from "#lib/components/chan/apple-carousel/apple-carousel-controls.svelte?raw";
+import AppleCarouselItemSvelteRaw from "#lib/components/chan/apple-carousel/apple-carousel-item.svelte?raw";
+import AppleCarouselPlayButtonSvelteRaw from "#lib/components/chan/apple-carousel/apple-carousel-play-button.svelte?raw";
+import AppleCarouselProviderSvelteRaw from "#lib/components/chan/apple-carousel/apple-carousel-provider.svelte?raw";
+import AppleCarouselStateSvelteTsRaw from "#lib/components/chan/apple-carousel/apple-carousel-state.svelte.ts?raw";
+import AppleCarouselTabListSvelteRaw from "#lib/components/chan/apple-carousel/apple-carousel-tab-list.svelte?raw";
+import AppleCarouselTabSvelteRaw from "#lib/components/chan/apple-carousel/apple-carousel-tab.svelte?raw";
+import AppleCarouselTypesTsRaw from "#lib/components/chan/apple-carousel/apple-carousel-types.ts?raw";
+import AppleCarouselUtilsTsRaw from "#lib/components/chan/apple-carousel/apple-carousel-utils.ts?raw";
+import AppleCarouselSvelteRaw from "#lib/components/chan/apple-carousel/apple-carousel.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/apple-carousel/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import CaptionsExample from "./examples/captions.svelte";
 import CaptionsExampleCode from "./examples/captions.svelte?raw";
 import Preview from "./examples/preview.svelte";
