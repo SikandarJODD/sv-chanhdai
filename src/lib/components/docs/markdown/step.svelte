@@ -2,17 +2,19 @@
 	import { cn } from "#lib/utils.js";
 	import type { Snippet } from "svelte";
 
+	interface Props {
+		class?: string;
+		children?: Snippet;
+		title?: string;
+		titleBaseClass?: string;
+	}
+
 	let {
 		class: className,
 		children,
 		title,
 		titleBaseClass
-	} = $props<{
-		class?: string;
-		children?: Snippet;
-		title?: string;
-		titleBaseClass?: string;
-	}>();
+	}: Props = $props();
 </script>
 
 <div class={cn("relative pb-10 pl-8", className)}>

@@ -2,6 +2,7 @@
 	import * as DropdownMenu from "#lib/components/ui/dropdown-menu/index.js";
 	import { createOpenInContext } from "./open-in-context.svelte.js";
 	import { watch } from "runed";
+	import { untrack } from "svelte";
 
 	interface Props {
 		query: string;
@@ -10,14 +11,12 @@
 
 	let { query, children }: Props = $props();
 
-	// Create context when component is initialized
-	let contextInstance = createOpenInContext(query);
+	const contextInstance = createOpenInContext(untrack(() => query));
 
-	// Update context when query prop changes using watch
 	watch(
 		() => query,
-		() => {
-			contextInstance.query = query;
+		(value) => {
+			contextInstance.query = value;
 		}
 	);
 </script>
