@@ -34,52 +34,52 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/icon-swap.json
 
 ```svelte
 <script lang="ts">
-  import { MonitorIcon, MoonIcon, SunIcon } from "@lucide/svelte";
-  import {
-    IconSwap,
-    IconSwapItem
-  } from "#lib/components/chan/icon-swap/index.js";
-  import { Button } from "#lib/components/ui/button/index.js";
-  const ICONS = {
-    sun: SunIcon,
-    moon: MoonIcon,
-    monitor: MonitorIcon
-  } as const;
-  type IconKey = keyof typeof ICONS;
-  let icon = $state<IconKey>("sun");
-  const Icon = $derived(ICONS[icon]);
+	import { MonitorIcon, MoonIcon, SunIcon } from "@lucide/svelte";
+	import {
+		IconSwap,
+		IconSwapItem
+	} from "#lib/components/chan/icon-swap/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	const ICONS = {
+		sun: SunIcon,
+		moon: MoonIcon,
+		monitor: MonitorIcon
+	} as const;
+	type IconKey = keyof typeof ICONS;
+	let icon = $state<IconKey>("sun");
+	const Icon = $derived(ICONS[icon]);
 
-  const iconKeys = Object.keys(ICONS) as IconKey[];
+	const iconKeys = Object.keys(ICONS) as IconKey[];
 </script>
 
 <div class="flex flex-col items-center gap-4">
-  <Button
-    class="relative will-change-transform"
-    variant="outline"
-    size="icon-sm"
-    aria-label={icon}
-  >
-    <IconSwap>
-      {#key icon}
-        <IconSwapItem>
-          <Icon />
-        </IconSwapItem>
-      {/key}
-    </IconSwap>
-  </Button>
+	<Button
+		class="relative will-change-transform"
+		variant="outline"
+		size="icon-sm"
+		aria-label={icon}
+	>
+		<IconSwap>
+			{#key icon}
+				<IconSwapItem>
+					<Icon />
+				</IconSwapItem>
+			{/key}
+		</IconSwap>
+	</Button>
 
-  <div class="flex gap-0.5 rounded-lg p-0.5">
-    {#each iconKeys as key (key)}
-      <Button
-        class="rounded-md border-none capitalize"
-        size="sm"
-        variant={icon === key ? "secondary" : "ghost"}
-        onclick={() => (icon = key)}
-      >
-        {key}
-      </Button>
-    {/each}
-  </div>
+	<div class="flex gap-0.5 rounded-lg p-0.5">
+		{#each iconKeys as key (key)}
+			<Button
+				class="rounded-md border-none capitalize"
+				size="sm"
+				variant={icon === key ? "secondary" : "ghost"}
+				onclick={() => (icon = key)}
+			>
+				{key}
+			</Button>
+		{/each}
+	</div>
 </div>
 ```
 
@@ -89,20 +89,20 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/icon-swap.json
 
 AnimatePresence wrapper for swapping icon content.
 
-| Prop       | Type                           | Default       | Required | Description                                            |
-| ---------- | ------------------------------ | ------------- | -------- | ------------------------------------------------------ |
-| `children` | `Snippet`                      | —             | Yes      | Keyed IconSwapItem content to animate between.         |
-| `mode`     | `AnimatePresenceProps['mode']` | `'popLayout'` | No       | Controls how entering and exiting items are sequenced. |
-| `initial`  | `boolean`                      | `false`       | No       | Whether content should animate on its initial render.  |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `children` | `Snippet` | — | Yes | Keyed IconSwapItem content to animate between. |
+| `mode` | `AnimatePresenceProps['mode']` | `'popLayout'` | No | Controls how entering and exiting items are sequenced. |
+| `initial` | `boolean` | `false` | No | Whether content should animate on its initial render. |
 
 ### IconSwapItem
 
 Motion element that defines the icon enter and exit transition.
 
-| Prop       | Type                                      | Default      | Required | Description                                      |
-| ---------- | ----------------------------------------- | ------------ | -------- | ------------------------------------------------ |
-| `children` | `Snippet`                                 | —            | Yes      | Icon content rendered inside the motion element. |
-| `as`       | `typeof motion.div \| typeof motion.span` | `motion.div` | No       | Motion element used as the item wrapper.         |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `children` | `Snippet` | — | Yes | Icon content rendered inside the motion element. |
+| `as` | `typeof motion.div \| typeof motion.span` | `motion.div` | No | Motion element used as the item wrapper. |
 
 ## Features
 

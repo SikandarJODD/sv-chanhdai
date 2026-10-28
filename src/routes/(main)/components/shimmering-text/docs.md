@@ -40,12 +40,12 @@ No usage example is available.
 
 Animated text with a staggered shimmer across its characters.
 
-| Prop        | Type      | Default     | Required | Description                                                       |
-| ----------- | --------- | ----------- | -------- | ----------------------------------------------------------------- |
-| `text`      | `string`  | —           | Yes      | Text rendered with the shimmering effect.                         |
-| `duration`  | `number`  | `1`         | No       | Duration of one shimmer cycle in seconds.                         |
-| `isStopped` | `boolean` | `false`     | No       | Pauses the shimmer and returns characters to their resting color. |
-| `class`     | `string`  | `undefined` | No       | Additional classes applied to the outer span.                     |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `text` | `string` | — | Yes | Text rendered with the shimmering effect. |
+| `duration` | `number` | `1` | No | Duration of one shimmer cycle in seconds. |
+| `isStopped` | `boolean` | `false` | No | Pauses the shimmer and returns characters to their resting color. |
+| `class` | `string` | `undefined` | No | Additional classes applied to the outer span. |
 
 ## Features
 

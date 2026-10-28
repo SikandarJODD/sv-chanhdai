@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/apple-hello-eff
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect";
+	import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect/index.js";
 </script>
 
 <AppleHelloEffectEnglish />
@@ -46,11 +46,11 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/apple-hello-eff
 
 Multilingual animated greeting text with Apple-style handwriting motion.
 
-| Prop                  | Type         | Default     | Required | Description                                                                        |
-| --------------------- | ------------ | ----------- | -------- | ---------------------------------------------------------------------------------- |
-| `class`               | `string`     | `''`        | No       | Additional classes applied to the underlying SVG element.                          |
-| `durationScale`       | `number`     | `1`         | No       | Scales the overall handwriting animation speed for the current language variation. |
-| `onAnimationComplete` | `() => void` | `undefined` | No       | Called when the full animation completes.                                          |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `class` | `string` | `''` | No | Additional classes applied to the underlying SVG element. |
+| `durationScale` | `number` | `1` | No | Scales the overall handwriting animation speed for the current language variation. |
+| `onAnimationComplete` | `() => void` | `undefined` | No | Called when the full animation completes. |
 
 ## Features
 
@@ -61,23 +61,11 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 
 ## Examples
 
-### Custom colors
-
-```svelte
-<script lang="ts">
-  import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect";
-</script>
-
-<AppleHelloEffectEnglish
-  class="border border-dashed bg-ink/5 p-1 text-ink dark:text-emerald-400"
-/>
-```
-
 ### English
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect";
+	import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect/index.js";
 </script>
 
 <AppleHelloEffectEnglish />
@@ -87,7 +75,7 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectHindi } from "#lib/components/chan/apple-hello-effect";
+	import { AppleHelloEffectHindi } from "#lib/components/chan/apple-hello-effect/index.js";
 </script>
 
 <AppleHelloEffectHindi />
@@ -97,7 +85,7 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectSpanish } from "#lib/components/chan/apple-hello-effect";
+	import { AppleHelloEffectSpanish } from "#lib/components/chan/apple-hello-effect/index.js";
 </script>
 
 <AppleHelloEffectSpanish />
@@ -107,8 +95,20 @@ Multilingual animated greeting text with Apple-style handwriting motion.
 
 ```svelte
 <script lang="ts">
-  import { AppleHelloEffectVietnamese } from "#lib/components/chan/apple-hello-effect";
+	import { AppleHelloEffectVietnamese } from "#lib/components/chan/apple-hello-effect/index.js";
 </script>
 
 <AppleHelloEffectVietnamese />
+```
+
+### Custom colors
+
+```svelte
+<script lang="ts">
+	import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect/index.js";
+</script>
+
+<AppleHelloEffectEnglish
+	class="border border-dashed bg-ink/5 p-1 text-ink dark:bg-emerald-500/5 dark:text-emerald-400"
+/>
 ```

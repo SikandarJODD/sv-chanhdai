@@ -339,7 +339,7 @@ async function resolveComponentExport({
 }
 
 function getImportStatement(sourceRelativePath, exportName, localName) {
-	const importPath = `#lib/components/${sourceRelativePath}`;
+	const importPath = `#lib/components/${sourceRelativePath}/index.js`;
 
 	if (exportName === localName) {
 		return `import { ${localName} } from "${importPath}";`;
@@ -440,7 +440,7 @@ function buildFolderStructure(sourceRelativePath, sourceFiles) {
 function renderPageSvelte() {
 	return `<script lang="ts">
 \timport ComponentDocPage from "#lib/components/docs/base/main/component-doc-page.svelte";
-\timport { data } from "./data";
+\timport { data } from "./data.js";
 </script>
 
 <ComponentDocPage

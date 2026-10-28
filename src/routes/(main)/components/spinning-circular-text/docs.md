@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/spinning-circul
 
 ```svelte
 <script lang="ts">
-  import { SpinningCircularText } from "#lib/components/chan/spinning-circular-text";
+	import { SpinningCircularText } from "#lib/components/chan/spinning-circular-text/index.js";
 </script>
 
 <SpinningCircularText text="Port By Bhide Svelte • " />
@@ -46,15 +46,15 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/spinning-circul
 
 Circular character layout with a continuously spinning ring.
 
-| Prop          | Type                                         | Default     | Required | Description                                        |
-| ------------- | -------------------------------------------- | ----------- | -------- | -------------------------------------------------- |
-| `text`        | `string`                                     | —           | Yes      | Text arranged around the circle.                   |
-| `charSpacing` | `number`                                     | `1`         | No       | Spacing multiplier between characters.             |
-| `fontSize`    | `string`                                     | `'1rem'`    | No       | CSS font size used for each character.             |
-| `spinClass`   | `ClassValue`                                 | `undefined` | No       | Classes applied to the spinning character ring.    |
-| `renderChar`  | `Snippet<[{ char: string; index: number }]>` | `undefined` | No       | Custom renderer for each positioned character.     |
-| `class`       | `ClassValue`                                 | `undefined` | No       | Additional classes applied to the outer container. |
-| `ref`         | `HTMLDivElement \| null`                     | `null`      | No       | Bindable reference to the outer container.         |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `text` | `string` | — | Yes | Text arranged around the circle. |
+| `charSpacing` | `number` | `1` | No | Spacing multiplier between characters. |
+| `fontSize` | `string` | `'1rem'` | No | CSS font size used for each character. |
+| `spinClass` | `ClassValue` | `undefined` | No | Classes applied to the spinning character ring. |
+| `renderChar` | `Snippet<[{ char: string; index: number }]>` | `undefined` | No | Custom renderer for each positioned character. |
+| `class` | `ClassValue` | `undefined` | No | Additional classes applied to the outer container. |
+| `ref` | `HTMLDivElement \| null` | `null` | No | Bindable reference to the outer container. |
 
 ## Features
 

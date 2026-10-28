@@ -34,14 +34,14 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial-2.j
 
 ```svelte
 <script lang="ts">
-  import { Testimonial2 } from "#lib/components/chan/testimonial-2";
+	import { Testimonial2 } from "#lib/components/chan/testimonial-2/index.js";
 </script>
 
 <Testimonial2
-  authorName="Jane Doe"
-  authorTagline="Product Designer"
-  url="https://example.com"
-  quote="This component library is a joy to use."
+	authorName="Jane Doe"
+	authorTagline="Product Designer"
+	url="https://example.com"
+	quote="This component library is a joy to use."
 />
 ```
 
@@ -51,13 +51,13 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/testimonial-2.j
 
 Quote and author attribution with an external profile link.
 
-| Prop            | Type     | Default     | Required | Description                                            |
-| --------------- | -------- | ----------- | -------- | ------------------------------------------------------ |
-| `authorName`    | `string` | —           | Yes      | Full display name of the testimonial author.           |
-| `authorTagline` | `string` | —           | Yes      | Short title or description shown beside the author.    |
-| `url`           | `string` | —           | Yes      | Link to the author's profile, website, or social page. |
-| `quote`         | `string` | —           | Yes      | Testimonial quote content.                             |
-| `class`         | `string` | `undefined` | No       | Additional classes applied to the figure.              |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `authorName` | `string` | — | Yes | Full display name of the testimonial author. |
+| `authorTagline` | `string` | — | Yes | Short title or description shown beside the author. |
+| `url` | `string` | — | Yes | Link to the author's profile, website, or social page. |
+| `quote` | `string` | — | Yes | Testimonial quote content. |
+| `class` | `string` | `undefined` | No | Additional classes applied to the figure. |
 
 ## Features
 
