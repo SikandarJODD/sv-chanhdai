@@ -32,14 +32,14 @@ export const meta: ComponentMeta = {
 	id: "elastic-slider",
 	title: "Elastic Slider",
 	description:
-		"Slider with elastic rubber-band drag and magnetic snap feedback.",
+		"A slider with rubber-band dragging, step support, value formatting, and keyboard controls.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Elastic Slider",
 	description:
-		"Slider with elastic rubber-band drag and magnetic snap feedback.",
+		"A slider with rubber-band dragging, step support, value formatting, and keyboard controls.",
 	keywords: ["Svelte", "Elastic Slider", "Component"]
 };
 

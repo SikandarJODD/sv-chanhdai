@@ -21,7 +21,7 @@ export const meta: ComponentMeta = {
 const seo: SEO = {
 	title: "Shimmering Text",
 	description:
-		"Add a configurable character-by-character shimmer animation to text in Svelte.",
+		"A configurable character-by-character shimmer animation for Svelte text.",
 	keywords: ["Svelte", "Shimmering Text", "Component"]
 };
 

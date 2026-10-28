@@ -18,14 +18,14 @@ export const meta: ComponentMeta = {
 	id: "github-stars",
 	title: "GitHub Stars",
 	description:
-		"Display GitHub repo star count with formatted numbers and full-count tooltip.",
+		"A GitHub repository star count with compact formatting and a tooltip for the exact total.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "GitHub Stars",
 	description:
-		"Display GitHub repo star count with formatted numbers and full-count tooltip.",
+		"A GitHub repository star count with compact formatting and a tooltip for the exact total.",
 	keywords: ["Svelte", "GitHub Stars", "Component"]
 };
 

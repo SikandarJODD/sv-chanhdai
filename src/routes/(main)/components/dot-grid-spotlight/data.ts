@@ -18,14 +18,14 @@ export const meta: ComponentMeta = {
 	id: "dot-grid-spotlight",
 	title: "Dot Grid Spotlight",
 	description:
-		"Interactive dot grid with a cursor-tracking spotlight effect.",
+		"A dot-grid background with a spotlight that follows the pointer.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Dot Grid Spotlight",
 	description:
-		"Interactive dot grid with a cursor-tracking spotlight effect.",
+		"A dot-grid background with a spotlight that follows the pointer.",
 	keywords: ["Svelte", "Dot Grid Spotlight", "Component"]
 };
 

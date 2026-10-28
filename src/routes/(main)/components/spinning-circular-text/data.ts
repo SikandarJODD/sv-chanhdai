@@ -14,15 +14,14 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "spinning-circular-text",
 	title: "Spinning Circular Text",
-	description:
-		"Text arranged in a circle with a continuous spinning animation.",
+	description: "Text arranged in a circle with a continuous rotation animation.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Spinning Circular Text",
 	description:
-		"Text arranged in a circle with a continuous spinning animation.",
+		"Text arranged in a circle with a continuous rotation animation.",
 	keywords: ["Svelte", "Spinning Circular Text", "Component"]
 };
 

@@ -272,7 +272,7 @@
 		</MasonryCard>
 
 		<MasonryCard
-			name="Testimonial 2"
+			name="Testimonial Quote"
 			href={resolve("/(main)/components/testimonial-2")}
 			class="md:col-span-7"
 		>

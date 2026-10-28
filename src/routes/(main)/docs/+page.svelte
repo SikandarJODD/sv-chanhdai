@@ -21,8 +21,9 @@
 </script>
 
 <Seo
-	title="Documentation"
-	description="Learn how to install and use Svelte Chanhdai: free, reusable Svelte 5 UI components and animated blocks built with SvelteKit, Tailwind CSS, and shadcn-svelte."
+	title="Svelte Component Documentation"
+	description="Installation, examples, source code, and API details for the components in this library."
+	schemaType="CollectionPage"
 	keywords={[
 		"svelte components",
 		"Svelte component documentation",

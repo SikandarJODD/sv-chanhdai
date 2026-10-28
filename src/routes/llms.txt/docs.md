@@ -21,7 +21,7 @@ A collection of free, open-source Svelte 5 components ported from Chánh Đại'
 - [Spinning Circular Text](https://sv-chan.vercel.app/components/spinning-circular-text/llms.txt)
 - [Status Button](https://sv-chan.vercel.app/components/status-button/llms.txt)
 - [Testimonial](https://sv-chan.vercel.app/components/testimonial/llms.txt)
-- [Testimonial 2](https://sv-chan.vercel.app/components/testimonial-2/llms.txt)
+- [Testimonial Quote](https://sv-chan.vercel.app/components/testimonial-2/llms.txt)
 - [Testimonial Spotlight](https://sv-chan.vercel.app/components/testimonial-spotlight/llms.txt)
 - [Timescale](https://sv-chan.vercel.app/components/timescale/llms.txt)
 - [Wheel Picker](https://sv-chan.vercel.app/components/wheel-picker/llms.txt)

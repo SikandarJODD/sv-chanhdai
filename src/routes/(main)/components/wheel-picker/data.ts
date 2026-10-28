@@ -19,14 +19,14 @@ export const meta: ComponentMeta = {
 	id: "wheel-picker",
 	title: "Wheel Picker",
 	description:
-		"iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support.",
+		"An iOS-style Svelte wheel picker with inertial scrolling, keyboard controls, and optional infinite looping.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Wheel Picker",
 	description:
-		"iOS-like wheel picker for Svelte with smooth inertia scrolling and infinite loop support.",
+		"An iOS-style Svelte wheel picker with inertial scrolling, keyboard controls, and optional infinite looping.",
 	keywords: ["Svelte", "Wheel Picker", "Component"]
 };
 

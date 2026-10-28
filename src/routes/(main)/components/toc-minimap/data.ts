@@ -18,16 +18,16 @@ import StaticOutlineCode from "./examples/static-outline.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "toc-minimap",
-	title: "Toc Minimap",
+	title: "TOC Minimap",
 	description: "Navigate page headings with a compact, hoverable minimap.",
 	category: "chan"
 };
 
 const seo: SEO = {
-	title: "Toc Minimap",
+	title: "TOC Minimap",
 	description:
-		"Display a minimap of the table of contents for easy navigation.",
-	keywords: ["Svelte", "Toc Minimap", "Component"]
+		"A compact table-of-contents minimap that links to headings and expands on hover.",
+	keywords: ["Svelte", "TOC Minimap", "Component"]
 };
 
 const usage: CodeBlock[] = [

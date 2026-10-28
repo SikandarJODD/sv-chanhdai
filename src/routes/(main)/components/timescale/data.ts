@@ -25,14 +25,14 @@ export const meta: ComponentMeta = {
 	id: "timescale",
 	title: "Timescale",
 	description:
-		"Ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
+		"A ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Timescale",
 	description:
-		"Ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
+		"A ruler-style timeline for plotting milestones along a horizontal or vertical axis.",
 	keywords: ["Svelte", "Timescale", "Component"]
 };
 

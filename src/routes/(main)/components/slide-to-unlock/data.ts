@@ -34,14 +34,14 @@ export const meta: ComponentMeta = {
 	id: "slide-to-unlock",
 	title: "Slide to Unlock",
 	description:
-		"Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
+		"A drag-to-confirm control inspired by the original iPhone slide-to-unlock gesture.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Slide to Unlock",
 	description:
-		"Interactive slider inspired by the classic iPhone “slide to unlock” gesture.",
+		"A drag-to-confirm control inspired by the original iPhone slide-to-unlock gesture.",
 	keywords: ["Svelte", "Slide to Unlock", "Component"]
 };
 

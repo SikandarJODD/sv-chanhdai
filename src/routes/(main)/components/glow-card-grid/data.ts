@@ -22,13 +22,15 @@ import VibrantGlowExampleCode from "./examples/vibrant-glow.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "glow-card-grid",
 	title: "Glow Card Grid",
-	description: "Display cards with glowing border and background effects.",
+	description:
+		"A responsive card grid with pointer-driven glow effects on card borders and backgrounds.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Glow Card Grid",
-	description: "Display cards with glowing border and background effects.",
+	description:
+		"A responsive card grid with pointer-driven glow effects on card borders and backgrounds.",
 	keywords: ["Svelte", "Glow Card Grid", "Component"]
 };
 

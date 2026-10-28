@@ -23,14 +23,14 @@ export const meta: ComponentMeta = {
 	id: "testimonial",
 	title: "Testimonial",
 	description:
-		"Display user feedback with author info, avatar, and verified badge.",
+		"Composable testimonial primitives for quotes, author details, avatars, and verified badges.",
 	category: "chan"
 };
 
 const seo: SEO = {
 	title: "Testimonial",
 	description:
-		"Display user feedback with author info, avatar, and verified badge.",
+		"Composable testimonial primitives for quotes, author details, avatars, and verified badges.",
 	keywords: ["Svelte", "Testimonial", "Component"]
 };
 

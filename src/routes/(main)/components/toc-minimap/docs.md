@@ -1,4 +1,4 @@
-# Toc Minimap
+# TOC Minimap
 
 Navigate page headings with a compact, hoverable minimap.
 

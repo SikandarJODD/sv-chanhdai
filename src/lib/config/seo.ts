@@ -8,7 +8,7 @@ type SeoConfig = {
 export let seo_config: SeoConfig = {
 	title: "Svelte Chanhdai Components & Blocks",
 	description:
-		"Svelte Port of Chanhdai Components & Blocks, a collection of reusable UI components and blocks for building web applications.",
+		"Open-source Svelte 5 components with live demos, source code, examples, and copy-paste installation guides.",
 	title_template: "%s | Svelte Chanhdai Components",
 	site_name: "Svelte Chanhdai Components & Blocks",
 	url: "https://sv-chan.vercel.app"
