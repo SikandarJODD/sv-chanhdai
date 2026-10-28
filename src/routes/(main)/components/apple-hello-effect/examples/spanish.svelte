@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AppleHelloEffectSpanish } from "$chan/apple-hello-effect";
+	import { AppleHelloEffectSpanish } from "#lib/components/chan/apple-hello-effect/index.js";
 </script>
 
 <AppleHelloEffectSpanish />

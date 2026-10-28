@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CloudUploadIcon from "@lucide/svelte/icons/cloud-upload";
-	import { StatusButton } from "$chan/status-button";
+	import { StatusButton } from "#lib/components/chan/status-button/index.js";
 
 	let progress = $state(0);
 

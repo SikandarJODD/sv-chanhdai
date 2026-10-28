@@ -1,13 +1,13 @@
-import IndexTsRaw from "$lib/components/chan/testimonial-2/index.ts?raw";
-import Testimonial2SvelteRaw from "$lib/components/chan/testimonial-2/testimonial-2.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/testimonial-2/index.ts?raw";
+import Testimonial2SvelteRaw from "#lib/components/chan/testimonial-2/testimonial-2.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -30,7 +30,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { Testimonial2 } from "$chan/testimonial-2";
+	import { Testimonial2 } from "#lib/components/chan/testimonial-2/index.js";
 </script>
 
 <Testimonial2

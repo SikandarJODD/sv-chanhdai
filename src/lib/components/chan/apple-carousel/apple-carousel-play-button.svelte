@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { motion } from "motion-sv";
 	import type { Transition } from "motion-sv";
 	import { useAppleCarousel } from "./apple-carousel-context.svelte";

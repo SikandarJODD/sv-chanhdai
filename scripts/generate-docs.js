@@ -112,12 +112,12 @@ async function parseDataFile(dataFile) {
 
 			if (importPath?.endsWith("?raw")) {
 				const sourcePath = importPath.slice(0, -"?raw".length);
-				const resolvedPath = sourcePath.startsWith("$lib/")
+				const resolvedPath = sourcePath.startsWith("#lib/")
 					? path.join(
 							ROOT_DIR,
 							"src",
 							"lib",
-							sourcePath.slice("$lib/".length)
+							sourcePath.slice("#lib/".length)
 						)
 					: sourcePath.startsWith(".")
 						? path.resolve(path.dirname(dataFile), sourcePath)

@@ -1,21 +1,21 @@
-import IndexTsRaw from "$lib/components/chan/testimonial/index.ts?raw";
-import TestimonialAuthorNameSvelteRaw from "$lib/components/chan/testimonial/testimonial-author-name.svelte?raw";
-import TestimonialAuthorTaglineSvelteRaw from "$lib/components/chan/testimonial/testimonial-author-tagline.svelte?raw";
-import TestimonialAuthorSvelteRaw from "$lib/components/chan/testimonial/testimonial-author.svelte?raw";
-import TestimonialAvatarImgSvelteRaw from "$lib/components/chan/testimonial/testimonial-avatar-img.svelte?raw";
-import TestimonialAvatarRingSvelteRaw from "$lib/components/chan/testimonial/testimonial-avatar-ring.svelte?raw";
-import TestimonialAvatarSvelteRaw from "$lib/components/chan/testimonial/testimonial-avatar.svelte?raw";
-import TestimonialQuoteSvelteRaw from "$lib/components/chan/testimonial/testimonial-quote.svelte?raw";
-import TestimonialVerifiedBadgeSvelteRaw from "$lib/components/chan/testimonial/testimonial-verified-badge.svelte?raw";
-import TestimonialSvelteRaw from "$lib/components/chan/testimonial/testimonial.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/testimonial/index.ts?raw";
+import TestimonialAuthorNameSvelteRaw from "#lib/components/chan/testimonial/testimonial-author-name.svelte?raw";
+import TestimonialAuthorTaglineSvelteRaw from "#lib/components/chan/testimonial/testimonial-author-tagline.svelte?raw";
+import TestimonialAuthorSvelteRaw from "#lib/components/chan/testimonial/testimonial-author.svelte?raw";
+import TestimonialAvatarImgSvelteRaw from "#lib/components/chan/testimonial/testimonial-avatar-img.svelte?raw";
+import TestimonialAvatarRingSvelteRaw from "#lib/components/chan/testimonial/testimonial-avatar-ring.svelte?raw";
+import TestimonialAvatarSvelteRaw from "#lib/components/chan/testimonial/testimonial-avatar.svelte?raw";
+import TestimonialQuoteSvelteRaw from "#lib/components/chan/testimonial/testimonial-quote.svelte?raw";
+import TestimonialVerifiedBadgeSvelteRaw from "#lib/components/chan/testimonial/testimonial-verified-badge.svelte?raw";
+import TestimonialSvelteRaw from "#lib/components/chan/testimonial/testimonial.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -47,7 +47,7 @@ const usage: CodeBlock[] = [
 		TestimonialAvatarImg,
 		TestimonialAvatarRing,
 		TestimonialQuote
-	} from "$chan/testimonial";
+	} from "#lib/components/chan/testimonial/index.js";
 </script>
 
 <Testimonial>

@@ -1,14 +1,14 @@
-import CopyButtonSvelteRaw from "$lib/components/chan/copy-button/copy-button.svelte?raw";
-import CopyStateIconSvelteRaw from "$lib/components/chan/copy-button/copy-state-icon.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/copy-button/index.ts?raw";
+import CopyButtonSvelteRaw from "#lib/components/chan/copy-button/copy-button.svelte?raw";
+import CopyStateIconSvelteRaw from "#lib/components/chan/copy-button/copy-state-icon.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/copy-button/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -29,7 +29,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { CopyButton } from "$chan/copy-button";
+	import { CopyButton } from "#lib/components/chan/copy-button/index.js";
 </script>
 
 <CopyButton text="Hello, world!">Copy</CopyButton>`,

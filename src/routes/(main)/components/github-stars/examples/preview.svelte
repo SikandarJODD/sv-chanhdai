@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { GithubStars } from "$chan/github-stars";
+	import { GithubStars } from "#lib/components/chan/github-stars/index.js";
 </script>
 
 <div>

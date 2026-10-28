@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { ButtonProps } from "$ui/button";
+	import type { ButtonProps } from "#lib/components/ui/button/index.js";
 	import type { CopyStateIconProps } from "./copy-state-icon.svelte";
 
 	export type CopyButtonProps = Omit<ButtonProps, "onclick"> &
@@ -15,9 +15,9 @@
 </script>
 
 <script lang="ts">
-	import { UseClipboard } from "$lib/hooks/use-clipboard.svelte";
-	import { cn } from "$lib/utils.js";
-	import { Button } from "$ui/button";
+	import { UseClipboard } from "#lib/hooks/use-clipboard.svelte.js";
+	import { cn } from "#lib/utils.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import CopyStateIcon, { type CopyState } from "./copy-state-icon.svelte";
 
 	let {

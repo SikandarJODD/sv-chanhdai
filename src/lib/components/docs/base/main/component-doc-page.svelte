@@ -1,10 +1,10 @@
 <!-- Main File -->
 <script lang="ts" module>
 	import type { Component } from "svelte";
-	import type { SEO } from "$lib/types/seo";
-	import type { Example } from "$lib/types/example";
-	import type { PropsTable } from "$lib/types/structure";
-	import type { CodeBlock } from "$lib/types/code";
+	import type { SEO } from "#lib/types/seo.js";
+	import type { Example } from "#lib/types/example.js";
+	import type { PropsTable } from "#lib/types/structure.js";
+	import type { CodeBlock } from "#lib/types/code.js";
 
 	export type ComponentDocPageProps = {
 		id: string;
@@ -29,13 +29,18 @@
 
 <script lang="ts">
 	import { page } from "$app/state";
-	import { H1, H2, Paragraph, H3 } from "$markdown";
+	import {
+		H1,
+		H2,
+		Paragraph,
+		H3
+	} from "#lib/components/docs/markdown/index.js";
 	import PackageBadges from "./package-badges.svelte";
 	import InstallComponent from "./install-component.svelte";
 	import ApiTable from "../api-table/api-table.svelte";
 	import Seo from "./seo.svelte";
-	import { PreviewComponent } from "$lib/components/ui/preview-component";
-	import FrameSingle from "$lib/components/ui/code/frame-single.svelte";
+	import { PreviewComponent } from "#lib/components/ui/preview-component/index.js";
+	import FrameSingle from "#lib/components/ui/code/frame-single.svelte";
 	import CopyPageDropdown from "./copy-page-dropdown.svelte";
 
 	let {

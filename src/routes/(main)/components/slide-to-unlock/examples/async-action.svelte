@@ -10,7 +10,7 @@
 		SlideToUnlockHandle,
 		SlideToUnlockText,
 		SlideToUnlockTrack
-	} from "$chan/slide-to-unlock";
+	} from "#lib/components/chan/slide-to-unlock/index.js";
 
 	let status = $state<"idle" | "processing" | "complete">("idle");
 	const shouldReduceMotion = useReducedMotion();
@@ -103,9 +103,7 @@
 						<SlideToUnlockHandle
 							class="rounded-full bg-zinc-900 text-white dark:bg-white dark:text-zinc-900"
 						>
-							{#snippet children()}
-								<ShoppingBagIcon class="size-5" />
-							{/snippet}
+							<ShoppingBagIcon class="size-5" />
 						</SlideToUnlockHandle>
 					</SlideToUnlockTrack>
 				</SlideToUnlock>

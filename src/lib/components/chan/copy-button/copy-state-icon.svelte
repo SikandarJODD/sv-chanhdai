@@ -17,7 +17,10 @@
 <script lang="ts">
 	import CircleXIcon from "@lucide/svelte/icons/circle-x";
 	import CopyIcon from "@lucide/svelte/icons/copy";
-	import { IconSwap, IconSwapItem } from "$chan/icon-swap";
+	import {
+		IconSwap,
+		IconSwapItem
+	} from "#lib/components/chan/icon-swap/index.js";
 	import { motion } from "motion-sv";
 
 	let { state, idleIcon, doneIcon, errorIcon }: CopyStateIconProps = $props();

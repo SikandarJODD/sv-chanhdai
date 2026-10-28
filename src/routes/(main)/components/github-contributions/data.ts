@@ -1,23 +1,23 @@
-import ContributionGraphBlockSvelteRaw from "$lib/components/chan/github-contributions/contribution-graph-block.svelte?raw";
-import ContributionGraphCalendarSvelteRaw from "$lib/components/chan/github-contributions/contribution-graph-calendar.svelte?raw";
-import ContributionGraphContextSvelteTsRaw from "$lib/components/chan/github-contributions/contribution-graph-context.svelte.ts?raw";
-import ContributionGraphFooterSvelteRaw from "$lib/components/chan/github-contributions/contribution-graph-footer.svelte?raw";
-import ContributionGraphLegendSvelteRaw from "$lib/components/chan/github-contributions/contribution-graph-legend.svelte?raw";
-import ContributionGraphTotalCountSvelteRaw from "$lib/components/chan/github-contributions/contribution-graph-total-count.svelte?raw";
-import ContributionGraphUtilsTsRaw from "$lib/components/chan/github-contributions/contribution-graph-utils.ts?raw";
-import ContributionGraphSvelteRaw from "$lib/components/chan/github-contributions/contribution-graph.svelte?raw";
-import GithubContributionsFallbackSvelteRaw from "$lib/components/chan/github-contributions/github-contributions-fallback.svelte?raw";
-import GithubContributionsSvelteRaw from "$lib/components/chan/github-contributions/github-contributions.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/github-contributions/index.ts?raw";
+import ContributionGraphBlockSvelteRaw from "#lib/components/chan/github-contributions/contribution-graph-block.svelte?raw";
+import ContributionGraphCalendarSvelteRaw from "#lib/components/chan/github-contributions/contribution-graph-calendar.svelte?raw";
+import ContributionGraphContextSvelteTsRaw from "#lib/components/chan/github-contributions/contribution-graph-context.svelte.ts?raw";
+import ContributionGraphFooterSvelteRaw from "#lib/components/chan/github-contributions/contribution-graph-footer.svelte?raw";
+import ContributionGraphLegendSvelteRaw from "#lib/components/chan/github-contributions/contribution-graph-legend.svelte?raw";
+import ContributionGraphTotalCountSvelteRaw from "#lib/components/chan/github-contributions/contribution-graph-total-count.svelte?raw";
+import ContributionGraphUtilsTsRaw from "#lib/components/chan/github-contributions/contribution-graph-utils.ts?raw";
+import ContributionGraphSvelteRaw from "#lib/components/chan/github-contributions/contribution-graph.svelte?raw";
+import GithubContributionsFallbackSvelteRaw from "#lib/components/chan/github-contributions/github-contributions-fallback.svelte?raw";
+import GithubContributionsSvelteRaw from "#lib/components/chan/github-contributions/github-contributions.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/github-contributions/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import CompactGraphExample from "./examples/compact-graph.svelte";
 import CompactGraphExampleCode from "./examples/compact-graph.svelte?raw";
 import CustomDataExample from "./examples/custom-data.svelte";
@@ -54,7 +54,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { GitHubContributions } from "$chan/github-contributions";
+	import { GitHubContributions } from "#lib/components/chan/github-contributions/index.js";
 </script>
 
 <GitHubContributions username="SikandarJODD" />`,

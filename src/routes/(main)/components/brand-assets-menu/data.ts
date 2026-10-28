@@ -1,14 +1,14 @@
-import BrandAssetsMenuSvelteRaw from "$lib/components/chan/brand-assets-menu/brand-assets-menu.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/brand-assets-menu/index.ts?raw";
+import BrandAssetsMenuSvelteRaw from "#lib/components/chan/brand-assets-menu/brand-assets-menu.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/brand-assets-menu/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -29,7 +29,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { BrandAssetsMenu } from "$chan/brand-assets-menu";
+	import { BrandAssetsMenu } from "#lib/components/chan/brand-assets-menu/index.js";
 
 	const LOGOMARK_SVG = '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /></svg>';
 	const LOGOTYPE_SVG = '<svg viewBox="0 0 120 24"><text x="0" y="18">Acme</text></svg>';

@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/share-menu.json
 
 ```svelte
 <script>
-  import { ShareMenu } from "$chan/share-menu";
+	import { ShareMenu } from "#lib/components/chan/share-menu/index.js";
 </script>
 
 <ShareMenu title="Share Menu" url="/components/share-menu" />
@@ -46,10 +46,10 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/share-menu.json
 
 Menu for copying or sharing a URL through supported services.
 
-| Prop    | Type     | Default | Required | Description                                                            |
-| ------- | -------- | ------- | -------- | ---------------------------------------------------------------------- |
-| `title` | `string` | —       | Yes      | Title passed to the native share sheet.                                |
-| `url`   | `string` | —       | Yes      | URL to share; relative values are resolved against the current origin. |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `title` | `string` | — | Yes | Title passed to the native share sheet. |
+| `url` | `string` | — | Yes | URL to share; relative values are resolved against the current origin. |
 
 ## Features
 

@@ -1,7 +1,7 @@
 import type { LucideIcon } from "@lucide/svelte";
 import type { Snippet } from "svelte";
 import type { HTMLAttributes } from "svelte/elements";
-import type { WithElementRef } from "$lib/utils";
+import type { WithElementRef } from "#lib/utils.js";
 
 export type ExperiencePositionItemType = {
 	/** Unique identifier for the position. */

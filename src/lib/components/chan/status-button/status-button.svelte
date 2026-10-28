@@ -1,5 +1,5 @@
 <script lang="ts" module>
-	import type { ButtonProps } from "$ui/button";
+	import type { ButtonProps } from "#lib/components/ui/button/index.js";
 	import type { Snippet } from "svelte";
 
 	export type ButtonStatus = "idle" | "loading" | "success" | "failed";
@@ -34,8 +34,8 @@
 <script lang="ts">
 	import { navigating } from "$app/state";
 	import XIcon from "@lucide/svelte/icons/x";
-	import { Button } from "$ui/button";
-	import { cn } from "$lib/utils";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { cn } from "#lib/utils.js";
 	import { AnimatePresence, motion, useReducedMotion } from "motion-sv";
 	import type { Transition, Variants } from "motion-sv";
 	import { watch } from "runed";

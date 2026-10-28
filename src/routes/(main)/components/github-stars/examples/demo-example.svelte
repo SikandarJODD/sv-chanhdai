@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { GithubStars } from "$chan/github-stars";
+	import { GithubStars } from "#lib/components/chan/github-stars/index.js";
 
 	type GitHubRepository = {
 		stargazers_count: number;

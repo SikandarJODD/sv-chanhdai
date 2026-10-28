@@ -16,15 +16,15 @@
 </script>
 
 <script lang="ts">
-	import { cn } from "$lib/utils";
-	import * as Tabs from "$lib/components/ui/tabs";
-	import type { CodeBlock } from "$lib/types/code";
-	import { Steps, Step } from "$markdown";
-	import { SingleFile } from "$lib/components/ui/code";
-	import { PMCommand } from "$lib/components/ui/pm-command";
+	import { cn } from "#lib/utils.js";
+	import * as Tabs from "#lib/components/ui/tabs/index.js";
+	import type { CodeBlock } from "#lib/types/code.js";
+	import { Steps, Step } from "#lib/components/docs/markdown/index.js";
+	import { SingleFile } from "#lib/components/ui/code/index.js";
+	import { PMCommand } from "#lib/components/ui/pm-command/index.js";
 	import { PersistedState } from "runed";
 	import type { Agent } from "package-manager-detector";
-	import { jsrepo } from "$lib/config/repo";
+	import { jsrepo } from "#lib/config/repo.js";
 	import { page } from "$app/state";
 
 	let {

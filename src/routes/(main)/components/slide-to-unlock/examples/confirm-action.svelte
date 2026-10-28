@@ -9,7 +9,7 @@
 		SlideToUnlockHandle,
 		SlideToUnlockText,
 		SlideToUnlockTrack
-	} from "$chan/slide-to-unlock";
+	} from "#lib/components/chan/slide-to-unlock/index.js";
 
 	let published = $state(false);
 
@@ -77,9 +77,7 @@
 						<SlideToUnlockHandle
 							class="rounded-full bg-emerald-600 text-white"
 						>
-							{#snippet children()}
-								<SendIcon class="size-5" />
-							{/snippet}
+							<SendIcon class="size-5" />
 						</SlideToUnlockHandle>
 					</SlideToUnlockTrack>
 				</SlideToUnlock>

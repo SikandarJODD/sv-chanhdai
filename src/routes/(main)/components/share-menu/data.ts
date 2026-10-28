@@ -1,14 +1,14 @@
-import IndexTsRaw from "$lib/components/chan/share-menu/index.ts?raw";
-import LinkedinIconSvelteRaw from "$lib/components/chan/share-menu/linkedin-icon.svelte?raw";
-import ShareMenuSvelteRaw from "$lib/components/chan/share-menu/share-menu.svelte?raw";
-import XIconSvelteRaw from "$lib/components/chan/share-menu/x-icon.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/share-menu/index.ts?raw";
+import LinkedinIconSvelteRaw from "#lib/components/chan/share-menu/linkedin-icon.svelte?raw";
+import ShareMenuSvelteRaw from "#lib/components/chan/share-menu/share-menu.svelte?raw";
+import XIconSvelteRaw from "#lib/components/chan/share-menu/x-icon.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 

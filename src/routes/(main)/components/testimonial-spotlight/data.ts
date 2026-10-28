@@ -1,13 +1,13 @@
-import IndexTsRaw from "$lib/components/chan/testimonial-spotlight/index.ts?raw";
-import TestimonialSpotlightSvelteRaw from "$lib/components/chan/testimonial-spotlight/testimonial-spotlight.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/testimonial-spotlight/index.ts?raw";
+import TestimonialSpotlightSvelteRaw from "#lib/components/chan/testimonial-spotlight/testimonial-spotlight.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -28,7 +28,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { TestimonialSpotlight } from "$chan/testimonial-spotlight";
+	import { TestimonialSpotlight } from "#lib/components/chan/testimonial-spotlight/index.js";
 </script>
 
 <TestimonialSpotlight class="max-w-sm p-6">

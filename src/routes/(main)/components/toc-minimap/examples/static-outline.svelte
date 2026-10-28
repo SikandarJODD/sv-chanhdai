@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { TOCItemType } from "$chan/toc-minimap";
-	import { TOCMinimap } from "$chan/toc-minimap";
+	import type { TOCItemType } from "#lib/components/chan/toc-minimap/index.js";
+	import { TOCMinimap } from "#lib/components/chan/toc-minimap/index.js";
 
 	const items: TOCItemType[] = [
 		{ title: "Features", url: "#static-features", depth: 2 },

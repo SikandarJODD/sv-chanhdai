@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { cn } from "$lib/utils.js";
+	import { cn } from "#lib/utils.js";
 	import { codeVariants } from ".";
 	import type { CodeRootProps } from "./types";
 	import { useCode } from "./code.svelte.js";
 	import { box } from "svelte-toolbelt";
 	import type { Attachment } from "svelte/attachments";
-	import { transformImportAliases } from "$lib/components/docs/base/import-alias/import-alias.js";
-	import { importAliasStyle } from "$lib/components/docs/base/import-alias/import-alias.svelte.js";
+	import { transformImportAliases } from "#lib/components/docs/base/import-alias/import-alias.js";
+	import { importAliasStyle } from "#lib/components/docs/base/import-alias/import-alias.svelte.js";
 	// import '../../../../routes/layout.css'
 
 	let {

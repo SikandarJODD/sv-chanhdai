@@ -12,7 +12,7 @@
 </script>
 
 <script lang="ts">
-	import * as ContextMenu from "$lib/components/ui/context-menu";
+	import * as ContextMenu from "#lib/components/ui/context-menu/index.js";
 	import DownloadIcon from "@lucide/svelte/icons/download";
 	import SquareDashedIcon from "@lucide/svelte/icons/square-dashed";
 	import TypeIcon from "@lucide/svelte/icons/type";

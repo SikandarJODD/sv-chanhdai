@@ -1,15 +1,15 @@
-import IndexTsRaw from "$lib/components/chan/status-button/index.ts?raw";
-import SpinnerSvelteRaw from "$lib/components/chan/status-button/spinner.svelte?raw";
-import StatusButtonSvelteRaw from "$lib/components/chan/status-button/status-button.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/status-button/index.ts?raw";
+import SpinnerSvelteRaw from "#lib/components/chan/status-button/spinner.svelte?raw";
+import StatusButtonSvelteRaw from "#lib/components/chan/status-button/status-button.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import BasicAsyncExample from "./examples/basic-async.svelte";
@@ -44,7 +44,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { StatusButton } from "$chan/status-button";
+	import { StatusButton } from "#lib/components/chan/status-button/index.js";
 
 	async function saveChanges() {
 		await new Promise((resolve) => setTimeout(resolve, 1000));

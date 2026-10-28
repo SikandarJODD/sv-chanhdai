@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { MetaTags } from "svelte-meta-tags";
-	import { Footer, Hero, Sponsors } from "$lib/components/landing";
-	import MasonryGrid from "$lib/components/ui/masonry-grid/masonry-grid.svelte";
+	import { Footer, Hero, Sponsors } from "#lib/components/landing/index.js";
+	import MasonryGrid from "#lib/components/ui/masonry-grid/masonry-grid.svelte";
 </script>
 
 <MetaTags

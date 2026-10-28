@@ -1,23 +1,23 @@
-import IndexTsRaw from "$lib/components/chan/timescale/index.ts?raw";
-import TimescaleAgeSvelteRaw from "$lib/components/chan/timescale/timescale-age.svelte?raw";
-import TimescaleContentSvelteRaw from "$lib/components/chan/timescale/timescale-content.svelte?raw";
-import TimescaleHeaderSvelteRaw from "$lib/components/chan/timescale/timescale-header.svelte?raw";
-import TimescaleIntroScrollSvelteRaw from "$lib/components/chan/timescale/timescale-intro-scroll.svelte?raw";
-import TimescaleItemSvelteRaw from "$lib/components/chan/timescale/timescale-item.svelte?raw";
-import TimescaleRailSvelteRaw from "$lib/components/chan/timescale/timescale-rail.svelte?raw";
-import TimescaleTickSvelteRaw from "$lib/components/chan/timescale/timescale-tick.svelte?raw";
-import TimescaleTrackSvelteRaw from "$lib/components/chan/timescale/timescale-track.svelte?raw";
-import TimescaleViewportSvelteRaw from "$lib/components/chan/timescale/timescale-viewport.svelte?raw";
-import TimescaleYearSvelteRaw from "$lib/components/chan/timescale/timescale-year.svelte?raw";
-import TimescaleSvelteRaw from "$lib/components/chan/timescale/timescale.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/timescale/index.ts?raw";
+import TimescaleAgeSvelteRaw from "#lib/components/chan/timescale/timescale-age.svelte?raw";
+import TimescaleContentSvelteRaw from "#lib/components/chan/timescale/timescale-content.svelte?raw";
+import TimescaleHeaderSvelteRaw from "#lib/components/chan/timescale/timescale-header.svelte?raw";
+import TimescaleIntroScrollSvelteRaw from "#lib/components/chan/timescale/timescale-intro-scroll.svelte?raw";
+import TimescaleItemSvelteRaw from "#lib/components/chan/timescale/timescale-item.svelte?raw";
+import TimescaleRailSvelteRaw from "#lib/components/chan/timescale/timescale-rail.svelte?raw";
+import TimescaleTickSvelteRaw from "#lib/components/chan/timescale/timescale-tick.svelte?raw";
+import TimescaleTrackSvelteRaw from "#lib/components/chan/timescale/timescale-track.svelte?raw";
+import TimescaleViewportSvelteRaw from "#lib/components/chan/timescale/timescale-viewport.svelte?raw";
+import TimescaleYearSvelteRaw from "#lib/components/chan/timescale/timescale-year.svelte?raw";
+import TimescaleSvelteRaw from "#lib/components/chan/timescale/timescale.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -48,7 +48,7 @@ const usage: CodeBlock[] = [
 		TimescaleTick,
 		TimescaleTrack,
 		TimescaleYear
-	} from "$chan/timescale";
+	} from "#lib/components/chan/timescale/index.js";
 </script>
 
 <Timescale orientation="vertical">

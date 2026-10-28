@@ -9,7 +9,7 @@
 		ContributionGraphTotalCount,
 		type Activity,
 		type Labels
-	} from "$chan/github-contributions";
+	} from "#lib/components/chan/github-contributions/index.js";
 
 	const labels: Labels = {
 		months: [

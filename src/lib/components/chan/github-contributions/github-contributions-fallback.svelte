@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Spinner } from "$lib/components/ui/spinner";
+	import { Spinner } from "#lib/components/ui/spinner/index.js";
 </script>
 
 <div class="flex h-40.5 w-full items-center justify-center">

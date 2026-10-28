@@ -9,8 +9,8 @@
 	import { onMount } from "svelte";
 	import { Tooltip as TooltipPrimitive } from "bits-ui";
 	import { format } from "date-fns";
-	import { cn } from "$lib/utils";
-	import * as Tooltip from "$lib/components/ui/tooltip";
+	import { cn } from "#lib/utils.js";
+	import * as Tooltip from "#lib/components/ui/tooltip/index.js";
 	import type { Activity } from "./contribution-graph-context.svelte";
 	import ContributionGraph from "./contribution-graph.svelte";
 	import ContributionGraphBlock from "./contribution-graph-block.svelte";

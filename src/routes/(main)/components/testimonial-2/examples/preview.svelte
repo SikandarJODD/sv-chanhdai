@@ -1,5 +1,5 @@
 <script>
-	import { Testimonial2 } from "$chan/testimonial-2";
+	import { Testimonial2 } from "#lib/components/chan/testimonial-2/index.js";
 </script>
 
 <Testimonial2

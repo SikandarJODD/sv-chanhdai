@@ -34,24 +34,24 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/scroll-fade-eff
 
 ```svelte
 <script lang="ts">
-  import { ScrollFadeEffect } from "$chan/scroll-fade-effect";
-  import { Separator } from "$ui/separator";
+	import { ScrollFadeEffect } from "#lib/components/chan/scroll-fade-effect/index.js";
+	import { Separator } from "#lib/components/ui/separator/index.js";
 
-  const tags = Array.from({ length: 50 }).map(
-    (_, i, a) => `v1.2.0-beta.${a.length - i}`
-  );
+	const tags = Array.from({ length: 50 }).map(
+		(_, i, a) => `v1.2.0-beta.${a.length - i}`
+	);
 </script>
 
 <div data-slot="scroll-fade-effect-demo" class="rounded-lg border">
-  <ScrollFadeEffect class="h-72 w-48">
-    <div class="p-4">
-      <h4 class="mb-4 text-sm leading-none font-medium">Tags</h4>
-      {#each tags as item}
-        <div class="text-sm">{item}</div>
-        <Separator class="my-2" />
-      {/each}
-    </div>
-  </ScrollFadeEffect>
+	<ScrollFadeEffect class="h-72 w-48">
+		<div class="p-4">
+			<h4 class="mb-4 text-sm leading-none font-medium">Tags</h4>
+			{#each tags as item (item)}
+				<div class="text-sm">{item}</div>
+				<Separator class="my-2" />
+			{/each}
+		</div>
+	</ScrollFadeEffect>
 </div>
 ```
 
@@ -61,12 +61,12 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/scroll-fade-eff
 
 Scrollable container with directional edge fades.
 
-| Prop          | Type                                   | Default      | Required | Description                                              |
-| ------------- | -------------------------------------- | ------------ | -------- | -------------------------------------------------------- |
-| `children`    | `Snippet`                              | —            | Yes      | Content rendered inside the scrollable container.        |
-| `orientation` | `'vertical' \| 'horizontal' \| 'both'` | `'vertical'` | No       | Direction in which scrolling and edge fades are enabled. |
-| `ref`         | `HTMLDivElement \| null`               | `null`       | No       | Bindable reference to the scroll container.              |
-| `class`       | `string`                               | `undefined`  | No       | Additional classes applied to the scroll container.      |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `children` | `Snippet` | — | Yes | Content rendered inside the scrollable container. |
+| `orientation` | `'vertical' \| 'horizontal' \| 'both'` | `'vertical'` | No | Direction in which scrolling and edge fades are enabled. |
+| `ref` | `HTMLDivElement \| null` | `null` | No | Bindable reference to the scroll container. |
+| `class` | `string` | `undefined` | No | Additional classes applied to the scroll container. |
 
 ## Features
 

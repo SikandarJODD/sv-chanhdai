@@ -1,15 +1,15 @@
-import IndexTsRaw from "$lib/components/chan/wheel-picker/index.ts?raw";
-import WheelPickerWrapperSvelteRaw from "$lib/components/chan/wheel-picker/wheel-picker-wrapper.svelte?raw";
-import WheelPickerSvelteRaw from "$lib/components/chan/wheel-picker/wheel-picker.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/wheel-picker/index.ts?raw";
+import WheelPickerWrapperSvelteRaw from "#lib/components/chan/wheel-picker/wheel-picker-wrapper.svelte?raw";
+import WheelPickerSvelteRaw from "#lib/components/chan/wheel-picker/wheel-picker.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import DemoExample from "./examples/demo-example.svelte";
 import DemoExampleCode from "./examples/demo-example.svelte?raw";
 import Preview from "./examples/preview.svelte";
@@ -38,7 +38,7 @@ const usage: CodeBlock[] = [
 		WheelPicker,
 		WheelPickerWrapper,
 		type WheelPickerOption
-	} from "$chan/wheel-picker";
+	} from "#lib/components/chan/wheel-picker/index.js";
 
 	const options: WheelPickerOption[] = [
 		{ label: "React", value: "react" },

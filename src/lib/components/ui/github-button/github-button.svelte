@@ -2,7 +2,7 @@
 	import type {
 		ButtonProps,
 		Size
-	} from "$lib/components/ui/extra/button.svelte";
+	} from "#lib/components/ui/extra/button.svelte";
 
 	export type GithubButtonProps = Omit<
 		ButtonProps,
@@ -19,8 +19,8 @@
 </script>
 
 <script lang="ts">
-	import Button, { sizeMap } from "$lib/components/ui/extra/button.svelte";
-	import { cn } from "$lib/utils";
+	import Button, { sizeMap } from "#lib/components/ui/extra/button.svelte";
+	import { cn } from "#lib/utils.js";
 	import { cubicInOut } from "svelte/easing";
 	import { Tween } from "svelte/motion";
 

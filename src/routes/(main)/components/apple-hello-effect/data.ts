@@ -1,16 +1,16 @@
-import AppleHelloEffectEnglishSvelteRaw from "$lib/components/chan/apple-hello-effect/apple-hello-effect-english.svelte?raw";
-import AppleHelloEffectHindiSvelteRaw from "$lib/components/chan/apple-hello-effect/apple-hello-effect-hindi.svelte?raw";
-import AppleHelloEffectSpanishSvelteRaw from "$lib/components/chan/apple-hello-effect/apple-hello-effect-spanish.svelte?raw";
-import AppleHelloEffectVietnameseSvelteRaw from "$lib/components/chan/apple-hello-effect/apple-hello-effect-vietnamese.svelte?raw";
-import IndexTsRaw from "$lib/components/chan/apple-hello-effect/index.ts?raw";
+import AppleHelloEffectEnglishSvelteRaw from "#lib/components/chan/apple-hello-effect/apple-hello-effect-english.svelte?raw";
+import AppleHelloEffectHindiSvelteRaw from "#lib/components/chan/apple-hello-effect/apple-hello-effect-hindi.svelte?raw";
+import AppleHelloEffectSpanishSvelteRaw from "#lib/components/chan/apple-hello-effect/apple-hello-effect-spanish.svelte?raw";
+import AppleHelloEffectVietnameseSvelteRaw from "#lib/components/chan/apple-hello-effect/apple-hello-effect-vietnamese.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/apple-hello-effect/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import CustomColorsExample from "./examples/custom-colors.svelte";
@@ -23,7 +23,7 @@ import SpanishExample from "./examples/spanish.svelte";
 import SpanishExampleCode from "./examples/spanish.svelte?raw";
 import VietnameseExample from "./examples/vietnamese.svelte";
 import VietnameseExampleCode from "./examples/vietnamese.svelte?raw";
-import type { CodeBlock } from "$lib/types/code";
+import type { CodeBlock } from "#lib/types/code.js";
 
 export const meta: ComponentMeta = {
 	id: "apple-hello-effect",
@@ -94,7 +94,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "preview.svelte",
 		code: `<script lang="ts">
-	import { AppleHelloEffectEnglish } from "$chan/apple-hello-effect";
+	import { AppleHelloEffectEnglish } from "#lib/components/chan/apple-hello-effect/index.js";
 </script>
 
 <AppleHelloEffectEnglish />`,

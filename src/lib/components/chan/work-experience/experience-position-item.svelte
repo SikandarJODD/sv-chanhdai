@@ -7,14 +7,14 @@
 	import {
 		ChevronsUpDownIcon,
 		type ChevronsUpDownIconHandle
-	} from "$lib/components/chan/chevrons-up-down-icon";
+	} from "#lib/components/chan/chevrons-up-down-icon/index.js";
 	import {
 		Collapsible,
 		CollapsibleContent,
 		CollapsibleTrigger
-	} from "$lib/components/ui/collapsible";
-	import { Separator } from "$lib/components/ui/separator";
-	import { cn } from "$lib/utils";
+	} from "#lib/components/ui/collapsible/index.js";
+	import { Separator } from "#lib/components/ui/separator/index.js";
+	import { cn } from "#lib/utils.js";
 	import Prose from "./prose.svelte";
 	import Skill from "./skill.svelte";
 	import type { ExperiencePositionItemProps } from "./work-experience-types";

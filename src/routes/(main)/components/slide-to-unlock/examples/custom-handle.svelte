@@ -5,7 +5,7 @@
 		SlideToUnlockHandle,
 		SlideToUnlockText,
 		SlideToUnlockTrack
-	} from "$chan/slide-to-unlock";
+	} from "#lib/components/chan/slide-to-unlock/index.js";
 
 	let launched = $state(false);
 </script>
@@ -25,9 +25,7 @@
 				{/snippet}
 			</SlideToUnlockText>
 			<SlideToUnlockHandle class="rounded-full bg-violet-600 text-white">
-				{#snippet children()}
-					<RocketIcon class="size-5" />
-				{/snippet}
+				<RocketIcon class="size-5" />
 			</SlideToUnlockHandle>
 		</SlideToUnlockTrack>
 	</SlideToUnlock>

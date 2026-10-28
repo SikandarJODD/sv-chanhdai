@@ -26,8 +26,8 @@ Add these aliases to your Vite or Svelte config.
 
 ```ts
 alias: {
-  $chan: "src/lib/components/chan",
-  $ui: "src/lib/components/ui",
+  #lib/components/chan: "src/lib/components/chan",
+  #lib/components/ui: "src/lib/components/ui",
 },
 ```
 

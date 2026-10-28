@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ElasticSlider } from "$chan/elastic-slider";
+	import { ElasticSlider } from "#lib/components/chan/elastic-slider/index.js";
 
 	let opacity = $state(0.5);
 </script>

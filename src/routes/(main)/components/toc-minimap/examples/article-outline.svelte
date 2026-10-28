@@ -1,10 +1,18 @@
 <script lang="ts">
-	import type { Heading } from "$lib/hooks/use-toc.svelte";
-	import { UseToc } from "$lib/hooks/use-toc.svelte";
-	import type { TOCItemType } from "$chan/toc-minimap";
-	import { TOCMinimap } from "$chan/toc-minimap";
+	import type { Heading } from "#lib/hooks/use-toc.svelte.js";
+	import { UseToc } from "#lib/hooks/use-toc.svelte.js";
+	import type { TOCItemType } from "#lib/components/chan/toc-minimap/index.js";
+	import { TOCMinimap } from "#lib/components/chan/toc-minimap/index.js";
 
 	let toc = new UseToc();
+
+	function tocContainer(element: HTMLElement) {
+		toc.ref = element;
+
+		return () => {
+			toc.ref = undefined;
+		};
+	}
 
 	function toMinimapItems(headings: Heading[]): TOCItemType[] {
 		return headings.flatMap((heading) => [
@@ -26,7 +34,7 @@
 
 <div class="mx-auto flex w-full max-w-lg items-start gap-6">
 	<article
-		bind:this={toc.ref}
+		{@attach tocContainer}
 		class="min-w-0 flex-1 space-y-6 text-sm text-muted-foreground"
 	>
 		<section class="space-y-2">

@@ -34,7 +34,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/github-stars.js
 
 ```svelte
 <script lang="ts">
-  import { GithubStars } from "$chan/github-stars";
+	import { GithubStars } from "#lib/components/chan/github-stars/index.js";
 </script>
 
 <GithubStars repo="SikandarJODD/sv-table" stargazersCount={82} />
@@ -46,11 +46,11 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/github-stars.js
 
 GitHub repository link with compact and full star counts.
 
-| Prop              | Type                   | Default   | Required | Description                                      |
-| ----------------- | ---------------------- | --------- | -------- | ------------------------------------------------ |
-| `repo`            | `string`               | —         | Yes      | GitHub repository in owner/repo format.          |
-| `stargazersCount` | `number`               | —         | Yes      | Number of stars to display.                      |
-| `locales`         | `Intl.LocalesArgument` | `'en-US'` | No       | Locale or locales used to format the star count. |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `repo` | `string` | — | Yes | GitHub repository in owner/repo format. |
+| `stargazersCount` | `number` | — | Yes | Number of stars to display. |
+| `locales` | `Intl.LocalesArgument` | `'en-US'` | No | Locale or locales used to format the star count. |
 
 ## Features
 
@@ -67,56 +67,56 @@ Fetch the latest star count from the GitHub REST API.
 
 ```svelte
 <script lang="ts">
-  import { onMount } from "svelte";
-  import { GithubStars } from "$chan/github-stars";
+	import { onMount } from "svelte";
+	import { GithubStars } from "#lib/components/chan/github-stars/index.js";
 
-  type GitHubRepository = {
-    stargazers_count: number;
-  };
+	type GitHubRepository = {
+		stargazers_count: number;
+	};
 
-  const repo = "SikandarJODD/sv-table";
-  let stargazersCount = $state<number | null>(null);
-  let error = $state<string | null>(null);
+	const repo = "SikandarJODD/sv-table";
+	let stargazersCount = $state<number | null>(null);
+	let error = $state<string | null>(null);
 
-  onMount(() => {
-    const controller = new AbortController();
+	onMount(() => {
+		const controller = new AbortController();
 
-    void fetch(`https://api.github.com/repos/${repo}`, {
-      signal: controller.signal
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Could not load GitHub stars.");
-        }
+		void fetch(`https://api.github.com/repos/${repo}`, {
+			signal: controller.signal
+		})
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error("Could not load GitHub stars.");
+				}
 
-        return response.json() as Promise<GitHubRepository>;
-      })
-      .then((repository) => {
-        stargazersCount = repository.stargazers_count;
-      })
-      .catch((caughtError: unknown) => {
-        if (
-          caughtError instanceof DOMException &&
-          caughtError.name === "AbortError"
-        ) {
-          return;
-        }
+				return response.json() as Promise<GitHubRepository>;
+			})
+			.then((repository) => {
+				stargazersCount = repository.stargazers_count;
+			})
+			.catch((caughtError: unknown) => {
+				if (
+					caughtError instanceof DOMException &&
+					caughtError.name === "AbortError"
+				) {
+					return;
+				}
 
-        error =
-          caughtError instanceof Error
-            ? caughtError.message
-            : "Could not load GitHub stars.";
-      });
+				error =
+					caughtError instanceof Error
+						? caughtError.message
+						: "Could not load GitHub stars.";
+			});
 
-    return () => controller.abort();
-  });
+		return () => controller.abort();
+	});
 </script>
 
 {#if stargazersCount !== null}
-  <GithubStars {repo} {stargazersCount} />
+	<GithubStars {repo} {stargazersCount} />
 {:else if error}
-  <p class="text-sm text-muted-foreground">{error}</p>
+	<p class="text-sm text-muted-foreground">{error}</p>
 {:else}
-  <p class="text-sm text-muted-foreground">Loading stars...</p>
+	<p class="text-sm text-muted-foreground">Loading stars...</p>
 {/if}
 ```

@@ -1,18 +1,18 @@
-import IndexTsRaw from "$lib/components/chan/slide-to-unlock/index.ts?raw";
-import SlideToUnlockContextTsRaw from "$lib/components/chan/slide-to-unlock/slide-to-unlock-context.ts?raw";
-import SlideToUnlockHandleSvelteRaw from "$lib/components/chan/slide-to-unlock/slide-to-unlock-handle.svelte?raw";
-import SlideToUnlockTextSvelteRaw from "$lib/components/chan/slide-to-unlock/slide-to-unlock-text.svelte?raw";
-import SlideToUnlockTrackSvelteRaw from "$lib/components/chan/slide-to-unlock/slide-to-unlock-track.svelte?raw";
-import SlideToUnlockSvelteRaw from "$lib/components/chan/slide-to-unlock/slide-to-unlock.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/slide-to-unlock/index.ts?raw";
+import SlideToUnlockContextTsRaw from "#lib/components/chan/slide-to-unlock/slide-to-unlock-context.ts?raw";
+import SlideToUnlockHandleSvelteRaw from "#lib/components/chan/slide-to-unlock/slide-to-unlock-handle.svelte?raw";
+import SlideToUnlockTextSvelteRaw from "#lib/components/chan/slide-to-unlock/slide-to-unlock-text.svelte?raw";
+import SlideToUnlockTrackSvelteRaw from "#lib/components/chan/slide-to-unlock/slide-to-unlock-track.svelte?raw";
+import SlideToUnlockSvelteRaw from "#lib/components/chan/slide-to-unlock/slide-to-unlock.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import AsyncActionExample from "./examples/async-action.svelte";
 import AsyncActionExampleCode from "./examples/async-action.svelte?raw";
 import BasicExample from "./examples/basic.svelte";
@@ -54,7 +54,7 @@ const usage: CodeBlock[] = [
 		SlideToUnlockHandle,
 		SlideToUnlockText,
 		SlideToUnlockTrack
-	} from "$chan/slide-to-unlock";
+	} from "#lib/components/chan/slide-to-unlock/index.js";
 
 	function handleUnlock() {
 		console.log("Unlocked");

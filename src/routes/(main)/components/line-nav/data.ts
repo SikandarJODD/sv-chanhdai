@@ -1,14 +1,14 @@
-import IndexTsRaw from "$lib/components/chan/line-nav/index.ts?raw";
-import LineNavItemSvelteRaw from "$lib/components/chan/line-nav/line-nav-item.svelte?raw";
-import LineNavSvelteRaw from "$lib/components/chan/line-nav/line-nav.svelte?raw";
+import IndexTsRaw from "#lib/components/chan/line-nav/index.ts?raw";
+import LineNavItemSvelteRaw from "#lib/components/chan/line-nav/line-nav-item.svelte?raw";
+import LineNavSvelteRaw from "#lib/components/chan/line-nav/line-nav.svelte?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
@@ -31,7 +31,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { LineNav } from "$chan/line-nav";
+	import { LineNav } from "#lib/components/chan/line-nav/index.js";
 
 	const items = [
 		{ title: "Introduction", href: "#introduction" },

@@ -1,5 +1,5 @@
 <script lang="ts" generics="T">
-	import { cn } from "$lib/utils";
+	import { cn } from "#lib/utils.js";
 	import { onMount, tick } from "svelte";
 	import { watch } from "runed";
 	import { useAppleCarousel } from "./apple-carousel-context.svelte";

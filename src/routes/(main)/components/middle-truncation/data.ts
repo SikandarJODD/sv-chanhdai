@@ -1,15 +1,15 @@
-import IndexTsRaw from "$lib/components/chan/middle-truncation/index.ts?raw";
-import MiddleTruncationSvelteRaw from "$lib/components/chan/middle-truncation/middle-truncation.svelte?raw";
-import MiddleTruncationTsRaw from "$lib/components/chan/middle-truncation/middle-truncation.ts?raw";
+import IndexTsRaw from "#lib/components/chan/middle-truncation/index.ts?raw";
+import MiddleTruncationSvelteRaw from "#lib/components/chan/middle-truncation/middle-truncation.svelte?raw";
+import MiddleTruncationTsRaw from "#lib/components/chan/middle-truncation/middle-truncation.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import DemoExample from "./examples/demo-example.svelte";
 import DemoExampleCode from "./examples/demo-example.svelte?raw";
 import Preview from "./examples/preview.svelte";
@@ -32,7 +32,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { MiddleTruncation } from "$chan/middle-truncation";
+	import { MiddleTruncation } from "#lib/components/chan/middle-truncation/index.js";
 </script>
 
 <div class="w-64">

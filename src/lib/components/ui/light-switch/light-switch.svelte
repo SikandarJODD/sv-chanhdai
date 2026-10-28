@@ -7,7 +7,7 @@
 
 <script lang="ts">
 	import SunIcon from "@lucide/svelte/icons/sun";
-	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+	import * as Tooltip from "#lib/components/ui/tooltip/index.js";
 	import MoonIcon from "@lucide/svelte/icons/moon";
 	import { toggleMode, mode } from "mode-watcher";
 	import Kbd from "../kbd/kbd.svelte";
@@ -16,7 +16,7 @@
 		buttonVariants,
 		type ButtonSize,
 		type ButtonVariant
-	} from "$lib/components/ui/button";
+	} from "#lib/components/ui/button/index.js";
 
 	let { variant = "ghost", size = "default" }: LightSwitchProps = $props();
 </script>

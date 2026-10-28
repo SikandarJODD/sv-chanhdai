@@ -1,19 +1,22 @@
 <script lang="ts">
-	import { Button } from "$lib/components/ui/button";
-	import { createScroll } from "$lib/hooks/use-scroll.svelte";
-	import Logo from "$lib/svg/logo.svelte";
-	import { cn } from "$lib/utils";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { createScroll } from "#lib/hooks/use-scroll.svelte.js";
+	import Logo from "#lib/svg/logo.svelte";
+	import { cn } from "#lib/utils.js";
 	import DesktopNav from "./desktop-nav.svelte";
 	import MobileNav from "./mobile-nav.svelte";
-	import { GitHubButton, getStars } from "$lib/components/ui/github-button";
+	import {
+		GitHubButton,
+		getStars
+	} from "#lib/components/ui/github-button/index.js";
 	import { onMount } from "svelte";
-	import { X } from "$lib/svg";
-	import { LightSwitch } from "$lib/components/ui/light-switch";
-	import { github_repo } from "$lib/config/repo";
+	import { X } from "#lib/svg/index.js";
+	import { LightSwitch } from "#lib/components/ui/light-switch/index.js";
+	import { github_repo } from "#lib/config/repo.js";
 	import { page } from "$app/state";
-	import SearchNavigation from "$lib/components/docs/layout/navigation/search-navigation.svelte";
-	import ImportAliasToggle from "$lib/components/docs/base/import-alias/ImportAliasToggle.svelte";
-	import { importAliasStyle } from "$lib/components/docs/base/import-alias/import-alias.svelte.js";
+	import SearchNavigation from "#lib/components/docs/layout/navigation/search-navigation.svelte";
+	import ImportAliasToggle from "#lib/components/docs/base/import-alias/ImportAliasToggle.svelte";
+	import { importAliasStyle } from "#lib/components/docs/base/import-alias/import-alias.svelte.js";
 
 	let scroll = createScroll(50);
 	let isComponentorDocsPage = $derived.by(() => {

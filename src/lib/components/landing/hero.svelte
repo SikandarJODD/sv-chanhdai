@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { resolve } from "$app/paths";
-	import FaviconLink from "$lib/components/docs/base/main/favicon-link.svelte";
-	import HeroIllustration from "$lib/components/landing/hero-illustration.svelte";
-	import { Button } from "$lib/components/ui/button";
-	import { components } from "$lib/registry/components";
-	import { Github } from "$lib/svg";
-	import { Annotation } from "$ui/annotation";
+	import FaviconLink from "#lib/components/docs/base/main/favicon-link.svelte";
+	import HeroIllustration from "#lib/components/landing/hero-illustration.svelte";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { components } from "#lib/registry/components.js";
+	import { Github } from "#lib/svg/index.js";
+	import { Annotation } from "#lib/components/ui/annotation/index.js";
 	import { mode } from "mode-watcher";
 	import { MediaQuery } from "svelte/reactivity";
 

@@ -2,8 +2,8 @@
 	import {
 		ChevronsUpDownIcon,
 		type ChevronsUpDownIconHandle
-	} from "$chan/chevrons-up-down-icon";
-	import { Button } from "$ui/button";
+	} from "#lib/components/chan/chevrons-up-down-icon/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
 	import { watch } from "runed";
 
 	let open = $state(false);

@@ -34,41 +34,41 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/chevrons-up-dow
 
 ```svelte
 <script lang="ts">
-  import {
-    ChevronsUpDownIcon,
-    type ChevronsUpDownIconHandle
-  } from "$chan/chevrons-up-down-icon";
-  import { Button } from "$ui/button";
-  import { watch } from "runed";
+	import {
+		ChevronsUpDownIcon,
+		type ChevronsUpDownIconHandle
+	} from "#lib/components/chan/chevrons-up-down-icon/index.js";
+	import { Button } from "#lib/components/ui/button/index.js";
+	import { watch } from "runed";
 
-  let open = $state(false);
-  let chevronsUpDownIconRef = $state<ChevronsUpDownIconHandle | undefined>();
+	let open = $state(false);
+	let chevronsUpDownIconRef = $state<ChevronsUpDownIconHandle | undefined>();
 
-  watch(
-    () => open,
-    (isOpen) => {
-      if (isOpen) {
-        chevronsUpDownIconRef?.startAnimation();
-      } else {
-        chevronsUpDownIconRef?.stopAnimation();
-      }
-    }
-  );
+	watch(
+		() => open,
+		(isOpen) => {
+			if (isOpen) {
+				chevronsUpDownIconRef?.startAnimation();
+			} else {
+				chevronsUpDownIconRef?.stopAnimation();
+			}
+		}
+	);
 </script>
 
 <Button
-  data-open={open}
-  variant="outline"
-  size="icon"
-  aria-label={open ? "Collapse" : "Expand"}
-  aria-expanded={open}
-  onclick={() => (open = !open)}
+	data-open={open}
+	variant="outline"
+	size="icon"
+	aria-label={open ? "Collapse" : "Expand"}
+	aria-expanded={open}
+	onclick={() => (open = !open)}
 >
-  <ChevronsUpDownIcon
-    bind:this={chevronsUpDownIconRef}
-    duration={0.2}
-    class="size-5"
-  />
+	<ChevronsUpDownIcon
+		bind:this={chevronsUpDownIconRef}
+		duration={0.2}
+		class="size-5"
+	/>
 </Button>
 ```
 
@@ -78,11 +78,11 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/chevrons-up-dow
 
 Animated SVG chevrons controlled through the component handle.
 
-| Prop       | Type                    | Default     | Required | Description                                      |
-| ---------- | ----------------------- | ----------- | -------- | ------------------------------------------------ |
-| `duration` | `number`                | `0.3`       | No       | Duration of the path morph animation in seconds. |
-| `ref`      | `SVGSVGElement \| null` | `null`      | No       | Bindable reference to the SVG element.           |
-| `class`    | `string`                | `undefined` | No       | Additional classes applied to the SVG element.   |
+| Prop | Type | Default | Required | Description |
+| --- | --- | --- | --- | --- |
+| `duration` | `number` | `0.3` | No | Duration of the path morph animation in seconds. |
+| `ref` | `SVGSVGElement \| null` | `null` | No | Bindable reference to the SVG element. |
+| `class` | `string` | `undefined` | No | Additional classes applied to the SVG element. |
 
 ## Features
 

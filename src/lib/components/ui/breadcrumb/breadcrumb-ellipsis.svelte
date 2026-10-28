@@ -4,7 +4,7 @@
 		cn,
 		type WithElementRef,
 		type WithoutChildren
-	} from "$lib/utils.js";
+	} from "#lib/utils.js";
 	import MoreHorizontalIcon from "@lucide/svelte/icons/more-horizontal";
 
 	let {

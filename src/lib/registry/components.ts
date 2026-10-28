@@ -20,8 +20,8 @@ let components: Component[] = [
 		id: "apple-carousel",
 		name: "Apple Carousel",
 		href: "/components/apple-carousel",
-		desc: "Infinite autoplay carousel with progress dots, inspired by Apple’s website.",
-		badge: "New"
+		badge: "New",
+		desc: "Infinite autoplay carousel with progress dots, inspired by Apple’s website."
 	},
 	{
 		id: "apple-hello-effect",
@@ -177,6 +177,13 @@ let components: Component[] = [
 		name: "Copy Button",
 		href: "/components/copy-button",
 		desc: "Copy text to the clipboard with animated status feedback."
+	},
+	{
+		id: "swipe-actions",
+		name: "Swipe Actions",
+		href: "/components/swipe-actions",
+		badge: "New",
+		desc: "Swipe a row in a list to reveal actions on the left or right."
 	}
 ];
 

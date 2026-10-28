@@ -1,6 +1,6 @@
 <script lang="ts">
 	import CreditCardIcon from "@lucide/svelte/icons/credit-card";
-	import { StatusButton } from "$chan/status-button";
+	import { StatusButton } from "#lib/components/chan/status-button/index.js";
 
 	function pay() {
 		return new Promise<void>((resolve) => setTimeout(resolve, 1200));

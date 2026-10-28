@@ -339,7 +339,7 @@ async function resolveComponentExport({
 }
 
 function getImportStatement(sourceRelativePath, exportName, localName) {
-	const importPath = `$lib/components/${sourceRelativePath}`;
+	const importPath = `#lib/components/${sourceRelativePath}/index.js`;
 
 	if (exportName === localName) {
 		return `import { ${localName} } from "${importPath}";`;
@@ -439,8 +439,8 @@ function buildFolderStructure(sourceRelativePath, sourceFiles) {
 
 function renderPageSvelte() {
 	return `<script lang="ts">
-\timport ComponentDocPage from "$lib/components/docs/base/main/component-doc-page.svelte";
-\timport { data } from "./data";
+\timport ComponentDocPage from "#lib/components/docs/base/main/component-doc-page.svelte";
+\timport { data } from "./data.js";
 </script>
 
 <ComponentDocPage
@@ -582,9 +582,9 @@ import type {
 \tComponentDoc,
 \tComponentMeta,
 \tInstallComponentDocs,
-} from "$lib/types/structure";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 import DemoExample from "./examples/demo-example.svelte";
@@ -809,7 +809,7 @@ function buildRegistryEntries(existingEntries, routePlans) {
 function buildInstallCodeImports(sourceRelativePath, sourceFiles) {
 	return sourceFiles.map((filePath) => {
 		const variableName = toRawImportVariable(filePath);
-		return `import ${variableName} from "$lib/components/${sourceRelativePath}/${filePath}?raw";`;
+		return `import ${variableName} from "#lib/components/${sourceRelativePath}/${filePath}?raw";`;
 	});
 }
 

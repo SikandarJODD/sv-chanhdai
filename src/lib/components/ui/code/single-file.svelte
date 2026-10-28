@@ -1,13 +1,18 @@
 <script lang="ts">
-	import { TypeScript } from "$lib/components/icons";
-	import { Svelte, Terminal, CSS, Markdown } from "$lib/components/icons";
-	import * as Code from "$lib/components/ui/code";
-	import type { CodeBlock } from "$lib/types/code";
+	import { TypeScript } from "#lib/components/icons/index.js";
+	import {
+		Svelte,
+		Terminal,
+		CSS,
+		Markdown
+	} from "#lib/components/icons/index.js";
+	import * as Code from "#lib/components/ui/code/index.js";
+	import type { CodeBlock } from "#lib/types/code.js";
 	import CopyButton from "../copy-button/copy-button.svelte";
 	import Button from "../button/button.svelte";
 	import { untrack } from "svelte";
-	import { transformImportAliases } from "$lib/components/docs/base/import-alias/import-alias.js";
-	import { importAliasStyle } from "$lib/components/docs/base/import-alias/import-alias.svelte.js";
+	import { transformImportAliases } from "#lib/components/docs/base/import-alias/import-alias.js";
+	import { importAliasStyle } from "#lib/components/docs/base/import-alias/import-alias.svelte.js";
 
 	type Props = {
 		code: CodeBlock;

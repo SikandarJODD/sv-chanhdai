@@ -1,16 +1,16 @@
-import ElasticSliderStateSvelteTsRaw from "$lib/components/chan/elastic-slider/elastic-slider-state.svelte.ts?raw";
-import ElasticSliderSvelteRaw from "$lib/components/chan/elastic-slider/elastic-slider.svelte?raw";
-import ElasticSliderUtilsTsRaw from "$lib/components/chan/elastic-slider/elastic-slider.utils.ts?raw";
-import IndexTsRaw from "$lib/components/chan/elastic-slider/index.ts?raw";
+import ElasticSliderStateSvelteTsRaw from "#lib/components/chan/elastic-slider/elastic-slider-state.svelte.ts?raw";
+import ElasticSliderSvelteRaw from "#lib/components/chan/elastic-slider/elastic-slider.svelte?raw";
+import ElasticSliderUtilsTsRaw from "#lib/components/chan/elastic-slider/elastic-slider.utils.ts?raw";
+import IndexTsRaw from "#lib/components/chan/elastic-slider/index.ts?raw";
 
 import type {
 	ComponentDoc,
 	ComponentMeta,
 	InstallComponentDocs
-} from "$lib/types/structure";
-import type { CodeBlock } from "$lib/types/code";
-import type { Example } from "$lib/types/example";
-import type { SEO } from "$lib/types/seo";
+} from "#lib/types/structure.js";
+import type { CodeBlock } from "#lib/types/code.js";
+import type { Example } from "#lib/types/example.js";
+import type { SEO } from "#lib/types/seo.js";
 import ControlledValueExample from "./examples/controlled-value.svelte";
 import ControlledValueExampleCode from "./examples/controlled-value.svelte?raw";
 import CurrencyFormattingExample from "./examples/currency-formatting.svelte";
@@ -47,7 +47,7 @@ const usage: CodeBlock[] = [
 	{
 		name: "usage.svelte",
 		code: `<script lang="ts">
-	import { ElasticSlider } from "$chan/elastic-slider";
+	import { ElasticSlider } from "#lib/components/chan/elastic-slider/index.js";
 </script>
 
 <ElasticSlider

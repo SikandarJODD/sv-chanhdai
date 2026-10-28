@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { github_repo } from "$lib/config/repo";
-	import { X } from "$lib/svg";
+	import { github_repo } from "#lib/config/repo.js";
+	import { X } from "#lib/svg/index.js";
 	import BugIcon from "@lucide/svelte/icons/bug";
 	import LightbulbIcon from "@lucide/svelte/icons/lightbulb";
 	let { class: className = "" }: { class?: string } = $props();

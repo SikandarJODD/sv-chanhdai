@@ -5,7 +5,7 @@
 		ContributionGraphBlock,
 		ContributionGraphCalendar,
 		type Activity
-	} from "$chan/github-contributions";
+	} from "#lib/components/chan/github-contributions/index.js";
 
 	const weekCount = 31;
 	const startDate = new Date(2025, 0, 5);

@@ -7,7 +7,7 @@
 
 	export type IconSwapItemProps = Omit<
 		ComponentProps<typeof motionNamespace.div>,
-		"children"
+		"as" | "children"
 	> & {
 		children: Snippet;
 		as?: MotionElement;

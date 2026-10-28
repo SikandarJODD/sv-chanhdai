@@ -8,7 +8,7 @@
 		SlideToUnlockHandle,
 		SlideToUnlockText,
 		SlideToUnlockTrack
-	} from "$chan/slide-to-unlock";
+	} from "#lib/components/chan/slide-to-unlock/index.js";
 
 	let deleted = $state(false);
 
@@ -84,9 +84,7 @@
 						<SlideToUnlockHandle
 							class="size-10 rounded-full bg-red-600 text-white"
 						>
-							{#snippet children()}
-								<Trash2Icon class="size-5" />
-							{/snippet}
+							<Trash2Icon class="size-5" />
 						</SlideToUnlockHandle>
 					</SlideToUnlockTrack>
 				</SlideToUnlock>
