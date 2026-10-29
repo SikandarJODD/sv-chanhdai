@@ -28,7 +28,7 @@
 <svelte:document onkeydown={handleKeydown} />
 
 <div
-	class="h-9 w-9 text-sm text-muted-foreground min-[800px]:h-8 min-[800px]:w-46 lg:mr-2"
+	class="text-sm text-muted-foreground min-[800px]:h-8 min-[800px]:w-46 lg:mr-2"
 >
 	{#if isMounted.current}
 		<div class="size-full" in:blur={{ opacity: 0.7, duration: 150 }}>

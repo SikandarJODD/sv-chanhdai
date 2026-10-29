@@ -132,8 +132,12 @@
 		@apply bg-background text-foreground;
 	}
 	html {
-		scroll-behavior: smooth;
 		@apply font-sans;
+	}
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
 	}
 	/* Custom scrollbar styling. Thanks @pranathiperii. */
 	::-webkit-scrollbar {
@@ -151,8 +155,10 @@
 	::-webkit-scrollbar-thumb {
 		@apply rounded-md bg-muted-foreground/40;
 	}
-	::-webkit-scrollbar-thumb:hover {
-		@apply bg-muted-foreground/60;
+	@media (hover: hover) and (pointer: fine) {
+		::-webkit-scrollbar-thumb:hover {
+			@apply bg-muted-foreground/60;
+		}
 	}
 	::-webkit-scrollbar-thumb:active {
 		@apply bg-muted-foreground/80;

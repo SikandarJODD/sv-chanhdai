@@ -47,14 +47,14 @@
 	</Button>
 
 	{#if open}
-		<Portal class="top-10">
+		<Portal class="top-[calc(3.5rem+env(safe-area-inset-top,0px))]">
 			<PortalBackdrop
 				class="bg-background! backdrop-blur-none duration-200"
 			/>
 			<div
 				id="mobile-menu"
 				class={cn(
-					"flex size-full min-h-0 flex-col p-4"
+					"flex size-full min-h-0 flex-col pt-4 pr-[max(1rem,env(safe-area-inset-right,0px))] pb-[max(1rem,env(safe-area-inset-bottom,0px))] pl-[max(1rem,env(safe-area-inset-left,0px))]"
 					// "ease-out data-[slot=open]:animate-in data-[slot=open]:zoom-in-97"
 				)}
 				data-slot={open ? "open" : "closed"}
@@ -101,7 +101,7 @@
 					</nav>
 				</ScrollFadeEffect>
 
-				<div class="flex justify-end gap-1 pt-2 pb-4">
+				<div class="mr-14 flex justify-end gap-1 pt-2 pb-2">
 					<Button
 						aria-label="GitHub"
 						href={github_repo.url}

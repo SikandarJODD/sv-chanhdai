@@ -58,7 +58,10 @@
 
 		history.pushState(null, "", url);
 		document.getElementById(getItemId(url))?.scrollIntoView({
-			behavior: "smooth"
+			behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+				.matches
+				? "auto"
+				: "smooth"
 		});
 	}
 </script>

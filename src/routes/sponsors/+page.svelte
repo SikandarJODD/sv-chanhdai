@@ -113,7 +113,7 @@
 	]}
 />
 
-<main class="min-h-[calc(100vh-4rem)] px-4 py-10 font-figtree sm:py-14">
+<main class="min-h-[calc(100svh-4rem)] px-4 py-10 font-figtree sm:py-14">
 	<div class="mx-auto w-full max-w-3xl">
 		<header
 			class="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-center"

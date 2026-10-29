@@ -32,7 +32,7 @@
 
 <header
 	class={cn(
-		"sticky top-0 z-50 w-full border-b border-transparent",
+		"sticky top-0 z-50 w-full border-b border-transparent pt-[env(safe-area-inset-top,0px)]",
 		scroll.scrolled &&
 			"border-border bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/50",
 		isComponentorDocsPage &&
@@ -40,7 +40,7 @@
 	)}
 >
 	<nav
-		class="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-4"
+		class="mx-auto flex h-14 w-full max-w-6xl items-center justify-between pr-[max(1rem,env(safe-area-inset-right,0px))] pl-[max(1rem,env(safe-area-inset-left,0px))]"
 	>
 		<div class="flex items-center gap-5">
 			<a
