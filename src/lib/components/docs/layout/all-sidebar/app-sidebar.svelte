@@ -67,7 +67,10 @@
 			activeItem?.scrollIntoView({
 				block: "nearest",
 				inline: "nearest",
-				behavior: "smooth"
+				behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+					.matches
+					? "auto"
+					: "smooth"
 			});
 		}
 	);
@@ -75,9 +78,9 @@
 
 <Sidebar.Root class="bg-background pt-14" {...restProps} bind:ref>
 	<Sidebar.Content bind:ref={contentRef}>
-		<ScrollFadeEffect class="max-h-[calc(100vh-6rem)] py-4 pr-1">
+		<ScrollFadeEffect class="max-h-[calc(100dvh-6rem)] py-4 pr-1">
 			<!-- We create a Sidebar.Group for each parent. -->
-			{#each data.navMain as group}
+			{#each data.navMain as group (group.title)}
 				<Sidebar.Group>
 					<div class="flex items-center justify-between">
 						<Sidebar.GroupLabel>{group.title}</Sidebar.GroupLabel>
@@ -154,7 +157,7 @@
 					</div>
 					<Sidebar.GroupContent>
 						<Sidebar.Menu>
-							{#each group.items as item}
+							{#each group.items as item (item.url)}
 								<Sidebar.MenuItem>
 									<Sidebar.MenuButton
 										isActive={page.url.pathname ===

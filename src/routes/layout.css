@@ -245,6 +245,7 @@
 	}
 	body {
 		@apply bg-background text-foreground antialiased;
+		overflow-x: clip;
 		font-synthesis-weight: none;
 		text-rendering: optimizeLegibility;
 	}
@@ -254,8 +255,21 @@
 		}
 	}
 	html {
-		scroll-behavior: smooth;
 		@apply font-sans;
+		-webkit-tap-highlight-color: transparent;
+		-webkit-text-size-adjust: 100%;
+	}
+	@media (pointer: coarse) {
+		input,
+		select,
+		textarea {
+			font-size: 1rem;
+		}
+	}
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
 	}
 	::selection {
 		background-color: var(--ink-dim);
@@ -278,8 +292,10 @@
 	::-webkit-scrollbar-thumb {
 		@apply rounded-md bg-muted-foreground/40;
 	}
-	::-webkit-scrollbar-thumb:hover {
-		@apply bg-muted-foreground/60;
+	@media (hover: hover) and (pointer: fine) {
+		::-webkit-scrollbar-thumb:hover {
+			@apply bg-muted-foreground/60;
+		}
 	}
 	::-webkit-scrollbar-thumb:active {
 		@apply bg-muted-foreground/80;
