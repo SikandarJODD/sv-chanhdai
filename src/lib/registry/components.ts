@@ -42,6 +42,12 @@ let components: Component[] = [
 		desc: "An animated Svelte icon that morphs between up and down chevrons."
 	},
 	{
+		id: "copy-button",
+		name: "Copy Button",
+		href: "/components/copy-button",
+		desc: "A Svelte copy button with animated success and error feedback."
+	},
+	{
 		id: "dot-grid-spotlight",
 		name: "Dot Grid Spotlight",
 		href: "/components/dot-grid-spotlight",
@@ -77,6 +83,13 @@ let components: Component[] = [
 		name: "Icon Swap",
 		href: "/components/icon-swap",
 		desc: "Animate icon changes with scale, blur, and opacity transitions."
+	},
+	{
+		id: "line-nav",
+		name: "Line Nav",
+		href: "/components/line-nav",
+		badge: "New",
+		desc: "Vertical navigation with an animated line marker for hover and active states."
 	},
 	{
 		id: "middle-truncation",
@@ -122,6 +135,13 @@ let components: Component[] = [
 		desc: "An async Svelte button with idle, loading, success, failure, and controlled states."
 	},
 	{
+		id: "swipe-actions",
+		name: "Swipe Actions",
+		href: "/components/swipe-actions",
+		badge: "New",
+		desc: "Swipe a list row left or right to reveal configurable actions."
+	},
+	{
 		id: "testimonial",
 		name: "Testimonial",
 		href: "/components/testimonial",
@@ -146,6 +166,13 @@ let components: Component[] = [
 		desc: "A ruler-style timeline for plotting milestones along a horizontal or vertical axis."
 	},
 	{
+		id: "toc-minimap",
+		name: "TOC Minimap",
+		href: "/components/toc-minimap",
+		badge: "New",
+		desc: "A compact table-of-contents minimap that links to headings and expands on hover."
+	},
+	{
 		id: "wheel-picker",
 		name: "Wheel Picker",
 		href: "/components/wheel-picker",
@@ -157,33 +184,6 @@ let components: Component[] = [
 		name: "Work Experience",
 		href: "/components/work-experience",
 		desc: "A work-history timeline for roles, companies, dates, descriptions, and related links."
-	},
-	{
-		id: "toc-minimap",
-		name: "TOC Minimap",
-		href: "/components/toc-minimap",
-		badge: "New",
-		desc: "A compact table-of-contents minimap that links to headings and expands on hover."
-	},
-	{
-		id: "line-nav",
-		name: "Line Nav",
-		href: "/components/line-nav",
-		badge: "New",
-		desc: "Vertical navigation with an animated line marker for hover and active states."
-	},
-	{
-		id: "copy-button",
-		name: "Copy Button",
-		href: "/components/copy-button",
-		desc: "A Svelte copy button with animated success and error feedback."
-	},
-	{
-		id: "swipe-actions",
-		name: "Swipe Actions",
-		href: "/components/swipe-actions",
-		badge: "New",
-		desc: "Swipe a list row left or right to reveal configurable actions."
 	}
 ];
 
