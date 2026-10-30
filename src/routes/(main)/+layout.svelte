@@ -8,15 +8,10 @@
 	import AppSidebar from "#lib/components/docs/layout/all-sidebar/app-sidebar.svelte";
 	import ContributeCard from "#lib/components/docs/base/main/contribute-card.svelte";
 	import SupportWork from "#lib/components/docs/base/main/support-work.svelte";
-	import type { Attachment } from "svelte/attachments";
 
 	let { children } = $props();
 
 	let toc = new UseToc();
-	const attachToc: Attachment<HTMLElement> = (node) => {
-		toc.ref = node;
-		return () => (toc.ref = undefined);
-	};
 
 	let pageId = $derived.by(() => {
 		const path = page.url.pathname;
@@ -43,7 +38,7 @@
 	<div
 		class="mx-auto flex w-full max-w-7xl items-start gap-x-8 px-4 py-6 sm:px-6 lg:gap-x-16 lg:pr-4 lg:pl-10"
 	>
-		<main class="w-full sm:max-w-4xl" {@attach attachToc}>
+		<main class="w-full sm:max-w-4xl" bind:this={toc.ref}>
 			<!-- Main area -->
 			{@render children()}
 
