@@ -6,14 +6,6 @@
 
 	let toc = new UseToc();
 
-	function tocContainer(element: HTMLElement) {
-		toc.ref = element;
-
-		return () => {
-			toc.ref = undefined;
-		};
-	}
-
 	function toMinimapItems(headings: Heading[]): TOCItemType[] {
 		return headings.flatMap((heading) => [
 			...(heading.id
@@ -34,7 +26,7 @@
 
 <div class="mx-auto flex w-full max-w-lg items-start gap-6">
 	<article
-		{@attach tocContainer}
+		bind:this={toc.ref}
 		class="min-w-0 flex-1 space-y-6 text-sm text-muted-foreground"
 	>
 		<section class="space-y-2">
