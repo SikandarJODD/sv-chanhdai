@@ -130,8 +130,7 @@ export type SwipeItemContextValue = {
 export type SwipeActionsContextValue = {
 	readonly side: SwipeSide;
 	readonly fullSwipe: boolean;
-	measure: (id: SwipeId, width: number) => void;
-	forget: (id: SwipeId) => void;
+	registerContent: (id: SwipeId, element: HTMLSpanElement) => VoidFunction;
 	offsetOf: (id: SwipeId) => number;
 	isOutermost: (id: SwipeId) => boolean;
 };

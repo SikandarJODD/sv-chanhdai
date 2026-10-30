@@ -163,6 +163,7 @@
 						<PreviewComponent
 							code={example.code}
 							class={example.previewClass}
+							lazy
 						>
 							<example.preview />
 						</PreviewComponent>

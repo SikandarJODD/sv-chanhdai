@@ -14,6 +14,7 @@
 		code?: CodeBlock | CodeBlock[];
 		showRetry?: boolean;
 		isCentered?: boolean;
+		lazy?: boolean;
 		class?: string;
 	}
 
@@ -22,19 +23,38 @@
 		children,
 		showRetry = true,
 		isCentered = true,
+		lazy = false,
 		class: className = ""
 	}: PreviewComponentProps = $props();
 
 	type TabValue = "preview" | "code";
 	let value: TabValue = $state("preview");
 	let retryKey = $state(0);
+	let isVisible = $state(false);
+	const shouldRender = $derived(!lazy || isVisible);
 
 	function handleRetry() {
 		retryKey += 1;
 	}
+
+	function observeVisibility(element: HTMLDivElement) {
+		if (!lazy || isVisible) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				if (!entries.some((entry) => entry.isIntersecting)) return;
+				isVisible = true;
+				observer.disconnect();
+			},
+			{ rootMargin: "300px 0px" }
+		);
+		observer.observe(element);
+
+		return () => observer.disconnect();
+	}
 </script>
 
-<div class="mt-2 w-full">
+<div class="mt-2 w-full" {@attach observeVisibility}>
 	<Tabs.Root bind:value>
 		<Tabs.List class="bg-transparent">
 			<Tabs.Trigger
@@ -61,7 +81,7 @@
 					className
 				)}
 			>
-				{#if showRetry && value === "preview"}
+				{#if shouldRender && showRetry && value === "preview"}
 					<Button
 						variant="secondary"
 						size="icon-sm"
@@ -86,13 +106,15 @@
 					</Button>
 				{/if}
 				{#key retryKey}
-					{#if children}
-						{@render children?.()}
-					{:else}
-						<p class="text-muted-foreground">
-							No component provided. Please provide a component to
-							render.
-						</p>
+					{#if shouldRender}
+						{#if children}
+							{@render children?.()}
+						{:else}
+							<p class="text-muted-foreground">
+								No component provided. Please provide a
+								component to render.
+							</p>
+						{/if}
 					{/if}
 				{/key}
 			</div>
