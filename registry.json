@@ -465,6 +465,11 @@
 					"target": "chan/status-button/spinner.svelte"
 				},
 				{
+					"path": "src/lib/components/chan/status-button/success-icon.svelte",
+					"type": "registry:component",
+					"target": "chan/status-button/success-icon.svelte"
+				},
+				{
 					"path": "src/lib/components/chan/status-button/index.ts",
 					"type": "registry:file",
 					"target": "chan/status-button/index.ts"

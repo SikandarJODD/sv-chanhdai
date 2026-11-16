@@ -9,7 +9,7 @@
 	import SunIcon from "@lucide/svelte/icons/sun";
 	import * as Tooltip from "#lib/components/ui/tooltip/index.js";
 	import MoonIcon from "@lucide/svelte/icons/moon";
-	import { toggleMode, mode } from "mode-watcher";
+	import { toggleMode } from "mode-watcher";
 	import Kbd from "../kbd/kbd.svelte";
 	import {
 		Button,
@@ -27,15 +27,8 @@
 			class={buttonVariants({ variant, size })}
 			onclick={toggleMode}
 		>
-			{#if mode.current === "dark"}
-				<MoonIcon
-					class="scale-0 rotate-90 transition-all! dark:scale-100 dark:rotate-0"
-				/>
-			{:else}
-				<SunIcon
-					class="scale-100 rotate-0 transition-all! dark:scale-0 dark:-rotate-90"
-				/>
-			{/if}
+			<MoonIcon class="hidden dark:block" />
+			<SunIcon class="block dark:hidden" />
 			<span class="sr-only">Toggle theme</span>
 		</Tooltip.Trigger>
 		<Tooltip.Content>

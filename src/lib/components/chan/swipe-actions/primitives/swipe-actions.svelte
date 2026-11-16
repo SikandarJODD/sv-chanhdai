@@ -19,20 +19,50 @@
 	}: SwipeActionsProps = $props();
 
 	const item = useSwipeItem();
-	let contents = $state<{ id: SwipeId; width: number }[]>([]);
+	type ContentMeasurement = {
+		id: SwipeId;
+		element: HTMLSpanElement;
+		width: number;
+	};
+
+	let contents = $state.raw<ContentMeasurement[]>([]);
 	let measuredSide: SwipeActionsProps["side"] | undefined;
+	let resizeObserver: ResizeObserver | undefined;
 	const total = $derived(
 		contents.reduce((sum, content) => sum + content.width, 0)
 	);
 
-	function measure(id: SwipeId, width: number) {
-		const index = contents.findIndex((content) => content.id === id);
-		if (index === -1) contents.push({ id, width });
-		else if (contents[index].width !== width) contents[index].width = width;
+	function updateMeasurements(entries: ResizeObserverEntry[]) {
+		let changed = false;
+		const next = contents.map((content) => {
+			const entry = entries.find(
+				(entry) => entry.target === content.element
+			);
+			if (!entry) return content;
+
+			const width =
+				entry.borderBoxSize[0]?.inlineSize ?? entry.contentRect.width;
+			if (width === content.width) return content;
+			changed = true;
+			return { ...content, width };
+		});
+
+		if (changed) contents = next;
 	}
 
-	function forget(id: SwipeId) {
-		contents = contents.filter((content) => content.id !== id);
+	function registerContent(id: SwipeId, element: HTMLSpanElement) {
+		contents = [...contents, { id, element, width: 0 }];
+		resizeObserver ??= new ResizeObserver(updateMeasurements);
+		resizeObserver.observe(element, { box: "border-box" });
+
+		return () => {
+			resizeObserver?.unobserve(element);
+			contents = contents.filter((content) => content.id !== id);
+			if (contents.length === 0) {
+				resizeObserver?.disconnect();
+				resizeObserver = undefined;
+			}
+		};
 	}
 
 	function offsetOf(id: SwipeId) {
@@ -55,8 +85,7 @@
 		get fullSwipe() {
 			return fullSwipe;
 		},
-		measure,
-		forget,
+		registerContent,
 		offsetOf,
 		isOutermost
 	});
@@ -69,6 +98,7 @@
 		item.setStripWidth(currentSide, currentTotal);
 	});
 	onDestroy(() => {
+		resizeObserver?.disconnect();
 		if (measuredSide) item.setStripWidth(measuredSide, 0);
 	});
 

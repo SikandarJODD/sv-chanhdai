@@ -28,17 +28,12 @@
 		size="icon-sm"
 		variant="secondary"
 	>
-		<div
-			class={cn(
-				"transition-all",
-				open ? "scale-100 opacity-100" : "scale-0 opacity-0"
-			)}
-		>
+		<div class={cn(open ? "scale-100 opacity-100" : "scale-0 opacity-0")}>
 			<XIcon />
 		</div>
 		<div
 			class={cn(
-				"absolute transition-all",
+				"absolute",
 				open ? "scale-0 opacity-0" : "scale-100 opacity-100"
 			)}
 		>
@@ -49,7 +44,7 @@
 	{#if open}
 		<Portal class="top-[calc(3.5rem+env(safe-area-inset-top,0px))]">
 			<PortalBackdrop
-				class="bg-background! backdrop-blur-none duration-200"
+				class="animate-none! bg-background! backdrop-blur-none"
 			/>
 			<div
 				id="mobile-menu"

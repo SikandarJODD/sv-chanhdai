@@ -1,6 +1,7 @@
 import IndexTsRaw from "#lib/components/chan/status-button/index.ts?raw";
 import SpinnerSvelteRaw from "#lib/components/chan/status-button/spinner.svelte?raw";
 import StatusButtonSvelteRaw from "#lib/components/chan/status-button/status-button.svelte?raw";
+import SuccessIconSvelteRaw from "#lib/components/chan/status-button/success-icon.svelte?raw";
 
 import type {
 	ComponentDoc,
@@ -124,6 +125,11 @@ const install_block: InstallComponentDocs = {
 			isExpand: true
 		},
 		{ name: "spinner.svelte", code: SpinnerSvelteRaw, lang: "svelte" },
+		{
+			name: "success-icon.svelte",
+			code: SuccessIconSvelteRaw,
+			lang: "svelte"
+		},
 		{
 			name: "status-button.svelte",
 			code: StatusButtonSvelteRaw,

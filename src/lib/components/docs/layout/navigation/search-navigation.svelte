@@ -19,61 +19,71 @@
 	// For Now we would use Magic UI - Components, Later on we would update it
 	let docs: Component[] = docsPages;
 
-	import { MediaQuery } from "svelte/reactivity";
-
-	const large = new MediaQuery("min-width: 800px");
 	const isMounted = new IsMounted();
 </script>
 
 <svelte:document onkeydown={handleKeydown} />
 
+{#snippet searchIcon()}
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		width="128"
+		height="128"
+		viewBox="0 0 24 24"
+		fill="none"
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+		role="img"
+		color="currentColor"
+	>
+		<path
+			d="M18.5016 18.5L21 21M20 14.5C20 11.4624 17.5376 9 14.5 9C11.4624 9 9 11.4624 9 14.5C9 17.5376 11.4624 20 14.5 20C17.5376 20 20 17.5376 20 14.5Z"
+			stroke="currentColor"
+			stroke-width="1.5"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		></path>
+		<path
+			d="M10 3H14M3 10V14M6.5 21C4.567 21 3 19.433 3 17.5M17.5 3C19.433 3 21 4.567 21 6.5M3 6.5C3 4.567 4.567 3 6.5 3"
+			stroke="currentColor"
+			stroke-width="1.5"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		></path>
+	</svg>
+{/snippet}
+
 <div
 	class="text-sm text-muted-foreground min-[800px]:h-8 min-[800px]:w-46 lg:mr-2"
 >
+	<div class="min-[800px]:hidden">
+		<Button
+			variant="ghost"
+			size="icon"
+			class="rounded-full bg-secondary"
+			onclick={() => (open = true)}
+		>
+			{@render searchIcon()}
+		</Button>
+	</div>
+
 	{#if isMounted.current}
-		<div class="size-full" in:blur={{ opacity: 0.7, duration: 150 }}>
+		<div
+			class="hidden size-full min-[800px]:block"
+			in:blur={{ opacity: 0.7, duration: 150 }}
+		>
 			<Button
 				variant="ghost"
-				size={large.current ? "sm" : "icon"}
-				class={large.current
-					? "flex justify-between rounded-full bg-secondary px-1.5 min-[800px]:min-w-46 min-[800px]:px-2 dark:bg-muted/60"
-					: "rounded-full bg-secondary"}
+				size="sm"
+				class="flex min-w-46 justify-between rounded-full bg-secondary px-2 dark:bg-muted/60"
 				onclick={() => (open = true)}
 			>
-				<span class="hidden pl-1 min-[800px]:block"> Search... </span>
+				<span class="pl-1">Search...</span>
 
-				<Kbd.Group class="hidden gap-1 min-[800px]:flex">
+				<Kbd.Group class="flex gap-1">
 					<!-- <Kbd.Root>⌘</Kbd.Root> -->
 					<Kbd.Root>Ctrl</Kbd.Root>
 					<Kbd.Root>K</Kbd.Root>
 				</Kbd.Group>
-				<span class="min-[800px]:hidden">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="128"
-						height="128"
-						viewBox="0 0 24 24"
-						fill="none"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						role="img"
-						color="currentColor"
-					>
-						<path
-							d="M18.5016 18.5L21 21M20 14.5C20 11.4624 17.5376 9 14.5 9C11.4624 9 9 11.4624 9 14.5C9 17.5376 11.4624 20 14.5 20C17.5376 20 20 17.5376 20 14.5Z"
-							stroke="currentColor"
-							stroke-width="1.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						></path>
-						<path
-							d="M10 3H14M3 10V14M6.5 21C4.567 21 3 19.433 3 17.5M17.5 3C19.433 3 21 4.567 21 6.5M3 6.5C3 4.567 4.567 3 6.5 3"
-							stroke="currentColor"
-							stroke-width="1.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						></path>
-					</svg>
-				</span>
 			</Button>
 		</div>
 	{/if}

@@ -18,16 +18,14 @@
 	const actions = useSwipeActions();
 
 	function attachContent(element: HTMLSpanElement) {
-		untrack(() => (ref = element));
-		const observer = new ResizeObserver(() => {
-			actions.measure(id, element.offsetWidth);
+		const unregister = untrack(() => {
+			ref = element;
+			return actions.registerContent(id, element);
 		});
-		observer.observe(element);
 
 		return () => {
-			observer.disconnect();
-			actions.forget(id);
 			untrack(() => {
+				unregister();
 				if (ref === element) ref = null;
 			});
 		};
