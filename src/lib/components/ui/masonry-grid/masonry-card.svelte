@@ -10,11 +10,11 @@
 </script>
 
 <script lang="ts">
-	import ExternalLink from "@lucide/svelte/icons/external-link";
 	import RotateCw from "@lucide/svelte/icons/rotate-cw";
 	import { cn } from "#lib/utils.js";
 	import * as Frame from "#lib/components/ui/frame/index.js";
 	import { Button } from "#lib/components/ui/button/index.js";
+	import ArrowUpRightCircle from "./arrow-up-right-circle.svelte";
 
 	let {
 		name,
@@ -59,14 +59,13 @@
 
 	<Frame.Footer class="p-0.5 pt-1">
 		<a
-			class="group flex w-full items-center justify-between rounded-xl px-2 py-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+			class="group flex w-full items-center justify-between rounded-full py-1.5 pr-1 pl-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:outline-none"
 			{href}
 			aria-label={`Visit ${name}`}
 		>
 			<h3 class="font-mono text-xs font-medium md:text-sm">{name}</h3>
-			<ExternalLink
-				class="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-				aria-hidden="true"
+			<ArrowUpRightCircle
+				class="size-5.5 opacity-80 transition-opacity duration-200 ease-out group-hover:opacity-100"
 			/>
 		</a>
 	</Frame.Footer>
